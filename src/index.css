@@ -221,6 +221,69 @@ body {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+/* ================= HEADER LOGO + PHONE ================= */
 
+.sf-logo{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
 
+.sf-logo .mark{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.logo-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+/* TEXT */
+.logo-text .title{
+  font-size:16px;
+  font-weight:800;
+  color:#111;
+  line-height:1.2;
+}
+
+.logo-text .subtitle{
+  font-size:12px;
+  color:#555;
+  line-height:1.2;
+}
+
+/* PHONE */
+.phone-line{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin-top:4px;
+}
+
+.phone-icon{
+  font-size:16px;
+}
+
+.phone-number{
+  font-size:16px;
+  font-weight:900;
+  color:#111;
+  letter-spacing:0.5px;
+  text-decoration:none;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .phone-number{
+    font-size:15px;
+  }
+}
 

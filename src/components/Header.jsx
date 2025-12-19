@@ -4,53 +4,58 @@ import { NavLink } from "react-router-dom";
 export default function Header() {
   const [open, setOpen] = useState(false);
 
-  function closeMenu() {
-    setOpen(false);
-  }
-
   return (
     <header className="sf-header">
       <div className="sf-header-inner">
-
         {/* Logo */}
         <div className="sf-logo">
-          <div className="mark">S</div>
-          <div>
-            <div className="title">SHA INFOTECHNOLOGY</div>
-            <div className="subtitle">Digital Solutions</div>
-          </div>
-        </div>
+  <div className="mark">
+    <img
+      src="/LOGO.jpeg"
+      alt="SHA Infotechnology Logo"
+      className="logo-img"
+    />
+  </div>
+  {/* <div>
+    <div className="title">SHA INFOTECHNOLOGY</div>
+    <div className="subtitle">Digital Solutions</div>
+     <div className="subtitle">9445747815</div>
+  </div> */}
+  <div className="logo-text">
+  <div className="title">SHA INFOTECHNOLOGY</div>
+  <div className="subtitle">Digital Solutions</div>
+
+  <div className="phone-line">
+    <span className="phone-icon">📞</span>
+    <a href="tel:9445747815" className="phone-number">
+  94457 47815
+</a>
+    {/* <span className="phone-number">9445747815</span> */}
+  </div>
+</div>
+</div>
 
         {/* Hamburger */}
         <button
           className={`hamburger ${open ? "open" : ""}`}
           onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          ☰
         </button>
 
         {/* Navigation */}
         <nav className={`sf-nav ${open ? "open" : ""}`}>
-          <NavLink to="/" end className={({ isActive }) => `nav-btn ${isActive ? "active" : ""}`} onClick={closeMenu}>
-            Home
-          </NavLink>
-
-          <NavLink to="/about" className={({ isActive }) => `nav-btn ${isActive ? "active" : ""}`} onClick={closeMenu}>
-            About
-          </NavLink>
-
-          <NavLink to="/services" className={({ isActive }) => `nav-btn ${isActive ? "active" : ""}`} onClick={closeMenu}>
-            Services
-          </NavLink>
-
-          <NavLink to="/contact" className={({ isActive }) => `nav-btn ${isActive ? "active" : ""}`} onClick={closeMenu}>
-            Contact
-          </NavLink>
+          {["/", "/about", "/services", "/contact"].map((path, i) => (
+            <NavLink
+              key={i}
+              to={path}
+              onClick={() => setOpen(false)}
+              className="nav-btn"
+            >
+              {["Home", "About", "Services", "Contact"][i]}
+            </NavLink>
+          ))}
         </nav>
-
       </div>
     </header>
   );

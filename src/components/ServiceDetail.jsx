@@ -136,64 +136,9 @@ export default function ServiceDetailPage() {
         font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
       }
 
-      .sf-header{
-        position:sticky;
-        top:0;
-        z-index:100;
-        width:100%;
-        background:rgba(232,232,232,0.96);
-        backdrop-filter:blur(8px);
-        border-bottom:1px solid rgba(0,0,0,0.06);
-      }
-      .sf-header-inner{
-        max-width:1400px;
-        margin:0 auto;
-        padding:14px 28px;
-        display:flex;
-        align-items:center;
-        justify-content:space-between;
-        position:relative;
-      }
-      .sf-nav{
-        position:absolute;
-        left:50%;
-        transform:translateX(-50%);
-        display:flex;
-        gap:28px;
-        align-items:center;
-      }
-      .sf-nav .nav-btn{
-        background:none;
-        border:none;
-        color:var(--text-dark);
-        font-size:18px;
-        font-weight:700;
-        cursor:pointer;
-        text-decoration:none;
-        transition:color 180ms ease, transform 180ms ease;
-      }
-      .sf-nav .nav-btn:hover{
-        color:var(--accent-red);
-        transform:translateY(-2px);
-      }
-      .sf-logo{
-        display:flex;
-        align-items:center;
-        gap:12px;
-        margin-left:auto;
-      }
-      .sf-logo .mark{
-        width:44px;
-        height:44px;
-        border-radius:12px;
-        background:var(--accent-red);
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        font-weight:700;
-        color:#fff;
-        box-shadow:0 6px 18px rgba(185,5,4,0.35);
-      }
+      
+     
+      
 
       .sd-section{
         padding:80px 7vw;
@@ -384,6 +329,310 @@ export default function ServiceDetailPage() {
         .sd-title{font-size:38px;}
         .sd-highlights-grid{grid-template-columns:1fr;}
       }
+
+/* ================= MOBILE VIEW (Service Detail) ================= */
+@media (max-width: 480px){
+
+  .sd-section{
+    padding:40px 16px;
+  }
+
+  .sd-title{
+    font-size:28px;
+    line-height:1.25;
+  }
+
+  .sd-punch{
+    font-size:16px;
+  }
+
+  .sd-intro{
+    font-size:14px;
+    line-height:1.7;
+  }
+
+  .sd-hero-card{
+    padding:18px 16px;
+  }
+
+  .sd-hero-card h3{
+    font-size:16px;
+  }
+
+  .sd-stat .number{
+    font-size:22px;
+  }
+
+  .sd-stat .label{
+    font-size:10px;
+  }
+
+  .sd-highlights-grid{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .sd-bullets-card,
+  .sd-flow-card{
+    padding:18px 16px;
+  }
+
+  .sd-bullets-title,
+  .sd-flow-title{
+    font-size:16px;
+  }
+
+  .sd-bullets-list li{
+    font-size:13px;
+  }
+
+  .sd-flow-step{
+    font-size:13px;
+  }
+
+  .sd-cta-strip{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .sd-cta-btn{
+    width:100%;
+    text-align:center;
+    font-size:14px;
+    padding:12px 18px;
+  }
+
+  .sd-cta-note{
+    font-size:13px;
+  }
+
+  /* HEADER MOBILE FIX */
+  .sf-nav{
+    display:none;
+  }
+}
+
+/* ================= USER-FRIENDLY TYPOGRAPHY (SERVICE DETAIL) ================= */
+
+/* Base text */
+.sd-wrap{
+  font-size:16px;
+  line-height:1.75;
+  letter-spacing:0.2px;
+}
+
+/* Main title */
+.sd-title{
+  font-weight:800;
+}
+
+/* Punch line */
+.sd-punch{
+  font-weight:700;
+}
+
+/* Intro paragraph */
+.sd-intro{
+  font-weight:500;
+}
+
+/* Hero card text */
+.sd-hero-card h3{
+  font-weight:800;
+}
+.sd-hero-card p{
+  font-weight:500;
+}
+
+/* Stats */
+.sd-stat .number{
+  font-weight:800;
+}
+.sd-stat .label{
+  font-weight:600;
+}
+
+/* Section titles */
+.sd-bullets-title,
+.sd-flow-title{
+  font-weight:800;
+}
+
+/* Bullet & flow text */
+.sd-bullets-list li,
+.sd-flow-step{
+  font-weight:500;
+}
+
+/* CTA */
+.sd-cta-btn{
+  font-weight:800;
+}
+.sd-cta-note{
+  font-weight:500;
+}
+
+/* Breadcrumb */
+.sd-breadcrumb,
+.sd-breadcrumb a{
+  font-weight:600;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+
+  .sd-title{
+    font-weight:800;
+  }
+
+  .sd-punch,
+  .sd-intro,
+  .sd-bullets-list li,
+  .sd-flow-step{
+    font-weight:500;
+  }
+
+}
+.sf-logo .mark{
+  width:48px;
+  height:48px;
+  border-radius:12px;
+  overflow:hidden;
+  background:#fff;
+}
+
+.sf-logo .logo-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+/* ================= ENHANCED TYPOGRAPHY + HOVER (SERVICE DETAIL) ================= */
+
+/* Base text */
+.sd-wrap{
+  font-size:17px;                 /* ⬆️ slightly bigger */
+  line-height:1.85;
+  letter-spacing:0.25px;
+}
+
+/* Main title */
+.sd-title{
+  font-size:52px;                 /* ⬆️ */
+  font-weight:800;
+  transition:color 0.25s ease;
+}
+
+/* Punch line */
+.sd-punch{
+  font-size:22px;                 /* ⬆️ */
+  font-weight:700;
+}
+
+/* Intro paragraph */
+.sd-intro{
+  font-size:17px;                 /* ⬆️ */
+  font-weight:500;
+}
+
+/* Hero card */
+.sd-hero-card h3{
+  font-size:19px;
+  font-weight:800;
+}
+.sd-hero-card p{
+  font-size:15px;
+  font-weight:500;
+}
+
+/* Hero card hover */
+.sd-hero-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 38px 110px rgba(185,5,4,0.35);
+}
+
+/* Stats */
+.sd-stat .number{
+  font-size:28px;
+  font-weight:800;
+}
+.sd-stat .label{
+  font-size:12px;
+  font-weight:600;
+}
+
+/* Section titles */
+.sd-bullets-title,
+.sd-flow-title{
+  font-size:19px;
+  font-weight:800;
+}
+
+/* Bullet points */
+.sd-bullets-list li{
+  font-size:15px;
+  font-weight:500;
+  transition:transform 0.2s ease, color 0.2s ease;
+}
+
+/* Bullet hover */
+.sd-bullets-list li:hover{
+  transform:translateX(4px);
+  color:var(--accent-red);
+}
+
+/* Flow steps */
+.sd-flow-step{
+  font-size:15px;
+  font-weight:500;
+  transition:transform 0.2s ease;
+}
+.sd-flow-step:hover{
+  transform:translateX(4px);
+}
+
+/* CTA button hover polish */
+.sd-cta-btn{
+  font-size:16px;
+  font-weight:800;
+}
+.sd-cta-btn:hover{
+  transform:translateY(-5px);
+}
+
+/* Breadcrumb */
+.sd-breadcrumb,
+.sd-breadcrumb a{
+  font-size:14px;
+  font-weight:600;
+}
+
+/* Breadcrumb hover */
+.sd-breadcrumb a:hover{
+  text-decoration:underline;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+
+  .sd-title{
+    font-size:32px;
+  }
+
+  .sd-punch{
+    font-size:17px;
+  }
+
+  .sd-intro{
+    font-size:15px;
+  }
+
+  .sd-bullets-list li,
+  .sd-flow-step{
+    font-size:14px;
+  }
+}
+
     `;
 
     const prev = document.getElementById("service-detail-page-styles");
@@ -426,24 +675,7 @@ export default function ServiceDetailPage() {
 
   return (
     <div className="sd-wrap">
-      <header className="sf-header">
-        <div className="sf-header-inner">
-          <div style={{ width: 120 }} />
-          <nav className="sf-nav" aria-label="Main navigation">
-            <Link className="nav-btn" to="/">Home</Link>
-            <Link className="nav-btn" to="/about">About Us</Link>
-            <Link className="nav-btn" to="/services">Services</Link>
-            <button className="nav-btn">Contact</button>
-          </nav>
-          <div className="sf-logo" style={{ gap: 12 }}>
-            <div className="mark">S</div>
-            <div className="brand" style={{ textAlign: "right" }}>
-              <div className="title">Shainfotechnology</div>
-              <div className="subtitle">Digital Marketing</div>
-            </div>
-          </div>
-        </div>
-      </header>
+      
 
       {/* HERO */}
       <section className="sd-section sd-hero">

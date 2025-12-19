@@ -98,25 +98,25 @@ function ContactSection() {
         resize:vertical;
       }
 
-      .svc-recaptcha{
-        margin-top:8px;
-        margin-bottom:20px;
-        background:#ffffff;
-        color:#111;
-        padding:12px 14px;
-        border-radius:10px;
-        display:flex;
-        align-items:center;
-        gap:12px;
-        border:1px solid rgba(0,0,0,0.1);
-      }
+      // .svc-recaptcha{
+      //   margin-top:8px;
+      //   margin-bottom:20px;
+      //   background:#ffffff;
+      //   color:#111;
+      //   padding:12px 14px;
+      //   border-radius:10px;
+      //   display:flex;
+      //   align-items:center;
+      //   gap:12px;
+      //   border:1px solid rgba(0,0,0,0.1);
+      // }
 
-      .svc-recaptcha .checkbox{
-        width:20px;
-        height:20px;
-        border-radius:4px;
-        border:2px solid #111;
-      }
+      // .svc-recaptcha .checkbox{
+      //   width:20px;
+      //   height:20px;
+      //   border-radius:4px;
+      //   border:2px solid #111;
+      // }
 
       .svc-submit-btn{
         width:100%;
@@ -142,6 +142,50 @@ function ContactSection() {
         margin-top:12px;
         font-weight:700;
       }
+//         .mark{
+//   width:44px;
+//   height:44px;
+//   border-radius:50%;
+//   display:flex;
+//   align-items:center;
+//   justify-content:center;
+//   background:#ffffff;
+//   overflow:hidden;
+// }
+
+// .logo-img{
+//   width:100%;
+//   height:100%;
+//   object-fit:contain;
+// }
+// @media(max-width:768px){
+//   .mark{
+//     width:38px;
+//     height:38px;
+//   }
+// }
+  .mark{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#ffffff;
+  overflow:hidden;
+}
+
+.logo-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+@media(max-width:768px){
+  .mark{
+    width:38px;
+    height:38px;
+  }
+}
 
       @media(max-width:980px){
         .svc-contact-wrapper{
@@ -153,6 +197,111 @@ function ContactSection() {
         .svc-contact-form{padding:24px;}
         .svc-contact-form .row{grid-template-columns:1fr;}
       }
+        /* ================= MOBILE VIEW (Contact Section) ================= */
+@media (max-width: 480px){
+  .svc-contact-wrapper{
+    padding:24px 16px;
+    min-height:auto;
+  }
+
+  .svc-contact-title{
+    font-size:30px;
+    line-height:1.2;
+  }
+
+  .svc-contact-form{
+    padding:18px;
+  }
+
+  .svc-contact-form input,
+  .svc-contact-form textarea{
+    font-size:15px;
+    padding:14px 16px;
+  }
+
+  .svc-submit-btn{
+    font-size:16px;
+    padding:14px;
+  }
+}
+
+
+/* ================= SLIGHTLY BOLDER TEXT (SERVICES) ================= */
+
+/* Paragraph & descriptions */
+.svc-section p,
+.svc-hero-lead,
+.svc-card-desc,
+.svc-step-text,
+.svc-plan-point,
+.svc-faq-answer p{
+  font-weight:500;   /* was normal (400) */
+}
+
+/* Headings */
+.svc-section h2,
+.svc-hero-title{
+  font-weight:900;   /* strong but clean */
+}
+
+/* Card & step titles */
+.svc-card-title,
+.svc-step-title,
+.svc-plan-name{
+  font-weight:800;
+}
+
+/* FAQ questions */
+.svc-faq-question{
+  font-weight:700;
+}
+
+/* Contact CTA text */
+.svc-contact-wrapper p{
+  font-weight:500;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+  .svc-section p,
+  .svc-hero-lead,
+  .svc-card-desc,
+  .svc-step-text,
+  .svc-plan-point,
+  .svc-faq-answer p{
+    font-weight:500;
+  }
+}
+/* ================= RED SECTION HEADINGS ================= */
+
+/* Main section headings */
+.svc-section h2{
+  color: var(--accent-red);
+}
+
+/* Hero title stays strong */
+.svc-hero-title{
+  color: var(--accent-red);
+}
+
+/* FAQ title */
+.svc-faq-title{
+  color: var(--accent-red);
+}
+.svc-section h2{
+  color: var(--accent-red);
+  transition: opacity 0.2s ease;
+}
+
+.svc-section:hover h2{
+  opacity: 0.85;
+}
+.svc-card-title{
+  color: var(--accent-red);
+}
+.svc-card:hover .svc-card-title{
+  color:#9b0403;
+}
     `;
 
     const old = document.getElementById("services-contact-styles");
@@ -246,7 +395,8 @@ function ContactSection() {
               Talk to our strategy team
             </div>
             <div style={{ opacity: 0.85, marginTop: 8 }}>
-              +91 93610 46387 &nbsp;|&nbsp; shainfotech05@gmail.com
+              {/* +91 93610 46387 &nbsp;|&nbsp; */}
+               shainfotech05@gmail.com
             </div>
           </div>
 
@@ -321,7 +471,7 @@ function ContactSection() {
 
         <div className="svc-recaptcha" role="checkbox" aria-checked="false">
           <div className="checkbox" aria-hidden="true" />
-          <div>I&apos;m not a robot</div>
+          {/* <div>I&apos;m not a robot</div> */}
         </div>
 
         <button className="svc-submit-btn" type="submit" disabled={loading}>
@@ -769,6 +919,56 @@ export default function ServicesPage() {
         .svc-plans{grid-template-columns:1fr;}
         .svc-faq-card{padding:24px 18px 30px;}
       }
+
+      /* ================= MOBILE VIEW (Services Page) ================= */
+@media (max-width: 480px){
+  .svc-section{
+    padding:40px 16px;
+  }
+
+  .svc-section h2{
+    font-size:26px;
+    line-height:1.25;
+  }
+
+  .svc-hero-title{
+    font-size:32px;
+    line-height:1.2;
+  }
+
+  .svc-hero-lead{
+    font-size:15px;
+  }
+
+  .svc-hero-badges{
+    gap:8px;
+  }
+
+  .svc-grid{
+    grid-template-columns:1fr;
+  }
+
+  .svc-card{
+    padding:18px;
+  }
+
+  .svc-process-strip{
+    grid-template-columns:1fr;
+  }
+
+  .svc-plans{
+    grid-template-columns:1fr;
+  }
+
+  .svc-faq-title{
+    font-size:26px;
+  }
+
+  .svc-faq-question{
+    font-size:16px;
+  }
+}
+
     `;
 
     const prev = document.getElementById("services-page-styles");
@@ -824,7 +1024,7 @@ export default function ServicesPage() {
     },
     {
       tag: "SEO",
-      title: "SEO (Search Engine Optimization)",
+      title: "Search Engine Optimization",
       slug: "seo",
       desc:
         "On-page & technical SEO to improve your ranking on Google and get more organic enquiries."

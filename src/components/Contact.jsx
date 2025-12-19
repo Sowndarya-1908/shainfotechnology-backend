@@ -31,15 +31,43 @@ export default function Contact() {
         padding:90px 7vw;
         font-family:Inter,system-ui;
       }
+//         @media(max-width:768px){
+//   img{
+//     width:100%;
+//     height:auto;
+//     object-fit:contain;
+//   }
+// }
+// @media(max-width:768px){
+//   .contact-section img{
+//     max-width:100%;
+//     height:auto;
+//     object-fit:contain;
+//   }
+// }
 
-      .contact-inner{
-        max-width:1200px;
-        margin:auto;
-        display:grid;
-        grid-template-columns:1.1fr 1fr;
-        gap:60px;
-        align-items:center;
-      }
+.sf-logo .mark{
+  width:48px;
+  height:48px;
+  border-radius:12px;
+  overflow:hidden;
+  background:#fff;
+}
+
+.sf-logo .logo-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+     .contact-inner{
+  width:100%;          /* FULL WIDTH */
+  max-width:100%;      /* REMOVE LIMIT */
+  margin:0;            /* NO CENTER GAP */
+  display:block; 
+  border-radius:50%;      /* SINGLE COLUMN */
+}
+
 
       .contact-left h2{
         font-size:56px;
@@ -75,9 +103,10 @@ export default function Contact() {
       }
 
       .contact-right{
-        background:#fff;
-        padding:36px;
-        border-radius:26px;
+       width:100%;
+  background:#fff;
+  padding:48px 60px;   /* BIG FORM AREA */
+  border-radius:0;  
         box-shadow:0 30px 90px rgba(185,5,4,0.25);
       }
 
@@ -93,6 +122,10 @@ export default function Contact() {
         border:1px solid rgba(0,0,0,0.1);
         font-size:16px;
       }
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+}
 
       .contact-form textarea{min-height:130px;}
 
@@ -125,10 +158,63 @@ export default function Contact() {
         border:none;
       }
 
-      @media(max-width:900px){
-        .contact-inner{grid-template-columns:1fr;}
-        .contact-left h2{font-size:40px;}
-      }
+      @media(max-width:768px){
+
+  .contact-section{
+    padding:60px 20px;
+  }
+
+  .contact-inner{
+    grid-template-columns:1fr;
+    gap:40px;
+    border-radius:50%;
+  }
+
+  .contact-left h2{
+    font-size:34px;
+    line-height:1.15;
+  }
+
+  .contact-lead{
+    font-size:16px;
+  }
+
+  .contact-right{
+    padding:24px;
+    border-radius:20px;
+  }
+
+  .contact-form input,
+  .contact-form textarea{
+    font-size:15px;
+    padding:14px 16px;
+  }
+
+  .contact-form button{
+    width:100%;
+    font-size:16px;
+    padding:16px;
+  }
+
+  .map-card iframe{
+    height:220px;
+  }
+}
+
+
+.map-link{
+  display:inline-block;
+  margin-top:12px;
+  font-weight:700;
+  color:#B90504;
+  text-decoration:none;
+}
+
+.map-link:hover{
+  text-decoration:underline;
+}
+
+
     `;
     const style = document.createElement("style");
     style.innerHTML = css;
@@ -177,7 +263,7 @@ export default function Contact() {
   return (
     <section className="contact-section">
       <div className="contact-inner">
-        <div className="contact-left">
+        {/* <div className="contact-left">
           <h2>Ready to turn clicks into customers?</h2>
           <p className="contact-lead">
             {CONTACT_PHONE_DISPLAY} | {CONTACT_EMAIL}
@@ -201,7 +287,7 @@ export default function Contact() {
               <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="contact-right">
           <form className="contact-form" onSubmit={handleSubmit}>
@@ -223,8 +309,24 @@ export default function Contact() {
           </form>
 
           <div className="map-card">
-            <iframe src={CONTACT_MAP_EMBED} title="Location" loading="lazy"></iframe>
-          </div>
+  <iframe
+    src="https://www.google.com/maps?q=13.09403,80.1912417&z=17&output=embed"
+    title="Shainfotechnology Location"
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    allowFullScreen
+  ></iframe>
+</div>
+{/* <a
+  href={CONTACT_MAP_LINK}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="map-link"
+>
+  View on Google Maps →
+</a> */}
+
+
         </div>
       </div>
     </section>

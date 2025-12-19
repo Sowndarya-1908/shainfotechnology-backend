@@ -4,10 +4,14 @@ import { Link } from "react-router-dom";
 
 // Image paths (public folder)
 const BG_QUOTE_IMAGE = "/images/about/image.png";
-const TEAM_PM_IMAGE = "/images/about/project-manager.jpg";
-const TEAM_MM_IMAGE = "/images/about/marketing-manager.jpg";
-const TEAM_DEV_IMAGE = "/images/about/web-developer.jpg";
+const TEAM_PM_IMAGE = "/images/about/m.jpeg";
+const TEAM_MM_IMAGE = "/images/about/r.jpeg";
+const TEAM_DEV_IMAGE = "/images/about/s.png";
+
 const GALLERY_IMAGE = "/images/about/1.png";
+
+
+
 
 // Contact details (kept for future use)
 const CONTACT_PHONE = "+919361046387";
@@ -19,13 +23,250 @@ const CONTACT_MAP_EMBED =
   "https://www.google.com/maps?q=13.09403,80.1912417&z=17&output=embed";
 
 // ---------- SMALL CONTACT “FLOATING FORM” SECTION (bottom of page) ----------
+// function Contactsection() {
+//   useEffect(() => {
+//     const css = `
+//       :root{
+//         --home-grey:#E8E8E8;
+//         --home-red:#B90504;
+//         --home-aqua:#6CC4C1;
+//       }
+
+      
+//       .contact-wrapper{
+//         min-height:100vh;
+//         display:grid;
+//         grid-template-columns:1fr 1fr;
+//         gap:56px;
+//         padding:72px 84px;
+//         align-items:start;
+//         font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+//         background:var(--home-grey);
+//         color:#111;
+//       }
+
+//       .contact-title{
+//         font-size:72px;
+//         font-weight:900;
+//         line-height:1.02;
+//         margin:0 0 36px 0;
+//         animation:floatHeadline 6s ease-in-out infinite;
+//       }
+
+//       @keyframes floatHeadline{
+//         0%{transform:translateY(0)}
+//         25%{transform:translateY(-8px)}
+//         50%{transform:translateY(0)}
+//         75%{transform:translateY(6px)}
+//         100%{transform:translateY(0)}
+//       }
+
+//       .contact-form{
+//         width:100%;
+//         background:#ffffff;
+//         border-radius:18px;
+//         padding:36px;
+//         box-shadow:0 24px 60px rgba(0,0,0,0.12);
+//         border:1px solid rgba(0,0,0,0.04);
+//         transition:transform 260ms ease, box-shadow 260ms ease;
+//       }
+
+//       .contact-form:hover{
+//         transform:translateY(-8px);
+//         box-shadow:0 32px 80px rgba(0,0,0,0.18);
+//       }
+
+//       .contact-form .form-row{
+//         display:grid;
+//         grid-template-columns:1fr 1fr;
+//         gap:18px;
+//         margin-bottom:18px;
+//       }
+
+//       .contact-form .form-field{margin-bottom:18px;}
+
+//       .contact-form input,
+//       .contact-form textarea{
+//         width:100%;
+//         padding:18px 20px;
+//         border-radius:12px;
+//         border:1px solid rgba(0,0,0,0.08);
+//         font-size:16px;
+//         color:#111;
+//         background:#ffffff;
+//         outline:none;
+//         box-shadow:0 0 0 rgba(0,0,0,0);
+//         transition:box-shadow 160ms ease, border-color 160ms ease, transform 160ms ease;
+//       }
+
+//       .contact-form input::placeholder,
+//       .contact-form textarea::placeholder{
+//         color:#777;
+//         font-weight:600;
+//       }
+
+//       .contact-form input:focus,
+//       .contact-form textarea:focus{
+//         border-color:var(--home-red);
+//         box-shadow:0 0 0 1px rgba(185,5,4,0.4);
+//         transform:translateY(-2px);
+//       }
+
+//       .contact-form textarea{
+//         min-height:150px;
+//         resize:vertical;
+//       }
+
+//       .fake-recaptcha{
+//         margin-top:8px;
+//         margin-bottom:20px;
+//         background:#ffffff;
+//         color:#111;
+//         padding:12px 14px;
+//         border-radius:10px;
+//         display:flex;
+//         align-items:center;
+//         gap:12px;
+//         border:1px solid rgba(0,0,0,0.1);
+//       }
+
+//       .fake-recaptcha .checkbox{
+//         width:20px;
+//         height:20px;
+//         border-radius:4px;
+//         border:2px solid #111;
+//       }
+
+//       .submit-btn{
+//         width:100%;
+//         background:var(--home-red);
+//         padding:18px;
+//         border-radius:12px;
+//         color:#fff;
+//         font-size:22px;
+//         font-weight:800;
+//         border:none;
+//         cursor:pointer;
+//         box-shadow:0 16px 40px rgba(185,5,4,0.4);
+//         transition:transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+//       }
+
+//       .submit-btn:hover{
+//         transform:translateY(-6px);
+//         background:#9b0403;
+//         box-shadow:0 26px 60px rgba(185,5,4,0.5);
+//       }
+
+//       @media(max-width:980px){
+//         .contact-wrapper{
+//           grid-template-columns:1fr;
+//           padding:40px;
+//           gap:28px;
+//         }
+//         .contact-title{font-size:44px;}
+//         .contact-form{padding:24px;}
+//         .contact-form .form-row{grid-template-columns:1fr;}
+//       }
+//     `;
+
+//     const old = document.getElementById("contactsection-spacing-styles");
+//     if (old) old.remove();
+//     const style = document.createElement("style");
+//     style.id = "contactsection-spacing-styles";
+//     style.innerHTML = css;
+//     document.head.appendChild(style);
+
+//     return () => {
+//       const s = document.getElementById("contactsection-spacing-styles");
+//       if (s) s.remove();
+//     };
+//   }, []);
+
+//   return (
+//     <div className="contact-wrapper">
+//       {/* LEFT text */}
+//       <div>
+//         <h1 className="contact-title">
+//           You’ve scrolled this far — let’s turn it into momentum.
+//         </h1>
+
+//         <div style={{ marginTop: 18, fontSize: 18, color: "#333" }}>
+//           <div style={{ marginBottom: 18 }}>
+//             <div style={{ fontWeight: 800, fontSize: 20 }}>
+//               {/* For Business Enquiries */}
+//             </div>
+//             {/* <div style={{ opacity: 0.8, marginTop: 8 }}>
+//               +91 95580 79502 | hello@florafountain.com
+//             </div> */}
+//           </div>
+
+//           <div>
+//             <div style={{ fontWeight: 800, fontSize: 20 }}>
+//               {/* For Career Opportunities */}
+//             </div>
+//             <div style={{ opacity: 0.8, marginTop: 8 }}>
+//               {/* +91 95109 24360 | careers@florafountain.com */}
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* RIGHT form */}
+//       <div className="contact-form" role="form" aria-label="Contact form">
+//         <div className="form-row">
+//           <div className="form-field">
+//             <input type="text" placeholder="Name" aria-label="Name" />
+//           </div>
+//           <div className="form-field">
+//             <input
+//               type="text"
+//               placeholder="Phone Number"
+//               aria-label="Phone number"
+//             />
+//           </div>
+//         </div>
+
+//         <div className="form-field">
+//           <input type="email" placeholder="Email" aria-label="Email" />
+//         </div>
+
+//         <div className="form-field">
+//           <input type="text" placeholder="Service" aria-label="Service" />
+//         </div>
+
+//         <div className="form-field">
+//           <textarea placeholder="Message" aria-label="Message" />
+//         </div>
+
+//         <div className="fake-recaptcha" role="checkbox" aria-checked="false">
+//           <div className="checkbox" aria-hidden="true" />
+//           <div>I'm not a robot</div>
+//         </div>
+
+//         <button className="submit-btn" type="button">
+//           LET'S CONNECT
+//         </button>
+//       </div>
+//     </div>
+//   );
+// }
 function Contactsection() {
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    service: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null);
+
   useEffect(() => {
     const css = `
       :root{
         --home-grey:#E8E8E8;
         --home-red:#B90504;
-        --home-aqua:#6CC4C1;
       }
 
       .contact-wrapper{
@@ -34,214 +275,177 @@ function Contactsection() {
         grid-template-columns:1fr 1fr;
         gap:56px;
         padding:72px 84px;
-        align-items:start;
-        font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
         background:var(--home-grey);
-        color:#111;
       }
 
       .contact-title{
         font-size:72px;
         font-weight:900;
-        line-height:1.02;
-        margin:0 0 36px 0;
-        animation:floatHeadline 6s ease-in-out infinite;
-      }
-
-      @keyframes floatHeadline{
-        0%{transform:translateY(0)}
-        25%{transform:translateY(-8px)}
-        50%{transform:translateY(0)}
-        75%{transform:translateY(6px)}
-        100%{transform:translateY(0)}
+        margin-bottom:36px;
       }
 
       .contact-form{
-        width:100%;
-        background:#ffffff;
+        background:#fff;
         border-radius:18px;
         padding:36px;
         box-shadow:0 24px 60px rgba(0,0,0,0.12);
-        border:1px solid rgba(0,0,0,0.04);
-        transition:transform 260ms ease, box-shadow 260ms ease;
       }
 
-      .contact-form:hover{
-        transform:translateY(-8px);
-        box-shadow:0 32px 80px rgba(0,0,0,0.18);
-      }
-
-      .contact-form .form-row{
+      .form-row{
         display:grid;
         grid-template-columns:1fr 1fr;
         gap:18px;
-        margin-bottom:18px;
       }
-
-      .contact-form .form-field{margin-bottom:18px;}
 
       .contact-form input,
       .contact-form textarea{
         width:100%;
-        padding:18px 20px;
+        padding:16px;
         border-radius:12px;
-        border:1px solid rgba(0,0,0,0.08);
+        border:1px solid rgba(0,0,0,0.1);
         font-size:16px;
-        color:#111;
-        background:#ffffff;
-        outline:none;
-        box-shadow:0 0 0 rgba(0,0,0,0);
-        transition:box-shadow 160ms ease, border-color 160ms ease, transform 160ms ease;
-      }
-
-      .contact-form input::placeholder,
-      .contact-form textarea::placeholder{
-        color:#777;
-        font-weight:600;
-      }
-
-      .contact-form input:focus,
-      .contact-form textarea:focus{
-        border-color:var(--home-red);
-        box-shadow:0 0 0 1px rgba(185,5,4,0.4);
-        transform:translateY(-2px);
       }
 
       .contact-form textarea{
-        min-height:150px;
-        resize:vertical;
-      }
-
-      .fake-recaptcha{
-        margin-top:8px;
-        margin-bottom:20px;
-        background:#ffffff;
-        color:#111;
-        padding:12px 14px;
-        border-radius:10px;
-        display:flex;
-        align-items:center;
-        gap:12px;
-        border:1px solid rgba(0,0,0,0.1);
-      }
-
-      .fake-recaptcha .checkbox{
-        width:20px;
-        height:20px;
-        border-radius:4px;
-        border:2px solid #111;
+        min-height:140px;
       }
 
       .submit-btn{
         width:100%;
-        background:var(--home-red);
+        margin-top:14px;
         padding:18px;
         border-radius:12px;
+        background:var(--home-red);
         color:#fff;
-        font-size:22px;
+        font-size:20px;
         font-weight:800;
         border:none;
         cursor:pointer;
-        box-shadow:0 16px 40px rgba(185,5,4,0.4);
-        transition:transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
       }
 
-      .submit-btn:hover{
-        transform:translateY(-6px);
-        background:#9b0403;
-        box-shadow:0 26px 60px rgba(185,5,4,0.5);
+      .form-status{
+        margin-top:10px;
+        font-weight:700;
       }
 
-      @media(max-width:980px){
+      @media(max-width:768px){
         .contact-wrapper{
           grid-template-columns:1fr;
-          padding:40px;
-          gap:28px;
+          padding:40px 20px;
         }
-        .contact-title{font-size:44px;}
-        .contact-form{padding:24px;}
-        .contact-form .form-row{grid-template-columns:1fr;}
+        .contact-title{
+          font-size:34px;
+        }
+        .form-row{
+          grid-template-columns:1fr;
+        }
       }
     `;
 
-    const old = document.getElementById("contactsection-spacing-styles");
-    if (old) old.remove();
     const style = document.createElement("style");
-    style.id = "contactsection-spacing-styles";
     style.innerHTML = css;
     document.head.appendChild(style);
-
-    return () => {
-      const s = document.getElementById("contactsection-spacing-styles");
-      if (s) s.remove();
-    };
+    return () => document.head.removeChild(style);
   }, []);
+
+  const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus(null);
+
+    try {
+      const res = await fetch("/.netlify/functions/send-enquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setStatus({ ok: true, msg: "✅ Enquiry sent successfully!" });
+        setForm({
+          name: "",
+          phone: "",
+          email: "",
+          service: "",
+          message: "",
+        });
+      } else {
+        setStatus({ ok: false, msg: "❌ Failed to send enquiry" });
+      }
+    } catch (err) {
+      setStatus({ ok: false, msg: "❌ Server error" });
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="contact-wrapper">
-      {/* LEFT text */}
       <div>
         <h1 className="contact-title">
           You’ve scrolled this far — let’s turn it into momentum.
         </h1>
-
-        <div style={{ marginTop: 18, fontSize: 18, color: "#333" }}>
-          <div style={{ marginBottom: 18 }}>
-            <div style={{ fontWeight: 800, fontSize: 20 }}>
-              {/* For Business Enquiries */}
-            </div>
-            {/* <div style={{ opacity: 0.8, marginTop: 8 }}>
-              +91 95580 79502 | hello@florafountain.com
-            </div> */}
-          </div>
-
-          <div>
-            <div style={{ fontWeight: 800, fontSize: 20 }}>
-              {/* For Career Opportunities */}
-            </div>
-            <div style={{ opacity: 0.8, marginTop: 8 }}>
-              {/* +91 95109 24360 | careers@florafountain.com */}
-            </div>
-          </div>
-        </div>
       </div>
 
-      {/* RIGHT form */}
-      <div className="contact-form" role="form" aria-label="Contact form">
+      <form className="contact-form" onSubmit={handleSubmit}>
         <div className="form-row">
-          <div className="form-field">
-            <input type="text" placeholder="Name" aria-label="Name" />
-          </div>
-          <div className="form-field">
-            <input
-              type="text"
-              placeholder="Phone Number"
-              aria-label="Phone number"
-            />
-          </div>
+          <input
+            name="name"
+            placeholder="Name"
+            value={form.name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            name="phone"
+            placeholder="Phone"
+            value={form.phone}
+            onChange={handleChange}
+          />
         </div>
 
-        <div className="form-field">
-          <input type="email" placeholder="Email" aria-label="Email" />
-        </div>
+        <input
+          name="email"
+          type="email"
+          placeholder="Email"
+          value={form.email}
+          onChange={handleChange}
+          required
+        />
 
-        <div className="form-field">
-          <input type="text" placeholder="Service" aria-label="Service" />
-        </div>
+        <input
+          name="service"
+          placeholder="Service"
+          value={form.service}
+          onChange={handleChange}
+        />
 
-        <div className="form-field">
-          <textarea placeholder="Message" aria-label="Message" />
-        </div>
+        <textarea
+          name="message"
+          placeholder="Message"
+          value={form.message}
+          onChange={handleChange}
+          required
+        />
 
-        <div className="fake-recaptcha" role="checkbox" aria-checked="false">
-          <div className="checkbox" aria-hidden="true" />
-          <div>I'm not a robot</div>
-        </div>
-
-        <button className="submit-btn" type="button">
-          LET'S CONNECT
+        <button className="submit-btn" type="submit" disabled={loading}>
+          {loading ? "Sending..." : "LET'S CONNECT"}
         </button>
-      </div>
+
+        {status && (
+          <p
+            className="form-status"
+            style={{ color: status.ok ? "green" : "red" }}
+          >
+            {status.msg}
+          </p>
+        )}
+      </form>
     </div>
   );
 }
@@ -482,6 +686,122 @@ export default function AboutPage() {
         animation:floatIllustration 12s ease-in-out infinite alternate;
       }
 
+      .mark{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#ffffff;
+  overflow:hidden;
+}
+
+.logo-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+  @media(max-width:768px){
+  .mark{
+    width:38px;
+    height:38px;
+  }
+}
+
+/* ================= USER-FRIENDLY TYPOGRAPHY ================= */
+
+/* Base text */
+.about-wrap {
+  font-size: 16px;
+  line-height: 1.75;
+  letter-spacing: 0.2px;
+}
+
+/* Section headings */
+.about-section h2 {
+  font-size: 40px;
+  line-height: 1.25;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+/* Paragraphs */
+.about-section p,
+.about-lead,
+.core-sub,
+.faq-answer p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* Hero title */
+.about-hero h2 {
+  font-size: 46px;
+  line-height: 1.2;
+}
+
+/* Quote text */
+.quote-text {
+  font-size: 21px;
+  line-height: 1.7;
+  font-weight: 600;
+}
+
+/* Team names */
+.team-name {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+/* Team roles */
+.team-role {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+}
+
+/* Core titles */
+.core-title {
+  font-size: 19px;
+  font-weight: 800;
+}
+
+/* FAQ question */
+.faq-question {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* ================= MOBILE FRIENDLY ================= */
+@media (max-width: 768px) {
+
+  .about-section h2 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .about-section p,
+  .about-lead,
+  .core-sub,
+  .faq-answer p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .about-hero h2 {
+    font-size: 32px;
+  }
+
+  .quote-text {
+    font-size: 17px;
+  }
+
+  .faq-question {
+    font-size: 16px;
+  }
+}
+
       @keyframes floatIllustration{
         0%{transform:translateY(0) scale(1.02);}
         50%{transform:translateY(-10px) scale(1.05);}
@@ -712,6 +1032,139 @@ export default function AboutPage() {
           padding:24px 18px 30px;
         }
       }
+
+      @media(max-width:768px){
+
+  /* HERO SECTION */
+  .about-hero{
+    min-height:auto;
+    padding-top:80px;
+    padding-bottom:80px;
+  }
+
+  .who-layout{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+
+  .who-card{
+    padding:20px;
+  }
+
+  /* CONTACT FLOATING SECTION */
+  .contact-wrapper{
+    grid-template-columns:1fr;
+    padding:32px 20px;
+    gap:24px;
+  }
+
+  .contact-title{
+    font-size:34px;
+    line-height:1.2;
+  }
+
+  .contact-form{
+    padding:20px;
+  }
+
+  .contact-form .form-row{
+    grid-template-columns:1fr;
+  }
+
+  .submit-btn{
+    font-size:18px;
+    padding:16px;
+  }
+
+  /* CORE VALUES */
+  .core-block{
+    grid-template-columns:1fr;
+  }
+
+  /* GALLERY IMAGE */
+  .gallery-card{
+    border-radius:16px;
+  }
+
+  /* FAQ */
+  .faq-question{
+    font-size:16px;
+  }
+}
+
+
+
+/* ================= SLIGHTLY BOLDER, USER-FRIENDLY TYPOGRAPHY (ABOUT) ================= */
+
+/* Base text */
+.about-wrap{
+  font-size:16px;
+  line-height:1.75;
+}
+
+/* Section headings */
+.about-section h2{
+  font-weight:800;
+}
+
+/* Hero heading */
+.about-hero h2{
+  font-weight:900;
+}
+
+/* Paragraphs & descriptions */
+.about-section p,
+.about-lead,
+.core-sub,
+.faq-answer p{
+  font-weight:500;   /* was 400 */
+}
+
+/* Quote text */
+.quote-text{
+  font-weight:600;
+}
+
+/* Card titles */
+.who-card h3,
+.core-title{
+  font-weight:800;
+}
+
+/* Team text */
+.team-name{
+  font-weight:800;
+}
+.team-role{
+  font-weight:600;
+}
+
+/* FAQ questions */
+.faq-question{
+  font-weight:700;
+}
+
+/* Contact CTA text */
+.contact-wrapper p{
+  font-weight:500;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+  .about-section p,
+  .about-lead,
+  .core-sub,
+  .faq-answer p{
+    font-weight:500;
+  }
+}
+
+
+
+
+
+
+
     `;
 
     const prev = document.getElementById("about-page-styles");
@@ -828,39 +1281,37 @@ export default function AboutPage() {
       </section>
 
       {/* SLIDE 3 – TEAM */}
-      <section className="about-section">
-        <div className="about-max">
-          <h2>Meet the people behind the work.</h2>
-          <div className="team-grid">
-            <div className="team-card">
-              <div
-                className="team-photo"
-                style={{ backgroundImage: `url(${TEAM_PM_IMAGE})` }}
-              />
-              <div className="team-role">Project Manager</div>
-              <div className="team-name">PRASANTH</div>
-            </div>
+     {/* SLIDE 3 – TEAM */}
+<section className="about-section">
+  <div className="about-max">
+    <h2>Meet the people behind the work.</h2>
 
-            <div className="team-card">
-              <div
-                className="team-photo"
-                style={{ backgroundImage: `url(${TEAM_MM_IMAGE})` }}
-              />
-              <div className="team-role">Project Manager</div>
-              <div className="team-name">RAMYA</div>
-            </div>
+    <div className="team-grid">
 
-            <div className="team-card">
-              <div
-                className="team-photo"
-                style={{ backgroundImage: `url(${TEAM_DEV_IMAGE})` }}
-              />
-              <div className="team-role">Web Developer</div>
-              <div className="team-name">SOWNDARYA S</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* PERSON 1 */}
+      <div className="team-card">
+        <img src={TEAM_PM_IMAGE} alt="Prasanth" className="team-photo-img" />
+        <div className="team-role">PROJECT MANAGER</div>
+        <div className="team-name">PRASANTH</div>
+      </div>
+
+      {/* PERSON 2 */}
+      <div className="team-card">
+        <img src={TEAM_MM_IMAGE} alt="Ramya" className="team-photo-img" />
+        <div className="team-role">PROJECT MANAGER</div>
+        <div className="team-name">RAMYA</div>
+      </div>
+
+      {/* PERSON 3 */}
+      <div className="team-card">
+        <img src={TEAM_DEV_IMAGE} alt="Sowndarya" className="team-photo-img" />
+        <div className="team-role">WEB DEVELOPER</div>
+        <div className="team-name">SOWNDARYA S</div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* SLIDE 4 – CORE VALUES */}
       <section className="about-section">
