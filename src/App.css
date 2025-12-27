@@ -1,4 +1,4 @@
-.header {
+/* .header {
   position: fixed;
   top: 0;
   width: 100%;
@@ -25,7 +25,7 @@
 
 .header nav a:hover {
   color: var(--red);
-}
+} */
 
 .logo-box {
   background: var(--red);

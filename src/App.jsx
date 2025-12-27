@@ -46,53 +46,56 @@ export default function App() {
 
       {/* Page Transitions */}
       <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route
-            path="/"
-            element={
-              <AnimatedPage animation={scaleFade}>
-                <Home />
-              </AnimatedPage>
-            }
-          />
+  <div className="app-page">
+    <Routes location={location} key={location.pathname}>
+      <Route
+        path="/"
+        element={
+          <AnimatedPage animation={scaleFade}>
+            <Home />
+          </AnimatedPage>
+        }
+      />
 
-          <Route
-            path="/about"
-            element={
-              <AnimatedPage animation={fadeUp}>
-                <About />
-              </AnimatedPage>
-            }
-          />
+      <Route
+        path="/about"
+        element={
+          <AnimatedPage animation={fadeUp}>
+            <About />
+          </AnimatedPage>
+        }
+      />
 
-          <Route
-            path="/services"
-            element={
-              <AnimatedPage animation={slideLeft}>
-                <Services />
-              </AnimatedPage>
-            }
-          />
+      <Route
+        path="/services"
+        element={
+          <AnimatedPage animation={slideLeft}>
+            <Services />
+          </AnimatedPage>
+        }
+      />
 
-          <Route
-            path="/services/:slug"
-            element={
-              <AnimatedPage animation={slideRight}>
-                <ServiceDetail />
-              </AnimatedPage>
-            }
-          />
+      <Route
+        path="/services/:slug"
+        element={
+          <AnimatedPage animation={slideRight}>
+            <ServiceDetail />
+          </AnimatedPage>
+        }
+      />
 
-          <Route
-            path="/contact"
-            element={
-              <AnimatedPage animation={fadeUp}>
-                <Contact />
-              </AnimatedPage>
-            }
-          />
-        </Routes>
-      </AnimatePresence>
+      <Route
+        path="/contact"
+        element={
+          <AnimatedPage animation={fadeUp}>
+            <Contact />
+          </AnimatedPage>
+        }
+      />
+    </Routes>
+  </div>
+</AnimatePresence>
+
     </>
   );
 }

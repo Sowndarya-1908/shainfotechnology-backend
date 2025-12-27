@@ -33,25 +33,51 @@ export default function Header() {
 
         {/* Hamburger */}
         <button
-          className={`hamburger ${open ? "open" : ""}`}
-          onClick={() => setOpen(!open)}
-        >
-          ☰
-        </button>
+  className={`hamburger ${open ? "open" : ""}`}
+  onClick={() => setOpen(!open)}
+  aria-label="Toggle menu"
+>
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
 
         {/* Navigation */}
         <nav className={`sf-nav ${open ? "open" : ""}`}>
-          {["/", "/about", "/services", "/contact"].map((path, i) => (
-            <NavLink
-              key={i}
-              to={path}
-              onClick={() => setOpen(false)}
-              className="nav-btn"
-            >
-              {["Home", "About", "Services", "Contact"][i]}
-            </NavLink>
-          ))}
-        </nav>
+  <NavLink
+    to="/"
+    end
+    onClick={() => setOpen(false)}
+    className="nav-btn"
+  >
+    Home
+  </NavLink>
+
+  <NavLink
+    to="/about"
+    onClick={() => setOpen(false)}
+    className="nav-btn"
+  >
+    About
+  </NavLink>
+
+  <NavLink
+    to="/services"
+    onClick={() => setOpen(false)}
+    className="nav-btn"
+  >
+    Services
+  </NavLink>
+
+  <NavLink
+    to="/contact"
+    onClick={() => setOpen(false)}
+    className="nav-btn"
+  >
+    Contact
+  </NavLink>
+</nav>
+
       </div>
     </header>
   );
