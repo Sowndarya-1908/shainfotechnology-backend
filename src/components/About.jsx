@@ -1105,10 +1105,9 @@ function WhyChooseSection() {
 
 
 
-
 function TeamSection() {
   useEffect(() => {
-  const css = `
+    const css = `
 /* ================= TEAM SECTION ================= */
 
 .team-section{
@@ -1174,7 +1173,6 @@ function TeamSection() {
     transform .8s cubic-bezier(.16,1,.3,1);
 }
 
-/* DESKTOP SLIDE */
 .team-card.from-left{ transform:translateX(-60px); }
 .team-card.from-right{ transform:translateX(60px); }
 
@@ -1203,6 +1201,7 @@ function TeamSection() {
 /* INFO */
 .team-info{
   padding:22px 24px 26px;
+  text-align:center;
 }
 
 .team-role{
@@ -1218,21 +1217,20 @@ function TeamSection() {
   color:#ffffff;
 }
 
-/* ================= MOBILE RESPONSIVE ================= */
+/* ================= TABLET ================= */
 
-@media(max-width:1024px){
+@media (max-width:1024px){
   .team-card{
     width:320px;
   }
 }
 
-@media(max-width:900px){
+/* ================= MOBILE (2-2-2 GRID) ================= */
+
+@media (max-width:768px){
+
   .team-section{
     padding:90px 5vw;
-  }
-
-  .team-title{
-    margin-bottom:50px;
   }
 
   .team-title h2{
@@ -1244,192 +1242,194 @@ function TeamSection() {
   }
 
   .team-grid{
-    gap:28px;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    gap:24px;
   }
 
   .team-card{
     width:100%;
-    max-width:420px;
-
-    /* MOBILE animation becomes vertical */
-    transform:translateY(40px) !important;
   }
 
-  .team-card.show{
-    transform:none !important;
+  .team-image{
+    height:220px;
+  }
+
+  .team-image img{
+    object-fit:cover;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width:420px){
+
+  .team-grid{
+    grid-template-columns: 1fr; /* 1 card per row */
   }
 
   .team-image{
     height:240px;
   }
-
-  .team-name{
-    font-size:18px;
-  }
 }
 
-@media(max-width:480px){
-  .team-section{
-    padding:70px 4vw;
-  }
-
-  .team-title h2{
-    font-size:28px;
-  }
-
-  .team-image{
-    height:210px;
-  }
-
-  .team-info{
-    padding:18px;
-  }
-}
-
-/* ================= MOBILE CARD FIX ================= */
+/* ================= USER FRIENDLY MOBILE FIX ================= */
 
 @media (max-width: 768px){
 
   .team-grid{
-    gap:24px;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:16px;
   }
 
   .team-card{
-    width:100% !important;
-    max-width:100%;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-  }
-
-  .team-image{
-    height:180px;
     width:100%;
-  }
-.team-card.from-left{
-  transform:translateX(-60px);
-}
-.team-card.from-right{
-  transform:translateX(60px);
-}
-.team-card:hover{
-  transform:translateY(-8px);
-}
-  .team-image img{
-    object-fit:contain;   /* ⬅ prevents face cut */
-    padding:12px;
-  }
-
-  .team-info{
-    padding:16px 14px 20px;
-  }
-
-  .team-role{
-    font-size:12px;
-    letter-spacing:1.5px;
-  }
-
-  .team-name{
-    font-size:17px;
-    line-height:1.3;
-    white-space:normal;
-  }
-}
-
-/* ================= MOBILE HARD FIX ================= */
-
-@media (max-width: 768px){
-
-  /* STOP SPLITTING */
-  .team-card,
-  .team-card.from-left,
-  .team-card.from-right,
-  .team-card:hover{
+    border-radius:18px;
+    padding:16px 12px 18px;
+    background:#0a0f1d;
+    box-shadow:0 15px 40px rgba(0,0,0,0.5);
     transform:none !important;
   }
 
-  /* FORCE SINGLE CARD LAYOUT */
-  .team-card{
-    width:100%;
-    max-width:100%;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:flex-start;
-  }
-
-  /* IMAGE FIX */
   .team-image{
     width:100%;
     height:auto;
-    padding:16px 0;
     display:flex;
     justify-content:center;
+    margin-bottom:12px;
   }
 
   .team-image img{
-    width:120px;
-    height:120px;
-    object-fit:cover;
+    width:90px;
+    height:90px;
     border-radius:50%;
+    object-fit:cover;
+    background:#111;
   }
 
-  /* TEXT FIX */
   .team-info{
-    padding:14px 16px 22px;
+    padding:0;
+    text-align:center;
+  }
+
+  .team-role{
+    font-size:11px;
+    letter-spacing:1.2px;
+    color:#9ca3af;
+    margin-bottom:4px;
+  }
+
+  .team-name{
+    font-size:15px;
+    font-weight:700;
+    line-height:1.2;
+  }
+}
+
+/* VERY SMALL MOBILE */
+@media (max-width:420px){
+  .team-grid{
+    grid-template-columns:1fr;
+  }
+}
+/* ================= MOBILE SINGLE CARD VIEW ================= */
+
+@media (max-width: 768px){
+
+  .team-grid{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+  }
+
+  .team-card{
+    width:100%;
+    max-width:100%;
+    padding:18px 16px 22px;
+    border-radius:20px;
+    background:#0a0f1d;
+    box-shadow:0 16px 45px rgba(0,0,0,0.55);
+    transform:none !important;
+  }
+
+  /* IMAGE */
+  .team-image{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin-bottom:14px;
+  }
+
+  .team-image img{
+    width:96px;
+    height:96px;
+    border-radius:50%;
+    object-fit:cover;
+    background:#111;
+  }
+
+  /* TEXT */
+  .team-info{
+    padding:0;
     text-align:center;
   }
 
   .team-role{
     font-size:12px;
     letter-spacing:1.4px;
+    color:#9ca3af;
+    margin-bottom:6px;
   }
 
   .team-name{
     font-size:16px;
+    font-weight:800;
     line-height:1.3;
+  }
+
+  /* DISABLE SLIDE ANIMATION ON MOBILE */
+  .team-card.from-left,
+  .team-card.from-right,
+  .team-card:hover{
+    transform:none !important;
   }
 }
 
+`;
 
-  `;
+    const id = "team-section-style";
+    if (!document.getElementById(id)) {
+      const style = document.createElement("style");
+      style.id = id;
+      style.innerHTML = css;
+      document.head.appendChild(style);
+    }
 
-  const id = "team-section-animated-style";
-  if (!document.getElementById(id)) {
-    const style = document.createElement("style");
-    style.id = id;
-    style.innerHTML = css;
-    document.head.appendChild(style);
-  }
+    const section = document.querySelector(".team-section");
+    const cards = document.querySelectorAll(".team-card");
 
-  /* SCROLL REVEAL */
-  const section = document.querySelector(".team-section");
-  const cards = document.querySelectorAll(".team-card");
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          section.classList.add("show");
+          cards.forEach((card, i) => {
+            setTimeout(() => card.classList.add("show"), i * 150);
+          });
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
 
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        section.classList.add("show");
-        cards.forEach((card, i) => {
-          setTimeout(() => card.classList.add("show"), i * 150);
-        });
-        observer.disconnect();
-      }
-    },
-    { threshold: 0.3 }
-  );
-
-  if (section) observer.observe(section);
-  return () => observer.disconnect();
-}, []);
-
+    if (section) observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section className="team-section">
       <div className="team-container">
 
-        {/* TITLE */}
         <div className="team-title">
           <h2>Meet the People Behind the Work.</h2>
           <p>
@@ -1439,7 +1439,6 @@ function TeamSection() {
           </p>
         </div>
 
-        {/* TEAM CARDS */}
         <div className="team-grid">
 
           <div className="team-card from-left">
@@ -1474,7 +1473,7 @@ function TeamSection() {
 
           <div className="team-card from-right">
             <div className="team-image">
-              <img src="/images/about/s.png" alt="Gayathri S" />
+              <img src="/images/about/gaya2.jpeg" alt="Gayathri S" />
             </div>
             <div className="team-info">
               <div className="team-role">TEAM LEAD</div>
@@ -1484,7 +1483,7 @@ function TeamSection() {
 
           <div className="team-card from-left">
             <div className="team-image">
-              <img src="/images/about/s.png" alt="Sathish Kumar" />
+              <img src="/images/about/sathish.png" alt="Sathish Kumar" />
             </div>
             <div className="team-info">
               <div className="team-role">MANAGEMENT</div>
@@ -1497,6 +1496,9 @@ function TeamSection() {
     </section>
   );
 }
+
+
+
 
 
 
