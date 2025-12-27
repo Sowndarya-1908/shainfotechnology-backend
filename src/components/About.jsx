@@ -2,6 +2,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+
 // Image paths (public folder)
 const BG_QUOTE_IMAGE = "/images/about/image.png";
 const TEAM_PM_IMAGE = "/images/about/m.jpeg";
@@ -13,246 +14,246 @@ const GALLERY_IMAGE = "/images/about/1.png";
 
 
 
-function CTASection() {
-  const navigate = useNavigate();
-  const sectionRef = useRef(null);
+// function CTASection() {
+//   const navigate = useNavigate();
+//   const sectionRef = useRef(null);
 
-  useEffect(() => {
-    const css = `
-/* ================= CTA SECTION ================= */
+//   useEffect(() => {
+//     const css = `
+// /* ================= CTA SECTION ================= */
 
-.cta-wrap{
-  position:relative;
-  min-height:60vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-  background:transparent;
-  font-family:Inter,system-ui;
-}
+// .cta-wrap{
+//   position:relative;
+//   min-height:60vh;
+//   display:flex;
+//   align-items:center;
+//   justify-content:center;
+//   overflow:hidden;
+//   background:transparent;
+//   font-family:Inter,system-ui;
+// }
 
-/* Animated background blobs */
-.cta-bg{
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(circle at 20% 40%, #ff0000, transparent 40%),
-    radial-gradient(circle at 60% 30%, #00e5ff, transparent 45%),
-    radial-gradient(circle at 80% 70%, #7c3aed, transparent 45%);
-  filter:blur(90px);
-  animation:floatBg 14s ease-in-out infinite alternate;
-  z-index:0;
-}
+// /* Animated background blobs */
+// .cta-bg{
+//   position:absolute;
+//   inset:0;
+//   background:
+//     radial-gradient(circle at 20% 40%, #ff0000, transparent 40%),
+//     radial-gradient(circle at 60% 30%, #00e5ff, transparent 45%),
+//     radial-gradient(circle at 80% 70%, #7c3aed, transparent 45%);
+//   filter:blur(90px);
+//   animation:floatBg 14s ease-in-out infinite alternate;
+//   z-index:0;
+// }
 
-@keyframes floatBg{
-  0%{ transform:translateY(-20px) scale(1); }
-  100%{ transform:translateY(20px) scale(1.1); }
-}
+// @keyframes floatBg{
+//   0%{ transform:translateY(-20px) scale(1); }
+//   100%{ transform:translateY(20px) scale(1.1); }
+// }
 
-.cta-overlay{
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.78);
-  z-index:1;
-}
+// .cta-overlay{
+//   position:absolute;
+//   inset:0;
+//   background:rgba(0,0,0,0.78);
+//   z-index:1;
+// }
 
-.cta-content{
-  position:relative;
-  z-index:2;
-  text-align:center;
-  max-width:1100px;
-  padding:40px 20px;
-  color:#ffffff;
-}
+// .cta-content{
+//   position:relative;
+//   z-index:2;
+//   text-align:center;
+//   max-width:1100px;
+//   padding:40px 20px;
+//   color:#ffffff;
+// }
 
-/* ================= SUPER SCROLL REVEAL ================= */
+// /* ================= SUPER SCROLL REVEAL ================= */
 
-.cta-title,
-.cta-sub,
-.cta-btn{
-  opacity:0;
-}
+// .cta-title,
+// .cta-sub,
+// .cta-btn{
+//   opacity:0;
+// }
 
-/* TITLE */
-.cta-title{
-  transform:scale(0.85);
-  filter:blur(12px);
-  transition:all 1s cubic-bezier(.16,1,.3,1);
-}
+// /* TITLE */
+// .cta-title{
+//   transform:scale(0.85);
+//   filter:blur(12px);
+//   transition:all 1s cubic-bezier(.16,1,.3,1);
+// }
 
-.cta-wrap.show .cta-title{
-  opacity:1;
-  transform:scale(1);
-  filter:blur(0);
-}
+// .cta-wrap.show .cta-title{
+//   opacity:1;
+//   transform:scale(1);
+//   filter:blur(0);
+// }
 
-/* SUB TEXT */
-.cta-sub{
-  transform:translateY(30px);
-  transition:all .9s ease .3s;
-}
+// /* SUB TEXT */
+// .cta-sub{
+//   transform:translateY(30px);
+//   transition:all .9s ease .3s;
+// }
 
-.cta-wrap.show .cta-sub{
-  opacity:1;
-  transform:none;
-}
+// .cta-wrap.show .cta-sub{
+//   opacity:1;
+//   transform:none;
+// }
 
-/* BUTTON */
-.cta-btn{
-  transform:scale(0.7);
-  transition:all .8s cubic-bezier(.34,1.56,.64,1) .55s;
-}
+// /* BUTTON */
+// .cta-btn{
+//   transform:scale(0.7);
+//   transition:all .8s cubic-bezier(.34,1.56,.64,1) .55s;
+// }
 
-.cta-wrap.show .cta-btn{
-  opacity:1;
-  transform:scale(1);
-}
+// .cta-wrap.show .cta-btn{
+//   opacity:1;
+//   transform:scale(1);
+// }
 
-/* ================= BIG TITLE ================= */
+// /* ================= BIG TITLE ================= */
 
-.cta-title{
-  text-align:center;
-}
+// .cta-title{
+//   text-align:center;
+// }
 
-.cta-white{
-  display:block;
-  color:#ffffff;
-}
+// .cta-white{
+//   display:block;
+//   color:#ffffff;
+// }
 
-.cta-gradient{
-  display:block;
-  background:linear-gradient(90deg,#8b5cf6,#ec4899);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
+// .cta-gradient{
+//   display:block;
+//   background:linear-gradient(90deg,#8b5cf6,#ec4899);
+//   -webkit-background-clip:text;
+//   -webkit-text-fill-color:transparent;
+// }
 
-/* Desktop sizes */
-@media(min-width:1400px){
-  .cta-white{font-size:86px;}
-  .cta-gradient{font-size:104px;}
-}
+// /* Desktop sizes */
+// @media(min-width:1400px){
+//   .cta-white{font-size:86px;}
+//   .cta-gradient{font-size:104px;}
+// }
 
-/* ================= SUB TEXT ================= */
+// /* ================= SUB TEXT ================= */
 
-.cta-sub{
-  font-size:20px;
-  color:#e5e7eb;
-  margin-bottom:40px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-}
+// .cta-sub{
+//   font-size:20px;
+//   color:#e5e7eb;
+//   margin-bottom:40px;
+//   display:flex;
+//   align-items:center;
+//   justify-content:center;
+//   gap:12px;
+// }
 
-.cta-dot{
-  width:16px;
-  height:16px;
-  border-radius:50%;
-  background:#2dd4bf;
-  box-shadow:0 0 20px rgba(45,212,191,0.9);
-  animation:pulse 1.6s infinite;
-}
+// .cta-dot{
+//   width:16px;
+//   height:16px;
+//   border-radius:50%;
+//   background:#2dd4bf;
+//   box-shadow:0 0 20px rgba(45,212,191,0.9);
+//   animation:pulse 1.6s infinite;
+// }
 
-@keyframes pulse{
-  0%{transform:scale(1);opacity:1}
-  50%{transform:scale(1.4);opacity:.6}
-  100%{transform:scale(1);opacity:1}
-}
+// @keyframes pulse{
+//   0%{transform:scale(1);opacity:1}
+//   50%{transform:scale(1.4);opacity:.6}
+//   100%{transform:scale(1);opacity:1}
+// }
 
-/* ================= BUTTON ================= */
+// /* ================= BUTTON ================= */
 
-.cta-btn{
-  display:inline-flex;
-  align-items:center;
-  gap:12px;
-  padding:18px 44px;
-  border-radius:999px;
-  background:linear-gradient(90deg,#8b5cf6,#ec4899);
-  color:#ffffff;
-  font-size:16px;
-  font-weight:900;
-  letter-spacing:0.14em;
-  border:none;
-  cursor:pointer;
-  box-shadow:
-    0 20px 60px rgba(139,92,246,0.45),
-    0 0 35px rgba(236,72,153,0.35);
-}
+// .cta-btn{
+//   display:inline-flex;
+//   align-items:center;
+//   gap:12px;
+//   padding:18px 44px;
+//   border-radius:999px;
+//   background:linear-gradient(90deg,#8b5cf6,#ec4899);
+//   color:#ffffff;
+//   font-size:16px;
+//   font-weight:900;
+//   letter-spacing:0.14em;
+//   border:none;
+//   cursor:pointer;
+//   box-shadow:
+//     0 20px 60px rgba(139,92,246,0.45),
+//     0 0 35px rgba(236,72,153,0.35);
+// }
 
-.cta-btn:hover{
-  transform:translateY(-4px) scale(1.05);
-  box-shadow:
-    0 30px 90px rgba(139,92,246,0.6),
-    0 0 45px rgba(236,72,153,0.5);
-}
+// .cta-btn:hover{
+//   transform:translateY(-4px) scale(1.05);
+//   box-shadow:
+//     0 30px 90px rgba(139,92,246,0.6),
+//     0 0 45px rgba(236,72,153,0.5);
+// }
 
-.cta-btn span{
-  font-size:22px;
-}
+// .cta-btn span{
+//   font-size:22px;
+// }
 
-/* ================= MOBILE ================= */
+// /* ================= MOBILE ================= */
 
-@media(max-width:768px){
-  .cta-white{font-size:36px;}
-  .cta-gradient{font-size:44px;}
-  .cta-sub{
-    font-size:16px;
-    flex-direction:column;
-  }
-}
-    `;
+// @media(max-width:768px){
+//   .cta-white{font-size:36px;}
+//   .cta-gradient{font-size:44px;}
+//   .cta-sub{
+//     font-size:16px;
+//     flex-direction:column;
+//   }
+// }
+//     `;
 
-    const id = "cta-style-super";
-    if (!document.getElementById(id)) {
-      const style = document.createElement("style");
-      style.id = id;
-      style.innerHTML = css;
-      document.head.appendChild(style);
-    }
+//     const id = "cta-style-super";
+//     if (!document.getElementById(id)) {
+//       const style = document.createElement("style");
+//       style.id = id;
+//       style.innerHTML = css;
+//       document.head.appendChild(style);
+//     }
 
-    /* ===== SCROLL OBSERVER ===== */
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.35 }
-    );
+//     /* ===== SCROLL OBSERVER ===== */
+//     const observer = new IntersectionObserver(
+//       ([entry]) => {
+//         if (entry.isIntersecting) {
+//           entry.target.classList.add("show");
+//           observer.disconnect();
+//         }
+//       },
+//       { threshold: 0.35 }
+//     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
+//     if (sectionRef.current) observer.observe(sectionRef.current);
 
-    return () => observer.disconnect();
-  }, []);
+//     return () => observer.disconnect();
+//   }, []);
 
-  return (
-    <section className="cta-wrap" ref={sectionRef}>
-      <div className="cta-bg"></div>
-      <div className="cta-overlay"></div>
+//   return (
+//     <section className="cta-wrap" ref={sectionRef}>
+//       <div className="cta-bg"></div>
+//       <div className="cta-overlay"></div>
 
-      <div className="cta-content">
-        <h2 className="cta-title">
-          <span className="cta-white">Ready to transform your</span><br />
-          <span className="cta-gradient">business?</span>
-        </h2>
+//       <div className="cta-content">
+//         <h2 className="cta-title">
+//           <span className="cta-white">Ready to transform your</span><br />
+//           <span className="cta-gradient">business?</span>
+//         </h2>
 
-        <div className="cta-sub">
-          <span className="cta-dot"></span>
-          Book an informal chat with one of our specialists
-        </div>
+//         <div className="cta-sub">
+//           <span className="cta-dot"></span>
+//           Book an informal chat with one of our specialists
+//         </div>
 
-        <button
-          className="cta-btn"
-          onClick={() => navigate("/contact")}
-        >
-          <span>→</span> GET IN TOUCH
-        </button>
-      </div>
-    </section>
-  );
-}
+//         <Link to="/contact"><button>
+//           // className="cta-btn"
+//           // onClick={() => navigate("/contact")}
+//           <span>→</span> GET IN TOUCH
+//         </button></Link>
+       
+//       </div>
+//     </section>
+//   );
+// }
 
 
 function Vission() {
@@ -3845,7 +3846,7 @@ vmItems.forEach(el => vmObserver.observe(el));
       
 <WhyChooseSection />
 
-<CTASection />
+{/* <CTASection /> */}
     </div>
 
     </>
