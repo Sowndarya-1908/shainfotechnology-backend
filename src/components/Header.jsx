@@ -16,11 +16,7 @@ export default function Header() {
       className="logo-img"
     />
   </div>
-  {/* <div>
-    <div className="title">SHA INFOTECHNOLOGY</div>
-    <div className="subtitle">Digital Solutions</div>
-     <div className="subtitle">9445747815</div>
-  </div> */}
+
   <div className="logo-text">
   <div className="title">SHA INFOTECHNOLOGY</div>
   <div className="subtitle">Digital Solutions</div>

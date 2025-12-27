@@ -1,772 +1,171 @@
-// src/components/ServiceDetail.jsx
-import React, { useEffect } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
 
-const SERVICE_DETAILS = {
-  "website-development": {
-    tag: "Web",
-    title: "Website Development",
-    punch: "Get a modern, responsive website that works smoothly on mobile and desktop.",
-    intro:
-      "We handle complete website development from scratch – from layout and UI to contact forms and basic SEO setup. The goal is simple: a clean site that loads fast, looks professional and clearly tells customers why they should choose you.",
-    highlights: [
-      "Custom design based on your brand and industry",
-      "Responsive layouts that work on mobile, tablet and desktop",
-      "Easy-to-use pages for services, about, contact and more",
-      "Basic SEO setup: titles, descriptions and URL structure"
-    ],
-    heroStatLeft: "7–21 days",
-    heroStatLeftLabel: "TYPICAL GO-LIVE",
-    heroStatRight: "100%",
-    heroStatRightLabel: "CUSTOM BUILT"
-  },
 
-  "business-website": {
-    tag: "Web",
-    title: "Business Website",
-    punch: "Make it easy for customers to understand your business and contact you.",
-    intro:
-      "A business website is your online visiting card. We design pages that clearly show what you do, where you are, who you’ve worked with and how people can reach you – without any confusion or clutter.",
-    highlights: [
-      "Home, About, Services, Gallery and Contact sections",
-      "Clear call-to-actions: call, WhatsApp, enquiry form",
-      "Map integration and contact details in key places",
-      "Content structure focused on trust and clarity"
-    ],
-    heroStatLeft: "5–14 days",
-    heroStatLeftLabel: "TYPICAL GO-LIVE",
-    heroStatRight: "24/7",
-    heroStatRightLabel: "ONLINE PRESENCE"
+import React from "react";
+import { useParams } from "react-router-dom";
+
+
+/* ===== SERVICES ===== */
+import {
+  SEOHero,
+  SecondSlideSEO,
+  ServicesGridSEO,
+  WhySEeOHeroDark,
+  FAQSEO
+} from "./Seo";
+
+import {
+  EcommerceHero,
+  SecondSlideEcommerce,
+  ServicesGridEcommerce,
+  WhyEcommerceHeroDark,
+  FAQEcommerce
+} from "./Ecommerce";
+
+import {
+  SocialMediaHero,
+  SecondSlideSocialMedia,
+  ServicesGridSocialMedia,
+  WhySocialMediaHeroDark,
+  FAQSocialMedia
+} from "./SocialMedia";
+
+import {
+  ContentDesignHero,
+  SecondSlideContentDesign,
+  ServicesGridContentDesign,
+  WhyContentDesignHeroDark,
+  FAQContentDesign
+} from "./ContentDesign";
+
+import {
+  BusinessAnalysisHero,
+  SecondSlideBusinessAnalysis,
+  ServicesGridBusinessAnalysis,
+  WhyBusinessAnalysisHeroDark,
+  FAQBusinessAnalysis
+} from "./BusinessAnalysis";
+
+import {
+  CreativeDesignHero,
+  SecondSlideCreativeDesign,
+  ServicesGridCreativeDesign,
+  WhyCreativeDesignHeroDark,
+  FAQCreativeDesign
+} from "./CreativeDesign";
+
+import {
+  BrandConsultancyHero,
+  SecondSlideBrandConsultancy,
+  ServicesGridBrandConsultancy,
+  WhyBrandConsultancyHeroDark,
+  FAQBrandConsultancy
+} from "./BrandConsultancy";
+
+import {
+  WebDevelopmentHero,
+  SecondSlideWebDevelopment,
+  ServicesGridWebDevelopment,
+  WhyWebDevelopmentHeroDark,
+  FAQWebDevelopment
+} from "./WebDevelopment";
+
+import {
+  DigitalStrategyHero,
+  SecondSlideDigitalStrategy,
+  ServicesGridDigitalStrategy,
+  WhyDigitalStrategyHeroDark,
+  FAQDigitalStrategy
+} from "./DigitalStrategy";
+
+/* ===== MAP ===== */
+const SERVICE_MAP = {
+  seo: {
+    first: SEOHero,
+    second: SecondSlideSEO,
+    third: ServicesGridSEO,
+    fourth: WhySEeOHeroDark,
+    fifth: FAQSEO
   },
 
   "ecommerce-website": {
-    tag: "Web",
-    title: "E-commerce Website",
-    punch: "Sell your products online with a secure, easy-to-use shopping experience.",
-    intro:
-      "We build e-commerce websites that make it simple for customers to browse products, add to cart and checkout safely. You get a backend to manage products, orders and basic offers.",
-    highlights: [
-      "Product, category and search-friendly layout",
-      "Secure checkout with popular payment gateways",
-      "Order and inventory management options",
-      "Coupon / offer setup and basic reports"
-    ],
-    heroStatLeft: "2x",
-    heroStatLeftLabel: "AVG. ORDER GROWTH",
-    heroStatRight: "PCI",
-    heroStatRightLabel: "SECURE CHECKOUT"
+    first: EcommerceHero,
+    second: SecondSlideEcommerce,
+    third: ServicesGridEcommerce,
+    fourth: WhyEcommerceHeroDark,
+    fifth: FAQEcommerce
   },
 
   "social-media-marketing": {
-    tag: "Social",
-    title: "Social Media Marketing",
-    punch: "Stay active on social media and consistently reach the right audience.",
-    intro:
-      "We plan and post regular content on Facebook and Instagram to keep your brand visible and engaging. From static posts to reels, we focus on building trust and recall with your audience.",
-    highlights: [
-      "Monthly content plan based on your business goals",
-      "Design for posts, stories and promotional creatives",
-      "Profile optimisation for better impression",
-      "Basic performance tracking: reach, engagement, clicks"
-    ],
-    heroStatLeft: "4+",
-    heroStatLeftLabel: "PLATFORMS SUPPORTED",
-    heroStatRight: "10x",
-    heroStatRightLabel: "AVG. REACH GROWTH"
+    first: SocialMediaHero,
+    second: SecondSlideSocialMedia,
+    third: ServicesGridSocialMedia,
+    fourth: WhySocialMediaHeroDark,
+    fifth: FAQSocialMedia
   },
 
-  "google-ads": {
-    tag: "Ads",
-    title: "Google Ads",
-    punch: "Show up on Google exactly when people search for what you offer.",
-    intro:
-      "We create and manage Google Ads campaigns that focus on real results – calls, leads, website visits and store visits. Every campaign is tracked so you know how your budget is performing.",
-    highlights: [
-      "Campaign setup for Search and Display ads",
-      "Keyword research based on your services and location",
-      "Ad copy and extensions to improve click-through rate",
-      "Conversion tracking setup to measure leads and calls"
-    ],
-    heroStatLeft: "3x",
-    heroStatLeftLabel: "AVG. LEAD GROWTH",
-    heroStatRight: "100%",
-    heroStatRightLabel: "TRACKED SPEND"
+  "content-design": {
+    first: ContentDesignHero,
+    second: SecondSlideContentDesign,
+    third: ServicesGridContentDesign,
+    fourth: WhyContentDesignHeroDark,
+    fifth: FAQContentDesign
   },
 
-  seo: {
-    tag: "SEO",
-    title: "SEO (Search Engine Optimization)",
-    punch: "Climb higher on Google for the keywords that bring real business.",
-    intro:
-      "We work on your website structure, content and technical setup to improve your ranking over time. The focus is on keywords that potential customers actually type, not just random traffic.",
-    highlights: [
-      "Basic SEO audit for your website",
-      "On-page optimisation for key pages and services",
-      "Local SEO improvements for Maps and area-based searches",
-      "Content guidance for blogs and service pages"
-    ],
-    heroStatLeft: "3–6 months",
-    heroStatLeftLabel: "TYPICAL TIMEFRAME",
-    heroStatRight: "50+",
-    heroStatRightLabel: "KEYWORDS MONITORED"
+  "business-analysis": {
+    first: BusinessAnalysisHero,
+    second: SecondSlideBusinessAnalysis,
+    third: ServicesGridBusinessAnalysis,
+    fourth: WhyBusinessAnalysisHeroDark,
+    fifth: FAQBusinessAnalysis
+  },
+
+  "creative-design": {
+    first: CreativeDesignHero,
+    second: SecondSlideCreativeDesign,
+    third: ServicesGridCreativeDesign,
+    fourth: WhyCreativeDesignHeroDark,
+    fifth: FAQCreativeDesign
+  },
+
+  "brand-consultancy": {
+    first: BrandConsultancyHero,
+    second: SecondSlideBrandConsultancy,
+    third: ServicesGridBrandConsultancy,
+    fourth: WhyBrandConsultancyHeroDark,
+    fifth: FAQBrandConsultancy
+  },
+
+  "web-development": {
+    first: WebDevelopmentHero,
+    second: SecondSlideWebDevelopment,
+    third: ServicesGridWebDevelopment,
+    fourth: WhyWebDevelopmentHeroDark,
+    fifth: FAQWebDevelopment
+  },
+
+  "digital-strategy": {
+    first: DigitalStrategyHero,
+    second: SecondSlideDigitalStrategy,
+    third: ServicesGridDigitalStrategy,
+    fourth: WhyDigitalStrategyHeroDark,
+    fifth: FAQDigitalStrategy
   }
 };
 
-export default function ServiceDetailPage() {
+export default function ServiceDetail() {
   const { slug } = useParams();
-  const navigate = useNavigate();
-  const service = SERVICE_DETAILS[slug];
+  const service = SERVICE_MAP[slug];
 
-  useEffect(() => {
-    const css = `
-      :root{
-        --accent-red:#B90504;
-        --bg-grey:#E8E8E8;
-        --text-dark:#202326;
-        --aqua:#6CC4C1;
-      }
-
-      *{box-sizing:border-box;}
-      body{margin:0;}
-
-      .sd-wrap{
-        min-height:100vh;
-        background:var(--bg-grey);
-        color:var(--text-dark);
-        font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
-      }
-
-      
-     
-      
-
-      .sd-section{
-        padding:80px 7vw;
-        border-bottom:1px solid rgba(0,0,0,0.04);
-      }
-      .sd-max{
-        max-width:1100px;
-        margin:0 auto;
-      }
-
-      .sd-hero{
-        background:radial-gradient(circle at top left,#ffffff 0,#E8E8E8 55%,#dcdcdc 100%);
-      }
-      .sd-hero-layout{
-        display:grid;
-        grid-template-columns:minmax(0,1.4fr) minmax(0,0.8fr);
-        gap:40px;
-        align-items:center;
-      }
-      .sd-pill{
-        display:inline-flex;
-        align-items:center;
-        gap:8px;
-        padding:4px 10px;
-        border-radius:999px;
-        background:#ffffff;
-        border:1px solid rgba(0,0,0,0.06);
-        font-size:12px;
-        letter-spacing:0.12em;
-        text-transform:uppercase;
-        margin-bottom:14px;
-      }
-      .sd-title{
-        font-size:50px;
-        font-weight:900;
-        line-height:1.05;
-        margin:0 0 14px 0;
-      }
-      .sd-punch{
-        font-size:20px;
-        font-weight:600;
-        color:var(--accent-red);
-        margin-bottom:18px;
-      }
-      .sd-intro{
-        font-size:16px;
-        line-height:1.8;
-        color:#333;
-      }
-
-      .sd-hero-card{
-        background:#ffffff;
-        border-radius:26px;
-        padding:26px 24px;
-        box-shadow:0 34px 100px rgba(185,5,4,0.28);
-        border:1px solid rgba(0,0,0,0.04);
-        animation:sdFloatCard 9s ease-in-out infinite;
-      }
-      @keyframes sdFloatCard{
-        0%{transform:translateY(0);}
-        25%{transform:translateY(-8px);}
-        50%{transform:translateY(0);}
-        75%{transform:translateY(6px);}
-        100%{transform:translateY(0);}
-      }
-      .sd-hero-card h3{
-        margin:0 0 10px 0;
-        font-size:18px;
-        font-weight:800;
-        color:var(--accent-red);
-      }
-      .sd-hero-card p{
-        margin:0;
-        font-size:14px;
-        color:#444;
-      }
-      .sd-hero-stats{
-        display:flex;
-        justify-content:space-between;
-        margin-top:20px;
-      }
-      .sd-stat{
-        text-align:center;
-      }
-      .sd-stat span{
-        display:block;
-      }
-      .sd-stat .number{
-        font-size:26px;
-        font-weight:800;
-      }
-      .sd-stat .label{
-        font-size:11px;
-        text-transform:uppercase;
-        letter-spacing:0.14em;
-        opacity:0.7;
-      }
-
-      .sd-highlights-grid{
-        display:grid;
-        grid-template-columns:1.2fr 0.8fr;
-        gap:32px;
-      }
-      .sd-bullets-card,
-      .sd-flow-card{
-        background:#ffffff;
-        border-radius:22px;
-        padding:24px 22px;
-        box-shadow:0 24px 70px rgba(185,5,4,0.22);
-        border:1px solid rgba(0,0,0,0.05);
-      }
-      .sd-bullets-title,
-      .sd-flow-title{
-        font-size:18px;
-        font-weight:800;
-        margin-bottom:10px;
-        color:var(--accent-red);
-      }
-      .sd-bullets-list{
-        padding-left:18px;
-        margin:0;
-      }
-      .sd-bullets-list li{
-        margin-bottom:8px;
-        font-size:14px;
-        color:#444;
-      }
-
-      .sd-flow-step{
-        margin-bottom:8px;
-        font-size:14px;
-        color:#444;
-      }
-      .sd-flow-step span{
-        font-weight:800;
-      }
-
-      .sd-cta-strip{
-        margin-top:26px;
-        display:flex;
-        flex-wrap:wrap;
-        gap:14px;
-        align-items:center;
-      }
-      .sd-cta-btn{
-        padding:12px 22px;
-        border-radius:999px;
-        border:none;
-        font-size:15px;
-        font-weight:800;
-        cursor:pointer;
-        background:var(--accent-red);
-        color:#fff;
-        box-shadow:0 18px 50px rgba(185,5,4,0.4);
-        transition:transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
-      }
-      .sd-cta-btn:hover{
-        transform:translateY(-4px);
-        background:#9b0403;
-        box-shadow:0 26px 70px rgba(185,5,4,0.5);
-      }
-      .sd-cta-note{
-        font-size:14px;
-        color:#444;
-      }
-
-      .sd-breadcrumb{
-        font-size:13px;
-        margin-bottom:10px;
-      }
-      .sd-breadcrumb a{
-        color:var(--accent-red);
-        text-decoration:none;
-        font-weight:600;
-      }
-
-      .sd-back-link{
-        font-size:14px;
-        color:var(--accent-red);
-        cursor:pointer;
-        text-decoration:none;
-        font-weight:600;
-      }
-
-      @media(max-width:900px){
-        .sd-section{padding:60px 24px;}
-        .sd-hero-layout{grid-template-columns:1fr;}
-        .sd-title{font-size:38px;}
-        .sd-highlights-grid{grid-template-columns:1fr;}
-      }
-
-/* ================= MOBILE VIEW (Service Detail) ================= */
-@media (max-width: 480px){
-
-  .sd-section{
-    padding:40px 16px;
-  }
-
-  .sd-title{
-    font-size:28px;
-    line-height:1.25;
-  }
-
-  .sd-punch{
-    font-size:16px;
-  }
-
-  .sd-intro{
-    font-size:14px;
-    line-height:1.7;
-  }
-
-  .sd-hero-card{
-    padding:18px 16px;
-  }
-
-  .sd-hero-card h3{
-    font-size:16px;
-  }
-
-  .sd-stat .number{
-    font-size:22px;
-  }
-
-  .sd-stat .label{
-    font-size:10px;
-  }
-
-  .sd-highlights-grid{
-    grid-template-columns:1fr;
-    gap:20px;
-  }
-
-  .sd-bullets-card,
-  .sd-flow-card{
-    padding:18px 16px;
-  }
-
-  .sd-bullets-title,
-  .sd-flow-title{
-    font-size:16px;
-  }
-
-  .sd-bullets-list li{
-    font-size:13px;
-  }
-
-  .sd-flow-step{
-    font-size:13px;
-  }
-
-  .sd-cta-strip{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .sd-cta-btn{
-    width:100%;
-    text-align:center;
-    font-size:14px;
-    padding:12px 18px;
-  }
-
-  .sd-cta-note{
-    font-size:13px;
-  }
-
-  /* HEADER MOBILE FIX */
-  .sf-nav{
-    display:none;
-  }
-}
-
-/* ================= USER-FRIENDLY TYPOGRAPHY (SERVICE DETAIL) ================= */
-
-/* Base text */
-.sd-wrap{
-  font-size:16px;
-  line-height:1.75;
-  letter-spacing:0.2px;
-}
-
-/* Main title */
-.sd-title{
-  font-weight:800;
-}
-
-/* Punch line */
-.sd-punch{
-  font-weight:700;
-}
-
-/* Intro paragraph */
-.sd-intro{
-  font-weight:500;
-}
-
-/* Hero card text */
-.sd-hero-card h3{
-  font-weight:800;
-}
-.sd-hero-card p{
-  font-weight:500;
-}
-
-/* Stats */
-.sd-stat .number{
-  font-weight:800;
-}
-.sd-stat .label{
-  font-weight:600;
-}
-
-/* Section titles */
-.sd-bullets-title,
-.sd-flow-title{
-  font-weight:800;
-}
-
-/* Bullet & flow text */
-.sd-bullets-list li,
-.sd-flow-step{
-  font-weight:500;
-}
-
-/* CTA */
-.sd-cta-btn{
-  font-weight:800;
-}
-.sd-cta-note{
-  font-weight:500;
-}
-
-/* Breadcrumb */
-.sd-breadcrumb,
-.sd-breadcrumb a{
-  font-weight:600;
-}
-
-/* ================= MOBILE ================= */
-@media(max-width:768px){
-
-  .sd-title{
-    font-weight:800;
-  }
-
-  .sd-punch,
-  .sd-intro,
-  .sd-bullets-list li,
-  .sd-flow-step{
-    font-weight:500;
-  }
-
-}
-.sf-logo .mark{
-  width:48px;
-  height:48px;
-  border-radius:12px;
-  overflow:hidden;
-  background:#fff;
-}
-
-.sf-logo .logo-img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-}
-
-/* ================= ENHANCED TYPOGRAPHY + HOVER (SERVICE DETAIL) ================= */
-
-/* Base text */
-.sd-wrap{
-  font-size:17px;                 /* ⬆️ slightly bigger */
-  line-height:1.85;
-  letter-spacing:0.25px;
-}
-
-/* Main title */
-.sd-title{
-  font-size:52px;                 /* ⬆️ */
-  font-weight:800;
-  transition:color 0.25s ease;
-}
-
-/* Punch line */
-.sd-punch{
-  font-size:22px;                 /* ⬆️ */
-  font-weight:700;
-}
-
-/* Intro paragraph */
-.sd-intro{
-  font-size:17px;                 /* ⬆️ */
-  font-weight:500;
-}
-
-/* Hero card */
-.sd-hero-card h3{
-  font-size:19px;
-  font-weight:800;
-}
-.sd-hero-card p{
-  font-size:15px;
-  font-weight:500;
-}
-
-/* Hero card hover */
-.sd-hero-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 38px 110px rgba(185,5,4,0.35);
-}
-
-/* Stats */
-.sd-stat .number{
-  font-size:28px;
-  font-weight:800;
-}
-.sd-stat .label{
-  font-size:12px;
-  font-weight:600;
-}
-
-/* Section titles */
-.sd-bullets-title,
-.sd-flow-title{
-  font-size:19px;
-  font-weight:800;
-}
-
-/* Bullet points */
-.sd-bullets-list li{
-  font-size:15px;
-  font-weight:500;
-  transition:transform 0.2s ease, color 0.2s ease;
-}
-
-/* Bullet hover */
-.sd-bullets-list li:hover{
-  transform:translateX(4px);
-  color:var(--accent-red);
-}
-
-/* Flow steps */
-.sd-flow-step{
-  font-size:15px;
-  font-weight:500;
-  transition:transform 0.2s ease;
-}
-.sd-flow-step:hover{
-  transform:translateX(4px);
-}
-
-/* CTA button hover polish */
-.sd-cta-btn{
-  font-size:16px;
-  font-weight:800;
-}
-.sd-cta-btn:hover{
-  transform:translateY(-5px);
-}
-
-/* Breadcrumb */
-.sd-breadcrumb,
-.sd-breadcrumb a{
-  font-size:14px;
-  font-weight:600;
-}
-
-/* Breadcrumb hover */
-.sd-breadcrumb a:hover{
-  text-decoration:underline;
-}
-
-/* ================= MOBILE ================= */
-@media(max-width:768px){
-
-  .sd-title{
-    font-size:32px;
-  }
-
-  .sd-punch{
-    font-size:17px;
-  }
-
-  .sd-intro{
-    font-size:15px;
-  }
-
-  .sd-bullets-list li,
-  .sd-flow-step{
-    font-size:14px;
-  }
-}
-
-    `;
-
-    const prev = document.getElementById("service-detail-page-styles");
-    if (prev) prev.remove();
-    const styleTag = document.createElement("style");
-    styleTag.id = "service-detail-page-styles";
-    styleTag.innerHTML = css;
-    document.head.appendChild(styleTag);
-
-    return () => {
-      const el = document.getElementById("service-detail-page-styles");
-      if (el) el.remove();
-    };
-  }, []);
-
-  if (!service) {
-    return (
-      <div className="sd-wrap">
-        <header className="sf-header">
-          <div className="sf-header-inner">
-            <div style={{ width: 120 }} />
-            <nav className="sf-nav" aria-label="Main navigation">
-              <Link className="nav-btn" to="/">Home</Link>
-              <Link className="nav-btn" to="/about">About Us</Link>
-              <Link className="nav-btn" to="/services">Services</Link>
-            </nav>
-          </div>
-        </header>
-        <section className="sd-section">
-          <div className="sd-max">
-            <p>Service not found.</p>
-            <Link to="/services" className="sd-back-link">
-              ← Back to all services
-            </Link>
-          </div>
-        </section>
-      </div>
-    );
-  }
+  if (!service) return null;
 
   return (
-    <div className="sd-wrap">
-      
-
-      {/* HERO */}
-      <section className="sd-section sd-hero">
-        <div className="sd-max sd-hero-layout">
-          <div>
-            <div className="sd-breadcrumb">
-              <Link to="/services">Services</Link> &nbsp;/&nbsp; {service.title}
-            </div>
-            <div className="sd-pill">
-              <span
-                style={{
-                  width: 8,
-                  height: 8,
-                  borderRadius: "50%",
-                  background: "#B90504"
-                }}
-              />
-              {service.tag}
-            </div>
-            <h1 className="sd-title">{service.title}</h1>
-            <div className="sd-punch">{service.punch}</div>
-            <p className="sd-intro">{service.intro}</p>
-          </div>
-
-          <aside className="sd-hero-card">
-            <h3>What you can expect</h3>
-            <p>
-              We plan, launch and optimise this service with clear milestones,
-              reporting and next steps – so you always know what&apos;s happening.
-            </p>
-            <div className="sd-hero-stats">
-              <div className="sd-stat">
-                <span className="number">{service.heroStatLeft}</span>
-                <span className="label">{service.heroStatLeftLabel}</span>
-              </div>
-              <div className="sd-stat">
-                <span className="number">{service.heroStatRight}</span>
-                <span className="label">{service.heroStatRightLabel}</span>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      {/* HIGHLIGHTS + FLOW */}
-      <section className="sd-section">
-        <div className="sd-max sd-highlights-grid">
-          <div className="sd-bullets-card">
-            <div className="sd-bullets-title">What we do for you</div>
-            <ul className="sd-bullets-list">
-              {service.highlights.map((h) => (
-                <li key={h}>{h}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="sd-flow-card">
-            <div className="sd-flow-title">How the engagement works</div>
-            <div className="sd-flow-step">
-              <span>1. Discovery & Strategy</span> – a short call to understand
-              your goals, audience, offers and current numbers.
-            </div>
-            <div className="sd-flow-step">
-              <span>2. Setup & Launch</span> – we configure accounts, tracking
-              and creatives, then go live with the first version.
-            </div>
-            <div className="sd-flow-step">
-              <span>3. Optimise & Improve</span> – weekly tweaks based on data
-              and new ideas to improve results.
-            </div>
-            <div className="sd-flow-step">
-              <span>4. Report & Plan Ahead</span> – transparent reports and
-              suggestions on where to invest next.
-            </div>
-          </div>
-        </div>
-
-        <div className="sd-max sd-cta-strip">
-          <button
-            type="button"
-            className="sd-cta-btn"
-            onClick={() => navigate("/services")}
-          >
-            ← Back to all services
-          </button>
-          <div className="sd-cta-note">
-            Want this service for your brand? Use the form on the Services page
-            or call us at <strong>+91 93610 46387</strong>.
-          </div>
-        </div>
-      </section>
-    </div>
+    <>
+      <service.first />
+      <service.second />
+      <service.third />
+      <service.fourth />
+      <service.fifth />
+      {/* <CTASection /> */}
+    </>
   );
 }

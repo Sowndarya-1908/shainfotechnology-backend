@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 /* ================= CONSTANTS ================= */
-const CONTACT_PHONE = "+919361046387";
-const CONTACT_PHONE_DISPLAY = "93610 46387";
+const CONTACT_PHONE = "94457 47815";
+const CONTACT_PHONE_DISPLAY = "94457 47815";
 const CONTACT_EMAIL = "shainfotech05@gmail.com";
 
 const CONTACT_MAP_LINK =

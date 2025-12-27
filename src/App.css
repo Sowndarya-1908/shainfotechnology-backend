@@ -34,3 +34,13 @@
   border-radius: 10px;
   margin-right: 10px;
 }
+@keyframes pageFadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
