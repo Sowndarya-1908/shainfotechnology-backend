@@ -37,9 +37,9 @@ export default function Header() {
   onClick={() => setOpen(!open)}
   aria-label="Toggle menu"
 >
-  {/* <span></span>
   <span></span>
-  <span></span> */}
+  <span></span>
+  <span></span>
 </button>
 
         {/* Navigation */}
