@@ -1098,9 +1098,9 @@ html, body{
         <div className="home-faq-cta">
           <h3>Still have questions?</h3>
           <p>Talk directly with our experts and get a custom growth plan.</p>
-          <button onClick={() => window.location.href="/contact"}>
+          <Link to="/contact"> <button >
             BOOK FREE CONSULTATION →
-          </button>
+          </button></Link>
         </div>
       </div>
     </section>
