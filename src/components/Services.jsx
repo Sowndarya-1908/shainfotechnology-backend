@@ -12,18 +12,19 @@ function ServicesHighlightSection() {
 
 .sh-wrap{
   background:radial-gradient(circle at top,#0b1220,#020617 70%);
-  padding:100px min(6vw, 24px);
+  padding:clamp(56px, 7vw, 88px) 6vw;   /* 🔥 FIXED */
   font-family:Inter,system-ui;
 }
 
+/* TITLE */
 .sh-title{
   text-align:center;
-  font-size:44px;
+  font-size:clamp(30px, 4vw, 44px);
   font-weight:900;
   background:linear-gradient(90deg,#8b5cf6,#ec4899);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  margin-bottom:70px;
+  margin-bottom:clamp(36px, 5vw, 56px); /* 🔥 FIXED */
 }
 
 /* GRID */
@@ -32,16 +33,15 @@ function ServicesHighlightSection() {
   margin:auto;
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:34px;
-  align-items:stretch;
+  gap:28px;                            /* 🔥 tighter */
 }
 
 /* CARD */
 .sh-card{
   background:#ffffff;
-  border-radius:26px;
-  padding:28px;
-  height:240px;
+  border-radius:22px;
+  padding:26px;
+  min-height:220px;                    /* 🔥 instead of fixed height */
   text-align:center;
   cursor:pointer;
 
@@ -54,19 +54,19 @@ function ServicesHighlightSection() {
   position:relative;
   overflow:hidden;
 
-  box-shadow:0 30px 80px rgba(0,0,0,0.55);
-  transition:transform .35s ease, box-shadow .35s ease;
+  box-shadow:0 22px 60px rgba(0,0,0,0.45);
+  transition:transform .3s ease, box-shadow .3s ease;
 }
 
 .sh-card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 45px 120px rgba(0,0,0,0.7);
+  transform:translateY(-8px);
+  box-shadow:0 35px 90px rgba(0,0,0,0.6);
 }
 
 /* ICON */
 .sh-icon{
-  width:58px;
-  height:58px;
+  width:56px;
+  height:56px;
   border-radius:50%;
   display:flex;
   align-items:center;
@@ -74,12 +74,12 @@ function ServicesHighlightSection() {
   font-size:26px;
   color:#ffffff;
   background:linear-gradient(135deg,#8b5cf6,#ec4899);
-  box-shadow:0 0 40px rgba(139,92,246,0.6);
+  box-shadow:0 0 32px rgba(139,92,246,0.5);
 }
 
 /* TITLE */
 .sh-card h3{
-  font-size:20px;
+  font-size:19px;
   font-weight:800;
   color:#020617;
   margin:0;
@@ -93,7 +93,7 @@ function ServicesHighlightSection() {
   align-items:center;
   justify-content:center;
   padding:20px;
-  font-size:16px;
+  font-size:15px;
   line-height:1.6;
   color:#ffffff;
   opacity:0;
@@ -112,7 +112,7 @@ function ServicesHighlightSection() {
   transition:.3s;
 }
 
-/* HOVER ACTION */
+/* HOVER (DESKTOP ONLY) */
 .sh-card:hover::before{ opacity:1; }
 .sh-card:hover .sh-hover-text{ opacity:1; }
 .sh-card:hover h3,
@@ -121,23 +121,48 @@ function ServicesHighlightSection() {
 /* SCROLL REVEAL */
 .sh-reveal{
   opacity:0;
-  transform:translateY(40px);
+  transform:translateY(32px);
   transition:.8s cubic-bezier(0.16,1,0.3,1);
 }
 
 .sh-reveal.show{
   opacity:1;
-  transform:translateY(0);
+  transform:none;
 }
 
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
+
 @media(max-width:1024px){
-  .sh-grid{grid-template-columns:1fr 1fr;}
+  .sh-grid{
+    grid-template-columns:1fr 1fr;
+  }
 }
 
-@media(max-width:640px){
-  .sh-grid{grid-template-columns:1fr;}
-  .sh-title{font-size:32px;}
+@media(max-width:768px){
+  .sh-wrap{
+    padding:56px 20px;                 /* 🔥 no extra gap */
+  }
+
+  .sh-grid{
+    grid-template-columns:1fr;
+    gap:22px;
+  }
+
+  .sh-card{
+    min-height:auto;                   /* 🔥 auto height */
+    padding:24px;
+  }
+
+  /* 🔥 Disable hover overlay on mobile */
+  .sh-card::before,
+  .sh-hover-text{
+    display:none;
+  }
+
+  .sh-card h3,
+  .sh-icon{
+    opacity:1 !important;
+  }
 }
     `;
 
@@ -171,84 +196,28 @@ function ServicesHighlightSection() {
       <h2 className="sh-title sh-reveal">What We Do Best</h2>
 
       <div className="sh-grid">
-        <div className="sh-card sh-reveal" onClick={() => navigate("/services/digital-strategy")}>
-          <div className="sh-icon">🧠</div>
-          <h3>Digital Strategy</h3>
-          <div className="sh-hover-text">
-            Data-driven strategies that align technology, marketing, and business goals.
+        {[
+          ["🧠","Digital Strategy","/services/digital-strategy","Data-driven strategies that align technology, marketing, and business goals."],
+          ["💻","Web Development","/services/web-development","High-performance, responsive websites built to convert visitors into customers."],
+          ["🛒","E-commerce Website","/services/ecommerce-website","Secure, scalable online stores designed for smooth shopping and higher sales."],
+          ["🔍","Search Engine Optimization","/services/seo","Improve rankings, organic traffic, and long-term online visibility."],
+          ["📣","Social Media Marketing","/services/social-media-marketing","Build brand awareness, engagement, and trust across social platforms."],
+          ["✍️","Content Design","/services/content-design","Compelling content that informs, engages, and converts your audience."],
+          ["📊","Business Analysis","/services/business-analysis","Insight-driven analysis to optimize processes, performance, and growth."],
+          ["🎨","Creative Design","/services/creative-design","Eye-catching visuals and branding that make your business stand out."],
+          ["🏷️","Brand Consultancy","/services/brand-consultancy","Build a strong, consistent brand identity that drives trust and growth."]
+        ].map(([icon,title,link,text],i)=>(
+          <div key={i} className="sh-card sh-reveal" onClick={()=>navigate(link)}>
+            <div className="sh-icon">{icon}</div>
+            <h3>{title}</h3>
+            <div className="sh-hover-text">{text}</div>
           </div>
-        </div>
-
-        <div className="sh-card sh-reveal" onClick={() => navigate("/services/web-development")}>
-          <div className="sh-icon">💻</div>
-          <h3>Web Development</h3>
-          <div className="sh-hover-text">
-            High-performance, responsive websites built to convert visitors into customers.
-          </div>
-        </div>
-
-        <div className="sh-card sh-reveal" onClick={() => navigate("/services/ecommerce-website")}>
-          <div className="sh-icon">🛒</div>
-          <h3>E-commerce Website</h3>
-          <div className="sh-hover-text">
-            Secure, scalable online stores designed for smooth shopping and higher sales.
-          </div>
-        </div>
-
-        <div className="sh-card sh-reveal" onClick={() => navigate("/services/seo")}>
-          <div className="sh-icon">🔍</div>
-          <h3>Search Engine Optimization</h3>
-          <div className="sh-hover-text">
-            Improve rankings, organic traffic, and long-term online visibility.
-          </div>
-        </div>
-
-        <div className="sh-card sh-reveal" onClick={() => navigate("/services/social-media-marketing")}>
-          <div className="sh-icon">📣</div>
-          <h3>Social Media Marketing</h3>
-          <div className="sh-hover-text">
-            Build brand awareness, engagement, and trust across social platforms.
-          </div>
-        </div>
-
-        <div className="sh-card sh-reveal" onClick={() => navigate("/services/content-design")}>
-          <div className="sh-icon">✍️</div>
-          <h3>Content Design</h3>
-          <div className="sh-hover-text">
-            Compelling content that informs, engages, and converts your audience.
-          </div>
-        </div>
-
-        <div className="sh-card sh-reveal" onClick={() => navigate("/services/business-analysis")}>
-          <div className="sh-icon">📊</div>
-          <h3>Business Analysis</h3>
-          <div className="sh-hover-text">
-            Insight-driven analysis to optimize processes, performance, and growth.
-          </div>
-        </div>
-
-        <div className="sh-card sh-reveal" onClick={() => navigate("/services/creative-design")}>
-          <div className="sh-icon">🎨</div>
-          <h3>Creative Design</h3>
-          <div className="sh-hover-text">
-            Eye-catching visuals and branding that make your business stand out.
-          </div>
-        </div>
-        <div
-  className="sh-card sh-reveal"
-  onClick={() => navigate("/services/brand-consultancy")}
->
-  <div className="sh-icon">🏷️</div>
-  <h3>Brand Consultancy</h3>
-  <div className="sh-hover-text">
-    Build a strong, consistent brand identity that connects with your audience
-    and drives long-term trust and growth.
-  </div>
-</div>
+        ))}
       </div>
     </section>
   );
 }
+
 
 function CTASection() {
     const navigate = useNavigate();
@@ -443,129 +412,136 @@ function CTASection() {
   );
 }
 
-
 function ServicesHero() {
   useEffect(() => {
     const css = `
-      :root{
-        --bg-dark:#020617;
-        --bg-dark-2:#0b1220;
-        --violet:#8b5cf6;
-        --pink:#ec4899;
-        --muted:#9ca3af;
-      }
+:root{
+  --bg-dark:#020617;
+  --bg-dark-2:#0b1220;
+  --violet:#8b5cf6;
+  --pink:#ec4899;
+  --muted:#9ca3af;
+}
 
-      *{
-        box-sizing:border-box;
-      }
+*{ box-sizing:border-box; }
+body{ margin:0; overflow-x:hidden; }
 
-      body{
-        overflow-x:hidden; /* 🔥 PREVENT SIDE SCROLL */
-      }
+/* ================= HERO ================= */
 
-      /* ================= HERO ================= */
+.services-hero{
+  padding:clamp(70px, 8vw, 110px) 7vw;
+  background:radial-gradient(circle at top, var(--bg-dark-2), var(--bg-dark) 70%);
+  display:grid;
+  grid-template-columns:1.15fr 0.85fr;   /* 🔥 text | image */
+  align-items:center;
+  gap:clamp(32px, 5vw, 64px);
+  font-family:Inter,system-ui,sans-serif;
+}
 
-      .services-hero{
-        min-height:100vh;
-        padding:90px 8vw;
-        background:radial-gradient(circle at top, var(--bg-dark-2), var(--bg-dark) 70%);
-        display:grid;
-        grid-template-columns:1.1fr 0.9fr;
-        align-items:center;
-        gap:60px;
-        font-family:Inter,system-ui,sans-serif;
-      }
+/* ================= LEFT TEXT ================= */
 
-      /* LEFT */
-      .services-left small{
-        letter-spacing:2px;
-        color:#93c5fd;
-        font-weight:600;
-        display:block;
-        margin-bottom:18px;
-      }
+.services-left{
+  max-width:640px;
+}
 
-      .services-left h1{
-        font-size:clamp(36px,5vw,64px);
-        line-height:1.1;
-        margin:0 0 20px;
-        color:white;
-      }
+.services-left small{
+  letter-spacing:2px;
+  color:#93c5fd;
+  font-weight:600;
+  display:block;
+  margin-bottom:14px;
+}
 
-      .gradient-text{
-        background:linear-gradient(90deg,var(--violet),var(--pink));
-        -webkit-background-clip:text;
-        -webkit-text-fill-color:transparent;
-      }
+.services-left h1{
+  font-size:clamp(38px,5.5vw,66px);
+  line-height:1.1;
+  margin:0 0 18px;
+  color:#ffffff;
+  font-weight:900;
+}
 
-      .services-left p{
-        max-width:520px;
-        font-size:16px;
-        line-height:1.7;
-        color:var(--muted);
-      }
+.gradient-text{
+  background:linear-gradient(90deg,var(--violet),var(--pink));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
 
-      /* RIGHT IMAGE */
-      .services-image-wrap{
-        position:relative;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-      }
+.services-left p{
+  max-width:520px;
+  font-size:16px;
+  line-height:1.75;
+  color:var(--muted);
+  margin:0;
+}
 
-      /* GLOW */
-      .services-image-wrap::before{
-        content:"";
-        position:absolute;
-        width:420px;
-        height:420px;
-        background:radial-gradient(circle, rgba(139,92,246,0.45), transparent 70%);
-        filter:blur(40px);
-        z-index:0;
-      }
+/* ================= RIGHT IMAGE ================= */
 
-      .services-image-wrap img{
-        width:100%;
-        max-width:420px;
-        position:relative;
-        z-index:1;
-      }
+.services-image-wrap{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 
-      /* ================= MOBILE FIX ================= */
-      @media (max-width: 768px){
+/* GLOW */
+.services-image-wrap::before{
+  content:"";
+  position:absolute;
+  width:420px;
+  height:420px;
+  background:radial-gradient(circle, rgba(139,92,246,0.45), transparent 70%);
+  filter:blur(44px);
+  z-index:0;
+}
 
-        .services-hero{
-          min-height:auto;              /* 🔥 FIX EMPTY SPACE */
-          grid-template-columns:1fr;    /* 🔥 STACK */
-          padding:70px 20px;
-          gap:50px;
-          text-align:center;
-        }
+.services-image-wrap img{
+  width:100%;
+  max-width:520px;     /* 🔥 BIG IMAGE */
+  position:relative;
+  z-index:1;
+  display:block;
+  filter:drop-shadow(0 50px 120px rgba(139,92,246,0.45));
+}
 
-        .services-left h1{
-          font-size:32px;
-          line-height:1.2;
-        }
+/* ================= MOBILE ================= */
 
-        .services-left p{
-          margin-left:auto;
-          margin-right:auto;
-          font-size:15px;
-        }
+@media (max-width: 768px){
 
-        .services-image-wrap{
-          margin-top:20px;
-        }
+  .services-hero{
+    grid-template-columns:1fr;
+    padding:60px 20px;
+    gap:36px;
+    text-align:center;
+  }
 
-        .services-image-wrap::before{
-          width:280px;                  /* 🔥 PREVENT OVERFLOW */
-          height:280px;
-        }
+  .services-left{
+    max-width:100%;
+  }
 
-        .services-image-wrap img{
-          max-width:260px;              /* 🔥 PERFECT MOBILE SIZE */
-        }
-      }
+  .services-left h1{
+    font-size:32px;
+    line-height:1.2;
+  }
+
+  .services-left p{
+    margin-left:auto;
+    margin-right:auto;
+    font-size:15px;
+  }
+
+  // .services-image-wrap{
+  //   order:-1; /* 🔥 image on top for mobile */
+  // }
+
+  .services-image-wrap::before{
+    width:260px;
+    height:260px;
+  }
+
+  .services-image-wrap img{
+    max-width:300px;
+  }
+}
     `;
 
     const style = document.createElement("style");
@@ -576,13 +552,16 @@ function ServicesHero() {
 
   return (
     <section className="services-hero">
-      {/* LEFT */}
+
+      {/* LEFT TEXT */}
       <div className="services-left">
         <small>OUR SERVICES</small>
+
         <h1>
           Where Digital Strategy <br />
           <span className="gradient-text">Turns Into Real Results</span>
         </h1>
+
         <p>
           Our solutions are built to increase visibility, drive qualified traffic,
           and convert clicks into customers. With a results-first approach,
@@ -596,98 +575,124 @@ function ServicesHero() {
         <img
           src="/images/SERVICESHERO.png"
           alt="Digital Services Illustration"
+          draggable="false"
         />
       </div>
+
     </section>
   );
 }
 
 
 
+
+
+
 function GrowthPartnerSection() {
   React.useEffect(() => {
     const css = `
-      :root{
-        --bg-dark:#020617;
-        --bg-dark-2:#0b1220;
-        --red:#B90504;
-        --violet:#8b5cf6;
-        --pink:#ec4899;
-        --gradient:linear-gradient(90deg,#8b5cf6,#ec4899);
-      }
+:root{
+  --bg-dark:#020617;
+  --bg-dark-2:#0b1220;
+  --red:#B90504;
+  --violet:#8b5cf6;
+  --pink:#ec4899;
+  --gradient:linear-gradient(90deg,#8b5cf6,#ec4899);
+}
 
-      /* SECTION */
-      .gp-wrap{
-        background:radial-gradient(circle at top, var(--bg-dark-2), var(--bg-dark) 70%);
-        padding:110px 7vw;
-        font-family:Inter,system-ui;
-      }
+/* ================= SECTION ================= */
+.gp-wrap{
+  background:radial-gradient(circle at top, var(--bg-dark-2), var(--bg-dark) 70%);
+  padding:clamp(60px,8vw,100px) 6vw;   /* 🔥 controlled spacing */
+  font-family:Inter,system-ui;
+}
 
-      /* HEADING */
-      .gp-title{
-        font-size:44px;
-        font-weight:900;
-        line-height:1.15;
-        color:#ffffff;
-        margin-bottom:60px;
-      }
+/* ================= HEADING ================= */
+.gp-title{
+  font-size:clamp(30px,4vw,44px);
+  font-weight:900;
+  line-height:1.2;
+  color:#ffffff;
+  margin-bottom:48px;                 /* 🔥 reduced gap */
+  text-align:left;
+}
 
-      .gp-title span{
-        background:var(--gradient);
-        -webkit-background-clip:text;
-        -webkit-text-fill-color:transparent;
-      }
+.gp-title span{
+  background:var(--gradient);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
 
-      /* GRID */
-      .gp-grid{
-        display:grid;
-        grid-template-columns:repeat(4,1fr);
-        gap:28px;
-      }
+/* ================= GRID ================= */
+.gp-grid{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;                            /* 🔥 no extra gap */
+}
 
-      /* 🔥 FORCE WHITE CARD */
-      .gp-card{
-        background:#ffffff !important;
-        background-image:none !important;
-        backdrop-filter:none !important;
-        border-radius:22px;
-        padding:44px 26px;
-        text-align:center;
-        box-shadow:0 30px 80px rgba(0,0,0,0.35);
-        transition:all .35s ease;
-      }
+/* ================= CARD ================= */
+.gp-card{
+  background:#ffffff !important;       /* 🔒 FORCE WHITE */
+  color:#020617;
+  border-radius:20px;
+  padding:36px 20px;                   /* 🔥 balanced padding */
+  text-align:center;
+  box-shadow:0 20px 60px rgba(0,0,0,0.25);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
 
-      .gp-card:hover{
-        transform:translateY(-10px);
-        box-shadow:0 40px 120px rgba(185,5,4,0.35);
-      }
+.gp-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 30px 90px rgba(185,5,4,0.35);
+}
 
-      /* ICON – NO CIRCLE */
-      .gp-icon{
-        font-size:28px;
-        margin-bottom:14px;
-      }
+/* ICON */
+.gp-icon{
+  font-size:30px;
+  margin-bottom:14px;
+}
 
-      /* TEXT – RED */
-      .gp-card h4{
-        font-size:16px;
-        font-weight:800;
-        color:var(--red) !important;
-      }
+/* TITLE */
+.gp-card h4{
+  font-size:15px;
+  font-weight:800;
+  color:var(--red) !important;
+  margin:0;
+}
 
-      /* RESPONSIVE */
-      @media(max-width:1024px){
-        .gp-grid{grid-template-columns:1fr 1fr;}
-        .gp-title{font-size:36px;}
-      }
+/* ================= TABLET ================= */
+@media(max-width:1024px){
+  .gp-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+  }
+}
 
-      @media(max-width:640px){
-        .gp-grid{grid-template-columns:1fr;}
-        .gp-title{font-size:30px;}
-      }
+/* ================= MOBILE ================= */
+@media(max-width:640px){
+  .gp-wrap{
+    padding:56px 20px;                 /* 🔥 no side overflow */
+  }
+
+  .gp-title{
+    text-align:center;
+    margin-bottom:36px;
+  }
+
+  .gp-grid{
+    grid-template-columns:1fr;         /* 🔥 single column */
+    gap:18px;
+  }
+
+  .gp-card{
+    padding:28px 18px;                 /* 🔥 compact but safe */
+  }
+}
     `;
 
-    const id = "gp-force-white-style";
+    const id = "growth-partner-fixed-style";
     const old = document.getElementById(id);
     if (old) old.remove();
 
@@ -751,129 +756,141 @@ function GrowthPartnerSection() {
 
 
 
+
 function ProjectWorkflowSection() {
   useEffect(() => {
     const css = `
-      :root{
-        --bg-dark:#020617;
-        --bg-dark-2:#0b1220;
-        --violet:#8b5cf6;
-        --pink:#ec4899;
-        --muted:#9ca3af;
-      }
+:root{
+  --bg-dark:#020617;
+  --bg-dark-2:#0b1220;
+  --violet:#8b5cf6;
+  --pink:#ec4899;
+  --muted:#9ca3af;
+}
 
-      .pw-section{
-        background:radial-gradient(circle at top, var(--bg-dark-2), var(--bg-dark) 70%);
-        padding:100px 8vw;
-        font-family:Inter, system-ui, sans-serif;
-        color:#e5e7eb;
-      }
+/* ================= SECTION ================= */
+.pw-section{
+  background:radial-gradient(circle at top, var(--bg-dark-2), var(--bg-dark) 70%);
+  padding:clamp(56px,8vw,90px) 6vw; /* 🔥 reduced vertical gap */
+  font-family:Inter, system-ui, sans-serif;
+  color:#e5e7eb;
+}
 
-      .pw-container{
-        max-width:1200px;
-        margin:auto;
-        display:grid;
-        grid-template-columns:1.1fr 0.9fr;
-        gap:70px;
-        align-items:center;
-      }
+/* ================= CONTAINER ================= */
+.pw-container{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:48px; /* 🔥 reduced from 70px */
+  align-items:center;
+}
 
-      /* ---------- LEFT CONTENT ---------- */
-      .pw-left h2{
-        font-size:clamp(28px,4vw,44px);
-        margin-bottom:18px;
-        color:#ffffff;
-      }
+/* ---------- LEFT CONTENT ---------- */
+.pw-left h2{
+  font-size:clamp(28px,4vw,44px);
+  margin-bottom:16px;
+  color:#ffffff;
+}
 
-      .pw-left p{
-        font-size:16px;
-        line-height:1.7;
-        color:var(--muted);
-        margin-bottom:18px;
-      }
+.pw-left p{
+  font-size:16px;
+  line-height:1.7;
+  color:var(--muted);
+  margin:0 0 14px; /* 🔥 normalized spacing */
+}
 
-      .highlight{
-        background:linear-gradient(90deg,var(--violet),var(--pink));
-        -webkit-background-clip:text;
-        -webkit-text-fill-color:transparent;
-        font-weight:600;
-      }
+.highlight{
+  background:linear-gradient(90deg,var(--violet),var(--pink));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  font-weight:600;
+}
 
-      /* ---------- RIGHT FLOATING CARDS ---------- */
-      .pw-right{
-        display:grid;
-        gap:22px;
-      }
+/* ---------- RIGHT FLOATING CARDS ---------- */
+.pw-right{
+  display:grid;
+  gap:18px; /* 🔥 tighter spacing */
+}
 
-      .pw-card{
-        background:rgba(139,92,246,0.08);
-        border:1px solid rgba(139,92,246,0.25);
-        border-radius:18px;
-        padding:22px 26px;
-        display:flex;
-        gap:16px;
-        align-items:flex-start;
-        box-shadow:0 30px 60px rgba(0,0,0,0.45);
-        transform:translateY(40px);
-        opacity:0;
-        transition:all 0.6s ease;
-      }
+.pw-card{
+  background:rgba(139,92,246,0.08);
+  border:1px solid rgba(139,92,246,0.25);
+  border-radius:18px;
+  padding:20px 24px; /* 🔥 reduced padding */
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  box-shadow:0 30px 60px rgba(0,0,0,0.45);
+  transform:translateY(40px);
+  opacity:0;
+  transition:all 0.6s ease;
+}
 
-      .pw-card.show{
-        transform:translateY(0);
-        opacity:1;
-      }
+.pw-card.show{
+  transform:translateY(0);
+  opacity:1;
+}
 
-      .pw-card:hover{
-        transform:translateY(-6px);
-        box-shadow:0 40px 80px rgba(139,92,246,0.35);
-      }
+.pw-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 40px 80px rgba(139,92,246,0.35);
+}
 
-      .pw-step{
-        min-width:34px;
-        height:34px;
-        border-radius:50%;
-        background:linear-gradient(135deg,var(--violet),var(--pink));
-        color:#fff;
-        font-weight:700;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        box-shadow:0 0 18px rgba(139,92,246,0.6);
-        margin-top:4px;
-      }
+.pw-step{
+  min-width:34px;
+  height:34px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--violet),var(--pink));
+  color:#fff;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 0 18px rgba(139,92,246,0.6);
+  margin-top:2px; /* 🔥 reduced */
+}
 
-      .pw-card p{
-        margin:0;
-        font-size:15px;
-        line-height:1.6;
-        color:#d1d5db;
-      }
+.pw-card p{
+  margin:0;
+  font-size:15px;
+  line-height:1.6;
+  color:#d1d5db;
+}
 
-      /* ---------- TITLE ---------- */
-      .pw-title{
-        font-size:clamp(32px,5vw,48px);
-        font-weight:800;
-        line-height:1.15;
-        color:#ffffff;
-      }
+/* ---------- TITLE ---------- */
+.pw-title{
+  font-size:clamp(32px,5vw,48px);
+  font-weight:800;
+  line-height:1.15;
+  color:#ffffff;
+}
 
-      .pw-gradient-text{
-        background:linear-gradient(90deg,#8b5cf6,#ec4899);
-        -webkit-background-clip:text;
-        -webkit-text-fill-color:transparent;
-      }
+.pw-gradient-text{
+  background:linear-gradient(90deg,#8b5cf6,#ec4899);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
 
-      /* ---------- RESPONSIVE ---------- */
-      @media(max-width:900px){
-        .pw-container{
-          grid-template-columns:1fr;
-        }
+/* ---------- MOBILE ---------- */
+@media(max-width:900px){
+  .pw-container{
+    grid-template-columns:1fr;
+    gap:36px; /* 🔥 reduced mobile gap */
+  }
 
-        .pw-right{
-          margin-top:32px;
-        }
-      }
+  .pw-right{
+    margin-top:12px; /* 🔥 remove empty space */
+  }
+
+  .pw-section{
+    padding:56px 20px; /* 🔥 tight mobile padding */
+  }
+
+  .pw-left p{
+    font-size:15px;
+  }
+}
     `;
 
     const style = document.createElement("style");
@@ -904,7 +921,6 @@ function ProjectWorkflowSection() {
     <section className="pw-section">
       <div className="pw-container">
 
-        {/* LEFT CONTENT */}
         <div className="pw-left">
           <h2 className="pw-title">
             How a Project With Us <br />
@@ -912,25 +928,26 @@ function ProjectWorkflowSection() {
           </h2>
 
           <p>
-             
-             <span className="highlight">No guesswork. No surprises.</span>
-           We follow a transparent and structured workflow so you always know where your project stands and what comes next.
+            <span className="highlight">No guesswork. No surprises.</span>
+            We follow a transparent and structured workflow so you always know where your project stands and what comes next.
           </p>
 
           <p>
-            <span className="highlight">We start with clarity.</span> Every project begins with understanding your business, audience, and goals to set the right digital foundation. </p>
+            <span className="highlight">We start with clarity.</span>
+            Every project begins with understanding your business, audience, and goals to set the right digital foundation.
+          </p>
 
           <p>
-            <span className="highlight">Planning meets action</span>
+            <span className="highlight">Planning meets action.</span>
             Our strategies are practical and result-focused—executed with clear timelines, collaboration, and regular updates.
           </p>
 
           <p>
-            <span className="highlight">Growth is continuously refined.</span> We monitor performance, refine strategies, and scale what works to deliver long-term business impact.
+            <span className="highlight">Growth is continuously refined.</span>
+            We monitor performance, refine strategies, and scale what works to deliver long-term business impact.
           </p>
         </div>
 
-        {/* RIGHT CARDS */}
         <div className="pw-right">
           <div className="pw-card">
             <div className="pw-step">1</div>
@@ -951,14 +968,13 @@ function ProjectWorkflowSection() {
             <div className="pw-step">4</div>
             <p>Improving performance and expanding results.</p>
           </div>
-
-            
         </div>
 
       </div>
     </section>
   );
 }
+
 
 function HomeFAQSection() {
   const [openFaq, setOpenFaq] = useState(-1);
@@ -1377,67 +1393,7 @@ export default function ServicesPage() {
 }
 
 
-      // .sf-header{
-      //   position:sticky;
-      //   top:0;
-      //   z-index:100;
-      //   width:100%;
-      //   background:rgba(232,232,232,0.96);
-      //   backdrop-filter:blur(8px);
-      //   border-bottom:1px solid rgba(0,0,0,0.06);
-      // }
-      // .sf-header-inner{
-      //   max-width:1400px;
-      //   margin:0 auto;
-      //   padding:14px 28px;
-      //   display:flex;
-      //   align-items:center;
-      //   justify-content:space-between;
-      //   position:relative;
-      // }
-      // .sf-nav{
-      //   position:absolute;
-      //   left:50%;
-      //   transform:translateX(-50%);
-      //   display:flex;
-      //   gap:28px;
-      //   align-items:center;
-      // }
-      // .sf-nav .nav-btn{
-      //   background:none;
-      //   border:none;
-      //   color:var(--text-dark);
-      //   font-size:18px;
-      //   font-weight:700;
-      //   cursor:pointer;
-      //   text-decoration:none;
-      //   transition:color 180ms ease, transform 180ms ease;
-      // }
-      // .sf-nav .nav-btn:hover{
-      //   color:var(--accent-red);
-      //   transform:translateY(-2px);
-      // }
-      // .sf-logo{
-      //   display:flex;
-      //   align-items:center;
-      //   gap:12px;
-      //   margin-left:auto;
-      // }
-      // .sf-logo .mark{
-      //   width:44px;
-      //   height:44px;
-      //   border-radius:12px;
-      //   background:var(--accent-red);
-      //   display:flex;
-      //   align-items:center;
-      //   justify-content:center;
-      //   font-weight:700;
-      //   color:#fff;
-      //   box-shadow:0 6px 18px rgba(185,5,4,0.35);
-      // }
-      // .sf-logo .title{font-weight:800;font-size:16px;}
-      // .sf-logo .subtitle{font-size:11px;opacity:0.8;margin-top:2px;}
-
+     
       .svc-section{
   padding:100px 7vw;
   border-bottom:none;
@@ -1692,76 +1648,7 @@ export default function ServicesPage() {
 
    
     
-      // .svc-faq-subtitle{
-      //   font-size:16px;
-      //   color:#555;
-      //   margin-bottom:24px;
-      // }
-      // .svc-faq-item{
-      //   border-top:1px solid rgba(0,0,0,0.06);
-      //   padding:18px 4px;
-      //   transition:background 160ms ease, transform 160ms ease,
-      //            box-shadow 160ms ease;
-      // }
-      // .svc-faq-item:last-child{
-      //   border-bottom:1px solid rgba(0,0,0,0.06);
-      // }
-      // .svc-faq-item.hoverable:hover{
-      //   background:#ffffff;
-      //   transform:translateY(-4px);
-      //   box-shadow:0 16px 40px rgba(185,5,4,0.25);
-      // }
-      // .svc-faq-header{
-      //   display:flex;
-      //   align-items:center;
-      //   justify-content:space-between;
-      //   cursor:pointer;
-      //   gap:16px;
-      // }
-      // .svc-faq-question{
-      //   font-size:18px;
-      //   font-weight:700;
-      // color:#ffffff;
-      //   transition:color 160ms ease;
-      // }
-      // .svc-faq-item.open .svc-faq-question{
-      // color:#B90504;
-      // }
-      // .svc-faq-toggle{
-      //   width:32px;
-      //   height:32px;
-      //   border-radius:999px;
-      //   border:2px solid #444;
-      //   display:flex;
-      //   align-items:center;
-      //   justify-content:center;
-      //   font-size:18px;
-      //   font-weight:900;
-      //   color:#444;
-      //   flex-shrink:0;
-      //   transition:background 160ms ease, color 160ms ease,
-      //              border-color 160ms ease, transform 160ms ease;
-      // }
-      // .svc-faq-item.open .svc-faq-toggle{
-      //   background:var(--accent-red);
-      //   color:#ffffff;
-      //   border-color:var(--accent-red);
-      //   transform:translateY(-1px);
-      // }
-      // .svc-faq-answer{
-      //   max-height:0;
-      //   overflow:hidden;
-      //   transition:max-height 260ms ease;
-      // }
-      // .svc-faq-item.open .svc-faq-answer{
-      //   max-height:400px;
-      // }
-      // .svc-faq-answer p{
-      //   margin-top:12px;
-      //   font-size:15px;
-      //   line-height:1.7;
-      //   color:#555;
-      // }
+     
 
       @media(max-width:1024px){
         .svc-hero-layout{grid-template-columns:1fr;}
@@ -2129,107 +2016,8 @@ export default function ServicesPage() {
   .gp-title{font-size:30px;}
 }
 
-// .gp-wrap{
-//   background:#f6f9ff;
-//   padding:110px 7vw;
-//   font-family:Inter,system-ui;
-// }
 
-// .gp-head{
-//   display:flex;
-//   justify-content:space-between;
-//   align-items:flex-start;
-//   gap:20px;
-//   margin-bottom:60px;
-// }
 
-// .gp-title{
-//   font-size:52px;
-//   font-weight:900;
-//   line-height:1.1;
-//   max-width:720px;
-//   color:#0f172a;
-// }
-
-// .gp-btn{
-//   display:flex;
-//   align-items:center;
-//   gap:14px;
-//   font-weight:800;
-//   background:#fff;
-//   border:2px solid #0f172a;
-//   border-radius:999px;
-//   padding:14px 26px;
-//   cursor:pointer;
-//   transition:all .25s ease;
-// }
-
-// .gp-btn:hover{
-//   background:#0f172a;
-//   color:#fff;
-//   transform:translateY(-3px);
-// }
-
-// .gp-btn span{
-//   width:38px;
-//   height:38px;
-//   border-radius:50%;
-//   border:2px solid currentColor;
-//   display:flex;
-//   align-items:center;
-//   justify-content:center;
-//   font-size:18px;
-// }
-
-// .gp-grid{
-//   display:grid;
-//   grid-template-columns:repeat(4,1fr);
-//   gap:28px;
-// }
-
-// .gp-card{
-//   background:#ffffff;
-//   border-radius:16px;
-//   padding:40px 24px;
-//   display:flex;
-//   flex-direction:column;
-//   align-items:center;
-//   text-align:center;
-//   gap:18px;
-//   box-shadow:0 20px 40px rgba(0,0,0,0.04);
-//   transition:transform .25s ease, box-shadow .25s ease;
-// }
-
-// .gp-card:hover{
-//   transform:translateY(-8px);
-//   box-shadow:0 30px 60px rgba(0,0,0,0.08);
-// }
-
-// .gp-icon{
-//   width:56px;
-//   height:56px;
-//   display:flex;
-//   align-items:center;
-//   justify-content:center;
-//   font-size:28px;
-// }
-
-// .gp-card h4{
-//   font-size:18px;
-//   font-weight:700;
-//   color:#0f172a;
-// }
-
-// @media(max-width:1100px){
-//   .gp-grid{grid-template-columns:1fr 1fr;}
-//   .gp-title{font-size:40px;}
-// }
-
-// @media(max-width:600px){
-//   .gp-head{flex-direction:column;}
-//   .gp-grid{grid-template-columns:1fr;}
-//   .gp-title{font-size:32px;}
-// }
 
 
 /* ================= GROWTH PARTNER SCROLL REVEAL ================= */

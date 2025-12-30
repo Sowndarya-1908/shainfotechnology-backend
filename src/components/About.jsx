@@ -12,284 +12,36 @@ const TEAM_DEV_IMAGE = "/images/about/s.png";
 const GALLERY_IMAGE = "/images/about/1.png";
 
 
-
-
-// function CTASection() {
-//   const navigate = useNavigate();
-//   const sectionRef = useRef(null);
-
-//   useEffect(() => {
-//     const css = `
-// /* ================= CTA SECTION ================= */
-
-// .cta-wrap{
-//   position:relative;
-//   min-height:60vh;
-//   display:flex;
-//   align-items:center;
-//   justify-content:center;
-//   overflow:hidden;
-//   background:transparent;
-//   font-family:Inter,system-ui;
-// }
-
-// /* Animated background blobs */
-// .cta-bg{
-//   position:absolute;
-//   inset:0;
-//   background:
-//     radial-gradient(circle at 20% 40%, #ff0000, transparent 40%),
-//     radial-gradient(circle at 60% 30%, #00e5ff, transparent 45%),
-//     radial-gradient(circle at 80% 70%, #7c3aed, transparent 45%);
-//   filter:blur(90px);
-//   animation:floatBg 14s ease-in-out infinite alternate;
-//   z-index:0;
-// }
-
-// @keyframes floatBg{
-//   0%{ transform:translateY(-20px) scale(1); }
-//   100%{ transform:translateY(20px) scale(1.1); }
-// }
-
-// .cta-overlay{
-//   position:absolute;
-//   inset:0;
-//   background:rgba(0,0,0,0.78);
-//   z-index:1;
-// }
-
-// .cta-content{
-//   position:relative;
-//   z-index:2;
-//   text-align:center;
-//   max-width:1100px;
-//   padding:40px 20px;
-//   color:#ffffff;
-// }
-
-// /* ================= SUPER SCROLL REVEAL ================= */
-
-// .cta-title,
-// .cta-sub,
-// .cta-btn{
-//   opacity:0;
-// }
-
-// /* TITLE */
-// .cta-title{
-//   transform:scale(0.85);
-//   filter:blur(12px);
-//   transition:all 1s cubic-bezier(.16,1,.3,1);
-// }
-
-// .cta-wrap.show .cta-title{
-//   opacity:1;
-//   transform:scale(1);
-//   filter:blur(0);
-// }
-
-// /* SUB TEXT */
-// .cta-sub{
-//   transform:translateY(30px);
-//   transition:all .9s ease .3s;
-// }
-
-// .cta-wrap.show .cta-sub{
-//   opacity:1;
-//   transform:none;
-// }
-
-// /* BUTTON */
-// .cta-btn{
-//   transform:scale(0.7);
-//   transition:all .8s cubic-bezier(.34,1.56,.64,1) .55s;
-// }
-
-// .cta-wrap.show .cta-btn{
-//   opacity:1;
-//   transform:scale(1);
-// }
-
-// /* ================= BIG TITLE ================= */
-
-// .cta-title{
-//   text-align:center;
-// }
-
-// .cta-white{
-//   display:block;
-//   color:#ffffff;
-// }
-
-// .cta-gradient{
-//   display:block;
-//   background:linear-gradient(90deg,#8b5cf6,#ec4899);
-//   -webkit-background-clip:text;
-//   -webkit-text-fill-color:transparent;
-// }
-
-// /* Desktop sizes */
-// @media(min-width:1400px){
-//   .cta-white{font-size:86px;}
-//   .cta-gradient{font-size:104px;}
-// }
-
-// /* ================= SUB TEXT ================= */
-
-// .cta-sub{
-//   font-size:20px;
-//   color:#e5e7eb;
-//   margin-bottom:40px;
-//   display:flex;
-//   align-items:center;
-//   justify-content:center;
-//   gap:12px;
-// }
-
-// .cta-dot{
-//   width:16px;
-//   height:16px;
-//   border-radius:50%;
-//   background:#2dd4bf;
-//   box-shadow:0 0 20px rgba(45,212,191,0.9);
-//   animation:pulse 1.6s infinite;
-// }
-
-// @keyframes pulse{
-//   0%{transform:scale(1);opacity:1}
-//   50%{transform:scale(1.4);opacity:.6}
-//   100%{transform:scale(1);opacity:1}
-// }
-
-// /* ================= BUTTON ================= */
-
-// .cta-btn{
-//   display:inline-flex;
-//   align-items:center;
-//   gap:12px;
-//   padding:18px 44px;
-//   border-radius:999px;
-//   background:linear-gradient(90deg,#8b5cf6,#ec4899);
-//   color:#ffffff;
-//   font-size:16px;
-//   font-weight:900;
-//   letter-spacing:0.14em;
-//   border:none;
-//   cursor:pointer;
-//   box-shadow:
-//     0 20px 60px rgba(139,92,246,0.45),
-//     0 0 35px rgba(236,72,153,0.35);
-// }
-
-// .cta-btn:hover{
-//   transform:translateY(-4px) scale(1.05);
-//   box-shadow:
-//     0 30px 90px rgba(139,92,246,0.6),
-//     0 0 45px rgba(236,72,153,0.5);
-// }
-
-// .cta-btn span{
-//   font-size:22px;
-// }
-
-// /* ================= MOBILE ================= */
-
-// @media(max-width:768px){
-//   .cta-white{font-size:36px;}
-//   .cta-gradient{font-size:44px;}
-//   .cta-sub{
-//     font-size:16px;
-//     flex-direction:column;
-//   }
-// }
-//     `;
-
-//     const id = "cta-style-super";
-//     if (!document.getElementById(id)) {
-//       const style = document.createElement("style");
-//       style.id = id;
-//       style.innerHTML = css;
-//       document.head.appendChild(style);
-//     }
-
-//     /* ===== SCROLL OBSERVER ===== */
-//     const observer = new IntersectionObserver(
-//       ([entry]) => {
-//         if (entry.isIntersecting) {
-//           entry.target.classList.add("show");
-//           observer.disconnect();
-//         }
-//       },
-//       { threshold: 0.35 }
-//     );
-
-//     if (sectionRef.current) observer.observe(sectionRef.current);
-
-//     return () => observer.disconnect();
-//   }, []);
-
-//   return (
-//     <section className="cta-wrap" ref={sectionRef}>
-//       <div className="cta-bg"></div>
-//       <div className="cta-overlay"></div>
-
-//       <div className="cta-content">
-//         <h2 className="cta-title">
-//           <span className="cta-white">Ready to transform your</span><br />
-//           <span className="cta-gradient">business?</span>
-//         </h2>
-
-//         <div className="cta-sub">
-//           <span className="cta-dot"></span>
-//           Book an informal chat with one of our specialists
-//         </div>
-
-//         <Link to="/contact"><button>
-//           // className="cta-btn"
-//           // onClick={() => navigate("/contact")}
-//           <span>→</span> GET IN TOUCH
-//         </button></Link>
-       
-//       </div>
-//     </section>
-//   );
-// }
-
-
 function Vission() {
   const sectionRef = useRef(null);
 
- 
-useEffect(() => {
-  const section = sectionRef.current;
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
 
-  const header = section.querySelector(".vision-header");
-  const image = section.querySelector(".vision-image-glow");
-  const divider = section.querySelector(".vision-divider");
-  const paragraphs = section.querySelectorAll(".vision-text p");
+    const header = section.querySelector(".vision-header");
+    const image = section.querySelector(".vision-image-glow");
+    const divider = section.querySelector(".vision-divider");
+    const paragraphs = section.querySelectorAll(".vision-text p");
 
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
         if (entry.isIntersecting) {
           header.classList.add("reveal");
           divider.classList.add("draw");
           image.classList.add("reveal");
-
-          paragraphs.forEach((p, i) => {
-            setTimeout(() => p.classList.add("reveal"), i * 180);
-          });
-
+          paragraphs.forEach((p, i) =>
+            setTimeout(() => p.classList.add("reveal"), i * 150)
+          );
           observer.disconnect();
         }
-      });
-    },
-    { threshold: 0.3 }
-  );
+      },
+      { threshold: 0.3 }
+    );
 
-  observer.observe(section);
-  return () => observer.disconnect();
-}, []);
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section className="vision-section" ref={sectionRef}>
@@ -297,40 +49,35 @@ useEffect(() => {
       <div className="vision-header">
         <h2 className="vision-title">
           <span className="vision-title-white">Our Vision</span>
-          <span className="vision-title-gradient">
-            Driving Digital Growth
-          </span>
+          <span className="vision-title-gradient">Driving Digital Growth</span>
         </h2>
         <div className="vision-divider"></div>
       </div>
 
       {/* CONTENT */}
       <div className="vision-container">
-
-        {/* IMAGE – LEFT */}
+        {/* IMAGE */}
         <div className="vision-image">
           <div className="vision-image-glow">
             <img src="/images/vission.png" alt="Our Vision" />
           </div>
         </div>
 
-        {/* TEXT – RIGHT */}
+        {/* TEXT */}
         <div className="vision-text">
           <p>
             At SHA Infotechnology, we believe sustainable growth comes from the
             right blend of creativity, performance marketing, and modern
             technology—built to scale with your business.
           </p>
-
           <p>
             We aim to empower brands to build a powerful online presence,
             strengthen customer trust, and achieve long-term success in an
             ever-evolving digital landscape.
           </p>
-
           <p>
-            Our vision is to create digital solutions that are not only visually
-            compelling but also strategically designed to deliver real business
+            Our vision is to create digital solutions that are visually
+            compelling and strategically designed to deliver real business
             impact.
           </p>
         </div>
@@ -339,55 +86,9 @@ useEffect(() => {
       {/* STYLES */}
       <style>{`
 /* ================= VISION SECTION ================= */
-/* ===== EXTRA POLISH ANIMATIONS ===== */
 
-/* Divider draw */
-.vision-divider{
-  transform:scaleX(0);
-  transform-origin:left;
-  transition:transform .8s ease .2s;
-}
-
-.vision-divider.draw{
-  transform:scaleX(1);
-}
-
-/* Background pulse on reveal */
-.vision-section::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle at center, rgba(139,92,246,.12), transparent 70%);
-  opacity:0;
-  transition:opacity 1s ease;
-  pointer-events:none;
-}
-
-.vision-section.reveal-bg::after{
-  opacity:1;
-}
-
-/* Image parallax feel */
-.vision-image-glow{
-  will-change:transform;
-}
-
-/* Paragraph wave reveal */
-.vision-text p{
-  transition:
-    opacity .8s ease,
-    transform .8s cubic-bezier(.16,1,.3,1);
-}
-
-/* Extra depth shadow on reveal */
-// .vision-image-glow.reveal img{
-//   box-shadow:
-//     0 40px 120px rgba(168,85,247,.35),
-//     0 0 80px rgba(236,72,153,.25);
-// }
-
-.vision-section {
-  padding: 20px 4vw;
+.vision-section{
+  padding: clamp(60px, 8vw, 100px) 6vw;
   background: radial-gradient(circle at top, #0b1220, #020617 70%);
   font-family: Inter, system-ui, sans-serif;
   color: #e5e7eb;
@@ -395,14 +96,13 @@ useEffect(() => {
 }
 
 /* ===== HEADER ===== */
-.vision-header {
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto 70px;
+.vision-header{
+  text-align:center;
+  max-width:900px;
+  margin:0 auto clamp(32px, 6vw, 60px);
   opacity:0;
-  transform:translateY(30px);
-  transition:all .9s ease;
-  margin-bottom:0px;
+  transform:translateY(24px);
+  transition:all .8s ease;
 }
 
 .vision-header.reveal{
@@ -410,95 +110,98 @@ useEffect(() => {
   transform:none;
 }
 
-.vision-title {
-  font-size: clamp(34px, 4vw, 56px);
-  font-weight: 800;
-  line-height: 1.2;
+.vision-title{
+  font-size:clamp(30px,4vw,54px);
+  font-weight:800;
+  line-height:1.2;
 }
 
-.vision-title-white {
-  display: block;
-  color: #ffffff;
+.vision-title-white{
+  display:block;
+  color:#ffffff;
 }
 
-.vision-title-gradient {
-  display: block;
-  background: linear-gradient(90deg, #8b5cf6, #ec4899);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.vision-title-gradient{
+  display:block;
+  background:linear-gradient(90deg,#8b5cf6,#ec4899);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
-.vision-divider {
-  width: 90px;
-  height: 3px;
-  background: #8b5cf6;
-  margin: 22px auto 0;
-  border-radius: 2px;
+.vision-divider{
+  width:90px;
+  height:3px;
+  background:#8b5cf6;
+  margin:18px auto 0;
+  border-radius:2px;
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .6s ease .2s;
+}
+
+.vision-divider.draw{
+  transform:scaleX(1);
 }
 
 /* ===== LAYOUT ===== */
-.vision-container {
-  max-width: 1200px;
-  margin: auto;
-
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  // gap: 60px;
-  align-items: center;
-  margin-top:0px;
+.vision-container{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1.1fr;
+  gap:clamp(28px,5vw,60px);
+  align-items:center;
 }
 
-/* ===== IMAGE REVEAL ===== */
-.vision-image {
-  display: flex;
-  justify-content: center;
+/* ===== IMAGE ===== */
+.vision-image{
+  display:flex;
+  justify-content:center;
 }
 
-.vision-image-glow {
-  position: relative;
+.vision-image-glow{
+  position:relative;
   opacity:0;
-  transform:scale(0.9);
-  transition:all 1s cubic-bezier(.16,1,.3,1);
+  transform:translateY(20px);
+  transition:all .8s ease;
 }
 
 .vision-image-glow.reveal{
   opacity:1;
-  transform:scale(1);
+  transform:none;
 }
 
-.vision-image-glow::before {
-  content: "";
-  position: absolute;
-  inset: -70px;
-  background: radial-gradient(
+.vision-image-glow::before{
+  content:"";
+  position:absolute;
+  inset:-50px;
+  background:radial-gradient(
     circle,
-    rgba(168, 85, 247, 0.6),
-    rgba(236, 72, 153, 0.35),
+    rgba(168,85,247,.45),
+    rgba(236,72,153,.25),
     transparent 70%
   );
-  filter: blur(65px);
-  z-index: 0;
+  filter:blur(60px);
+  z-index:0;
 }
 
-.vision-image-glow img {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 520px;
-  border-radius: 18px;
+.vision-image-glow img{
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:480px;
+  border-radius:18px;
 }
 
-/* ===== TEXT REVEAL ===== */
-.vision-text p {
-  font-size: 16px;
-  line-height: 1.8;
-  margin-bottom: 10px;
-  color: #cbd5f5;
-  font-style:bold;
-
+/* ===== TEXT ===== */
+.vision-text p{
+  font-size:16px;
+  line-height:1.75;
+  margin-bottom:14px;
+  color:#cbd5f5;
   opacity:0;
-  transform:translateY(24px);
-  transition:all .8s ease;
+  transform:translateY(20px);
+  transition:all .6s ease;
 }
 
 .vision-text p.reveal{
@@ -507,9 +210,18 @@ useEffect(() => {
 }
 
 /* ===== MOBILE ===== */
-@media (max-width: 900px) {
-  .vision-container {
-    grid-template-columns: 1fr;
+@media (max-width:900px){
+  .vision-container{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .vision-text p{
+    font-size:15px;
+  }
+
+  .vision-image-glow img{
+    max-width:360px;
   }
 }
       `}</style>
@@ -528,9 +240,9 @@ function IdeasSection() {
 /* ================= IDEAS SECTION ================= */
 
 .ideas-section{
-  padding:100px 6vw;
-  background:radial-gradient(circle at top, #0b1220, #020617 70%);
-  font-family:Inter,system-ui;
+  padding: clamp(60px, 8vw, 90px) 6vw;
+  background: radial-gradient(circle at top, #0b1220, #020617 70%);
+  font-family: Inter, system-ui;
   overflow:hidden;
 }
 
@@ -542,10 +254,10 @@ function IdeasSection() {
 /* ===== HEADING ===== */
 .ideas-heading{
   text-align:center;
-  margin-bottom:60px;
+  margin-bottom: clamp(28px, 5vw, 48px);
   opacity:0;
-  transform:translateY(30px);
-  transition:all .8s ease;
+  transform:translateY(24px);
+  transition:all .7s ease;
 }
 
 .ideas-heading.show{
@@ -554,49 +266,49 @@ function IdeasSection() {
 }
 
 .ideas-heading h2{
-  font-size:44px;
+  font-size: clamp(28px, 4vw, 44px);
   font-weight:900;
   background:linear-gradient(90deg,#8b5cf6,#ec4899);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
+  line-height:1.2;
 }
 
 /* ===== GRID ===== */
 .ideas-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:32px;
+  gap: clamp(20px, 3vw, 32px);
 }
 
-/* ===== CARD (LEFT → RIGHT REVEAL) ===== */
+/* ===== CARD ===== */
 .idea-card{
-  background:rgba(255,255,255,0.04);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-  border-radius:22px;
-  padding:34px 30px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-radius:20px;
+  padding: clamp(22px, 3vw, 32px);
   box-shadow:
-    0 25px 70px rgba(0,0,0,0.6),
-    inset 0 0 0 1px rgba(255,255,255,0.06);
+    0 18px 50px rgba(0,0,0,0.55),
+    inset 0 0 0 1px rgba(255,255,255,0.08);
 
-  /* REVEAL BASE */
   opacity:0;
-  transform:translateX(-60px);
+  transform:translateY(28px);
   transition:
-    opacity .7s ease,
-    transform .7s cubic-bezier(.16,1,.3,1);
+    opacity .6s ease,
+    transform .6s cubic-bezier(.16,1,.3,1);
 }
 
 .idea-card.show{
   opacity:1;
-  transform:translateX(0);
+  transform:none;
 }
 
 /* CARD TITLE */
 .idea-card h3{
-  font-size:22px;
+  font-size:20px;
   font-weight:800;
-  margin-bottom:16px;
+  margin-bottom:12px;
   background:linear-gradient(90deg,#8b5cf6,#ec4899);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
@@ -604,38 +316,37 @@ function IdeasSection() {
 
 /* CARD TEXT */
 .idea-card p{
-  font-size:16px;
-  line-height:1.8;
+  font-size:15.5px;
+  line-height:1.7;
   color:#e5e7eb;
+  margin:0;
+}
+
+/* ===== TABLET ===== */
+@media(max-width:1024px){
+  .ideas-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
 }
 
 /* ===== MOBILE ===== */
-@media(max-width:900px){
+@media(max-width:768px){
   .ideas-section{
-    padding:70px 6vw;
+    padding: 60px 5vw;
   }
 
   .ideas-grid{
     grid-template-columns:1fr;
-    gap:26px;
+    gap:22px;
   }
 
-  .ideas-heading h2{
-    font-size:32px;
-  }
-
-  /* Mobile: slide UP instead of sideways */
-  .idea-card{
-    transform:translateY(30px);
-  }
-
-  .idea-card.show{
-    transform:none;
+  .idea-card p{
+    font-size:15px;
   }
 }
     `;
 
-    const id = "ideas-section-style-left-right";
+    const id = "ideas-section-style-clean";
     if (!document.getElementById(id)) {
       const style = document.createElement("style");
       style.id = id;
@@ -643,32 +354,25 @@ function IdeasSection() {
       document.head.appendChild(style);
     }
 
-    /* ================= SCROLL REVEAL ================= */
+    /* SCROLL REVEAL */
     const section = sectionRef.current;
     const heading = section.querySelector(".ideas-heading");
     const cards = section.querySelectorAll(".idea-card");
 
     const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            heading.classList.add("show");
-
-            cards.forEach((card, i) => {
-              setTimeout(() => {
-                card.classList.add("show");
-              }, i * 180); // LEFT → RIGHT STAGGER
-            });
-
-            observer.disconnect();
-          }
-        });
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          heading.classList.add("show");
+          cards.forEach((card, i) =>
+            setTimeout(() => card.classList.add("show"), i * 150)
+          );
+          observer.disconnect();
+        }
       },
       { threshold: 0.3 }
     );
 
     observer.observe(section);
-
     return () => observer.disconnect();
   }, []);
 
@@ -676,14 +380,11 @@ function IdeasSection() {
     <section className="ideas-section" ref={sectionRef}>
       <div className="ideas-container">
 
-        {/* HEADING */}
         <div className="ideas-heading">
           <h2>The Ideas That Drive Everything We Do</h2>
         </div>
 
-        {/* CARDS */}
         <div className="ideas-grid">
-
           <div className="idea-card">
             <h3>Core Purpose</h3>
             <p>
@@ -696,20 +397,17 @@ function IdeasSection() {
             <h3>Core Values</h3>
             <p>
               Driven by transparency, responsibility, continuous learning, and
-              respect for our clients. These principles influence every
-              decision, strategy, and solution we create.
+              respect for our clients—guiding every decision we make.
             </p>
           </div>
 
           <div className="idea-card">
             <h3>Our Passion</h3>
             <p>
-              We are passionate about creating digital experiences that deliver
-              real impact—websites, marketing campaigns, and strategies designed
-              to produce meaningful results.
+              Creating digital experiences that deliver real impact through
+              thoughtful design, strategy, and execution.
             </p>
           </div>
-
         </div>
       </div>
     </section>
@@ -725,9 +423,9 @@ function WhyChooseSection() {
 /* ================= WHY CHOOSE SECTION ================= */
 
 .why-section{
-  padding:120px 6vw;
-  background:radial-gradient(circle at top, #0b1220, #020617 70%);
-  font-family:Inter,system-ui;
+  padding: clamp(64px, 8vw, 96px) 6vw;
+  background: radial-gradient(circle at top, #0b1220, #020617 70%);
+  font-family: Inter, system-ui;
   overflow:hidden;
 }
 
@@ -739,10 +437,10 @@ function WhyChooseSection() {
 /* ===== TITLE ===== */
 .why-title{
   text-align:center;
-  margin-bottom:80px;
+  margin-bottom: clamp(36px, 6vw, 64px);
   opacity:0;
-  transform:translateY(30px);
-  transition:all .8s ease;
+  transform:translateY(24px);
+  transition:.6s ease;
 }
 
 .why-title.show{
@@ -751,7 +449,7 @@ function WhyChooseSection() {
 }
 
 .why-title h2{
-  font-size:46px;
+  font-size: clamp(28px, 4vw, 46px);
   font-weight:900;
   background:linear-gradient(90deg,#8b5cf6,#ec4899);
   -webkit-background-clip:text;
@@ -762,49 +460,37 @@ function WhyChooseSection() {
 .why-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:40px;
-  justify-items:center;
+  gap: clamp(22px, 3vw, 40px);
 }
 
 /* ===== CARD ===== */
 .why-card{
-  width:360px;
-  height:430px;
   background:#ffffff;
-  border-radius:26px;
-  padding:48px 36px;
+  border-radius:24px;
+  padding: clamp(28px, 4vw, 40px);
   text-align:center;
-  box-shadow:0 30px 80px rgba(0,0,0,0.35);
+  box-shadow:0 20px 60px rgba(0,0,0,0.28);
   display:flex;
   flex-direction:column;
-  justify-content:flex-start;
-  position:relative;
+  align-items:center;
 
   opacity:0;
+  transform:translateY(30px);
   transition:
-    opacity .8s ease,
-    transform .8s cubic-bezier(.16,1,.3,1);
-}
-
-/* SLIDE DIRECTIONS */
-.slide-left{
-  transform:translateX(-80px);
-}
-
-.slide-right{
-  transform:translateX(80px);
+    opacity .6s ease,
+    transform .6s cubic-bezier(.16,1,.3,1);
 }
 
 .why-card.show{
   opacity:1;
-  transform:translateX(0);
+  transform:none;
 }
 
 /* ICON */
 .why-icon{
-  width:84px;
-  height:84px;
-  margin:0 auto 26px;
+  width:72px;
+  height:72px;
+  margin-bottom:20px;
   border-radius:50%;
   display:flex;
   align-items:center;
@@ -813,185 +499,80 @@ function WhyChooseSection() {
 }
 
 .why-icon span{
-  font-size:80px;
+  font-size:34px;
 }
 
 /* TITLE */
 .why-card h3{
-  font-size:22px;
+  font-size:20px;
   font-weight:800;
-  margin-bottom:18px;
+  margin-bottom:14px;
   color:#ff1f1f;
-}
-
-.why-card h3::after{
-  content:"";
-  display:block;
-  width:40px;
-  height:3px;
-  margin:10px auto 0;
-  background:linear-gradient(90deg,#8b5cf6,#ec4899);
-  border-radius:6px;
 }
 
 /* TEXT */
 .why-card .para{
-  font-size:16px;
-  line-height:1.8;
+  font-size:15.5px;
+  line-height:1.7;
   color:#000000;
+  margin:0;
 }
-.why-card .para{
-  letter-spacing:0.2px;
-  text-rendering:optimizeLegibility;
+.why-card::before{ content:""; position:absolute; inset:0; border-radius:26px; padding:1.5px; background:linear-gradient(135deg,#8b5cf6,#ec4899); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite:xor; mask-composite:exclude; }
+.why-card .para{ font-size:16px; 
+line-height:1.8; 
+color:#000000 !important; /* 🔥 PURE BLACK */ 
+opacity:1 !important; /* 🔥 NO FADE */ 
+visibility:visible !important; 
 }
-/* BORDER */
-.why-card::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:26px;
-  padding:1.5px;
-  background:linear-gradient(135deg,#8b5cf6,#ec4899);
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite:xor;
-  mask-composite:exclude;
+/* ===== TABLET ===== */
+@media(max-width:1024px){
+  .why-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
 }
 
-/* HOVER */
-.why-card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 45px 120px rgba(0,0,0,0.45);
-}
-
-.why-card .para{
-  font-size:16px;
-  line-height:1.8;
-
-  color:#000000 !important;   /* 🔥 PURE BLACK */
-  opacity:1 !important;       /* 🔥 NO FADE */
-  visibility:visible !important;
-}
 /* ===== MOBILE ===== */
-@media(max-width:900px){
-  .why-grid{
-    grid-template-columns:1fr;
-    gap:32px;
-  }
+@media(max-width:768px){
 
-  .why-card{
-    width:100%;
-    height:auto;
-    transform:translateY(40px);
-  }
-
-  .why-card.show{
-    transform:none;
-  }
-
-  .why-title h2{
-    font-size:32px;
-  }
-}
-
-/* ================= WHY CHOOSE – MOBILE HARD FIX ================= */
-
-@media (max-width: 768px){
-
-  /* SECTION SPACING */
   .why-section{
-    padding:70px 20px;
+    padding:60px 20px;
   }
 
-  /* TITLE */
   .why-title{
-    margin-bottom:40px;
+    margin-bottom:32px;
   }
 
-  .why-title h2{
-    font-size:28px;
-    line-height:1.2;
-  }
-
-  /* GRID → STACK */
   .why-grid{
     grid-template-columns:1fr;
-    gap:28px;
+    gap:24px;
   }
 
-  /* CARD RESET */
   .why-card{
-    width:100%;
-    height:auto;
-    padding:34px 22px;
-    transform:none !important;     /* 🔥 stops split */
-  }
-
-  /* DISABLE DESKTOP SLIDE ANIMATIONS */
-  .slide-left,
-  .slide-right{
+    padding:26px 20px;
+    opacity:1 !important;
     transform:none !important;
   }
 
-  .why-card.show{
-    transform:none !important;
-    opacity:1;
-  }
-
-  /* DISABLE HOVER ON MOBILE */
-  .why-card:hover{
-    transform:none;
-    box-shadow:0 30px 80px rgba(0,0,0,0.35);
-  }
-
-  /* ICON FIX */
   .why-icon{
-    width:64px;
-    height:64px;
-    margin-bottom:18px;
+    width:60px;
+    height:60px;
   }
 
   .why-icon span{
-    font-size:36px;
+    font-size:28px;
   }
 
-  /* HEADING */
   .why-card h3{
     font-size:18px;
-    margin-bottom:14px;
   }
 
-  /* TEXT */
   .why-card .para{
     font-size:15px;
-    line-height:1.65;
   }
 }
-
-/* ================= WHY CHOOSE – MOBILE VISIBILITY FIX ================= */
-
-@media (max-width: 768px){
-
-  /* FORCE SHOW EVERYTHING */
-  .why-title,
-  .why-card{
-    opacity:1 !important;
-    transform:none !important;
-    visibility:visible !important;
-  }
-
-  /* STOP OBSERVER-DEPENDENT STATES */
-  .slide-left,
-  .slide-right{
-    transform:none !important;
-  }
-}
-
-
     `;
 
-    const id = "why-choose-slide-style";
+    const id = "why-choose-clean-style";
     if (!document.getElementById(id)) {
       const style = document.createElement("style");
       style.id = id;
@@ -999,28 +580,21 @@ function WhyChooseSection() {
       document.head.appendChild(style);
     }
 
-    /* ===== SCROLL REVEAL ===== */
     const section = sectionRef.current;
     const title = section.querySelector(".why-title");
     const cards = section.querySelectorAll(".why-card");
 
     const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            title.classList.add("show");
-
-            cards.forEach((card, i) => {
-              setTimeout(() => {
-                card.classList.add("show");
-              }, i * 140);
-            });
-
-            observer.disconnect();
-          }
-        });
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          title.classList.add("show");
+          cards.forEach((card, i) =>
+            setTimeout(() => card.classList.add("show"), i * 120)
+          );
+          observer.disconnect();
+        }
       },
-      { threshold: 0.3 }
+      { threshold: 0.25 }
     );
 
     observer.observe(section);
@@ -1037,73 +611,61 @@ function WhyChooseSection() {
 
         <div className="why-grid">
 
-  <div className="why-card slide-left">
-    <div className="why-icon"><span>🖥️</span></div>
-    <h3>End-to-End Website Development</h3>
-    <p className="para">
-      We design and develop high-performance websites that are fast, responsive,
-      and built to convert. From UI design to backend functionality, every site
-      is crafted to support your business goals.
-    </p>
-  </div>
+          <div className="why-card">
+            <div className="why-icon">🖥️</div>
+            <h3>End-to-End Website Development</h3>
+            <p className="para">
+              We build fast, responsive websites designed to convert visitors
+              into customers and support your business goals.
+            </p>
+          </div>
 
-  <div className="why-card slide-right">
-    <div className="why-icon"><span>📊</span></div>
-    <h3>SEO Strategies That Drive Growth</h3>
-    <p className="para">
-      Our SEO approach focuses on visibility that matters. We help your business
-      rank for high-intent keywords, attract qualified traffic, and generate
-      consistent enquiries.
-    </p>
-  </div>
+          <div className="why-card">
+            <div className="why-icon">📊</div>
+            <h3>SEO Strategies That Drive Growth</h3>
+            <p className="para">
+              High-intent SEO strategies that improve visibility, traffic, and
+              qualified enquiries.
+            </p>
+          </div>
 
-  <div className="why-card slide-left">
-    <div className="why-icon"><span>🚀</span></div>
-    <h3>High-ROI Google Ads & PPC</h3>
-    <p className="para">
-      We create and manage targeted Google Ads campaigns that maximise ROI.
-      From keyword research to conversion tracking, our paid strategies deliver
-      faster and measurable results.
-    </p>
-  </div>
+          <div className="why-card">
+            <div className="why-icon">🚀</div>
+            <h3>High-ROI Google Ads & PPC</h3>
+            <p className="para">
+              Targeted ad campaigns optimised for conversions and measurable ROI.
+            </p>
+          </div>
 
-  <div className="why-card slide-right">
-    <div className="why-icon"><span>🛍️</span></div>
-    <h3>Scalable E-Commerce Solutions</h3>
-    <p className="para">
-      We build secure, scalable e-commerce platforms with smooth user experiences,
-      optimised checkout flows, and mobile-first design to increase online sales.
-    </p>
-  </div>
+          <div className="why-card">
+            <div className="why-icon">🛍️</div>
+            <h3>Scalable E-Commerce Solutions</h3>
+            <p className="para">
+              Secure, mobile-first e-commerce platforms built to scale.
+            </p>
+          </div>
 
-  <div className="why-card slide-left">
-    <div className="why-icon"><span>📢</span></div>
-    <h3>Result-Focused Social Media Marketing</h3>
-    <p className="para">
-      Our social media strategies go beyond likes and followers. We create
-      engaging campaigns that strengthen brand presence and connect with the
-      right audience.
-    </p>
-  </div>
+          <div className="why-card">
+            <div className="why-icon">📢</div>
+            <h3>Result-Focused Social Media</h3>
+            <p className="para">
+              Campaigns that build brand trust and real audience engagement.
+            </p>
+          </div>
 
-  <div className="why-card slide-right">
-    <div className="why-icon"><span>🔍</span></div>
-    <h3>Transparent Process & Ongoing Support</h3>
-    <p className="para">
-      We believe in complete transparency. With clear communication, regular
-      updates, and ongoing support, you always know what we’re doing and how
-      your business is growing.
-    </p>
-  </div>
+          <div className="why-card">
+            <div className="why-icon">🔍</div>
+            <h3>Transparent Process & Support</h3>
+            <p className="para">
+              Clear communication, reporting, and long-term partnership.
+            </p>
+          </div>
 
-</div>
-
+        </div>
       </div>
     </section>
   );
 }
-
-
 
 
 function TeamSection() {
@@ -1163,7 +725,7 @@ function TeamSection() {
 /* ===== CARD ===== */
 .team-card{
   width:380px;
-  background:#0a0f1d;
+   background:#ffffff !important;
   border-radius:22px;
   overflow:hidden;
   box-shadow:0 25px 70px rgba(0,0,0,0.6);
@@ -1191,6 +753,7 @@ function TeamSection() {
   width:100%;
   height:300px;
   overflow:hidden;
+  background:#ffffff !important;
 }
 
 .team-image img{
@@ -1208,15 +771,19 @@ function TeamSection() {
 .team-role{
   font-size:13px;
   letter-spacing:2px;
-  color:#9ca3af;
+  color:#64748b !important;
   margin-bottom:6px;
 }
 
 .team-name{
   font-size:20px;
   font-weight:800;
-  color:#ffffff;
+   color:#020617 !important;
 }
+ .team-card from-left{
+ background: #ffffff;
+ 
+ }
 
 /* ================= TABLET ================= */
 
@@ -1226,176 +793,76 @@ function TeamSection() {
   }
 }
 
-/* ================= MOBILE (2-2-2 GRID) ================= */
-
-@media (max-width:768px){
-
-  .team-section{
-    padding:90px 5vw;
-  }
-
-  .team-title h2{
-    font-size:32px;
-  }
-
-  .team-title p{
-    font-size:15px;
-  }
-
-  .team-grid{
-    display:grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
-    gap:24px;
-  }
-
-  .team-card{
-    width:100%;
-  }
-
-  .team-image{
-    height:220px;
-  }
-
-  .team-image img{
-    object-fit:cover;
-  }
-}
-
-/* ================= SMALL MOBILE ================= */
-
-@media (max-width:420px){
-
-  .team-grid{
-    grid-template-columns: 1fr; /* 1 card per row */
-  }
-
-  .team-image{
-    height:240px;
-  }
-}
-
-/* ================= USER FRIENDLY MOBILE FIX ================= */
-
+/* ================= FORCE CLEAN MOBILE TEAM CARD ================= */
 @media (max-width: 768px){
 
+  /* Kill old layouts completely */
   .team-grid{
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap:16px;
+    display:flex !important;
+    flex-direction:column !important;
+    
+    gap:20px !important;
   }
 
   .team-card{
-    width:100%;
-    border-radius:18px;
-    padding:16px 12px 18px;
-    background:#0a0f1d;
-    box-shadow:0 15px 40px rgba(0,0,0,0.5);
+    width:100% !important;
+    height:auto !important;
+    background:#ffffff !important;
+    border-radius:20px !important;
+    padding:24px 16px 22px !important;
+    box-shadow:0 14px 36px rgba(0,0,0,0.18) !important;
     transform:none !important;
+    opacity:1 !important;
   }
 
-  .team-image{
-    width:100%;
-    height:auto;
-    display:flex;
-    justify-content:center;
-    margin-bottom:12px;
-  }
-
-  .team-image img{
-    width:90px;
-    height:90px;
-    border-radius:50%;
-    object-fit:cover;
-    background:#111;
-  }
-
-  .team-info{
-    padding:0;
-    text-align:center;
-  }
-
-  .team-role{
-    font-size:11px;
-    letter-spacing:1.2px;
-    color:#9ca3af;
-    margin-bottom:4px;
-  }
-
-  .team-name{
-    font-size:15px;
-    font-weight:700;
-    line-height:1.2;
-  }
-}
-
-/* VERY SMALL MOBILE */
-@media (max-width:420px){
-  .team-grid{
-    grid-template-columns:1fr;
-  }
-}
-/* ================= MOBILE SINGLE CARD VIEW ================= */
-
-@media (max-width: 768px){
-
-  .team-grid{
-    display:flex;
-    flex-direction:column;
-    gap:20px;
-  }
-
-  .team-card{
-    width:100%;
-    max-width:100%;
-    padding:18px 16px 22px;
-    border-radius:20px;
-    background:#0a0f1d;
-    box-shadow:0 16px 45px rgba(0,0,0,0.55);
+  /* Remove old hover + animations */
+  .team-card:hover,
+  .team-card.from-left,
+  .team-card.from-right{
     transform:none !important;
   }
 
   /* IMAGE */
   .team-image{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    margin-bottom:14px;
+    height:auto !important;
+    display:flex !important;
+    justify-content:center !important;
+    margin-bottom:14px !important;
+    background:none !important;
   }
 
   .team-image img{
-    width:96px;
-    height:96px;
-    border-radius:50%;
-    object-fit:cover;
-    background:#111;
+    width:110px !important;
+    height:110px !important;
+    border-radius:50% !important;
+    object-fit:cover !important;
+    background:#ffffff !important;
+    border:4px solid #ffffff !important;
+    box-shadow:0 8px 22px rgba(0,0,0,0.2) !important;
   }
 
   /* TEXT */
   .team-info{
-    padding:0;
-    text-align:center;
-  }
-
-  .team-role{
-    font-size:12px;
-    letter-spacing:1.4px;
-    color:#9ca3af;
-    margin-bottom:6px;
+    padding:0 !important;
+    text-align:center !important;
   }
 
   .team-name{
-    font-size:16px;
-    font-weight:800;
-    line-height:1.3;
+    font-size:18px !important;
+    font-weight:800 !important;
+    color:#020617 !important;
+    margin-bottom:4px !important;
   }
 
-  /* DISABLE SLIDE ANIMATION ON MOBILE */
-  .team-card.from-left,
-  .team-card.from-right,
-  .team-card:hover{
-    transform:none !important;
+  .team-role{
+    font-size:14px !important;
+    font-weight:500 !important;
+    color:#6b7280 !important;
+    letter-spacing:0.4px !important;
   }
 }
+
+
 
 `;
 
@@ -1499,21 +966,17 @@ function TeamSection() {
 }
 
 
-
-
-
-
 function MeetTheTeam() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
     const css = `
-/* ================= MISSION SECTION ================= */
+/* ================= MEET THE TEAM ================= */
 
 .mission-section{
-  padding:120px 6vw;
+  padding: clamp(64px, 8vw, 96px) 6vw;
   background: radial-gradient(circle at top, #0b1220, #020617 70%);
-  font-family:Inter,system-ui;
+  font-family: Inter, system-ui;
   overflow:hidden;
 }
 
@@ -1525,12 +988,11 @@ function MeetTheTeam() {
 /* ===== TITLE ===== */
 .mission-heading{
   text-align:center;
-  margin-bottom:80px;
+  margin-bottom: clamp(36px, 6vw, 64px);
   line-height:1.2;
-
   opacity:0;
-  transform:translateY(30px);
-  transition:all .8s ease;
+  transform:translateY(24px);
+  transition:.6s ease;
 }
 
 .mission-section.show .mission-heading{
@@ -1540,14 +1002,14 @@ function MeetTheTeam() {
 
 .mission-heading .white{
   display:block;
-  font-size:42px;
+  font-size: clamp(26px, 4vw, 40px);
   font-weight:800;
   color:#ffffff;
 }
 
 .mission-heading .gradient{
   display:block;
-  font-size:54px;
+  font-size: clamp(30px, 5vw, 52px);
   font-weight:900;
   background:linear-gradient(90deg,#8b5cf6,#ec4899);
   -webkit-background-clip:text;
@@ -1556,119 +1018,103 @@ function MeetTheTeam() {
 
 .mission-heading::after{
   content:"";
-  width:120px;
-  height:4px;
+  width:100px;
+  height:3px;
   background:#ffffff;
   display:block;
-  margin:22px auto 0;
-  opacity:0.7;
+  margin:18px auto 0;
+  opacity:.7;
 }
 
 /* ===== GRID ===== */
 .mission-grid{
   display:grid;
   grid-template-columns:1.2fr 1fr;
-  gap:70px;
+  gap: clamp(32px, 6vw, 64px);
   align-items:center;
 }
 
-/* ===== TEXT WRAP ===== */
-.mission-text{
-  opacity:1;
-}
-
-/* TEXT ITEMS (STAGGER) */
-.mission-text p,
-.mission-points li{
-  opacity:0;
-  transform:translateY(20px);
-  transition:
-    opacity .7s ease,
-    transform .7s cubic-bezier(.16,1,.3,1);
-}
-
-.mission-section.show .mission-text p.show,
-.mission-section.show .mission-points li.show{
-  opacity:1;
-  transform:none;
-}
-
-/* TEXT STYLES */
+/* ===== TEXT ===== */
 .mission-text p{
-  font-size:18px;
-  line-height:1.9;
+  font-size:17px;
+  line-height:1.8;
   color:#f1f1f1;
-  margin-bottom:22px;
+  margin-bottom:18px;
   max-width:640px;
+
+  opacity:0;
+  transform:translateY(18px);
+  transition:.6s ease;
 }
 
 .mission-points{
-  margin-top:24px;
+  margin-top:18px;
   padding-left:18px;
 }
 
 .mission-points li{
-  margin-bottom:14px;
-  font-size:17px;
+  font-size:16px;
+  margin-bottom:12px;
   color:#d1d5db;
+
+  opacity:0;
+  transform:translateY(18px);
+  transition:.6s ease;
 }
 
-/* ===== IMAGE (UNCHANGED) ===== */
+.mission-section.show .mission-text p,
+.mission-section.show .mission-points li{
+  opacity:1;
+  transform:none;
+}
+
+/* ===== IMAGE ===== */
 .mission-image{
-  position:relative;
   display:flex;
   justify-content:center;
-  align-items:center;
 }
 
 .mission-image img{
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 520px;
-  border-radius: 58px;
+  width:100%;
+  max-width:480px;
+  border-radius:32px;
   box-shadow:
-    0 40px 120px rgba(139,92,246,0.35),
-    0 20px 60px rgba(236,72,153,0.25);
-}
-
-.mission-image::before{
-  content:"";
-  position:absolute;
-  inset:-60px;
-  background:
-    radial-gradient(
-      circle,
-      rgba(139,92,246,0.45),
-      rgba(236,72,153,0.25),
-      transparent 70%
-    );
-  filter:blur(50px);
-  z-index:1;
+    0 28px 90px rgba(139,92,246,.35),
+    0 14px 40px rgba(236,72,153,.25);
 }
 
 /* ===== MOBILE ===== */
 @media(max-width:900px){
-  .mission-grid{
-    grid-template-columns:1fr;
-    gap:40px;
+
+  .mission-section{
+    padding:60px 20px;
   }
 
-  .mission-heading .white{font-size:28px;}
-  .mission-heading .gradient{font-size:34px;}
+  .mission-grid{
+    grid-template-columns:1fr;
+    gap:32px;
+  }
 
-  .mission-text p{
+  .mission-text p,
+  .mission-points li{
     font-size:15px;
-    line-height:1.7;
+    line-height:1.65;
+    opacity:1 !important;
+    transform:none !important;
   }
 
   .mission-image img{
-    max-width:420px;
+    max-width:360px;
+  }
+
+  .mission-heading{
+    opacity:1 !important;
+    transform:none !important;
   }
 }
     `;
 
-    const id = "mission-text-animation-style";
+    const id = "meet-team-clean-style";
     if (!document.getElementById(id)) {
       const style = document.createElement("style");
       style.id = id;
@@ -1676,7 +1122,6 @@ function MeetTheTeam() {
       document.head.appendChild(style);
     }
 
-    /* ===== SCROLL REVEAL ===== */
     const section = sectionRef.current;
     const textItems = section.querySelectorAll(
       ".mission-text p, .mission-points li"
@@ -1686,17 +1131,13 @@ function MeetTheTeam() {
       ([entry]) => {
         if (entry.isIntersecting) {
           section.classList.add("show");
-
-          textItems.forEach((el, i) => {
-            setTimeout(() => {
-              el.classList.add("show");
-            }, i * 160);
-          });
-
+          textItems.forEach((el, i) =>
+            setTimeout(() => el.classList.add("show"), i * 140)
+          );
           observer.disconnect();
         }
       },
-      { threshold: 0.35 }
+      { threshold: 0.3 }
     );
 
     observer.observe(section);
@@ -1707,7 +1148,6 @@ function MeetTheTeam() {
     <section className="mission-section" ref={sectionRef}>
       <div className="mission-container">
 
-        {/* TITLE */}
         <h2 className="mission-heading">
           <span className="white">Meet the Team</span>
           <span className="gradient">The People Behind the Pixels</span>
@@ -1715,7 +1155,6 @@ function MeetTheTeam() {
 
         <div className="mission-grid">
 
-          {/* TEXT */}
           <div className="mission-text">
             <p>
               At SHA Infotechnology, our strength lies in the people behind the work.
@@ -1736,11 +1175,10 @@ function MeetTheTeam() {
             </ul>
           </div>
 
-          {/* IMAGE */}
           <div className="mission-image">
             <img
               src="/images/meetourteam.png"
-              alt="SEO & Digital Growth Illustration"
+              alt="Meet Our Team"
               draggable="false"
             />
           </div>
@@ -1761,54 +1199,34 @@ function AboutMission() {
 /* ================= ABOUT MISSION ================= */
 
 .aboutmission-section{
-  padding:100px 8vw;
+  padding: clamp(64px, 8vw, 96px) 6vw;
   background:radial-gradient(circle at top,#0b1220,#020617 70%);
   font-family:Inter,system-ui,sans-serif;
   color:#e5e7eb;
   overflow:hidden;
 }
 
-/* ===== HEADER ===== */
 .aboutmission-header{
   text-align:center;
   max-width:900px;
-  margin:0 auto 70px;
+  margin:0 auto clamp(36px, 6vw, 56px);
 }
 
-/* TITLE (SCALE + SHIMMER) */
+/* ===== TITLE ===== */
 .aboutmission-title{
-  font-size:clamp(34px,4vw,56px);
+  font-size:clamp(28px,4vw,52px);
   font-weight:800;
   line-height:1.2;
-  margin-bottom:20px;
+  margin-bottom:14px;
 
   opacity:0;
-  transform:scale(.94);
-  transition:all .9s ease;
+  transform:translateY(20px);
+  transition:.6s ease;
 }
 
 .aboutmission-section.show .aboutmission-title{
   opacity:1;
-  transform:scale(1);
-}
-
-.aboutmission-title-gradient{
-  display:block;
-  background-size:200% auto;
-  background-image:linear-gradient(
-    90deg,
-    #8b5cf6,
-    #ec4899,
-    #8b5cf6
-  );
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  animation:shimmer 3s linear infinite;
-}
-
-@keyframes shimmer{
-  0%{background-position:0% center}
-  100%{background-position:200% center}
+  transform:none;
 }
 
 .aboutmission-title-white{
@@ -1816,18 +1234,28 @@ function AboutMission() {
   color:#ffffff;
 }
 
-/* DIVIDER (DRAW FROM CENTER) */
+.aboutmission-title-gradient{
+  display:block;
+  background:linear-gradient(90deg,#8b5cf6,#ec4899);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* Divider */
 .aboutmission-divider{
-  width:0;
+  width:70px;
   height:3px;
   background:#8b5cf6;
-  margin:22px auto 0;
+  margin:18px auto 0;
   border-radius:2px;
-  transition:width .8s ease .3s;
+  opacity:0;
+  transform:scaleX(0);
+  transition:.6s ease;
 }
 
 .aboutmission-section.show .aboutmission-divider{
-  width:90px;
+  opacity:1;
+  transform:scaleX(1);
 }
 
 /* ===== CONTENT GRID ===== */
@@ -1836,38 +1264,35 @@ function AboutMission() {
   margin:auto;
   display:grid;
   grid-template-columns:1.1fr 1fr;
-  gap:60px;
+  gap: clamp(32px, 6vw, 56px);
   align-items:center;
 }
 
-/* ===== TEXT (CLIP REVEAL – UNIQUE) ===== */
+/* ===== TEXT ===== */
 .aboutmission-text p{
   font-size:16px;
-  line-height:1.8;
-  margin-bottom:18px;
+  line-height:1.75;
+  margin-bottom:16px;
   color:#cbd5f5;
 
   opacity:0;
-  clip-path:inset(0 0 100% 0);
-  transition:
-    opacity .6s ease,
-    clip-path .8s cubic-bezier(.16,1,.3,1);
+  transform:translateY(16px);
+  transition:.6s ease;
 }
 
 .aboutmission-text p.show{
   opacity:1;
-  clip-path:inset(0 0 0 0);
+  transform:none;
 }
 
-/* ===== IMAGE (FLOAT + GLOW PULSE) ===== */
+/* ===== IMAGE ===== */
 .aboutmission-image{
   display:flex;
   justify-content:center;
-  align-items:center;
 
   opacity:0;
-  transform:translateY(30px);
-  transition:all 1s ease .4s;
+  transform:translateY(20px);
+  transition:.7s ease;
 }
 
 .aboutmission-section.show .aboutmission-image{
@@ -1877,60 +1302,76 @@ function AboutMission() {
 
 .aboutmission-image-glow{
   position:relative;
-  animation:float 6s ease-in-out infinite;
-}
-
-@keyframes float{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-14px)}
-  100%{transform:translateY(0)}
 }
 
 .aboutmission-image-glow::before{
   content:"";
   position:absolute;
-  inset:-70px;
+  inset:-40px;
   background:radial-gradient(
     circle,
-    rgba(168,85,247,0.6),
-    rgba(236,72,153,0.35),
+    rgba(168,85,247,.45),
+    rgba(236,72,153,.25),
     transparent 70%
   );
-  filter:blur(65px);
+  filter:blur(40px);
   z-index:0;
-  animation:glowPulse 3.5s ease-in-out infinite;
-}
-
-@keyframes glowPulse{
-  0%,100%{opacity:.6}
-  50%{opacity:1}
 }
 
 .aboutmission-image-glow img{
   position:relative;
   z-index:2;
   width:100%;
-  max-width:520px;
-  border-radius:10px;
+  max-width:480px;
+  border-radius:14px;
 }
 
 /* ===== MOBILE ===== */
 @media(max-width:900px){
+
+  .aboutmission-section{
+    padding:60px 20px;
+  }
+
   .aboutmission-container{
     grid-template-columns:1fr;
+    gap:28px;
   }
 
   .aboutmission-text{
     text-align:center;
   }
 
+  .aboutmission-text p{
+    font-size:15px;
+    line-height:1.65;
+    opacity:1 !important;
+    transform:none !important;
+  }
+
+  .aboutmission-title{
+    opacity:1 !important;
+    transform:none !important;
+  }
+
+  .aboutmission-divider{
+    opacity:1 !important;
+    transform:scaleX(1) !important;
+  }
+
   .aboutmission-image{
-    margin-top:40px;
+    opacity:1 !important;
+    transform:none !important;
+  }
+
+  .aboutmission-image-glow::before{
+    inset:-24px;
+    filter:blur(28px);
   }
 }
     `;
 
-    const id = "aboutmission-unique-animation";
+    const id = "aboutmission-clean-style";
     if (!document.getElementById(id)) {
       const style = document.createElement("style");
       style.id = id;
@@ -1938,7 +1379,6 @@ function AboutMission() {
       document.head.appendChild(style);
     }
 
-    /* ===== SCROLL REVEAL ===== */
     const section = sectionRef.current;
     const textLines = section.querySelectorAll(".aboutmission-text p");
 
@@ -1946,17 +1386,13 @@ function AboutMission() {
       ([entry]) => {
         if (entry.isIntersecting) {
           section.classList.add("show");
-
-          textLines.forEach((p, i) => {
-            setTimeout(() => {
-              p.classList.add("show");
-            }, i * 180);
-          });
-
+          textLines.forEach((p, i) =>
+            setTimeout(() => p.classList.add("show"), i * 140)
+          );
           observer.disconnect();
         }
       },
-      { threshold: 0.35 }
+      { threshold: 0.3 }
     );
 
     observer.observe(section);
@@ -1965,7 +1401,6 @@ function AboutMission() {
 
   return (
     <section className="aboutmission-section" ref={sectionRef}>
-      {/* HEADER */}
       <div className="aboutmission-header">
         <h2 className="aboutmission-title">
           <span className="aboutmission-title-white">Our Mission</span>
@@ -1976,7 +1411,6 @@ function AboutMission() {
         <div className="aboutmission-divider"></div>
       </div>
 
-      {/* CONTENT */}
       <div className="aboutmission-container">
         <div className="aboutmission-text">
           <p>
@@ -2000,7 +1434,7 @@ function AboutMission() {
 
         <div className="aboutmission-image">
           <div className="aboutmission-image-glow">
-            <img src="/images/mission.png" alt="SEO Marketing" />
+            <img src="/images/mission.png" alt="Our Mission" />
           </div>
         </div>
       </div>
@@ -2009,176 +1443,128 @@ function AboutMission() {
 }
 
 
-
-
 function HomeHerohead() {
   useEffect(() => {
     const css = `
-:root{
-  --bg-dark:#020617;
-  --bg-dark-2:#0b1220;
-  --violet:#8b5cf6;
-  --pink:#ec4899;
-  --gradient:linear-gradient(90deg,#8b5cf6,#ec4899);
-}
+      :root{
+        --bg-dark:#020617;
+        --bg-dark-2:#0b1220;
+      }
 
-*{ box-sizing:border-box; }
-body{ margin:0; padding:0; }
+      *{
+        box-sizing:border-box;
+      }
 
-/* ================= HERO ================= */
+      html, body{
+        margin:0;
+        padding:0;
+        background:#020617;
+        overflow-x:hidden; /* 🔥 IMPORTANT */
+      }
 
-.home-hero{
-  min-height:100vh;
-  padding:40px 8vw 60px;
-  background:radial-gradient(circle at top, var(--bg-dark-2), var(--bg-dark) 70%);
-  display:grid;
-  grid-template-columns:1fr 1.1fr;
-  align-items:center;
-  gap:60px;
-  font-family:Inter,system-ui,sans-serif;
-  overflow:hidden;
-}
+      /* ================= HERO ================= */
+      .home-hero{
+        position:relative;
+        min-height:100vh;
+        padding:40px 8vw 60px;
+        background:radial-gradient(
+          circle at top,
+          var(--bg-dark-2),
+          var(--bg-dark) 70%
+        );
+        display:grid;
+        grid-template-columns:1fr 1.1fr;
+        align-items:center;
+        gap:60px;
+        font-family:Inter,system-ui,sans-serif;
+        overflow:hidden;
+      }
 
-/* ================= IMAGE ================= */
+      /* ================= IMAGE ================= */
+      .hero-image-wrap{
+        display:flex;
+        justify-content:center;
+        opacity:0;
+        transform:translateY(40px);
+        animation:heroImageIn 1.2s ease forwards;
+      }
 
-.hero-image-wrap{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  pointer-events:none;
+      @keyframes heroImageIn{
+        to{
+          opacity:1;
+          transform:none;
+        }
+      }
 
-  opacity:0;
-  transform:translateY(40px) scale(.96);
-  animation:heroImageIn 1.2s cubic-bezier(.16,1,.3,1) forwards;
-}
+      .hero-image{
+        max-width:460px;
+        width:100%;
+        filter:drop-shadow(0 50px 120px rgba(139,92,246,.4));
+      }
 
-@keyframes heroImageIn{
-  to{
-    opacity:1;
-    transform:none;
-  }
-}
+      /* ================= TEXT ================= */
+      .hero-text{
+        max-width:560px;
+      }
 
-.hero-image{
-  width:100%;
-  max-width:460px;
-  height:auto;
-  filter:drop-shadow(0 50px 120px rgba(139,92,246,0.4));
-  animation:floatHero 6s ease-in-out infinite;
-}
+      .hero-text small{
+        color:#c7d2fe;
+        font-weight:700;
+        display:block;
+        margin-bottom:20px;
+      }
 
-@keyframes floatHero{
-  0%{ transform:translateY(0); }
-  50%{ transform:translateY(-16px); }
-  100%{ transform:translateY(0); }
-}
+      .gradient-text{
+        background:linear-gradient(90deg,#a78bfa,#ec4899);
+        -webkit-background-clip:text;
+        -webkit-text-fill-color:transparent;
+      }
 
-/* ================= TEXT ================= */
+      .hero-text h1{
+        font-size:clamp(48px,6vw,80px);
+        color:#fff;
+        margin-bottom:24px;
+      }
 
-.hero-text{
-  pointer-events:none;
-  max-width:560px;
-}
+      .hero-text p{
+        color:#e5e7eb;
+        line-height:1.8;
+        margin-bottom:20px;
+      }
 
-/* SMALL TEXT */
-.hero-text small{
-  font-size:20px;
-  letter-spacing:0.1em;
-  color:#c7d2fe;
-  font-weight:700;
-  margin-bottom:20px;
-  display:block;
+      /* ================= 🔥 MOBILE HARD RESET ================= */
+      @media (max-width:900px){
 
-  opacity:0;
-  transform:translateY(20px);
-  animation:fadeUp .8s ease .3s forwards;
-}
+        /* REMOVE ALL GRADIENT BLEEDS */
+        html, body{
+          background:#020617 !important;
+        }
 
-/* TITLE */
-.hero-text h1{
-  font-size:clamp(52px,6.5vw,80px);
-  line-height:1.1;
-  margin:0 0 30px;
-  color:#ffffff;
-  font-weight:900;
+        *::before,
+        *::after{
+          display:none !important;
+          content:none !important;
+        }
 
-  overflow:hidden;
-}
+        svg{
+          display:none !important;
+        }
 
-.hero-text h1 span,
-.hero-text h1 br{
-  display:block;
-}
+        .home-hero{
+          grid-template-columns:1fr;
+          padding:80px 6vw;
+          text-align:center;
 
-.hero-text h1{
-  opacity:0;
-  transform:translateY(30px);
-  animation:fadeUp 1s cubic-bezier(.16,1,.3,1) .5s forwards;
-}
+          /* FORCE SOLID BACKGROUND */
+          background:#020617 !important;
+          box-shadow:none !important;
+          border:none !important;
+        }
 
-/* GRADIENT */
-.gradient-text{
-  background:linear-gradient(90deg,#a78bfa,#ec4899);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  font-weight:900;
-}
-
-/* PARAGRAPHS */
-.hero-text p{
-  max-width:560px;
-  font-size:18px;
-  line-height:1.8;
-  color:#e5e7eb;
-  margin-bottom:24px;
-
-  opacity:0;
-  transform:translateY(20px);
-}
-
-.hero-text p:nth-of-type(1){
-  animation:fadeUp .8s ease .8s forwards;
-}
-
-.hero-text p:nth-of-type(2){
-  animation:fadeUp .8s ease 1s forwards;
-}
-
-/* TAGS (if added later) */
-.hero-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:14px;
-}
-
-/* COMMON */
-@keyframes fadeUp{
-  to{
-    opacity:1;
-    transform:none;
-  }
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:900px){
-  .home-hero{
-    grid-template-columns:1fr;
-    padding:80px 6vw;
-    text-align:center;
-  }
-
-  .hero-image{
-    max-width:420px;
-    margin-bottom:40px;
-  }
-
-  .hero-text p{
-    margin-left:auto;
-    margin-right:auto;
-    font-size:14px;
-  }
-}
+        .hero-image{
+          margin-bottom:40px;
+        }
+      }
     `;
 
     const style = document.createElement("style");
@@ -2190,18 +1576,14 @@ body{ margin:0; padding:0; }
 
   return (
     <section className="home-hero">
-
-      {/* LEFT IMAGE */}
       <div className="hero-image-wrap">
         <img
           src="/images/about3d.png"
-          alt="Digital Marketing Illustration"
+          alt="Illustration"
           className="hero-image"
-          draggable="false"
         />
       </div>
 
-      {/* RIGHT TEXT */}
       <div className="hero-text">
         <small>
           Your <span className="gradient-text">Success Story</span>
@@ -2212,204 +1594,20 @@ body{ margin:0; padding:0; }
         </h1>
 
         <p>
-          <strong>SHA Infotechnology</strong> is a full-service digital marketing
-          and technology company focused on helping businesses build a strong
-          online presence and grow with confidence.
+          <strong>SHA Infotechnology</strong> helps businesses build strong
+          online presence with real, measurable growth.
         </p>
 
         <p>
-          From SEO and paid advertising to social media marketing and smart
-          website development, we craft digital strategies that attract the
-          right audience and turn visitors into real customers. Our goal is
-          simple: deliver solutions that work in the real world and drive
-          measurable results.
+          SEO, Ads, Social Media, and Smart Web Development — all under
+          one roof.
         </p>
       </div>
-
     </section>
   );
 }
 
 
-
-
-
-// function HomeHerohead() {
-//   useEffect(() => {
-//     const css = `
-//       :root{
-//         --bg-dark:#020617;
-//         --bg-dark-2:#0b1220;
-//         --violet:#8b5cf6;
-//         --pink:#ec4899;
-//         --muted:#9ca3af;
-//         --gradient:linear-gradient(90deg,#8b5cf6,#ec4899);
-//       }
-
-//       *{
-//         box-sizing:border-box;
-//       }
-// body{
-//   margin:0;
-//   padding:0;
-// }
-//       .home-hero{
-//         min-height:100vh;
-//   padding:40px 8vw 60px;
-//         background:radial-gradient(circle at top, var(--bg-dark-2), var(--bg-dark) 70%);
-//         display:grid;
-//         grid-template-columns:1fr 1.1fr; /* IMAGE LEFT, TEXT RIGHT */
-//         align-items:center;
-//         gap:60px;
-//         font-family:Inter,system-ui,sans-serif;
-//         overflow:hidden;
-//       }
-
-//       /* IMAGE (LEFT) */
-//       .hero-image-wrap{
-//         display:flex;
-//         align-items:center;
-//         justify-content:center;
-//         pointer-events:none;
-//       }
-
-//       .hero-image{
-//   width:100%;
-//   max-width:460px;   /* ⬅ reduced size */
-//   height:auto;
-//   filter:drop-shadow(0 50px 120px rgba(139,92,246,0.4));
-// }
-
-
-//       /* TEXT (RIGHT) */
-//       .hero-text{
-//   pointer-events:none;
-//   max-width:560px;
-// }
-
-//   .hero-text small{
-//   font-size:20px;        /* ⬅ BIGGER */
-//   letter-spacing:0.1em;
-//   color:#c7d2fe;
-//   font-weight:700;
-//   margin-bottom:20px;
-// }
-
-
-
-//  .hero-text h1{
-//   font-size:clamp(52px,6.5vw,80px);  /* ⬅ MUCH BIGGER */
-//   line-height:1.1;
-//   margin:0 0 30px;
-//   color:#ffffff;
-//   font-weight:900;
-// }
-
-
-
-//   .gradient-text{
-//   background:linear-gradient(90deg,#a78bfa,#ec4899);
-//   -webkit-background-clip:text;
-//   -webkit-text-fill-color:transparent;
-//   font-weight:900;
-// }
-
-
-
-//    .hero-text p{
-//   max-width:560px;
-//   font-size:18px;        /* ⬅ BIGGER */
-//   line-height:1.8;
-//   color:#e5e7eb;
-//   margin-bottom:24px;
-// }
-
-
-
-//       .hero-tags{
-//         display:flex;
-//         flex-wrap:wrap;
-//         gap:14px;
-//       }
-
-//       .hero-tags span{
-//         padding:10px 16px;
-//         border-radius:14px;
-//         background:rgba(139,92,246,0.12);
-//         color:#e5e7eb;
-//         font-size:14px;
-//         border:1px solid rgba(139,92,246,0.25);
-//       }
-
-//       /* MOBILE */
-//       @media(max-width:900px){
-//         .home-hero{
-//           grid-template-columns:1fr;
-//           padding:80px 6vw;
-//           text-align:center;
-//         }
-
-//         .hero-image{
-//           max-width:420px;
-//           margin-bottom:40px;
-//         }
-
-//         .hero-text p{
-//           margin-left:auto;
-//           margin-right:auto;
-//           font-size:14px;
-//         }
-
-//         .hero-tags{
-//           justify-content:center;
-//         }
-//       }
-//     `;
-
-//     const style = document.createElement("style");
-//     style.innerHTML = css;
-//     document.head.appendChild(style);
-
-//     return () => document.head.removeChild(style);
-//   }, []);
-
-//   return (
-//     <section className="home-hero">
-
-//       {/* LEFT IMAGE */}
-//       <div className="hero-image-wrap">
-//         <img
-//           src="/images/about3d.png"
-//           alt="Digital Marketing Illustration"
-//           className="hero-image"
-//           draggable="false"
-//         />
-//       </div>
-
-//       {/* RIGHT TEXT */}
-//       <div className="hero-text">
-//   <small>
-//     Your <span className="gradient-text">Success Story</span>
-//   </small>
-
-//   <h1>
-//     Starts <br />
-//     Now!
-//   </h1>
-
-//   <p>
-//     <strong>SHA Infotechnology</strong> is a full-service digital marketing and technology company focused on helping businesses build a strong online presence and grow with confidence.
-//   </p>
-
-//   <p>
-//     From SEO and paid advertising to social media marketing and smart website development, we craft digital strategies that attract the right audience and turn visitors into real customers. Our goal is simple: deliver solutions that work in the real world and drive measurable results.
-//   </p>
-// </div>
-
-
-//     </section>
-//   );
-// }
 
 // ========================= ABOUT PAGE MAIN =========================
 export default function AboutPage() {
@@ -3795,6 +2993,92 @@ background: radial-gradient(circle at top, #1e293b, #020617 75%);
   }
 }
 
+/* =========================================================
+   GLOBAL SPACING & MOBILE STABILITY FIX (ABOUT PAGE)
+========================================================= */
+
+/* 1️⃣ NORMALIZE ALL SECTION SPACING */
+.about-section,
+.success-hero,
+.perks-section,
+.gallery-section,
+.quote-section {
+  padding: clamp(60px, 8vw, 96px) 6vw !important;
+}
+
+/* Remove stacked borders causing visual gaps */
+.about-section {
+  border-bottom: none !important;
+}
+
+/* 2️⃣ PREVENT HEIGHT JUMPS */
+.about-hero,
+.success-hero {
+  min-height: auto !important;
+}
+
+/* 3️⃣ CONTAINER WIDTH FIX */
+.about-max,
+.success-container,
+.perks-grid,
+.team-grid,
+.core-block {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+/* 4️⃣ DISABLE HIDDEN STATES ON MOBILE */
+@media (max-width: 768px) {
+
+  /* Force all content visible */
+  .about-wrap * {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    visibility: visible !important;
+  }
+
+  /* Reduce vertical padding */
+  .about-section,
+  .success-hero,
+  .perks-section {
+    padding: 56px 20px !important;
+  }
+
+  /* Fix hero spacing */
+  .about-hero {
+    padding-top: 72px !important;
+    padding-bottom: 72px !important;
+  }
+
+  /* Stack grids properly */
+  .who-layout,
+  .success-container,
+  .vm-section,
+  .core-block,
+  .team-grid,
+  .perks-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  /* Reduce large typography */
+  h1 { font-size: clamp(28px, 8vw, 36px) !important; }
+  h2 { font-size: clamp(26px, 7vw, 32px) !important; }
+
+  p {
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+  }
+}
+
+/* 5️⃣ REMOVE FLOATING ANIMATIONS THAT CAUSE MOVEMENT */
+.quote-card,
+.hero-image,
+.aboutmission-image-glow,
+.mission-image img {
+  animation: none !important;
+}
 
     `;
 

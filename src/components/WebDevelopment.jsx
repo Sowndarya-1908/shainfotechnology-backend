@@ -8,12 +8,11 @@ export function WebDevelopmentHero() {
   useEffect(() => {
     const css = `
       .smm-hero{
-        min-height:90vh;
         background:radial-gradient(circle at top,#0b0b16,#05050c 70%);
         display:grid;
         grid-template-columns:1.2fr 1fr;
         align-items:center;
-        padding:100px 7vw;
+        padding:80px 7vw;              /* 🔥 reduced */
         font-family:Inter,system-ui;
         color:#fff;
         overflow:hidden;
@@ -31,7 +30,7 @@ export function WebDevelopmentHero() {
         font-size:56px;
         font-weight:900;
         line-height:1.15;
-        margin:18px 0;
+        margin:16px 0;                /* 🔥 tightened */
       }
 
       .smm-title .accent{
@@ -45,12 +44,11 @@ export function WebDevelopmentHero() {
         color:#cfcfe5;
         max-width:540px;
         line-height:1.7;
-        margin-top:16px;
+        margin-top:12px;              /* 🔥 reduced */
       }
 
       .smm-right{
         position:relative;
-        height:420px;
         display:flex;
         align-items:center;
         justify-content:center;
@@ -89,19 +87,35 @@ export function WebDevelopmentHero() {
         100%{transform:translateY(0)}
       }
 
+      /* ================= MOBILE ================= */
       @media(max-width:900px){
         .smm-hero{
           grid-template-columns:1fr;
           text-align:center;
-          padding:80px 24px;
+          padding:60px 24px;          /* 🔥 reduced */
         }
-        .smm-title{font-size:36px}
-        .smm-desc{margin:auto}
-        .smm-right{margin-top:60px}
+
+        .smm-title{
+          font-size:36px;
+        }
+
+        .smm-desc{
+          margin-left:auto;
+          margin-right:auto;
+        }
+
+        .smm-right{
+          margin-top:36px;            /* 🔥 reduced */
+        }
+
+        .icon-cloud{
+          width:280px;                /* 🔥 responsive */
+          height:280px;
+        }
       }
     `;
 
-    const id = "seo-hero-style";
+    const id = "web-dev-hero-clean-spacing";
     if (!document.getElementById(id)) {
       const style = document.createElement("style");
       style.id = id;
@@ -121,13 +135,15 @@ export function WebDevelopmentHero() {
         <small>Website Development</small>
 
         <h1 className="smm-title">
-         Build a <span className="accent">Website Designed for</span><br />
+          Build a <span className="accent">Website Designed for</span><br />
           Performance and Growth <br />
           <span className="accent">Modern, Responsive, and Conversion-Focused</span>
         </h1>
 
         <p className="smm-desc">
-          We develop fast, secure, and scalable websites tailored to your business goals. Every website is built to deliver a seamless user experience and support long-term digital success.
+          We develop fast, secure, and scalable websites tailored to your business goals.
+          Every website is built to deliver a seamless user experience and support
+          long-term digital success.
         </p>
       </div>
 
@@ -146,13 +162,12 @@ export function WebDevelopmentHero() {
   );
 }
 
-// 2
+
 export function SecondSlideWebDevelopment() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
-   
-const css = `
+    const css = `
 .why-orbit-dark{
   padding:110px 7vw;
   background:radial-gradient(circle at top,#0b1220,#020617 70%);
@@ -199,6 +214,22 @@ const css = `
   line-height:1.9;
   color:#cbd5f5;
   max-width:520px;
+  margin-bottom:14px;
+}
+
+/* 🔥 GAP FIXES (SAFE – NO DESIGN CHANGE) */
+.why-dark-left li{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.why-dark-left li + p{
+  margin-top:6px;
+}
+
+.why-dark-left h2 + li{
+  margin-top:0;
 }
 
 /* ORBIT WRAP */
@@ -221,7 +252,7 @@ const css = `
   position:absolute;
   inset:0;
   border-radius:50%;
-    border:3px solid rgba(255,255,255,0.15);   /* FULL CIRCLE */
+  border:3px solid rgba(255,255,255,0.15);
   border-top-color:#ff4ecd;
   border-right-color:#7c7cff;
   filter:drop-shadow(0 0 12px #ff4ecd)
@@ -294,7 +325,15 @@ const css = `
 .o8{top:-10px;left:50%;transform:translateX(-50%)}
 .o9{top:50%;right:-10px;transform:translateY(-50%)}
 
-/* MOBILE */
+/* 🔥 DESKTOP GAP CONTROL ONLY */
+@media(min-width:901px){
+  .why-orbit-dark{
+    padding-top:90px;
+    padding-bottom:90px;
+  }
+}
+
+/* MOBILE – UNCHANGED */
 @media(max-width:900px){
   .why-dark-grid{
     grid-template-columns:1fr;
@@ -335,23 +374,25 @@ const css = `
           <h2>
             Why <span>Choose us</span> for your Web Development Services?
           </h2>
+
           <li><strong>Purpose-Driven Website Development</strong></li>
-          <p>
-            We build websites with clear structure and functionality, designed to support your business goals and user journey.
-          </p>
+          <p>We build websites with clear structure and functionality, designed to support your business goals and user journey.</p>
+
           <li><strong>Responsive & Cross-Device Compatibility</strong></li>
           <p>Every website we develop works seamlessly across mobile, tablet, and desktop devices.</p>
+
           <li><strong>Performance-Optimized Codebase</strong></li>
           <p>Clean, efficient code ensures fast load times, smooth navigation, and a better user experience.</p>
+
           <li><strong>SEO-Ready & Scalable Structure</strong></li>
           <p>Our websites are built with search-friendly architecture and scalability in mind for long-term growth.</p>
+
           <li><strong>Secure & Reliable Development</strong></li>
           <p>We follow secure development practices to protect your website, data, and users.</p>
         </div>
 
         {/* RIGHT */}
         <div className="orbit-dark-wrap">
-          {/* OUTER */}
           <div className="orbit-ring-dark">
             <div className="orbit-icon-dark o1">📊</div>
             <div className="orbit-icon-dark o2">🔗</div>
@@ -361,7 +402,6 @@ const css = `
             <div className="orbit-icon-dark o6">🌐</div>
           </div>
 
-          {/* INNER */}
           <div className="orbit-ring-dark inner">
             <div className="orbit-icon-dark o7">🔍</div>
             <div className="orbit-icon-dark o8">f</div>
@@ -373,88 +413,94 @@ const css = `
   );
 }
 
+
 // 3
+
+
 export function ServicesGridWebDevelopment() {
   useEffect(() => {
     const css = `
-      .services-wrap{
-        padding:110px 7vw;
-        background:radial-gradient(circle at top, #0b1220, #020617 70%);
-        font-family:Inter,system-ui;
-        color:#e5e7eb;
-      }
+.services-wrap{
+  padding:110px 7vw;
+  background:radial-gradient(circle at top, #0b1220, #020617 70%);
+  font-family:Inter,system-ui;
+  color:#e5e7eb;
 
-      .services-grid{
-        max-width:1200px;
-        margin:auto;
-        display:grid;
-        grid-template-columns:repeat(3,1fr);
-        gap:28px;
-      }
+  /* 🔥 REMOVE DEFAULT SECTION GAPS */
+  margin:0;
+}
 
-      .service-card{
-        background:#ffffff;
+/* GRID */
+.services-grid{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
 
-        border-radius:22px;
-        padding:40px 34px;
-        position:relative;
-        border:1px solid rgba(255,255,255,0.08);
-        box-shadow:
-          0 20px 60px rgba(0,0,0,0.6),
-          inset 0 0 0 rgba(255,255,255,0);
-        transition:all .35s ease;
-        overflow:hidden;
-      }
+/* CARD */
+.service-card{
+  background:#ffffff;
+  border-radius:22px;
+  padding:40px 34px;
+  position:relative;
+  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.6),
+    inset 0 0 0 rgba(255,255,255,0);
+  transition:all .35s ease;
+  overflow:hidden;
+}
 
-      /* Glow line */
-      .service-card::before{
-        content:"";
-        position:absolute;
-        inset:0;
-        border-radius:22px;
-        background:linear-gradient(135deg,transparent,rgba(255,78,78,.25),transparent);
-        opacity:0;
-        transition:opacity .35s ease;
-        pointer-events:none;
-      }
+/* Glow line */
+.service-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:22px;
+  background:linear-gradient(135deg,transparent,rgba(255,78,78,.25),transparent);
+  opacity:0;
+  transition:opacity .35s ease;
+  pointer-events:none;
+}
 
-      .service-card:hover::before{
-        opacity:1;
-      }
+.service-card:hover::before{
+  opacity:1;
+}
 
-      .service-card:hover{
-        transform:translateY(-10px);
-        box-shadow:
-          0 30px 90px rgba(185,5,4,0.45),
-          0 0 40px rgba(185,5,4,0.35);
-      }
+.service-card:hover{
+  transform:translateY(-10px);
+  box-shadow:
+    0 30px 90px rgba(185,5,4,0.45),
+    0 0 40px rgba(185,5,4,0.35);
+}
 
-      .service-number{
-        position:absolute;
-        top:18px;
-        right:22px;
-        font-size:60px;
-        font-weight:900;
-        color:rgba(255,255,255,0.06);
-      }
+.service-number{
+  position:absolute;
+  top:18px;
+  right:22px;
+  font-size:60px;
+  font-weight:900;
+  color:rgba(255,255,255,0.06);
+}
 
-  .service-icon{
+/* ICON */
+.service-icon{
   width:56px;
   height:56px;
   border-radius:14px;
-  background:linear-gradient(135deg,#8b5cf6,#ec4899); /* 👈 SAME AS QUESTIONS */
+  background:linear-gradient(135deg,#8b5cf6,#ec4899);
   display:flex;
   align-items:center;
   justify-content:center;
   font-size:26px;
   color:#ffffff;
   margin-bottom:20px;
-
   position:relative;
   z-index:1;
 }
 
-/* PURPLE GRADIENT GLOW */
 .service-icon::after{
   content:"";
   position:absolute;
@@ -465,25 +511,36 @@ export function ServicesGridWebDevelopment() {
   z-index:-1;
 }
 
-      .service-title{
-        font-size:20px;
-        font-weight:800;
-        margin-bottom:12px;
-        color:#000000;
-      }
+/* TEXT */
+.service-title{
+  font-size:20px;
+  font-weight:800;
+  margin:0 0 12px 0;
+  color:#000000;
+}
 
-      .service-desc{
-        font-size:15px;
-        line-height:1.75;
-        color:#000000;
-      }
+.service-desc{
+  font-size:15px;
+  line-height:1.75;
+  margin:0;
+  color:#000000;
+}
 
-      @media(max-width:900px){
-        .services-grid{
-          grid-template-columns:1fr;
-        }
-      }
-    `;
+/* 🔥 DESKTOP GAP CONTROL ONLY */
+@media(min-width:901px){
+  .services-wrap{
+    padding-top:90px;
+    padding-bottom:90px;
+  }
+}
+
+/* MOBILE – COMPLETELY UNCHANGED */
+@media(max-width:900px){
+  .services-grid{
+    grid-template-columns:1fr;
+  }
+}
+`;
 
     const id = "services-grid-dark-style";
     if (!document.getElementById(id)) {
@@ -499,46 +556,38 @@ export function ServicesGridWebDevelopment() {
     };
   }, []);
 
- const services = [
-  {
-    title: "Purpose-Driven Web Architecture",
-    desc:
-      "Websites structured around user flow, clarity, and business objectives.",
-    icon: "🧭"
-  },
-  {
-    title: "Device-First Responsive Builds",
-    desc:
-      "Layouts engineered to adapt flawlessly across all modern devices.",
-    icon: "📐"
-  },
-  {
-    title: "Speed-Focused Engineering",
-    desc:
-      "Lean code and optimized assets for faster load times and smoother interactions.",
-    icon: "⚡"
-  },
-  {
-    title: "Search-Ready Codebase",
-    desc:
-      "Technically sound foundations built for long-term search visibility.",
-    icon: "🔎"
-  },
-  {
-    title: "Scalable Content Management",
-    desc:
-      "Flexible CMS setups that grow with your content and team.",
-    icon: "🧩"
-  },
-  {
-    title: "Security-First Development",
-    desc:
-      "Hardened builds with best-practice protections from day one.",
-    icon: "🛡️"
-  }
-];
-
-
+  const services = [
+    {
+      title: "Purpose-Driven Web Architecture",
+      desc: "Websites structured around user flow, clarity, and business objectives.",
+      icon: "🧭"
+    },
+    {
+      title: "Device-First Responsive Builds",
+      desc: "Layouts engineered to adapt flawlessly across all modern devices.",
+      icon: "📐"
+    },
+    {
+      title: "Speed-Focused Engineering",
+      desc: "Lean code and optimized assets for faster load times and smoother interactions.",
+      icon: "⚡"
+    },
+    {
+      title: "Search-Ready Codebase",
+      desc: "Technically sound foundations built for long-term search visibility.",
+      icon: "🔎"
+    },
+    {
+      title: "Scalable Content Management",
+      desc: "Flexible CMS setups that grow with your content and team.",
+      icon: "🧩"
+    },
+    {
+      title: "Security-First Development",
+      desc: "Hardened builds with best-practice protections from day one.",
+      icon: "🛡️"
+    }
+  ];
 
   return (
     <section className="services-wrap">
@@ -556,127 +605,145 @@ export function ServicesGridWebDevelopment() {
   );
 }
 
+
 // 4
+
+
 export function WhyWebDevelopmentHeroDark() {
   const ref = useRef(null);
 
   useEffect(() => {
     const css = `
-      .seo-hero-dark{
-        min-height:90vh;
-        display:grid;
-        place-items:center;
-        background:radial-gradient(circle at top,#0b1220,#020617 70%);
-        font-family:Inter,system-ui;
-        color:#e5e7eb;
-        overflow:hidden;
-        padding:100px 7vw;
-      }
+.seo-hero-dark{
+  min-height:90vh;
+  display:grid;
+  place-items:center;
+  background:radial-gradient(circle at top,#0b1220,#020617 70%);
+  font-family:Inter,system-ui;
+  color:#e5e7eb;
+  overflow:hidden;
+  padding:100px 7vw;
 
-      .seo-hero-grid{
-        max-width:1300px;
-        width:100%;
-        display:grid;
-        grid-template-columns:1.1fr .9fr;
-        gap:80px;
-        align-items:center;
-      }
+  /* 🔥 REMOVE DEFAULT SECTION GAPS */
+  margin:0;
+}
 
-      /* LEFT */
-      .seo-left{
-        opacity:0;
-        transform:translateY(40px);
-        transition:all 1s ease;
-      }
+.seo-hero-grid{
+  max-width:1300px;
+  width:100%;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:80px;
+  align-items:center;
+}
 
-      .seo-hero-dark.show .seo-left{
-        opacity:1;
-        transform:none;
-      }
+/* LEFT */
+.seo-left{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 1s ease;
+}
 
-      .seo-left h1{
-        font-size:42px;
-        font-weight:900;
-        line-height:1.2;
-        margin-bottom:24px;
-        color:#fff;
-      }
+.seo-hero-dark.show .seo-left{
+  opacity:1;
+  transform:none;
+}
 
-      .seo-left h1 span{
-        background:linear-gradient(90deg,#8b5cf6,#ec4899);
-        -webkit-background-clip:text;
-        -webkit-text-fill-color:transparent;
-      }
+.seo-left h1{
+  font-size:42px;
+  font-weight:900;
+  line-height:1.2;
+  margin-bottom:24px;
+  color:#fff;
+}
 
-      .seo-left li{
-        font-size:18px;
-        line-height:2;
-        color:#cbd5f5;
-        max-width:560px;
-        margin-bottom:20px;
-      }
+.seo-left h1 span{
+  background:linear-gradient(90deg,#8b5cf6,#ec4899);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
 
-      /* RIGHT IMAGE */
-      .seo-right{
-        position:relative;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        opacity:0;
-        transform:scale(.9);
-        transition:all 1s ease .2s;
-      }
+/* 🔥 GAP FIX FOR LIST ITEMS (NO STYLE CHANGE) */
+.seo-left li{
+  font-size:18px;
+  line-height:2;
+  color:#cbd5f5;
+  max-width:560px;
 
-      .seo-hero-dark.show .seo-right{
-        opacity:1;
-        transform:scale(1);
-      }
+  margin:0 0 20px 0;
+  padding:0;
+  list-style:none;
+}
 
-      /* IMAGE + GLOW */
-      .seo-image-wrap::before{
-        content:"";
-        position:absolute;
-        width:420px;
-        height:420px;
-        background:radial-gradient(
-          circle,
-          rgba(139,92,246,.45),
-          transparent 70%
-        );
-        filter:blur(50px);
-        z-index:0;
-      }
+/* RIGHT IMAGE */
+.seo-right{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  transform:scale(.9);
+  transition:all 1s ease .2s;
+}
 
-      .seo-image-wrap img{
-        position:relative;
-        z-index:1;
-        width:100%;
-        max-width:420px;
-      }
+.seo-hero-dark.show .seo-right{
+  opacity:1;
+  transform:scale(1);
+}
 
-      /* MOBILE */
-      @media(max-width:900px){
-        .seo-hero-grid{
-          grid-template-columns:1fr;
-          text-align:center;
-          gap:50px;
-        }
+/* IMAGE + GLOW */
+.seo-image-wrap::before{
+  content:"";
+  position:absolute;
+  width:420px;
+  height:420px;
+  background:radial-gradient(
+    circle,
+    rgba(139,92,246,.45),
+    transparent 70%
+  );
+  filter:blur(50px);
+  z-index:0;
+}
 
-        .seo-left li{
-          margin-left:auto;
-          margin-right:auto;
-        }
+.seo-image-wrap img{
+  position:relative;
+  z-index:1;
+  width:100%;
+  max-width:420px;
+}
 
-        .seo-image-wrap::before{
-          width:280px;
-          height:280px;
-        }
+/* 🔥 DESKTOP GAP CONTROL ONLY */
+@media(min-width:901px){
+  .seo-hero-dark{
+    padding-top:80px;
+    padding-bottom:80px;
+  }
+}
 
-        .seo-image-wrap img{
-          max-width:280px;
-        }
-      }
-    `;
+/* MOBILE – COMPLETELY UNCHANGED */
+@media(max-width:900px){
+  .seo-hero-grid{
+    grid-template-columns:1fr;
+    text-align:center;
+    gap:50px;
+  }
+
+  .seo-left li{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .seo-image-wrap::before{
+    width:280px;
+    height:280px;
+  }
+
+  .seo-image-wrap img{
+    max-width:280px;
+  }
+}
+`;
 
     const style = document.createElement("style");
     style.innerHTML = css;
@@ -737,6 +804,7 @@ export function WhyWebDevelopmentHeroDark() {
 
 
 // 5
+
 export function FAQWebDevelopment() {
   const [openFaq, setOpenFaq] = useState(-1);
   const sectionRef = useRef(null);
@@ -751,17 +819,14 @@ export function FAQWebDevelopment() {
   padding:110px 6vw;
   color:#ffffff;
   font-family:Inter,system-ui;
-}
-/* ================= GAP / STRIP FIX ================= */
 
+  /* 🔥 REMOVE DEFAULT SECTION GAP */
+  margin:0;
+}
+
+/* ================= GAP / STRIP FIX ================= */
 *{
   box-sizing:border-box;
-}
-
-html, body{
-  margin:0;
-  padding:0;
-  overflow-x:hidden;
 }
 
 .home-faq-container{
@@ -769,24 +834,37 @@ html, body{
   margin:auto;
 }
 
+/* TITLE */
 .home-faq-title{
   text-align:center;
   font-size:42px;
   font-weight:900;
-  margin-bottom:12px;
-  color:#B90504;
+  margin:0 0 12px 0;
+  color:transparent !important;
+  pointer-events:none;
+}
+
+/* White part */
+.home-faq-title .faq-title-white{
+  color:#ffffff !important;
+}
+
+/* Gradient part */
+.home-faq-title .faq-title-gradient{
+  background:linear-gradient(90deg,#8b5cf6,#ec4899);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
 .home-faq-sub{
   text-align:center;
   color:#cfcfcf;
   font-size:16px;
-  margin-bottom:50px;
+  margin:0 0 50px 0;
 }
 
 /* CARD */
 .home-faq-card{
-  // background:#141414;
   border-radius:26px;
   padding:36px;
   box-shadow:0 30px 90px rgba(185,5,4,0.35);
@@ -821,12 +899,7 @@ html, body{
 .home-faq-question{
   font-size:18px;
   font-weight:700;
-  color:#ffffff;
-  transition:color .25s ease;
-}
-
-.home-faq-item.open .home-faq-question{
-  color:#B90504;
+  color:#ffffff !important;
 }
 
 /* TOGGLE */
@@ -834,23 +907,23 @@ html, body{
   width:34px;
   height:34px;
   border-radius:50%;
-  border:2px solid #B90504;
+  border:none !important;
+  background:linear-gradient(135deg,#8b5cf6,#ec4899) !important;
+  color:#ffffff !important;
   display:flex;
   align-items:center;
   justify-content:center;
   font-size:18px;
   font-weight:900;
-  color:#B90504;
   transition:all .3s ease;
+  box-shadow:0 0 20px rgba(139,92,246,0.6);
 }
 
 .home-faq-item.open .home-faq-toggle{
-  background:#B90504;
-  color:#ffffff;
-  transform:rotate(180deg);
+  background:linear-gradient(135deg,#7c3aed,#db2777) !important;
 }
 
-/* ANSWER – SMOOTH */
+/* ANSWER */
 .home-faq-answer{
   max-height:0;
   overflow:hidden;
@@ -869,10 +942,10 @@ html, body{
 }
 
 .home-faq-answer p{
-  margin-top:14px;
+  margin:14px 0 0 0;
   font-size:15px;
   line-height:1.7;
-  color:#cfcfcf;
+  color:#ffffff !important;
 }
 
 /* CTA */
@@ -880,30 +953,30 @@ html, body{
   margin-top:48px;
   padding:36px;
   border-radius:22px;
-  background:linear-gradient(135deg,#B90504,#ff3b3b);
+  background:#ffffff !important;
   text-align:center;
-  box-shadow:0 30px 90px rgba(185,5,4,0.45);
+  box-shadow:0 30px 90px rgba(0,0,0,0.25);
 }
 
 .home-faq-cta h3{
   font-size:26px;
   font-weight:900;
-  margin-bottom:12px;
-  color:#ffffff;
+  margin:0 0 12px 0;
+  color:#020617 !important;
 }
 
 .home-faq-cta p{
   font-size:16px;
-  color:#ffffff;
-  margin-bottom:22px;
+  margin:0 0 22px 0;
+  color:#475569 !important;
 }
 
 .home-faq-cta button{
   padding:14px 36px;
   border-radius:999px;
   border:none;
-  background:#ffffff;
-  color:#000;
+  background:#020617;
+  color:#ffffff;
   font-size:15px;
   font-weight:800;
   cursor:pointer;
@@ -915,84 +988,19 @@ html, body{
   box-shadow:0 20px 60px rgba(0,0,0,0.4);
 }
 
-/* MOBILE */
+/* 🔥 DESKTOP GAP CONTROL ONLY */
+@media(min-width:769px){
+  .home-faq-wrap{
+    padding-top:90px;
+    padding-bottom:90px;
+  }
+}
+
+/* MOBILE – UNCHANGED */
 @media(max-width:768px){
   .home-faq-wrap{padding:70px 20px;}
   .home-faq-title{font-size:28px;}
   .home-faq-question{font-size:16px;}
-}
-
-
-/* ----- FAQ TITLE ----- */
-.home-faq-title{
-  color:transparent !important;
-  text-align:center;
-}
-
-/* White part */
-.home-faq-title .faq-title-white{
-  color:#ffffff !important;
-}
-
-/* Gradient part */
-.home-faq-title .faq-title-gradient{
-  background:linear-gradient(90deg,#8b5cf6,#ec4899);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-/* Disable hover on FAQ title */
-.home-faq-title,
-.home-faq-title *{
-  pointer-events:none;
-}
-
-/* ----- FAQ QUESTIONS ----- */
-.home-faq-question{
-  color:#ffffff !important;
-}
-
-/* ----- FAQ ANSWERS ----- */
-.home-faq-answer p{
-  color:#ffffff !important;
-}
-
-/* ----- PLUS / MINUS BUTTON (GRADIENT) ----- */
-.home-faq-toggle{
-  border:none !important;
-  background:linear-gradient(135deg,#8b5cf6,#ec4899) !important;
-  color:#ffffff !important;
-  box-shadow:0 0 20px rgba(139,92,246,0.6);
-}
-
-/* Minus state */
-.home-faq-item.open .home-faq-toggle{
-  background:linear-gradient(135deg,#7c3aed,#db2777) !important;
-  color:#ffffff !important;
-}
-
-/* Remove red hover influence */
-.home-faq-toggle:hover{
-  background:linear-gradient(135deg,#8b5cf6,#ec4899) !important;
-}
-
-
-/* ================= FAQ CTA WHITE BOX FIX ================= */
-
-/* White container */
-.home-faq-cta{
-  background:#ffffff !important;
-  box-shadow:0 30px 90px rgba(0,0,0,0.25);
-}
-
-/* Heading inside CTA */
-.home-faq-cta h3{
-  color:#020617 !important;   /* dark text */
-}
-
-/* Subtitle text */
-.home-faq-cta p{
-  color:#475569 !important;   /* soft dark grey */
 }
     `;
 
@@ -1010,7 +1018,7 @@ html, body{
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setOpenFaq(0); // open first FAQ automatically
+          setOpenFaq(0);
           observer.disconnect();
         }
       },
@@ -1021,62 +1029,37 @@ html, body{
     return () => observer.disconnect();
   }, []);
 
- const faqs = [
-  {
-    q: "How long does it take to build a website?",
-    a: "Most websites are completed within 2–4 weeks, depending on features, content readiness, and feedback cycles."
-  },
-  {
-    q: "Will my website be mobile-friendly?",
-    a: "Yes. All our websites are fully responsive and optimized for mobile, tablet, and desktop devices."
-  },
-  {
-    q: "Can I update the website content myself?",
-    a: "Absolutely. We build CMS-based websites so you can easily update content without technical knowledge."
-  },
-  {
-    q: "Do you provide support after the website launch?",
-    a: "Yes. We offer ongoing maintenance, security updates, performance optimization, and technical support."
-  },
-  {
-    q: "How do I get started with website development?",
-    a: "Fill out our contact form or call us. We’ll discuss your requirements and share a clear plan and timeline."
-  }
-];
-
-
-  /* ================= SEO SCHEMA ================= */
-  useEffect(() => {
-    const schema = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": faqs.map(f => ({
-        "@type": "Question",
-        "name": f.q,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": f.a
-        }
-      }))
-    };
-
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.innerHTML = JSON.stringify(schema);
-    document.head.appendChild(script);
-
-    return () => document.head.removeChild(script);
-  }, []);
+  const faqs = [
+    {
+      q: "How long does it take to build a website?",
+      a: "Most websites are completed within 2–4 weeks, depending on features, content readiness, and feedback cycles."
+    },
+    {
+      q: "Will my website be mobile-friendly?",
+      a: "Yes. All our websites are fully responsive and optimized for mobile, tablet, and desktop devices."
+    },
+    {
+      q: "Can I update the website content myself?",
+      a: "Absolutely. We build CMS-based websites so you can easily update content without technical knowledge."
+    },
+    {
+      q: "Do you provide support after the website launch?",
+      a: "Yes. We offer ongoing maintenance, security updates, performance optimization, and technical support."
+    },
+    {
+      q: "How do I get started with website development?",
+      a: "Fill out our contact form or call us. We’ll discuss your requirements and share a clear plan and timeline."
+    }
+  ];
 
   return (
     <section className="home-faq-wrap" ref={sectionRef}>
       <div className="home-faq-container">
         <h2 className="home-faq-title">
-  <span className="faq-title-white">Frequently Asked</span>{" "}
-  <span className="faq-title-gradient">Questions</span>
-</h2>
+          <span className="faq-title-white">Frequently Asked</span>{" "}
+          <span className="faq-title-gradient">Questions</span>
+        </h2>
 
-        {/* <h2 className="home-faq-title">Frequently Asked Questions</h2> */}
         <p className="home-faq-sub">
           Clear answers to help you move forward with confidence.
         </p>
@@ -1109,13 +1092,12 @@ html, body{
         <div className="home-faq-cta">
           <h3>Still have questions?</h3>
           <p>Talk directly with our experts and get a custom growth plan.</p>
-         <Link to="/contact"> <button >
-            BOOK FREE CONSULTATION →
-          </button></Link>
+          <Link to="/contact">
+            <button>BOOK FREE CONSULTATION →</button>
+          </Link>
         </div>
       </div>
     </section>
   );
 }
-
 // 6
