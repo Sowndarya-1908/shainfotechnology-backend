@@ -729,7 +729,7 @@ export function WhyDigitalStrategyHeroDark() {
         {/* RIGHT IMAGE */}
         <div className="seo-right seo-image-wrap">
           <img
-            src="/images/digital-strategy-illustration.png"
+            src="/images/digitalstrategy.png"
             alt="Digital Strategy Illustration"
           />
         </div>
