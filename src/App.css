@@ -1,31 +1,3 @@
-/* .header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(232,232,232,0.95);
-  border-bottom: 1px solid #ddd;
-  z-index: 100;
-}
-
-.header-inner {
-  max-width: 1200px;
-  margin: auto;
-  padding: 14px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.header nav a:hover {
-  color: var(--red);
-} */
 
 .logo-box {
   background: var(--red);

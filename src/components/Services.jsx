@@ -218,200 +218,6 @@ function ServicesHighlightSection() {
   );
 }
 
-
-function CTASection() {
-    const navigate = useNavigate();
-  useEffect(() => {
-    const css = `
-      .cta-wrap{
-        position:relative;
-        min-height:60vh;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        overflow:hidden;
-        // background:#000;
-        background: transparent;
-        font-family:Inter,system-ui;
-      }
-
-      .cta-bg{
-       position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  overflow:hidden;
-        // position:absolute;
-        // inset:-20%;
-        background:
-          radial-gradient(circle at 20% 40%, #ff0000, transparent 40%),
-          radial-gradient(circle at 60% 30%, #00e5ff, transparent 45%),
-          radial-gradient(circle at 80% 70%, #7c3aed, transparent 45%);
-        filter: blur(90px);
-        animation: floatBg 14s ease-in-out infinite alternate;
-        z-index:0;
-      }
-
-      @keyframes floatBg{
-        0%{ transform:translateY(-20px) scale(1); }
-        100%{ transform:translateY(20px) scale(1.1); }
-      }
-
-      .cta-overlay{
-        position:absolute;
-        inset:0;
-        background:rgba(0,0,0,0.78);
-        z-index:1;
-      }
-
-      .cta-content{
-        position:relative;
-        z-index:2;
-        text-align:center;
-        max-width:900px;
-        padding:40px 20px;
-        color:#fff;
-      }
-
-      .cta-title{
-        font-size:42px;
-        font-weight:900;
-        margin-bottom:18px;
-      }
-
-      .cta-sub{
-        font-size:20px;
-        color:#e5e7eb;
-        margin-bottom:36px;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        gap:12px;
-      }
-
-      .cta-dot{
-        width:16px;
-        height:16px;
-        border-radius:50%;
-        background:#2dd4bf;
-        box-shadow:0 0 20px rgba(45,212,191,0.9);
-        animation:pulse 1.6s infinite;
-      }
-
-      @keyframes pulse{
-        0%{transform:scale(1);opacity:1}
-        50%{transform:scale(1.4);opacity:.6}
-        100%{transform:scale(1);opacity:1}
-      }
-
-      .cta-btn{
-        display:inline-flex;
-        align-items:center;
-        gap:10px;
-        padding:16px 36px;
-        border-radius:999px;
-        background:#ffffff;
-        color:#000;
-        font-size:15px;
-        font-weight:800;
-        border:none;
-        cursor:pointer;
-        letter-spacing:0.12em;
-        box-shadow:0 20px 60px rgba(255,255,255,0.35);
-        transition:all .3s ease;
-      }
-
-      .cta-btn:hover{
-        transform:translateY(-4px) scale(1.05);
-        box-shadow:0 30px 90px rgba(255,255,255,0.55);
-      }
-
-      .cta-btn span{
-        font-size:20px;
-      }
-
-      @media(max-width:768px){
-        .cta-title{font-size:28px;}
-        .cta-sub{font-size:16px;flex-direction:column;}
-      }
-
-      /* ===== FORCE REMOVE RED & APPLY GRADIENT ===== */
-
-/* Neutralize h2 color completely */
-.cta-title{
-  color:transparent !important;
-}
-
-/* Gradient text */
-.cta-gradient-text{
-  background:linear-gradient(90deg, #8b5cf6, #ec4899);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  font-weight:800;
-
-}
-  .home-faq-cta button{
-  background:linear-gradient(90deg,#8b5cf6,#ec4899) !important;
-  color:#ffffff !important;
-  border:none;
-  font-weight:800;
-  letter-spacing:0.05em;
-  box-shadow:0 20px 60px rgba(139,92,246,0.45);
-}
-
-/* Hover effect */
-.home-faq-cta button:hover{
-  transform:translateY(-4px) scale(1.05);
-  box-shadow:0 30px 90px rgba(236,72,153,0.55);
-  background:linear-gradient(90deg,#7c3aed,#db2777) !important;
-}
-
-/* Focus / active */
-.home-faq-cta button:active{
-  transform:scale(0.98);
-}
-
-    `;
-
-    const id = "cta-style";
-    if (!document.getElementById(id)) {
-      const style = document.createElement("style");
-      style.id = id;
-      style.innerHTML = css;
-      document.head.appendChild(style);
-    }
-  }, []);
-
-  return (
-    <section className="cta-wrap">
-      <div className="cta-bg"></div>
-      <div className="cta-overlay"></div>
-
-      <div className="cta-content">
-        {/* <h2 className="cta-title">Ready to transform your business?</h2> */}
-<h2 className="cta-title">
-  <span className="cta-gradient-text">
-    Ready to transform your business?
-  </span>
-</h2>
-
-        <div className="cta-sub">
-          <span className="cta-dot"></span>
-          Book an informal chat with one of our specialists
-        </div>
-
-        <button
-  className="cta-btn"
-  onClick={() => navigate("/contact")}
->
-
-          <span>→</span> GET IN TOUCH
-        </button>
-      </div>
-    </section>
-  );
-}
-
 function ServicesHero() {
   useEffect(() => {
     const css = `
@@ -583,11 +389,6 @@ body{ margin:0; overflow-x:hidden; }
   );
 }
 
-
-
-
-
-
 function GrowthPartnerSection() {
   React.useEffect(() => {
     const css = `
@@ -753,8 +554,6 @@ function GrowthPartnerSection() {
     </section>
   );
 }
-
-
 
 
 function ProjectWorkflowSection() {
@@ -2086,8 +1885,6 @@ useEffect(() => {
 
 
 <HomeFAQSection />
-
-      {/* // <CTASection /> */}
 
        
     </div>

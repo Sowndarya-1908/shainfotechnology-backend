@@ -165,7 +165,7 @@ export default function ServiceDetail() {
       <service.third />
       <service.fourth />
       <service.fifth />
-      {/* <CTASection /> */}
+     
     </>
   );
 }

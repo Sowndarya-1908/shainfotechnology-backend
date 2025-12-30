@@ -26,7 +26,7 @@ export default function Header() {
     <a href="tel:9445747815" className="phone-number">
   94457 47815
 </a>
-    {/* <span className="phone-number">9445747815</span> */}
+   
   </div>
 </div>
 </div>

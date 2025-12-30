@@ -36,15 +36,15 @@ export default function App() {
       {/* Static Header */}
       <Header />
 
-      {/* 🔥 Always scroll to top on route change */}
+     
       <ScrollToTop />
 
-      {/* Page Loader */}
+     
       <AnimatePresence>
         {loading && <PageLoader />}
       </AnimatePresence>
 
-      {/* Page Transitions */}
+      
       <AnimatePresence mode="wait">
   <div className="app-page">
     <Routes location={location} key={location.pathname}>
