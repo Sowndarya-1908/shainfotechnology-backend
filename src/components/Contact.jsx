@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 /* ================= CONSTANTS ================= */
-const CONTACT_PHONE = "9445747815";
+const CONTACT_PHONE = "7550057453";
 const CONTACT_PHONE_DISPLAY = "94457 47815";
 const CONTACT_EMAIL = "shainfotech05@gmail.com";
 
