@@ -1,7 +1,394 @@
-// src/components/About.jsx
 import React, { useEffect, useState, useRef } from "react";
 
 const BG_QUOTE_IMAGE = "/images/about/image.png";
+
+ function StatsHighlight() {
+  const sectionRef = useRef(null);
+  const [start, setStart] = useState(false);
+
+  const stats = [
+    { value: 150, label: "Happy Clients" },
+    { value: 12, label: "Years of Experience" },
+    { value: 20, label: "Expert Professionals" },
+    { value: 100, label: "Projects Delivered" }
+  ];
+
+  const [counts, setCounts] = useState(stats.map(() => 0));
+
+  /* ================= COUNT-UP LOGIC ================= */
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStart(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.4 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!start) return;
+
+    stats.forEach((stat, index) => {
+      let current = 0;
+      const increment = Math.ceil(stat.value / 40);
+
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= stat.value) {
+          current = stat.value;
+          clearInterval(timer);
+        }
+
+        setCounts(prev => {
+          const updated = [...prev];
+          updated[index] = current;
+          return updated;
+        });
+      }, 30);
+    });
+  }, [start]);
+
+  /* ================= STYLES ================= */
+  useEffect(() => {
+    const css = `
+/* ===== STATS SECTION ===== */
+.sha-stats{
+  background:#ffffff;
+  padding:50px 1vw;
+  font-family:Inter,system-ui;
+}
+
+.sha-stats-inner{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:40px;
+  text-align:center;
+}
+
+/* NUMBER */
+.stat-value{
+  font-size:48px;
+  font-weight:900;
+  background:linear-gradient(90deg,#8b5cf6,#ec4899);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin-bottom:10px;
+}
+
+/* LABEL */
+.stat-label{
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:#0f172a;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .sha-stats-inner{
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+  }
+}
+
+@media(max-width:480px){
+  .sha-stats-inner{
+    grid-template-columns:1fr;
+  }
+
+  .stat-value{
+    font-size:42px;
+  }
+}
+    `;
+    const style = document.createElement("style");
+    style.innerHTML = css;
+    document.head.appendChild(style);
+    return () => style.remove();
+  }, []);
+
+  return (
+    <section className="sha-stats" ref={sectionRef}>
+      <div className="sha-stats-inner">
+        {stats.map((stat, i) => (
+          <div key={i}>
+            <div className="stat-value">{counts[i]}+</div>
+            <div className="stat-label">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+
+
+function Testimonials() {
+  const [index, setIndex] = useState(0);
+  const startX = useRef(0);
+  const isDragging = useRef(false);
+
+  const testimonials = [
+    {
+      name: "Muthukumar",
+      role: "Founder, Chennai Business",
+      quote:
+        "SHA Infotechnology helped us build a strong digital foundation. Their SEO strategy and website performance improvements brought us consistent leads."
+    },
+    {
+      name: "Priya Anand",
+      role: "Startup Founder",
+      quote:
+        "Their transparent workflow and clear communication stood out. We always knew what was happening and why. Results were visible within weeks."
+    },
+    {
+      name: "Suresh Kumar",
+      role: "Retail Business Owner",
+      quote:
+        "From UI design to performance optimization, everything was handled professionally. SHA Infotechnology truly understands business growth."
+    },
+    {
+      name: "Arun Raj",
+      role: "E-commerce Entrepreneur",
+      quote:
+        "Our online store performance improved drastically. Faster load times, better UX, and higher conversions after working with SHA Infotechnology."
+    },
+    {
+      name: "Divya Shankar",
+      role: "Marketing Head",
+      quote:
+        "Their digital strategy helped us reach the right audience without wasting ad spend. Highly recommend their data-driven approach."
+    }
+  ];
+
+  /* ===== AUTO SLIDE ===== */
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex(prev => (prev + 1) % testimonials.length);
+    }, 5000); // 5 seconds
+
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
+
+  /* ===== STYLES ===== */
+  useEffect(() => {
+    const css = `
+/* ===== TESTIMONIAL SECTION ===== */
+.sha-testimonial{
+  background:radial-gradient(circle at top,#0b1220,#020617 70%);
+  padding:10px 6vw;
+  font-family:Inter,system-ui;
+  color:#ffffff;
+}
+
+.sha-testimonial-inner{
+  max-width:960px;
+  margin:auto;
+}
+
+/* HEADING */
+.sha-testimonial h2{
+  font-size:clamp(32px,4.5vw,48px);
+  font-weight:900;
+  line-height:1.15;
+  margin-bottom:14px;
+}
+
+.sha-testimonial h2 span{
+  background:linear-gradient(90deg,#8b5cf6,#ec4899);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.sha-testimonial p.lead{
+  font-size:16px;
+  color:#cbd5f5;
+  margin-bottom:50px;
+}
+
+/* SLIDER */
+.testimonial-slider{
+  overflow:hidden;
+  cursor:grab;
+}
+
+.testimonial-track{
+  display:flex;
+  transition:transform .6s cubic-bezier(.16,1,.3,1);
+}
+
+/* CARD */
+.testimonial-card{
+  min-width:100%;
+  background:linear-gradient(180deg,#0f172a,#020617);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:28px;
+  padding:42px;
+  box-shadow:0 40px 120px rgba(0,0,0,.7);
+}
+
+/* STARS */
+.testimonial-rating{
+  background:linear-gradient(90deg,#8b5cf6,#ec4899);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  font-size:18px;
+  margin-bottom:16px;
+}
+
+/* QUOTE */
+.testimonial-quote{
+  font-size:18px;
+  line-height:1.85;
+  color:#f1f5f9;
+  margin-bottom:32px;
+}
+
+/* AUTHOR */
+.testimonial-author{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.author-avatar{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#8b5cf6,#ec4899);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+}
+
+.author-name{
+  font-weight:800;
+}
+
+.author-role{
+  font-size:14px;
+  color:#9ca3af;
+}
+
+/* DOTS */
+.testimonial-dots{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-top:28px;
+}
+
+.testimonial-dots span{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#334155;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.testimonial-dots span.active{
+  background:linear-gradient(135deg,#8b5cf6,#ec4899);
+  box-shadow:0 0 14px rgba(139,92,246,.9);
+}
+
+/* MOBILE */
+@media(max-width:640px){
+  .testimonial-card{
+    padding:28px;
+  }
+}
+    `;
+    const style = document.createElement("style");
+    style.innerHTML = css;
+    document.head.appendChild(style);
+    return () => style.remove();
+  }, []);
+
+  /* ===== DRAG / SWIPE ===== */
+  const handleStart = e => {
+    isDragging.current = true;
+    startX.current = e.touches ? e.touches[0].clientX : e.clientX;
+  };
+
+  const handleEnd = e => {
+    if (!isDragging.current) return;
+    const endX = e.changedTouches
+      ? e.changedTouches[0].clientX
+      : e.clientX;
+
+    const diff = startX.current - endX;
+
+    if (diff > 60) setIndex(i => Math.min(i + 1, testimonials.length - 1));
+    if (diff < -60) setIndex(i => Math.max(i - 1, 0));
+
+    isDragging.current = false;
+  };
+
+  return (
+    <section className="sha-testimonial">
+      <div className="sha-testimonial-inner">
+        <h2>
+          What our clients say <br />
+          about <span>working with us</span>
+        </h2>
+
+        <p className="lead">
+          Real feedback from businesses that trusted SHA Infotechnology
+          to scale their digital growth.
+        </p>
+
+        <div
+          className="testimonial-slider"
+          onMouseDown={handleStart}
+          onMouseUp={handleEnd}
+          onTouchStart={handleStart}
+          onTouchEnd={handleEnd}
+        >
+          <div
+            className="testimonial-track"
+            style={{ transform: `translateX(-${index * 100}%)` }}
+          >
+            {testimonials.map((t, i) => (
+              <div className="testimonial-card" key={i}>
+                <div className="testimonial-rating">★★★★★</div>
+                <div className="testimonial-quote">{t.quote}</div>
+
+                <div className="testimonial-author">
+                  <div className="author-avatar">{t.name[0]}</div>
+                  <div>
+                    <div className="author-name">{t.name}</div>
+                    <div className="author-role">{t.role}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="testimonial-dots">
+          {testimonials.map((_, i) => (
+            <span
+              key={i}
+              className={i === index ? "active" : ""}
+              onClick={() => setIndex(i)}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 
 function Vission() {
@@ -80,8 +467,8 @@ function Vission() {
 /* ================= VISION SECTION ================= */
 
 .vision-section{
-  padding: clamp(60px, 8vw, 100px) 6vw;
-  background: radial-gradient(circle at top, #0b1220, #020617 70%);
+  padding: clamp(10px, 8vw) 6vw;
+  // background: radial-gradient(circle at top, #0b1220, #020617 70%);
   font-family: Inter, system-ui, sans-serif;
   color: #e5e7eb;
   overflow:hidden;
@@ -221,7 +608,295 @@ function Vission() {
   );
 }
 
+function TrustTimelineSticky() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [counters, setCounters] = useState({
+    clients: 0,
+    projects: 0,
+    years: 0
+  });
 
+  useEffect(() => {
+    const css = `
+/* ================= TRUST SECTION ================= */
+.trust-wrap{
+  background:radial-gradient(circle at top,#0b1220,#020617 70%);
+  padding:120px 6vw;
+  font-family:Inter,system-ui;
+  color:#e5e7eb;
+}
+
+/* ================= HEADING ================= */
+.trust-heading{
+  text-align:center;
+  margin-bottom:90px;
+}
+
+.trust-heading h5{
+  font-size:14px;
+  letter-spacing:.14em;
+  color:#cbd5f5;
+}
+
+.trust-heading h2{
+  font-size:clamp(32px,5vw,56px);
+  font-weight:900;
+}
+
+.trust-heading h2 span{
+  background:linear-gradient(90deg,#8b5cf6,#ec4899);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.trust-underline{
+  width:72px;
+  height:4px;
+  margin:18px auto 0;
+  border-radius:999px;
+  background:linear-gradient(90deg,#8b5cf6,#ec4899);
+}
+
+/* ================= GRID ================= */
+.trust-grid{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:70px;
+}
+
+/* ================= TIMELINE ================= */
+.trust-timeline{
+  position:relative;
+  display:grid;
+  gap:60px;
+}
+
+.trust-timeline::before{
+  content:"";
+  position:absolute;
+  left:10px;
+  top:0;
+  bottom:0;
+  width:3px;
+  background:linear-gradient(180deg,#8b5cf6,#ec4899);
+}
+
+/* ITEM – ALWAYS VISIBLE */
+.trust-item{
+  position:relative;
+  padding-left:72px;
+}
+
+/* DOT */
+.trust-dot{
+  position:absolute;
+  left:1px;
+  top:8px;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:#020617;
+  border:2px solid var(--accent);
+}
+
+.trust-item.active .trust-dot{
+  background:var(--accent);
+  box-shadow:0 0 18px var(--accent);
+}
+
+/* CARD */
+.trust-card{
+  background:rgba(255,255,255,0.06);
+  border:1px solid var(--accent-soft);
+  border-radius:22px;
+  padding:26px;
+  box-shadow:0 30px 80px rgba(0,0,0,.6);
+}
+
+.trust-icon{
+  width:46px;
+  height:46px;
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--accent),#ffffff22);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  margin-bottom:14px;
+}
+
+.trust-card h4{
+  font-size:18px;
+  font-weight:900;
+}
+
+.trust-card p{
+  font-size:15px;
+  line-height:1.7;
+  color:#cbd5f5;
+}
+
+/* ================= STICKY RIGHT ================= */
+.trust-sticky{
+  position:sticky;
+  top:110px;
+}
+
+.trust-box{
+  background:linear-gradient(180deg,#0f172a,#020617);
+  border:1px solid var(--accent-soft);
+  border-radius:26px;
+  padding:38px;
+  box-shadow:0 40px 120px rgba(0,0,0,.75);
+}
+
+.trust-box h3 span{
+  background:linear-gradient(90deg,var(--accent),#ec4899);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* EXTRA CONTENT */
+.trust-points{
+  display:grid;
+  gap:12px;
+  margin:22px 0;
+}
+
+.trust-point{
+  display:flex;
+  gap:10px;
+  font-size:14px;
+}
+
+.trust-point span{
+  color:var(--accent);
+  font-weight:900;
+}
+
+/* COUNTERS */
+.trust-counters{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.counter-box{
+  background:rgba(255,255,255,0.05);
+  border-radius:18px;
+  padding:18px;
+  border:1px solid var(--accent-soft);
+  text-align:center;
+}
+
+.counter-box strong{
+  font-size:26px;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:900px){
+  .trust-grid{
+    grid-template-columns:1fr;
+  }
+  .trust-sticky{
+    position:relative;
+    top:auto;
+  }
+}
+
+@media(max-width:480px){
+  .trust-counters{
+    grid-template-columns:1fr;
+  }
+}
+`;
+    const style = document.createElement("style");
+    style.innerHTML = css;
+    document.head.appendChild(style);
+
+    let step = 0;
+    const timer = setInterval(() => {
+      step++;
+      setCounters({
+        clients: Math.min(step * 6, 120),
+        projects: Math.min(step * 9, 180),
+        years: Math.min(step, 5)
+      });
+      if (step >= 20) clearInterval(timer);
+    }, 60);
+
+    return () => style.remove();
+  }, []);
+
+  const timeline = [
+    { title: "Strong Digital Foundation", desc: "Scalable, future-ready architecture.", icon: "🏗️", accent: "#8b5cf6" },
+    { title: "Transparent Process", desc: "Clear timelines & communication.", icon: "🔍", accent: "#22d3ee" },
+    { title: "Results That Matter", desc: "Leads, traffic & conversions.", icon: "📈", accent: "#ec4899" },
+    { title: "Long-Term Partnership", desc: "We grow with your business.", icon: "🤝", accent: "#f59e0b" }
+  ];
+
+  return (
+    <section className="trust-wrap">
+      <div className="trust-heading">
+        <h5>OUR MISSION</h5>
+        <h2><span>Turning Vision Into Results</span></h2>
+        <div className="trust-underline"></div>
+      </div>
+
+      <div className="trust-grid">
+        {/* LEFT */}
+        <div className="trust-timeline">
+          {timeline.map((item, i) => (
+            <div
+              key={i}
+              className={`trust-item ${activeIndex === i ? "active" : ""}`}
+              style={{
+                "--accent": item.accent,
+                "--accent-soft": `${item.accent}55`
+              }}
+              onMouseEnter={() => setActiveIndex(i)}
+            >
+              <div className="trust-dot"></div>
+              <div className="trust-card">
+                <div className="trust-icon">{item.icon}</div>
+                <h4>{item.title}</h4>
+                <p>{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* RIGHT */}
+        <div className="trust-sticky">
+          <div
+            className="trust-box"
+            style={{
+              "--accent": timeline[activeIndex].accent,
+              "--accent-soft": `${timeline[activeIndex].accent}55`
+            }}
+          >
+            <h3>Why Clients <span>Trust Us</span></h3>
+
+            <div className="trust-points">
+              <div className="trust-point"><span>✓</span> Strategy-first execution</div>
+              <div className="trust-point"><span>✓</span> SEO & performance focus</div>
+              <div className="trust-point"><span>✓</span> Transparent process</div>
+              <div className="trust-point"><span>✓</span> Scalable solutions</div>
+            </div>
+
+            <div className="trust-counters">
+              <div className="counter-box"><strong>{counters.clients}+</strong><span>Clients</span></div>
+              <div className="counter-box"><strong>{counters.projects}+</strong><span>Projects</span></div>
+              <div className="counter-box"><strong>{counters.years}+</strong><span>Years</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 
 function IdeasSection() {
@@ -405,7 +1080,6 @@ function IdeasSection() {
     </section>
   );
 }
-
 
 function WhyChooseSection() {
   const sectionRef = useRef(null);
@@ -1627,16 +2301,20 @@ vmItems.forEach(el => vmObserver.observe(el));
 
     <HomeHerohead />
     <Vission />
+   
     {/* <OurVission /> */}
     
   <AboutMission />
+  
     <div className="about-wrap">
       {/* <AboutMeet /> */}
+      <TrustTimelineSticky />
+       <StatsHighlight />
 <MeetTheTeam />
 <TeamSection />
-
+<Testimonials />
 <IdeasSection />
-      
+     
 <WhyChooseSection />
 
 {/* <CTASection /> */}

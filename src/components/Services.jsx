@@ -555,6 +555,188 @@ function GrowthPartnerSection() {
   );
 }
 
+ function IndustriesWeServe() {
+  useEffect(() => {
+    const css = `
+/* ===== INDUSTRIES SECTION ===== */
+.sha-industries{
+  padding:40px 6vw;
+  background:radial-gradient(circle at top,#0b1220,#020617 70%);
+  font-family:Inter,system-ui;
+  color:#ffffff;
+  overflow:hidden;
+}
+
+/* HEADING */
+.sha-industries h2{
+  text-align:center;
+  font-size:clamp(34px,5vw,48px);
+  font-weight:900;
+  // margin-bottom:15px;
+}
+
+.sha-industries h2 span{
+  background:linear-gradient(90deg,#8b5cf6,#ec4899);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* DESCRIPTION */
+.sha-industries p{
+  max-width:900px;
+  margin:0 auto 70px;
+  text-align:center;
+  font-size:16px;
+  line-height:1.8;
+  color:#cbd5f5;
+}
+
+/* SLIDER */
+.industry-slider{
+  overflow:hidden;
+}
+
+/* TRACK */
+.industry-track{
+  display:flex;
+  gap:70px;
+  width:max-content;
+  animation:scroll 26s linear infinite;
+}
+
+.industry-slider:hover .industry-track{
+  animation-play-state:paused;
+}
+
+/* ITEM */
+.industry-item{
+  min-width:220px;
+   padding-top:50px;
+  text-align:center;
+}
+
+/* ICON WRAP (NO SIZE CHANGE) */
+.industry-icon{
+  width:120px;
+  height:120px;
+  margin:0 auto 18px;
+  border-radius:50%;
+  border:2px solid rgba(139,92,246,0.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:44px;
+  color:#8b5cf6;
+  background:rgba(255,255,255,0.02);
+  position:relative;
+  box-sizing:border-box;
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    background .35s ease,
+    color .35s ease;
+}
+
+/* GLOW LAYER (NO LAYOUT IMPACT) */
+.industry-icon::after{
+  content:"";
+  position:absolute;
+  inset:-14px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#8b5cf6,#ec4899);
+  opacity:0;
+  filter:blur(22px);
+  transition:opacity .35s ease;
+  z-index:-1;
+  
+}
+
+/* HOVER — NO PADDING / SIZE CHANGE */
+.industry-item:hover .industry-icon{
+  background:linear-gradient(135deg,#8b5cf6,#ec4899);
+  color:#ffffff;
+  
+  transform:translateY(-6px);
+  box-shadow:0 20px 50px rgba(139,92,246,.45);
+}
+
+.industry-item:hover .industry-icon::after{
+  opacity:.6;
+  
+}
+
+/* TITLE */
+.industry-item h4{
+  font-size:18px;
+  font-weight:800;
+  color:#ffffff;
+}
+
+/* AUTO SCROLL */
+@keyframes scroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .sha-industries{
+    padding:90px 20px;
+  }
+
+  .industry-item{
+    min-width:180px;
+  }
+
+  .industry-icon{
+    width:100px;
+    height:100px;
+    font-size:36px;
+  }
+}
+    `;
+    const style = document.createElement("style");
+    style.innerHTML = css;
+    document.head.appendChild(style);
+    return () => style.remove();
+  }, []);
+
+  const industries = [
+    { name: "Technology & Software", icon: "⚙️" },
+    { name: "Health Care", icon: "🏥" },
+    { name: "Food & Beverages", icon: "🍔" },
+    { name: "Finance", icon: "💰" },
+    { name: "Education", icon: "🎓" },
+    { name: "E-Commerce", icon: "🛒" },
+    { name: "Real Estate", icon: "🏢" },
+    { name: "Retail", icon: "🏬" }
+  ];
+
+  return (
+    <section className="sha-industries">
+      <h2>
+        Industries <span>We Serve</span>
+      </h2>
+
+      <p>
+        SHA Infotechnology delivers performance-driven digital solutions across
+        technology, healthcare, e-commerce, finance, education, and more—helping
+        businesses in Chennai and beyond grow visibility, engagement, and revenue.
+      </p>
+
+      <div className="industry-slider">
+        <div className="industry-track">
+          {[...industries, ...industries].map((item, i) => (
+            <div className="industry-item" key={i}>
+              <div className="industry-icon">{item.icon}</div>
+              <h4>{item.name}</h4>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 function ProjectWorkflowSection() {
   useEffect(() => {
@@ -1879,8 +2061,9 @@ useEffect(() => {
     <div className="services-wrap">
       
 <ServicesHighlightSection />
-   
+   <IndustriesWeServe />
       <ProjectWorkflowSection />
+      
       <GrowthPartnerSection />
 
 

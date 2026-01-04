@@ -1,18 +1,18 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
-
+import WhatsAppFloat from "./components/WhatsAppFloat";
 import Header from "./components/Header";
 import ScrollToTop from "./components/ScrollToTop";
 import AnimatedPage from "./components/AnimatedPage";
 import PageLoader from "./components/PageLoader";
-
+import Footer from "./components/Footer";
 import Home from "./components/Home";
 import About from "./components/About";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
 import ServiceDetail from "./components/ServiceDetail";
-
+// import AssistantPopup from "./components/AssistantPopup";
 import {
   fadeUp,
   slideLeft,
@@ -38,7 +38,7 @@ export default function App() {
 
      
       <ScrollToTop />
-
+ {/* <AssistantPopup /> */}
      
       <AnimatePresence>
         {loading && <PageLoader />}
@@ -93,8 +93,10 @@ export default function App() {
         }
       />
     </Routes>
+         <WhatsAppFloat />
   </div>
 </AnimatePresence>
+<Footer />
 
     </>
   );
