@@ -6,9 +6,12 @@
   font-family: Inter, system-ui, Arial, sans-serif;
 }
 
-body {
+html, body {
+  margin: 0;
+  padding: 0;
   background: radial-gradient(circle at top, #0b1220, #020617 70%);
-  
+  color: #e5e7eb;
+  overflow-x: hidden;
 }
 
 /* ===== HEADER ===== */

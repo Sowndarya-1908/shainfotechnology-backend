@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 
 import { useNavigate } from "react-router-dom";
 
-import Contact from "./Contact";
 
   function IndustriesWeServe() {
   useEffect(() => {
     const css = `
 /* ===== INDUSTRIES SECTION ===== */
 .sha-industries{
-  padding:40px 6vw;
-  background:radial-gradient(circle at top,#0b1220,#020617 70%);
+  // padding:40px 6vw;
+  padding-top: 30px;
+  // background:radial-gradient(circle at top,#0b1220,#020617 70%);
   font-family:Inter,system-ui;
   color:#ffffff;
   overflow:hidden;
@@ -143,6 +143,7 @@ import Contact from "./Contact";
     width:100px;
     height:100px;
     font-size:36px;
+
   }
 }
     `;
@@ -188,7 +189,133 @@ import Contact from "./Contact";
     </section>
   );
 }
+function StatsHighlight() {
+  const sectionRef = useRef(null);
+  const [start, setStart] = useState(false);
 
+  const stats = [
+    { value: 100, label: "Happy Clients" },
+    { value: 2, label: "Years of Experience" },
+    { value: 5, label: "Expert Professionals" },
+    { value: 180, label: "Projects Delivered" }
+  ];
+
+  const [counts, setCounts] = useState(stats.map(() => 0));
+
+  /* ================= COUNT-UP LOGIC ================= */
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStart(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.4 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!start) return;
+
+    stats.forEach((stat, index) => {
+      let current = 0;
+      const increment = Math.ceil(stat.value / 40);
+
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= stat.value) {
+          current = stat.value;
+          clearInterval(timer);
+        }
+
+        setCounts(prev => {
+          const updated = [...prev];
+          updated[index] = current;
+          return updated;
+        });
+      }, 30);
+    });
+  }, [start]);
+
+  /* ================= STYLES ================= */
+  useEffect(() => {
+    const css = `
+/* ===== STATS SECTION ===== */
+.sha-stats{
+  background:#fff;
+  padding:20px 1vw;
+  font-family:Inter,system-ui;
+}
+
+.sha-stats-inner{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:40px;
+  text-align:center;
+}
+
+/* NUMBER */
+.stat-value{
+  font-size:48px;
+  font-weight:900;
+  background:linear-gradient(90deg,#8b5cf6,#ec4899);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin-bottom:10px;
+}
+
+/* LABEL */
+.stat-label{
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:#0f172a;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .sha-stats-inner{
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+  }
+}
+
+@media(max-width:480px){
+  .sha-stats-inner{
+    grid-template-columns:1fr;
+  }
+
+  .stat-value{
+    font-size:42px;
+  }
+}
+    `;
+    const style = document.createElement("style");
+    style.innerHTML = css;
+    document.head.appendChild(style);
+    return () => style.remove();
+  }, []);
+
+  return (
+    <section className="sha-stats" ref={sectionRef}>
+      <div className="sha-stats-inner">
+        {stats.map((stat, i) => (
+          <div key={i}>
+            <div className="stat-value">{counts[i]}+</div>
+            <div className="stat-label">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
 
 function ProjectRunLeftImageSection() {
   return (
@@ -243,8 +370,8 @@ function ProjectRunLeftImageSection() {
       <style>{`
         /* SECTION */
         .projectrun-section {
-          padding: clamp(48px, 6vw, 80px) clamp(5vw, 8vw, 9vw);
-          background: radial-gradient(circle at top, #0b1220, #020617 70%);
+          padding: clamp(8px, 2vw, 0px) clamp(5vw, 8vw, 9vw);
+          // background: radial-gradient(circle at top, #0b1220, #020617 70%);
           font-family: Inter, system-ui, sans-serif;
           color: #e5e7eb;
           overflow: hidden;
@@ -316,12 +443,12 @@ function ProjectRunLeftImageSection() {
         .projectrun-image-glow::before {
           content: "";
           position: absolute;
-          inset: clamp(-40px, -6vw, -65px);
+          inset: clamp(-40px, -2vw, -20px);
           background: radial-gradient(
             circle,
             rgba(168, 85, 247, 0.55),
             rgba(236, 72, 153, 0.3),
-            transparent 70%
+            transparent 50%
           );
           filter: blur(clamp(45px, 6vw, 65px));
           z-index: 0;
@@ -397,8 +524,8 @@ function SeoMarketingSection() {
       <style>{`
         /* SECTION */
         .seo-section {
-          padding: clamp(48px, 6vw, 80px) clamp(5vw, 8vw, 9vw);
-          background: radial-gradient(circle at top, #0b1220, #020617 70%);
+          // padding: clamp(48px, 6vw, 80px) clamp(5vw, 8vw, 9vw);
+          // background: radial-gradient(circle at top, #0b1220, #020617 70%);
           font-family: Inter, system-ui, sans-serif;
           color: #e5e7eb;
           overflow: hidden;
@@ -455,7 +582,8 @@ function SeoMarketingSection() {
         .seo-text p {
           font-size: clamp(15px, 1.4vw, 16px);
           line-height: 1.7;
-          margin-bottom: clamp(10px, 2vw, 16px);
+          // margin-bottom: clamp(10px, 2vw, 16px);
+          margin-bottom:auto;
           color: #cbd5f5;
         }
 
@@ -473,14 +601,14 @@ function SeoMarketingSection() {
         .image-glow::before {
           content: "";
           position: absolute;
-          inset: clamp(-40px, -6vw, -65px);
+          // inset: clamp(-40px, -6vw, -65px);
           background: radial-gradient(
             circle,
             rgba(168, 85, 247, 0.55),
             rgba(236, 72, 153, 0.3),
-            transparent 70%
+            transparent 50%
           );
-          filter: blur(clamp(45px, 6vw, 65px));
+          filter: blur(clamp(5px, 2vw, 65px));
           z-index: 0;
         }
 
@@ -488,7 +616,7 @@ function SeoMarketingSection() {
           position: relative;
           z-index: 2;
           width: 100%;
-          max-width: clamp(320px, 42vw, 520px);
+          max-width: clamp(320px, 42vw, 20px);
           border-radius: 10px;
           background: none;
           box-shadow: none;
@@ -562,8 +690,8 @@ function SeoGrowthSectionleftimage() {
       <style>{`
         /* SECTION */
         .seo-section {
-          padding: clamp(48px, 6vw, 80px) clamp(5vw, 8vw, 9vw);
-          background: radial-gradient(circle at top, #0b1220, #020617 70%);
+          padding-top:40px;
+          // background: radial-gradient(circle at top, #0b1220, #020617 70%);
           font-family: Inter, system-ui, sans-serif;
           color: #e5e7eb;
           overflow: hidden;
@@ -674,8 +802,9 @@ function ProcessFlowSection() {
 /* ================= PROCESS FLOW ================= */
 
 .process-wrap{
-  padding: clamp(60px, 8vw, 100px) 40px;
-  background: radial-gradient(circle at top, #0b1220, #020617 70%);
+  // padding: clamp(40px, 8vw, 100px) 50px;
+  padding-top:40px;
+  // background: radial-gradient(circle at top, #0b1220, #020617 70%);
   position: relative;
   overflow: hidden;
 }
@@ -905,8 +1034,9 @@ useEffect(() => {
 /* ================= HOME FAQ (SPACING FIXED) ================= */
 
 .home-faq-wrap{
-  background: radial-gradient(circle at top, #0b1220, #020617 70%);
-  padding: clamp(56px, 7vw, 90px) clamp(5vw, 6vw, 7vw);
+  // background: radial-gradient(circle at top, #0b1220, #020617 70%);
+  // padding: clamp(56px, 7vw, 90px) clamp(5vw, 6vw, 7vw);
+  padding-top:30px;
   color:#ffffff;
   font-family:Inter,system-ui;
 }
@@ -1204,8 +1334,8 @@ function ServicesHighlightSection() {
 /* ================= SERVICES HIGHLIGHT (SPACING FIXED) ================= */
 
 .sh-wrap{
-  background:radial-gradient(circle at top,#0b1220,#020617 70%);
-  padding: clamp(56px, 7vw, 88px) clamp(5vw, 6vw, 7vw);
+  // background:radial-gradient(circle at top,#0b1220,#020617 70%);
+  // padding: clamp(56px, 7vw, 88px) clamp(5vw, 6vw, 7vw);
   font-family:Inter,system-ui;
 }
 
@@ -1462,8 +1592,8 @@ function ServicesHighlightSection() {
 /* HERO */
 .home-hero{
   min-height:auto; /* ❌ remove forced full screen */
-  padding: clamp(56px, 7vw, 90px) clamp(5vw, 8vw, 9vw);
-  background:radial-gradient(circle at top, var(--bg-dark-2), var(--bg-dark) 70%);
+  padding: clamp(56px, 1vw, 90px) clamp(5vw, 8vw, 9vw);
+  // background:radial-gradient(circle at top, var(--bg-dark-2), var(--bg-dark) 70%);
   display:grid;
   grid-template-columns:1.1fr 1fr;
   align-items:center;
@@ -1518,9 +1648,9 @@ function ServicesHighlightSection() {
 
 .hero-image{
   width:100%;
-  max-width: clamp(420px, 45vw, 820px);
+  max-width: clamp(42px, 45vw, 820px);
   height:auto;
-  filter:drop-shadow(0 50px 120px rgba(139,92,246,0.45));
+  filter:drop-shadow(0 20px 80px rgba(139,92,246,0.45));
 }
 
 /* MOBILE */
@@ -1773,6 +1903,7 @@ useEffect(() => {
  <ServicesHighlightSection />
  <IndustriesWeServe />
         <SeoGrowthSectionleftimage />
+        <StatsHighlight />
         <HomeFAQSection /> 
         
        

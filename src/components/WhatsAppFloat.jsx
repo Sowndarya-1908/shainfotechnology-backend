@@ -99,7 +99,7 @@ export default function WhatsAppFloat() {
 }
 
 .wa-bubble{
-  background:#ffffff;
+  background:#000000;
   padding:10px 12px;
   border-radius:12px;
   font-size:14px;
@@ -169,7 +169,7 @@ export default function WhatsAppFloat() {
   }, []);
 
   /* ================= LOGIC ================= */
-  const phone = "917550057453";
+  const phone = "919445747815";
 
   const defaultMessage =
     "Hi SHA Infotechnology 👋 I would like to enquire about your services.";

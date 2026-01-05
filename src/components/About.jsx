@@ -7,10 +7,10 @@ const BG_QUOTE_IMAGE = "/images/about/image.png";
   const [start, setStart] = useState(false);
 
   const stats = [
-    { value: 150, label: "Happy Clients" },
-    { value: 12, label: "Years of Experience" },
-    { value: 20, label: "Expert Professionals" },
-    { value: 100, label: "Projects Delivered" }
+    { value: 100, label: "Happy Clients" },
+    { value: 2, label: "Years of Experience" },
+    { value: 5, label: "Expert Professionals" },
+    { value: 180, label: "Projects Delivered" }
   ];
 
   const [counts, setCounts] = useState(stats.map(() => 0));
@@ -59,7 +59,7 @@ const BG_QUOTE_IMAGE = "/images/about/image.png";
     const css = `
 /* ===== STATS SECTION ===== */
 .sha-stats{
-  background:#ffffff;
+   background:#fff;  
   padding:50px 1vw;
   font-family:Inter,system-ui;
 }
@@ -131,6 +131,216 @@ const BG_QUOTE_IMAGE = "/images/about/image.png";
 }
 
 
+function AboutWaveSection() {
+  useEffect(() => {
+    const css = `
+/* ===== ANIMATED GRADIENT BACKGROUND ===== */
+.about-wave-bg{
+  position:relative;
+  min-height:87vh;
+  width:100%;
+  overflow:hidden;
+  font-family:Inter,system-ui,sans-serif;
+  background:linear-gradient(
+    315deg,
+    rgba(174, 84, 211, 1) 3%,
+    rgba(85, 6, 88, 1) 38%,
+    rgba(102, 6, 83, 1) 68%,
+    rgba(217, 72, 193, 1) 98%
+  );
+  background-size:400% 400%;
+  animation:gradientMove 15s ease infinite;
+}
+
+/* GRADIENT ANIMATION */
+@keyframes gradientMove{
+  0%{background-position:0% 0%}
+  50%{background-position:100% 100%}
+  100%{background-position:0% 0%}
+}
+  .about-wave-bg::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:4px;               /* 🔥 seam cover */
+  background:#020617;
+  z-index:10;
+}
+
+/* ===== WAVES ===== */
+.about-wave{
+  background:rgba(255,255,255,0.25);
+  border-radius:1000% 1000% 0 0;
+  position:absolute;
+  width:200%;
+  height:12em;
+  bottom:-2px;
+  left:0;
+  animation:waveMove 10s -3s linear infinite;
+  opacity:.8;
+  z-index:1;
+}
+
+.about-wave:nth-of-type(2){
+
+  bottom:calc(-1.25em - 2px);
+  animation:waveMove 18s linear reverse infinite;
+}
+
+.about-wave:nth-of-type(3){
+
+  bottom:calc(-1.25em - 2px);
+  animation:waveMove 20s -1s reverse infinite;
+}
+
+/* WAVE ANIMATION */
+@keyframes waveMove{
+  0%{transform:translateX(0)}
+  25%{transform:translateX(-25%)}
+  50%{transform:translateX(-50%)}
+  75%{transform:translateX(-25%)}
+  100%{transform:translateX(0)}
+}
+
+/* ===== CONTENT ABOVE WAVES ===== */
+.about-wave-content{
+  position:relative;
+  z-index:5;
+}
+
+/* ===== ABOUT CONTENT ===== */
+.about-section{
+  min-height:50vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 6vw;
+  color:#ffffff;
+  text-align:center;
+}
+
+.about-container{
+  max-width:900px;
+}
+
+.about-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 20px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.35);
+  font-size:14px;
+  font-weight:600;
+  margin-bottom:28px;
+}
+
+.about-badge span{
+  width:10px;
+  height:10px;
+  background:#ffffff;
+  border-radius:50%;
+  box-shadow:0 0 12px rgba(255,255,255,.8);
+}
+
+.about-heading{
+  font-size:clamp(38px,6vw,64px);
+  font-weight:900;
+  line-height:1.1;
+  margin-bottom:24px;
+}
+
+.about-heading span{
+  background:linear-gradient(90deg,#ffffff,#fbcfe8);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.about-text{
+  font-size:18px;
+  line-height:1.85;
+  color:#f5f3ff;
+  margin-bottom:46px;
+}
+
+.about-features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.feature-card{
+  background:rgba(101, 5, 87, 0.15);
+  backdrop-filter:blur(12px);
+  border-radius:20px;
+  padding:22px;
+  font-size:15px;
+  font-weight:600;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .about-features{
+    grid-template-columns:1fr;
+  }
+.about-wave-bg{
+ min-height:100vh;
+  }
+  .about-text{
+    font-size:16px;
+  }
+}
+    `;
+
+    const style = document.createElement("style");
+    style.innerHTML = css;
+    document.head.appendChild(style);
+
+    return () => style.remove();
+  }, []);
+
+  return (
+    <section className="about-wave-bg">
+      {/* CONTENT */}
+      <div className="about-wave-content">
+        <section className="about-section">
+          <div className="about-container">
+
+            <div className="about-badge">
+              <span></span> ABOUT SHA INFOTECHNOLOGY
+            </div>
+
+            <h1 className="about-heading">
+              Building <span>Digital Experiences</span><br />
+              That Drive Growth
+            </h1>
+
+            <p className="about-text">
+              <strong>SHA Infotechnology</strong> is a digital solutions company
+              helping businesses grow through strategy, design, and scalable
+              technology.
+            </p>
+
+            <div className="about-features">
+              <div className="feature-card">🚀 Strategy-First Approach</div>
+              <div className="feature-card">🎯 Performance-Driven Solutions</div>
+              <div className="feature-card">🤝 Long-Term Growth Partner</div>
+            </div>
+
+          </div>
+        </section>
+      </div>
+
+      {/* WAVES */}
+      <div className="about-wave"></div>
+      <div className="about-wave"></div>
+      <div className="about-wave"></div>
+    </section>
+  );
+}
+
 
 function Testimonials() {
   const [index, setIndex] = useState(0);
@@ -184,8 +394,10 @@ function Testimonials() {
     const css = `
 /* ===== TESTIMONIAL SECTION ===== */
 .sha-testimonial{
-  background:radial-gradient(circle at top,#0b1220,#020617 70%);
-  padding:10px 6vw;
+  // background:radial-gradient(circle at top,#0b1220,#020617 70%);
+  // padding:10px 6vw;
+  padding-top:30px;
+  padding-bottom:30px;
   font-family:Inter,system-ui;
   color:#ffffff;
 }
@@ -467,8 +679,8 @@ function Vission() {
 /* ================= VISION SECTION ================= */
 
 .vision-section{
-  padding: clamp(10px, 8vw) 6vw;
-  // background: radial-gradient(circle at top, #0b1220, #020617 70%);
+  padding: clamp(30px, 8vw) 6vw;
+  /* background: radial-gradient(circle at top, #0b1220, #020617 70%); */
   font-family: Inter, system-ui, sans-serif;
   color: #e5e7eb;
   overflow:hidden;
@@ -506,6 +718,15 @@ function Vission() {
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
+// .vision-title::after{
+//   content:"";
+//   display:block;
+//   width:80px;
+//   height:3px;
+//   margin:16px auto 0;
+//   background:linear-gradient(90deg,#8b5cf6,#ec4899);
+//   border-radius:2px;
+// }
 
 .vision-divider{
   width:90px;
@@ -513,19 +734,17 @@ function Vission() {
   background:#8b5cf6;
   margin:18px auto 0;
   border-radius:2px;
-  transform:scaleX(0);
-  transform-origin:left;
-  transition:transform .6s ease .2s;
+  opacity:1;                /* 🔥 REMOVE opacity animation */
+  transform:translateZ(0);  /* 🔥 GPU fix */
+  backface-visibility:hidden;
+  will-change:transform;
 }
 
-.vision-divider.draw{
-  transform:scaleX(1);
-}
 
 /* ===== LAYOUT ===== */
 .vision-container{
   max-width:1200px;
-  margin:auto;
+   margin:auto;
   display:grid;
   grid-template-columns:1fr 1.1fr;
   gap:clamp(28px,5vw,60px);
@@ -576,7 +795,7 @@ function Vission() {
 .vision-text p{
   font-size:16px;
   line-height:1.75;
-  margin-bottom:14px;
+  // margin-bottom:14px;
   color:#cbd5f5;
   opacity:0;
   transform:translateY(20px);
@@ -620,8 +839,9 @@ function TrustTimelineSticky() {
     const css = `
 /* ================= TRUST SECTION ================= */
 .trust-wrap{
-  background:radial-gradient(circle at top,#0b1220,#020617 70%);
-  padding:120px 6vw;
+  // background:radial-gradient(circle at top,#0b1220,#020617 70%);
+  // padding:120px 6vw;
+  padding-bottom:20px;
   font-family:Inter,system-ui;
   color:#e5e7eb;
 }
@@ -820,9 +1040,9 @@ function TrustTimelineSticky() {
     const timer = setInterval(() => {
       step++;
       setCounters({
-        clients: Math.min(step * 6, 120),
-        projects: Math.min(step * 9, 180),
-        years: Math.min(step, 5)
+        clients: Math.min(step * 6, 100),
+        projects: Math.min(step * 9, 150),
+        years: Math.min(step, 2)
       });
       if (step >= 20) clearInterval(timer);
     }, 60);
@@ -840,8 +1060,8 @@ function TrustTimelineSticky() {
   return (
     <section className="trust-wrap">
       <div className="trust-heading">
-        <h5>OUR MISSION</h5>
-        <h2><span>Turning Vision Into Results</span></h2>
+        
+        <h2><span>Our Journey</span></h2>
         <div className="trust-underline"></div>
       </div>
 
@@ -907,8 +1127,9 @@ function IdeasSection() {
 /* ================= IDEAS SECTION ================= */
 
 .ideas-section{
-  padding: clamp(60px, 8vw, 90px) 6vw;
-  background: radial-gradient(circle at top, #0b1220, #020617 70%);
+  // padding: clamp(60px, 8vw, 90px) 6vw;
+  padding-top:40px;
+  /* background: radial-gradient(circle at top, #0b1220, #020617 70%); */
   font-family: Inter, system-ui;
   overflow:hidden;
 }
@@ -1089,8 +1310,9 @@ function WhyChooseSection() {
 /* ================= WHY CHOOSE SECTION ================= */
 
 .why-section{
-  padding: clamp(64px, 8vw, 96px) 6vw;
-  background: radial-gradient(circle at top, #0b1220, #020617 70%);
+  // padding: clamp(64px, 8vw, 96px) 6vw;
+  /* background: radial-gradient(circle at top, #0b1220, #020617 70%); */
+  padding-top:30px;
   font-family: Inter, system-ui;
   overflow:hidden;
 }
@@ -1340,8 +1562,9 @@ function TeamSection() {
 /* ================= TEAM SECTION ================= */
 
 .team-section{
-  padding:120px 6vw;
-  background: radial-gradient(circle at top, #0b1220, #020617 70%);
+  padding-bottom:50px;
+  padding-top:20px;
+  /* background: radial-gradient(circle at top, #0b1220, #020617 70%); */
   font-family:Inter,system-ui;
   overflow:hidden;
 }
@@ -1565,7 +1788,7 @@ function TeamSection() {
       <div className="team-container">
 
         <div className="team-title">
-          <h2>Meet the People Behind the Work.</h2>
+          <h2>Meet the People Behind the Work</h2>
           <p>
             The team that turns ideas into powerful digital solutions.
             <br />
@@ -1640,8 +1863,10 @@ function MeetTheTeam() {
 /* ================= MEET THE TEAM ================= */
 
 .mission-section{
-  padding: clamp(64px, 8vw, 96px) 6vw;
-  background: radial-gradient(circle at top, #0b1220, #020617 70%);
+  // padding: clamp(64px, 8vw, 96px) 6vw;
+  padding-top:20px;
+  padding-bottom:30px;
+  /* background: radial-gradient(circle at top, #0b1220, #020617 70%); */
   font-family: Inter, system-ui;
   overflow:hidden;
 }
@@ -1865,8 +2090,8 @@ function AboutMission() {
 /* ================= ABOUT MISSION ================= */
 
 .aboutmission-section{
-  padding: clamp(64px, 8vw, 96px) 6vw;
-  background:radial-gradient(circle at top,#0b1220,#020617 70%);
+  // padding: clamp(64px, 8vw, 96px) 6vw;
+  // background:radial-gradient(circle at top,#0b1220,#020617 70%);
   font-family:Inter,system-ui,sans-serif;
   color:#e5e7eb;
   overflow:hidden;
@@ -2274,8 +2499,6 @@ function HomeHerohead() {
 }
 
 
-
-// ========================= ABOUT PAGE MAIN =========================
 export default function AboutPage() {
 
 
@@ -2297,9 +2520,9 @@ vmItems.forEach(el => vmObserver.observe(el));
   return (
 
     <>
-
-
-    <HomeHerohead />
+<AboutWaveSection />
+{/* <AnimatedWaveBackground /> */}
+    {/* <HomeHerohead /> */}
     <Vission />
    
     {/* <OurVission /> */}
@@ -2312,12 +2535,12 @@ vmItems.forEach(el => vmObserver.observe(el));
        <StatsHighlight />
 <MeetTheTeam />
 <TeamSection />
-<Testimonials />
-<IdeasSection />
-     
-<WhyChooseSection />
 
-{/* <CTASection /> */}
+<IdeasSection />
+<WhyChooseSection />
+     <Testimonials />
+
+
     </div>
 
     </>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 /* ================= CONSTANTS ================= */
-const CONTACT_PHONE = "7550057453";
+const CONTACT_PHONE = "919445747815"; // WhatsApp number with country code
 const CONTACT_PHONE_DISPLAY = "94457 47815";
 const CONTACT_EMAIL = "shainfotech05@gmail.com";
 
@@ -73,17 +73,27 @@ Message:
 ${form.message || getServiceMessage()}
     `;
 
-    const whatsappURL = `https://wa.me/${CONTACT_PHONE}?text=${encodeURIComponent(
-      text
-    )}`;
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(
+      navigator.userAgent
+    );
 
-    window.open(whatsappURL, "_blank");
+    if (isMobile) {
+      window.location.href = `whatsapp://send?phone=${CONTACT_PHONE}&text=${encodeURIComponent(
+        text
+      )}`;
+    } else {
+      window.open(
+        `https://web.whatsapp.com/send?phone=${CONTACT_PHONE}&text=${encodeURIComponent(
+          text
+        )}`,
+        "_blank"
+      );
+    }
   };
 
   /* ================= STYLES ================= */
   useEffect(() => {
     const css = `
-/* ===== CONTACT SECTION ===== */
 .contact-cards-ui{
   padding:100px 6vw;
   background:radial-gradient(circle at top,#0b1220,#020617 70%);
@@ -108,7 +118,6 @@ ${form.message || getServiceMessage()}
   height:10px;
   background:#ffb703;
   border-radius:50%;
-  box-shadow:0 0 12px rgba(255,183,3,.9);
 }
 
 .contact-heading{
@@ -134,7 +143,6 @@ ${form.message || getServiceMessage()}
   color:#000;
   border-radius:20px;
   padding:28px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.15);
 }
 
 .icon-box{
@@ -152,20 +160,8 @@ ${form.message || getServiceMessage()}
 .card-title{
   font-size:22px;
   font-weight:800;
-  margin-bottom:8px;
 }
 
-.card-desc{
-  font-size:15px;
-  margin-bottom:12px;
-}
-
-.card-link{
-  font-size:16px;
-  font-weight:700;
-}
-
-/* ===== FORM ===== */
 .contact-section{
   padding:80px 6vw;
   background:#020617;
@@ -177,7 +173,6 @@ ${form.message || getServiceMessage()}
   background:linear-gradient(180deg,#0f172a,#020617);
   padding:48px;
   border-radius:24px;
-  box-shadow:0 40px 120px rgba(0,0,0,0.75);
 }
 
 .contact-form{
@@ -195,8 +190,6 @@ ${form.message || getServiceMessage()}
   background:#020617;
   color:#fff;
 }
-
-.contact-form textarea{min-height:140px}
 
 .contact-form button{
   padding:18px;
@@ -222,7 +215,7 @@ ${form.message || getServiceMessage()}
   /* ================= JSX ================= */
   return (
     <>
-      {/* ===== CONTACT CARDS ===== */}
+      {/* CONTACT CARDS */}
       <section className="contact-cards-ui">
         <div className="contact-tag">
           <span></span> GET IN TOUCH
@@ -236,41 +229,32 @@ ${form.message || getServiceMessage()}
           <div className="contact-card-ui">
             <div className="icon-box">✉️</div>
             <div className="card-title">Send Message</div>
-            <div className="card-desc">Send us a message for quick support.</div>
-            <div className="card-link">{CONTACT_EMAIL}</div>
+            <div>{CONTACT_EMAIL}</div>
           </div>
 
           <div className="contact-card-ui">
             <div className="icon-box">📞</div>
             <div className="card-title">Let's Talk</div>
-            <div className="card-desc">Explore your growth opportunities.</div>
-            <div className="card-link">{CONTACT_PHONE_DISPLAY}</div>
+            <div>{CONTACT_PHONE_DISPLAY}</div>
           </div>
 
           <div className="contact-card-ui">
             <div className="icon-box">💬</div>
             <div className="card-title">Chat Us</div>
-            <div className="card-desc">Chat with us on WhatsApp.</div>
-            <div className="card-link">@{CONTACT_PHONE_DISPLAY}</div>
+            <div>@{CONTACT_PHONE_DISPLAY}</div>
           </div>
 
           <div className="contact-card-ui">
             <div className="icon-box">📍</div>
             <div className="card-title">Our Office</div>
-            <div className="card-desc">Porur, Chennai</div>
-            <a
-              href={CONTACT_MAP_LINK}
-              target="_blank"
-              rel="noreferrer"
-              className="card-link"
-            >
-              Get Direction
+            <a href={CONTACT_MAP_LINK} target="_blank" rel="noreferrer">
+              Porur, Chennai
             </a>
           </div>
         </div>
       </section>
 
-      {/* ===== CONTACT FORM ===== */}
+      {/* CONTACT FORM */}
       <section className="contact-section">
         <div className="contact-right">
           <form className="contact-form" onSubmit={handleSubmit}>

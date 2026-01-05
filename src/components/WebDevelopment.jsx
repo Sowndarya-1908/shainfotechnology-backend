@@ -163,187 +163,307 @@ export function WebDevelopmentHero() {
 }
 
 
+
+// export function SecondSlideWebDevelopment() {
+//   const sectionRef = useRef(null);
+
+//   useEffect(() => {
+//     const css = `
+// /* ================= SECTION ================= */
+// .why-orbit-dark{
+//   padding:110px;
+//   padding-bottom:10px;
+//   // background:radial-gradient(circle at top,#0b1220,#020617 70%);
+//   font-family:Inter,system-ui;
+//   color:#e5e7eb;
+//   overflow:hidden;
+// }
+
+// /* GRID */
+// .why-dark-grid{
+//   max-width:1300px;
+//   margin:auto;
+//   display:grid;
+//   grid-template-columns:1.1fr 0.9fr;
+//   align-items:center;
+//   gap:70px;
+// }
+
+// /* LEFT TEXT */
+// .why-dark-left{
+//   opacity:0;
+//   transform:translateY(40px);
+//   transition:all .9s ease;
+// }
+
+// .why-orbit-dark.show .why-dark-left{
+//   opacity:1;
+//   transform:none;
+// }
+
+// .why-dark-left h2{
+//   font-size:38px;
+//   font-weight:900;
+//   margin-bottom:22px;
+//   color:#fff;
+// }
+
+// .why-dark-left h2 span{
+//   background:linear-gradient(90deg,#8b5cf6,#ec4899);
+//   -webkit-background-clip:text;
+//   -webkit-text-fill-color:transparent;
+// }
+
+// .why-dark-left p{
+//   font-size:17px;
+//   line-height:1.9;
+//   color:#cbd5f5;
+//   max-width:520px;
+//   margin-bottom:14px;
+// }
+
+// /* 🔥 GAP FIXES (SAFE – NO DESIGN CHANGE) */
+// .why-dark-left li{
+//   list-style:none;
+//   margin:0;
+//   padding:0;
+// }
+
+// .why-dark-left li + p{
+//   margin-top:6px;
+// }
+
+// .why-dark-left h2 + li{
+//   margin-top:0;
+// }
+
+// .why-dark-left strong{
+//   color:#ffffff;
+// }
+
+// /* RIGHT IMAGE */
+// .why-dark-image{
+//   display:flex;
+//   justify-content:center;
+//   align-items:center;
+//   opacity:0;
+//   transform:translateY(40px);
+//   transition:all .9s ease .2s;
+// }
+
+// .why-orbit-dark.show .why-dark-image{
+//   opacity:1;
+//   transform:none;
+// }
+
+// .why-dark-image img{
+//   width:100%;
+//   max-width:420px;
+//   border-radius:18px;
+// }
+
+// /* 🔥 DESKTOP GAP CONTROL ONLY */
+// @media(min-width:901px){
+//   .why-orbit-dark{
+//     padding-top:90px;
+//     padding-bottom:90px;
+//   }
+// }
+
+// /* MOBILE */
+// @media(max-width:900px){
+//   .why-dark-grid{
+//     grid-template-columns:1fr;
+//     text-align:center;
+//   }
+
+//   .why-dark-left p{
+//     margin-left:auto;
+//     margin-right:auto;
+//   }
+
+//   .why-dark-image{
+//     margin-top:40px;
+//   }
+// }
+//     `;
+
+//     const style = document.createElement("style");
+//     style.innerHTML = css;
+//     document.head.appendChild(style);
+
+//     const observer = new IntersectionObserver(
+//       ([entry]) => {
+//         if (entry.isIntersecting) {
+//           entry.target.classList.add("show");
+//         }
+//       },
+//       { threshold: 0.3 }
+//     );
+
+//     if (sectionRef.current) observer.observe(sectionRef.current);
+
+//     return () => {
+//       style.remove();
+//       if (sectionRef.current) observer.unobserve(sectionRef.current);
+//     };
+//   }, []);
+
+//   return (
+//     <section className="why-orbit-dark" ref={sectionRef}>
+//       <div className="why-dark-grid">
+
+//         {/* LEFT */}
+//         <div className="why-dark-left">
+//           <h2>
+//             Why <span>Choose us</span> for your Web Development Services?
+//           </h2>
+ 
+//           <p>
+//             <strong>Purpose-Driven Website Development</strong><br />
+//             We build websites with clear structure and functionality, designed
+//             to support your business goals and user journey.
+//           </p>
+
+//           <p>
+//             <strong>Responsive & Cross-Device Compatibility</strong><br />
+//             Every website we develop works seamlessly across mobile, tablet, and
+//             desktop devices.
+//           </p>
+
+//           <p>
+//             <strong>Performance-Optimized Codebase</strong><br />
+//             Clean, efficient code ensures fast load times, smooth navigation,
+//             and a better user experience.
+//           </p>
+
+//           <p>
+//             <strong>SEO-Ready & Scalable Structure</strong><br />
+//             Our websites are built with search-friendly architecture and
+//             scalability in mind for long-term growth.
+//           </p>
+
+//           <p>
+//             <strong>Secure & Reliable Development</strong><br />
+//             We follow secure development practices to protect your website,
+//             data, and users.
+//           </p>
+//         </div>
+
+//         {/* RIGHT IMAGE */}
+       
+// <div className="why-dark-image">
+//           <img
+//             src="/images/about/whyss.png"
+//             alt="Web Development"
+//           />
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 export function SecondSlideWebDevelopment() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
     const css = `
-.why-orbit-dark{
+/* ================= BRAND CONSULTANCY SECTION ================= */
+.brand-section{
+  // background:#ffffff;
   padding:110px 7vw;
-  background:radial-gradient(circle at top,#0b1220,#020617 70%);
   font-family:Inter,system-ui;
-  color:#e5e7eb;
   overflow:hidden;
 }
 
 /* GRID */
-.why-dark-grid{
-  max-width:1300px;
+.brand-grid{
+  max-width:1500px;
   margin:auto;
   display:grid;
   grid-template-columns:1.1fr 0.9fr;
   align-items:center;
-  gap:70px;
+  gap:80px;
 }
 
-/* LEFT TEXT */
-.why-dark-left{
+/* LEFT CONTENT */
+.brand-left{
   opacity:0;
   transform:translateY(40px);
   transition:all .9s ease;
 }
-.why-orbit-dark.show .why-dark-left{
+
+.brand-section.show .brand-left{
   opacity:1;
   transform:none;
 }
 
-.why-dark-left h2{
-  font-size:38px;
+/* ===== GRADIENT HEADING ===== */
+.brand-left h2{
+  font-size:42px;
   font-weight:900;
-  margin-bottom:22px;
-  color:#fff;
+  margin-bottom:26px;
+  line-height:1.15;
+  color:#111827; /* fallback */
 }
-.why-dark-left h2 span{
+
+/* GRADIENT TEXT */
+.brand-gradient{
   background:linear-gradient(90deg,#8b5cf6,#ec4899);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
+  background-clip:text;
+  color:transparent;
 }
-
-.why-dark-left p{
+.brand-white{
+  color:#ffffff;
+}
+/* PARAGRAPH */
+.brand-left p{
   font-size:17px;
   line-height:1.9;
-  color:#cbd5f5;
-  max-width:520px;
-  margin-bottom:14px;
+  color:#ffffff;
+  max-width:650px;
+  margin-bottom:20px;
 }
 
-/* 🔥 GAP FIXES (SAFE – NO DESIGN CHANGE) */
-.why-dark-left li{
-  list-style:none;
-  margin:0;
-  padding:0;
-}
-
-.why-dark-left li + p{
-  margin-top:6px;
-}
-
-.why-dark-left h2 + li{
-  margin-top:0;
-}
-
-/* ORBIT WRAP */
-.orbit-dark-wrap{
-  position:relative;
-  width:440px;
-  height:440px;
-  margin:auto;
-  opacity:0;
-  transform:scale(.85);
-  transition:all 1s ease;
-}
-.why-orbit-dark.show .orbit-dark-wrap{
-  opacity:1;
-  transform:scale(1);
-}
-
-/* 🔥 NEON RINGS */
-.orbit-ring-dark{
-  position:absolute;
-  inset:0;
-  border-radius:50%;
-  border:3px solid rgba(255,255,255,0.15);
-  border-top-color:#ff4ecd;
-  border-right-color:#7c7cff;
-  filter:drop-shadow(0 0 12px #ff4ecd)
-         drop-shadow(0 0 28px #7c7cff);
-  animation:spin 18s linear infinite;
-}
-
-.orbit-ring-dark.inner{
-  inset:75px;
-  border-top-color:#22d3ee;
-  border-right-color:#a78bfa;
-  filter:drop-shadow(0 0 10px #22d3ee)
-         drop-shadow(0 0 26px #a78bfa);
-  animation-duration:12s;
-  animation-direction:reverse;
-}
-
-@keyframes spin{
-  100%{transform:rotate(360deg)}
-}
-
-/* 🌈 NEON ICONS */
-.orbit-icon-dark{
-  position:absolute;
-  width:56px;
-  height:56px;
-  border-radius:50%;
-  background:#020617;
+/* RIGHT IMAGE */
+.brand-right{
   display:flex;
-  align-items:center;
   justify-content:center;
-  font-size:26px;
-  color:#fff;
-  box-shadow:
-    0 0 10px rgba(255,255,255,.15),
-    0 0 25px rgba(124,124,255,.45),
-    0 0 45px rgba(255,78,205,.35);
-  animation:neonPulse 2.8s ease-in-out infinite;
-  transition:transform .3s ease, box-shadow .3s ease;
+  align-items:center;
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .9s ease .2s;
 }
 
-.orbit-icon-dark:hover{
-  transform:scale(1.15);
-  box-shadow:
-    0 0 15px rgba(255,255,255,.35),
-    0 0 35px rgba(124,124,255,.9),
-    0 0 70px rgba(255,78,205,.8);
+.brand-section.show .brand-right{
+  opacity:1;
+  transform:none;
 }
 
-@keyframes neonPulse{
-  0%,100%{opacity:.9}
-  50%{opacity:1}
+.brand-right img{
+  width:100%;
+  max-width:480px;
 }
 
-/* ICON POSITIONS */
-.o1{top:-10px;left:50%;transform:translateX(-50%)}
-.o2{top:90px;right:-10px}
-.o3{bottom:90px;right:-10px}
-.o4{bottom:-10px;left:50%;transform:translateX(-50%)}
-.o5{bottom:90px;left:-10px}
-.o6{top:90px;left:-10px}
-
-.inner .orbit-icon-dark{
-  width:48px;
-  height:48px;
-  font-size:22px;
-}
-
-.o7{top:50%;left:-10px;transform:translateY(-50%)}
-.o8{top:-10px;left:50%;transform:translateX(-50%)}
-.o9{top:50%;right:-10px;transform:translateY(-50%)}
-
-/* 🔥 DESKTOP GAP CONTROL ONLY */
-@media(min-width:901px){
-  .why-orbit-dark{
-    padding-top:90px;
-    padding-bottom:90px;
-  }
-}
-
-/* MOBILE – UNCHANGED */
+/* MOBILE */
 @media(max-width:900px){
-  .why-dark-grid{
+  .brand-grid{
     grid-template-columns:1fr;
     text-align:center;
   }
-  .why-dark-left p{
-    margin:auto;
+
+  .brand-left p{
+  color:#ffffff;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .brand-right{
+    margin-top:40px;
   }
 }
-`;
+    `;
 
     const style = document.createElement("style");
     style.innerHTML = css;
@@ -355,7 +475,7 @@ export function SecondSlideWebDevelopment() {
           entry.target.classList.add("show");
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.25 }
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
@@ -367,47 +487,34 @@ export function SecondSlideWebDevelopment() {
   }, []);
 
   return (
-    <section className="why-orbit-dark" ref={sectionRef}>
-      <div className="why-dark-grid">
-        {/* LEFT */}
-        <div className="why-dark-left">
+    <section className="brand-section" ref={sectionRef}>
+      <div className="brand-grid">
+
+        {/* LEFT CONTENT */}
+        <div className="brand-left">
           <h2>
-            Why <span>Choose us</span> for your Web Development Services?
-          </h2>
+  <span className="brand-white">What is </span>
+  <span className="brand-gradient">Web Development</span>
+  <span className="brand-white">?</span>
+</h2>
 
-          <li><strong>Purpose-Driven Website Development</strong></li>
-          <p>We build websites with clear structure and functionality, designed to support your business goals and user journey.</p>
+          <p>
+           Web development is the process of designing, building, and maintaining websites that are functional, fast, and user-friendly. A well-developed website acts as the digital foundation of your business, supporting marketing, sales, and customer engagement.
+          </p>
 
-          <li><strong>Responsive & Cross-Device Compatibility</strong></li>
-          <p>Every website we develop works seamlessly across mobile, tablet, and desktop devices.</p>
-
-          <li><strong>Performance-Optimized Codebase</strong></li>
-          <p>Clean, efficient code ensures fast load times, smooth navigation, and a better user experience.</p>
-
-          <li><strong>SEO-Ready & Scalable Structure</strong></li>
-          <p>Our websites are built with search-friendly architecture and scalability in mind for long-term growth.</p>
-
-          <li><strong>Secure & Reliable Development</strong></li>
-          <p>We follow secure development practices to protect your website, data, and users.</p>
+          <p>
+           We focus on creating responsive, performance-optimized websites that work seamlessly across all devices. Our development approach ensures clean code, scalability, and SEO-ready structure—so your website grows with your business and delivers a strong user experience.
+          </p>
         </div>
 
-        {/* RIGHT */}
-        <div className="orbit-dark-wrap">
-          <div className="orbit-ring-dark">
-            <div className="orbit-icon-dark o1">📊</div>
-            <div className="orbit-icon-dark o2">🔗</div>
-            <div className="orbit-icon-dark o3">▶️</div>
-            <div className="orbit-icon-dark o4">📸</div>
-            <div className="orbit-icon-dark o5">📈</div>
-            <div className="orbit-icon-dark o6">🌐</div>
-          </div>
-
-          <div className="orbit-ring-dark inner">
-            <div className="orbit-icon-dark o7">🔍</div>
-            <div className="orbit-icon-dark o8">f</div>
-            <div className="orbit-icon-dark o9">in</div>
-          </div>
+        {/* RIGHT IMAGE */}
+        <div className="brand-right">
+          <img
+            src="/images/about/whyss.png"
+            alt="Brand Consultancy Illustration"
+          />
         </div>
+
       </div>
     </section>
   );
@@ -421,11 +528,11 @@ export function ServicesGridWebDevelopment() {
   useEffect(() => {
     const css = `
 .services-wrap{
-  padding:110px 7vw;
-  background:radial-gradient(circle at top, #0b1220, #020617 70%);
+  // padding:110px 7vw;
+  // background:radial-gradient(circle at top, #0b1220, #020617 70%);
   font-family:Inter,system-ui;
   color:#e5e7eb;
-
+padding-top:0px;
   /* 🔥 REMOVE DEFAULT SECTION GAPS */
   margin:0;
 }
@@ -618,12 +725,12 @@ export function WhyWebDevelopmentHeroDark() {
   min-height:90vh;
   display:grid;
   place-items:center;
-  background:radial-gradient(circle at top,#0b1220,#020617 70%);
+  // background:radial-gradient(circle at top,#0b1220,#020617 70%);
   font-family:Inter,system-ui;
   color:#e5e7eb;
   overflow:hidden;
-  padding:100px 7vw;
-
+  // padding:100px 7vw;
+padding-top:5px;
   /* 🔥 REMOVE DEFAULT SECTION GAPS */
   margin:0;
 }
@@ -773,7 +880,7 @@ export function WhyWebDevelopmentHeroDark() {
           <h1>
             Why <span>Website Development</span>?
           </h1>
-
+ 
           <li>
             Your website is your digital foundation. A well-built website builds
             trust, improves engagement, and supports every marketing effort you
@@ -790,13 +897,17 @@ export function WhyWebDevelopmentHeroDark() {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="seo-right seo-image-wrap">
+       
+ <div className="seo-left">
+         
+ <div className="seo-right seo-image-wrap">
           <img
             src="/images/WEBDEVELOPMENT.png"
             alt="Website Development Illustration"
           />
         </div>
-
+        
+        </div>
       </div>
     </section>
   );
@@ -815,8 +926,8 @@ export function FAQWebDevelopment() {
 /* ================= HOME FAQ (UPGRADED) ================= */
 
 .home-faq-wrap{
-  background: radial-gradient(circle at top, #0b1220, #020617 70%);
-  padding:110px 6vw;
+  // background: radial-gradient(circle at top, #0b1220, #020617 70%);
+  // padding:110px 6vw;
   color:#ffffff;
   font-family:Inter,system-ui;
 

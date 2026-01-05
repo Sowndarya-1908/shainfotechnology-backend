@@ -3,6 +3,196 @@ import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
+
+ function ServicesWaveSection() {
+  useEffect(() => {
+    const css = `
+/* ===== ANIMATED GRADIENT BACKGROUND ===== */
+.about-wave-bg{
+  position:relative;
+  min-height:30vh;
+  width:100%;
+  overflow:hidden;
+  font-family:Inter,system-ui,sans-serif;
+  background:linear-gradient(
+    315deg,
+    rgba(174, 84, 211, 1) 3%,
+    rgba(85, 6, 88, 1) 38%,
+    rgba(102, 6, 83, 1) 68%,
+    rgba(217, 72, 193, 1) 98%
+  );
+  background-size:400% 400%;
+  animation:gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove{
+  0%{background-position:0% 0%}
+  50%{background-position:100% 100%}
+  100%{background-position:0% 0%}
+}
+
+.about-wave-bg::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:4px;
+  background:#020617;
+  z-index:10;
+}
+
+/* WAVES */
+.about-wave{
+  background:rgba(255,255,255,0.25);
+  border-radius:1000% 1000% 0 0;
+  position:absolute;
+  width:200%;
+  height:12em;
+  bottom:-2px;
+  left:0;
+  animation:waveMove 10s -3s linear infinite;
+  opacity:.8;
+  z-index:1;
+}
+
+.about-wave:nth-of-type(2){
+  bottom:calc(-1.25em - 2px);
+  animation:waveMove 18s linear reverse infinite;
+}
+
+.about-wave:nth-of-type(3){
+  bottom:calc(-1.25em - 2px);
+  animation:waveMove 20s -1s reverse infinite;
+}
+
+@keyframes waveMove{
+  0%{transform:translateX(0)}
+  25%{transform:translateX(-25%)}
+  50%{transform:translateX(-50%)}
+  75%{transform:translateX(-25%)}
+  100%{transform:translateX(0)}
+}
+
+/* CONTENT */
+.about-wave-content{position:relative;z-index:5}
+
+.about-section{
+  min-height:50vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 6vw;
+  color:#ffffff;
+  text-align:center;
+}
+
+.about-container{max-width:900px}
+
+.about-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 20px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.35);
+  font-size:14px;
+  font-weight:600;
+  margin-bottom:28px;
+}
+
+.about-badge span{
+  width:10px;
+  height:10px;
+  background:#ffffff;
+  border-radius:50%;
+}
+
+.about-heading{
+  font-size:clamp(38px,6vw,64px);
+  font-weight:900;
+  line-height:1.1;
+  margin-bottom:24px;
+}
+
+.about-heading span{
+  background:linear-gradient(90deg,#ffffff,#fbcfe8);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.about-text{
+  font-size:18px;
+  line-height:1.85;
+  color:#f5f3ff;
+  margin-bottom:46px;
+}
+
+.about-features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.feature-card{
+  background:rgba(101,5,87,0.15);
+  backdrop-filter:blur(12px);
+  border-radius:20px;
+  padding:22px;
+  font-size:15px;
+  font-weight:600;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .about-features{grid-template-columns:1fr}
+  .about-wave-bg{min-height:100vh}
+  .about-text{font-size:16px}
+}
+    `;
+    const style = document.createElement("style");
+    style.innerHTML = css;
+    document.head.appendChild(style);
+    return () => style.remove();
+  }, []);
+
+  return (
+    <section className="about-wave-bg">
+      <div className="about-wave-content">
+        <section className="about-section">
+          <div className="about-container">
+
+            <div className="about-badge">
+              <span></span> OUR SERVICES
+            </div>
+
+            <h1 className="about-heading">
+              Where Digital Strategy<br />
+              <span>Turns Into Real Results</span>
+            </h1>
+
+            <p className="about-text">
+              Our solutions are built to increase visibility, drive qualified traffic, and convert clicks into customers. With a results first approach, SHA Infotechnology supports your business at every stage from strategy to scalable growth.
+            </p>
+
+            <div className="about-features">
+              <div className="feature-card">💡 Digital Strategy & Consulting</div>
+              <div className="feature-card">🌐 Web & E-Commerce Development</div>
+              <div className="feature-card">📈 SEO, Marketing & Growth</div>
+            </div>
+
+          </div>
+        </section>
+      </div>
+
+      <div className="about-wave"></div>
+      <div className="about-wave"></div>
+      <div className="about-wave"></div>
+    </section>
+  );
+}
+
+
 function ServicesHighlightSection() {
   const navigate = useNavigate();
 
@@ -11,9 +201,10 @@ function ServicesHighlightSection() {
 /* ================= SERVICES HIGHLIGHT ================= */
 
 .sh-wrap{
-  background:radial-gradient(circle at top,#0b1220,#020617 70%);
-  padding:clamp(56px, 7vw, 88px) 6vw;   /* 🔥 FIXED */
+  // background:radial-gradient(circle at top,#0b1220,#020617 70%);
+  // padding:clamp(56px, 7vw, 88px) 6vw;   /* 🔥 FIXED */
   font-family:Inter,system-ui;
+  padding-bottom:30px;
 }
 
 /* TITLE */
@@ -393,8 +584,8 @@ function GrowthPartnerSection() {
   React.useEffect(() => {
     const css = `
 :root{
-  --bg-dark:#020617;
-  --bg-dark-2:#0b1220;
+  // --bg-dark:#020617;
+  // --bg-dark-2:#0b1220;
   --red:#B90504;
   --violet:#8b5cf6;
   --pink:#ec4899;
@@ -403,8 +594,8 @@ function GrowthPartnerSection() {
 
 /* ================= SECTION ================= */
 .gp-wrap{
-  background:radial-gradient(circle at top, var(--bg-dark-2), var(--bg-dark) 70%);
-  padding:clamp(60px,8vw,100px) 6vw;   /* 🔥 controlled spacing */
+  // background:radial-gradient(circle at top, var(--bg-dark-2), var(--bg-dark) 70%);
+  // padding:clamp(60px,8vw,100px) 6vw;   
   font-family:Inter,system-ui;
 }
 
@@ -414,8 +605,9 @@ function GrowthPartnerSection() {
   font-weight:900;
   line-height:1.2;
   color:#ffffff;
-  margin-bottom:48px;                 /* 🔥 reduced gap */
+  margin-bottom:48px;                 
   text-align:left;
+
 }
 
 .gp-title span{
@@ -560,11 +752,12 @@ function GrowthPartnerSection() {
     const css = `
 /* ===== INDUSTRIES SECTION ===== */
 .sha-industries{
-  padding:40px 6vw;
-  background:radial-gradient(circle at top,#0b1220,#020617 70%);
+  // padding:40px 6vw;
+  // background:radial-gradient(circle at top,#0b1220,#020617 70%);
   font-family:Inter,system-ui;
   color:#ffffff;
   overflow:hidden;
+  padding-bottom:60px;
 }
 
 /* HEADING */
@@ -742,8 +935,8 @@ function ProjectWorkflowSection() {
   useEffect(() => {
     const css = `
 :root{
-  --bg-dark:#020617;
-  --bg-dark-2:#0b1220;
+  // --bg-dark:#020617;
+  // --bg-dark-2:#0b1220;
   --violet:#8b5cf6;
   --pink:#ec4899;
   --muted:#9ca3af;
@@ -751,10 +944,11 @@ function ProjectWorkflowSection() {
 
 /* ================= SECTION ================= */
 .pw-section{
-  background:radial-gradient(circle at top, var(--bg-dark-2), var(--bg-dark) 70%);
-  padding:clamp(56px,8vw,90px) 6vw; /* 🔥 reduced vertical gap */
+  // background:radial-gradient(circle at top, var(--bg-dark-2), var(--bg-dark) 70%);
+  // padding:clamp(56px,8vw,90px) 6vw; /* 🔥 reduced vertical gap */
   font-family:Inter, system-ui, sans-serif;
   color:#e5e7eb;
+  padding-top:30px;
 }
 
 /* ================= CONTAINER ================= */
@@ -967,8 +1161,8 @@ function HomeFAQSection() {
 /* ================= HOME FAQ (UPGRADED) ================= */
 
 .home-faq-wrap{
-  background: radial-gradient(circle at top, #0b1220, #020617 70%);
-  padding:110px 6vw;
+  // background: radial-gradient(circle at top, #0b1220, #020617 70%);
+  // padding:110px 6vw;
   color:#ffffff;
   font-family:Inter,system-ui;
 }
@@ -2056,8 +2250,8 @@ useEffect(() => {
   
   return (
     <>
-  
-    <ServicesHero />
+  <ServicesWaveSection />
+    {/* <ServicesHero /> */}
     <div className="services-wrap">
       
 <ServicesHighlightSection />

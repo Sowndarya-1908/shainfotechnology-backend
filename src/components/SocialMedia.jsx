@@ -144,164 +144,278 @@ export function SocialMediaHero() {
     </section>
   );
 }
+
+// export function SecondSlideSocialMedia() {
+//   const sectionRef = useRef(null);
+
+//   useEffect(() => {
+//      const css = `
+// /* ================= SECTION ================= */
+// .why-orbit-dark{
+//   // padding:110px 7vw;
+//   // background:radial-gradient(circle at top,#0b1220,#020617 70%);
+//   font-family:Inter,system-ui;
+//   color:#e5e7eb;
+//   overflow:hidden;
+// }
+
+// /* GRID */
+// .why-dark-grid{
+//   max-width:1300px;
+//   margin:auto;
+//   display:grid;
+//   grid-template-columns:1.1fr 0.9fr;
+//   align-items:center;
+//   gap:70px;
+// }
+
+// /* LEFT TEXT */
+// .why-dark-left{
+//   opacity:0;
+//   transform:translateY(40px);
+//   transition:all .9s ease;
+// }
+
+// .why-orbit-dark.show .why-dark-left{
+//   opacity:1;
+//   transform:none;
+// }
+
+// .why-dark-left h2{
+//   font-size:38px;
+//   font-weight:900;
+//   margin-bottom:22px;
+//   color:#fff;
+// }
+
+// .why-dark-left h2 span{
+//   background:linear-gradient(90deg,#8b5cf6,#ec4899);
+//   -webkit-background-clip:text;
+//   -webkit-text-fill-color:transparent;
+// }
+
+// .why-dark-left p{
+//   font-size:17px;
+//   line-height:1.9;
+//   color:#cbd5f5;
+//   max-width:520px;
+//   margin-bottom:18px;
+// }
+
+// .why-dark-left strong{
+//   color:#ffffff;
+// }
+
+// /* RIGHT IMAGE */
+// .why-dark-image{
+//   display:flex;
+//   justify-content:center;
+//   align-items:center;
+//   opacity:0;
+//   transform:translateY(40px);
+//   transition:all .9s ease .2s;
+// }
+
+// .why-orbit-dark.show .why-dark-image{
+//   opacity:1;
+//   transform:none;
+// }
+
+// .why-dark-image img{
+//   width:100%;
+//   max-width:420px;
+//   border-radius:18px;
+// }
+
+// /* MOBILE */
+// @media(max-width:900px){
+//   .why-dark-grid{
+//     grid-template-columns:1fr;
+//     text-align:center;
+//   }
+
+//   .why-dark-left p{
+//     margin-left:auto;
+//     margin-right:auto;
+//   }
+
+//   .why-dark-image{
+//     margin-top:40px;
+//   }
+// }
+//     `;
+
+//     const style = document.createElement("style");
+//     style.innerHTML = css;
+//     document.head.appendChild(style);
+
+//     const observer = new IntersectionObserver(
+//       ([entry]) => {
+//         if (entry.isIntersecting) {
+//           entry.target.classList.add("show");
+//         }
+//       },
+//       { threshold: 0.3 }
+//     );
+
+//     if (sectionRef.current) observer.observe(sectionRef.current);
+
+//     return () => {
+//       style.remove();
+//       if (sectionRef.current) observer.unobserve(sectionRef.current);
+//     };
+//   }, []);
+
+//   return (
+//     <section className="why-orbit-dark" ref={sectionRef}>
+//       <div className="why-dark-grid">
+
+//         {/* LEFT */}
+//         <div className="why-dark-left">
+//           <h2>
+//             Why <span>Choose us</span> for your Social Media Marketing Services?
+//           </h2>
+
+//           <p>
+//             <strong>Platform-Specific Strategy</strong><br />
+//             We choose the right social platforms based on your audience, goals,
+//             and industry — no one-size-fits-all posting.
+//           </p>
+
+//           <p>
+//             <strong>Consistent & Engaging Content</strong><br />
+//             Our content is designed to capture attention, build brand presence,
+//             and encourage meaningful interactions.
+//           </p>
+
+//           <p>
+//             <strong>Creative Visuals & Short-Form Videos</strong><br />
+//             We create scroll-stopping creatives and reels aligned with your brand
+//             identity.
+//           </p>
+
+//           <p>
+//             <strong>Community Engagement & Brand Voice</strong><br />
+//             We actively manage comments and messages to strengthen audience
+//             relationships and trust.
+//           </p>
+//         </div>
+
+//         {/* RIGHT IMAGE */}
+       
+//  <div className="why-dark-image">
+//           <img
+//             src="/images/about/whyss.png"
+//             alt="Social Media Marketing"
+//           />
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
 export function SecondSlideSocialMedia() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
-   
-const css = `
-.why-orbit-dark{
+    const css = `
+/* ================= BRAND CONSULTANCY SECTION ================= */
+.brand-section{
+  // background:#ffffff;
   padding:110px 7vw;
-  background:radial-gradient(circle at top,#0b1220,#020617 70%);
   font-family:Inter,system-ui;
-  color:#e5e7eb;
   overflow:hidden;
 }
 
 /* GRID */
-.why-dark-grid{
+.brand-grid{
   max-width:1500px;
   margin:auto;
   display:grid;
   grid-template-columns:1.1fr 0.9fr;
   align-items:center;
-  gap:70px;
+  gap:80px;
 }
 
-/* LEFT TEXT */
-.why-dark-left{
+/* LEFT CONTENT */
+.brand-left{
   opacity:0;
   transform:translateY(40px);
   transition:all .9s ease;
 }
-.why-orbit-dark.show .why-dark-left{
+
+.brand-section.show .brand-left{
   opacity:1;
   transform:none;
 }
 
-.why-dark-left h2{
-  font-size:38px;
+/* ===== GRADIENT HEADING ===== */
+.brand-left h2{
+  font-size:42px;
   font-weight:900;
-  margin-bottom:22px;
-  color:#fff;
+  margin-bottom:26px;
+  line-height:1.15;
+  color:#111827; /* fallback */
 }
-.why-dark-left h2 span{
+
+/* GRADIENT TEXT */
+.brand-gradient{
   background:linear-gradient(90deg,#8b5cf6,#ec4899);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
+  background-clip:text;
+  color:transparent;
 }
-
-.why-dark-left p{
+.brand-white{
+  color:#ffffff;
+}
+/* PARAGRAPH */
+.brand-left p{
   font-size:17px;
   line-height:1.9;
-  color:#cbd5f5;
-  max-width:520px;
+  color:#ffffff;
+  max-width:650px;
+  margin-bottom:20px;
 }
 
-/* ORBIT WRAP */
-.orbit-dark-wrap{
-  position:relative;
-  width:440px;
-  height:440px;
-  margin:auto;
-  opacity:0;
-  transform:scale(.85);
-  transition:all 1s ease;
-}
-.why-orbit-dark.show .orbit-dark-wrap{
-  opacity:1;
-  transform:scale(1);
-}
-
-/* 🔥 NEON RINGS */
-.orbit-ring-dark{
-  position:absolute;
-  inset:0;
-  border-radius:50%;
-    border:3px solid rgba(255,255,255,0.15);   /* FULL CIRCLE */
-  border-top-color:#ff4ecd;
-  border-right-color:#7c7cff;
-  filter:drop-shadow(0 0 12px #ff4ecd)
-         drop-shadow(0 0 28px #7c7cff);
-  animation:spin 18s linear infinite;
-}
-
-.orbit-ring-dark.inner{
-  inset:75px;
-  border-top-color:#22d3ee;
-  border-right-color:#a78bfa;
-  filter:drop-shadow(0 0 10px #22d3ee)
-         drop-shadow(0 0 26px #a78bfa);
-  animation-duration:12s;
-  animation-direction:reverse;
-}
-
-@keyframes spin{
-  100%{transform:rotate(360deg)}
-}
-
-/* 🌈 NEON ICONS */
-.orbit-icon-dark{
-  position:absolute;
-  width:56px;
-  height:56px;
-  border-radius:50%;
-  background:#020617;
+/* RIGHT IMAGE */
+.brand-right{
   display:flex;
-  align-items:center;
   justify-content:center;
-  font-size:26px;
-  color:#fff;
-  box-shadow:
-    0 0 10px rgba(255,255,255,.15),
-    0 0 25px rgba(124,124,255,.45),
-    0 0 45px rgba(255,78,205,.35);
-  animation:neonPulse 2.8s ease-in-out infinite;
-  transition:transform .3s ease, box-shadow .3s ease;
+  align-items:center;
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .9s ease .2s;
 }
 
-.orbit-icon-dark:hover{
-  transform:scale(1.15);
-  box-shadow:
-    0 0 15px rgba(255,255,255,.35),
-    0 0 35px rgba(124,124,255,.9),
-    0 0 70px rgba(255,78,205,.8);
+.brand-section.show .brand-right{
+  opacity:1;
+  transform:none;
 }
 
-@keyframes neonPulse{
-  0%,100%{opacity:.9}
-  50%{opacity:1}
+.brand-right img{
+  width:100%;
+  max-width:480px;
 }
-
-/* ICON POSITIONS */
-.o1{top:-10px;left:50%;transform:translateX(-50%)}
-.o2{top:90px;right:-10px}
-.o3{bottom:90px;right:-10px}
-.o4{bottom:-10px;left:50%;transform:translateX(-50%)}
-.o5{bottom:90px;left:-10px}
-.o6{top:90px;left:-10px}
-
-.inner .orbit-icon-dark{
-  width:48px;
-  height:48px;
-  font-size:22px;
-}
-
-.o7{top:50%;left:-10px;transform:translateY(-50%)}
-.o8{top:-10px;left:50%;transform:translateX(-50%)}
-.o9{top:50%;right:-10px;transform:translateY(-50%)}
 
 /* MOBILE */
 @media(max-width:900px){
-  .why-dark-grid{
+  .brand-grid{
     grid-template-columns:1fr;
     text-align:center;
   }
-  .why-dark-left p{
-    margin:auto;
+
+  .brand-left p{
+  color:#ffffff;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .brand-right{
+    margin-top:40px;
   }
 }
-`;
+    `;
 
     const style = document.createElement("style");
     style.innerHTML = css;
@@ -313,7 +427,7 @@ const css = `
           entry.target.classList.add("show");
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.25 }
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
@@ -325,57 +439,34 @@ const css = `
   }, []);
 
   return (
-    <section className="why-orbit-dark" ref={sectionRef}>
-      <div className="why-dark-grid">
-        {/* LEFT */}
-        <div className="why-dark-left">
+    <section className="brand-section" ref={sectionRef}>
+      <div className="brand-grid">
+
+        {/* LEFT CONTENT */}
+        <div className="brand-left">
           <h2>
-            Why <span>Choose us</span> for your Social Media Marketing Services?
-          </h2>
+  <span className="brand-white">What is </span>
+  <span className="brand-gradient">Social Media Marketing</span>
+  <span className="brand-white">?</span>
+</h2>
 
-          <li><strong>Platform-Specific Strategy</strong></li>
           <p>
-           We choose the right social platforms based on your audience, goals, and industry—no one-size-fits-all posting.
-          </p>
-<li><strong>Consistent & Engaging Content</strong></li>
-          <p>
-           Our content is designed to capture attention, build brand presence, and encourage meaningful interactions.
-          </p>
-          <li><strong>Creative Visuals & Short-Form Videos</strong></li>
-          <p>
-           We create scroll-stopping creatives and reels that align with your brand identity.
-          </p>
-          <li><strong>Community Engagement & Brand Voice
-</strong></li>
-          <p>
-           We actively manage comments and messages to strengthen audience relationships.
-          </p>
-          <li><strong>Platform-Specific Strategy</strong></li>
-          <p>
-           We choose the right social platforms based on your audience, goals, and industry—no one-size-fits-all posting.
+            Social media marketing uses platforms like Instagram, Facebook, and LinkedIn to build brand awareness, engage audiences, and drive business growth. It focuses on meaningful interaction rather than just posting content.
           </p>
 
+          <p>
+           We develop platform-specific strategies, create engaging content, and manage community interactions to strengthen brand presence. Our approach helps businesses connect with their audience, build trust, and achieve measurable results.
+          </p>
         </div>
 
-        {/* RIGHT */}
-        <div className="orbit-dark-wrap">
-          {/* OUTER */}
-          <div className="orbit-ring-dark">
-            <div className="orbit-icon-dark o1">📊</div>
-            <div className="orbit-icon-dark o2">🔗</div>
-            <div className="orbit-icon-dark o3">▶️</div>
-            <div className="orbit-icon-dark o4">📸</div>
-            <div className="orbit-icon-dark o5">📈</div>
-            <div className="orbit-icon-dark o6">🌐</div>
-          </div>
-
-          {/* INNER */}
-          <div className="orbit-ring-dark inner">
-            <div className="orbit-icon-dark o7">🔍</div>
-            <div className="orbit-icon-dark o8">f</div>
-            <div className="orbit-icon-dark o9">in</div>
-          </div>
+        {/* RIGHT IMAGE */}
+        <div className="brand-right">
+          <img
+            src="/images/about/whyss.png"
+            alt="Brand Consultancy Illustration"
+          />
         </div>
+
       </div>
     </section>
   );
@@ -386,8 +477,8 @@ export function ServicesGridSocialMedia() {
   useEffect(() => {
     const css = `
       .services-wrap{
-        padding:110px 7vw;
-        background:radial-gradient(circle at top, #0b1220, #020617 70%);
+        // padding:110px 7vw;
+        // background:radial-gradient(circle at top, #0b1220, #020617 70%);
         font-family:Inter,system-ui;
         color:#e5e7eb;
       }
@@ -573,11 +664,11 @@ export function WhySocialMediaHeroDark() {
         min-height:90vh;
         display:grid;
         place-items:center;
-        background:radial-gradient(circle at top,#0b1220,#020617 70%);
+        // background:radial-gradient(circle at top,#0b1220,#020617 70%);
         font-family:Inter,system-ui;
         color:#e5e7eb;
         overflow:hidden;
-        padding:100px 7vw;
+        // padding:100px 7vw;
       }
 
       .seo-hero-grid{
@@ -730,13 +821,13 @@ export function WhySocialMediaHeroDark() {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="seo-right seo-image-wrap">
+        
+<div className="seo-right seo-image-wrap">
           <img
             src="/images/SOCIALMEDIAMARKETING.png"
             alt="Social Media Marketing Illustration"
           />
         </div>
-
       </div>
     </section>
   );
@@ -753,8 +844,8 @@ export function FAQSocialMedia() {
 /* ================= HOME FAQ (UPGRADED) ================= */
 
 .home-faq-wrap{
-  background: radial-gradient(circle at top, #0b1220, #020617 70%);
-  padding:110px 6vw;
+  // background: radial-gradient(circle at top, #0b1220, #020617 70%);
+  // padding:110px 6vw;
   color:#ffffff;
   font-family:Inter,system-ui;
 }
