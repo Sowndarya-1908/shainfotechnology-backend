@@ -3,12 +3,37 @@ import React, { useEffect } from "react";
 export default function Footer() {
   useEffect(() => {
     const css = `
-/* ===== FOOTER ===== */
+/* ===== FOOTER (GLASS GRADIENT) ===== */
 .sps-footer{
-  background:radial-gradient(circle at top,#0b1220,#020617 70%);
+  position: relative;
   padding:90px 6vw 30px;
   font-family:Inter,system-ui;
   color:#e5e7eb;
+
+  /* 🌈 LIGHT GRADIENT */
+  background:
+    linear-gradient(
+      135deg,
+      rgba(99,102,241,0.35),
+      rgba(168,85,247,0.30),
+      rgba(236,72,153,0.25)
+    );
+
+  /* 🧊 GLASS EFFECT */
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-top:1px solid rgba(255,255,255,0.18);
+  overflow:hidden;
+}
+
+/* SOFT OVERLAY FOR DEPTH */
+.sps-footer::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(10,12,35,0.35);
+  z-index:-1;
 }
 
 /* GRID */
@@ -30,7 +55,7 @@ export default function Footer() {
 .sps-footer-brand p{
   font-size:14px;
   line-height:1.8;
-  color:#cbd5f5;
+  color:#dbeafe;
   max-width:380px;
 }
 
@@ -56,7 +81,7 @@ export default function Footer() {
 .sps-footer ul li a{
   text-decoration:none;
   font-size:14px;
-  color:#cbd5f5;
+  color:#c7d2fe;
   transition:0.25s;
 }
 
@@ -67,7 +92,7 @@ export default function Footer() {
 /* CONTACT */
 .sps-footer-contact p{
   font-size:14px;
-  color:#cbd5f5;
+  color:#dbeafe;
   margin-bottom:10px;
 }
 
@@ -80,14 +105,16 @@ export default function Footer() {
 }
 
 .sps-footer-actions a{
-  padding:10px 16px;
+  padding:10px 18px;
   border-radius:999px;
   font-size:14px;
   font-weight:800;
   text-decoration:none;
   color:#ffffff;
-  background:linear-gradient(90deg,#8b5cf6,#ec4899);
-  box-shadow:0 12px 40px rgba(139,92,246,0.45);
+
+  background:linear-gradient(90deg,#6366f1,#a855f7,#ec4899);
+  box-shadow:0 12px 40px rgba(99,102,241,0.45);
+
   transition:all .3s ease;
 }
 
@@ -98,14 +125,14 @@ export default function Footer() {
 
 /* BOTTOM */
 .sps-footer-bottom{
-  border-top:1px solid rgba(255,255,255,0.08);
+  border-top:1px solid rgba(255,255,255,0.12);
   padding-top:18px;
   display:flex;
   justify-content:space-between;
   flex-wrap:wrap;
   gap:12px;
   font-size:13px;
-  color:#9ca3af;
+  color:#e0e7ff;
 }
 
 /* ===== RESPONSIVE ===== */

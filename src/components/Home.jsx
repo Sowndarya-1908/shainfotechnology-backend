@@ -5,14 +5,12 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 
-  function IndustriesWeServe() {
+ function IndustriesWeServe() {
   useEffect(() => {
     const css = `
 /* ===== INDUSTRIES SECTION ===== */
 .sha-industries{
-  // padding:40px 6vw;
-  padding-top: 30px;
-  // background:radial-gradient(circle at top,#0b1220,#020617 70%);
+  padding-top:30px;
   font-family:Inter,system-ui;
   color:#ffffff;
   overflow:hidden;
@@ -23,7 +21,6 @@ import { useNavigate } from "react-router-dom";
   text-align:center;
   font-size:clamp(34px,5vw,48px);
   font-weight:900;
-  // margin-bottom:15px;
 }
 
 .sha-industries h2 span{
@@ -62,11 +59,11 @@ import { useNavigate } from "react-router-dom";
 /* ITEM */
 .industry-item{
   min-width:220px;
-   padding-top:50px;
+  padding-top:50px;
   text-align:center;
 }
 
-/* ICON WRAP (NO SIZE CHANGE) */
+/* ICON */
 .industry-icon{
   width:120px;
   height:120px;
@@ -80,15 +77,9 @@ import { useNavigate } from "react-router-dom";
   color:#8b5cf6;
   background:rgba(255,255,255,0.02);
   position:relative;
-  box-sizing:border-box;
-  transition:
-    transform .35s ease,
-    box-shadow .35s ease,
-    background .35s ease,
-    color .35s ease;
+  transition:all .35s ease;
 }
 
-/* GLOW LAYER (NO LAYOUT IMPACT) */
 .industry-icon::after{
   content:"";
   position:absolute;
@@ -99,21 +90,17 @@ import { useNavigate } from "react-router-dom";
   filter:blur(22px);
   transition:opacity .35s ease;
   z-index:-1;
-  
 }
 
-/* HOVER — NO PADDING / SIZE CHANGE */
 .industry-item:hover .industry-icon{
   background:linear-gradient(135deg,#8b5cf6,#ec4899);
   color:#ffffff;
-  
   transform:translateY(-6px);
   box-shadow:0 20px 50px rgba(139,92,246,.45);
 }
 
 .industry-item:hover .industry-icon::after{
   opacity:.6;
-  
 }
 
 /* TITLE */
@@ -123,7 +110,7 @@ import { useNavigate } from "react-router-dom";
   color:#ffffff;
 }
 
-/* AUTO SCROLL */
+/* SCROLL */
 @keyframes scroll{
   from{transform:translateX(0)}
   to{transform:translateX(-50%)}
@@ -134,16 +121,13 @@ import { useNavigate } from "react-router-dom";
   .sha-industries{
     padding:90px 20px;
   }
-
   .industry-item{
     min-width:180px;
   }
-
   .industry-icon{
     width:100px;
     height:100px;
     font-size:36px;
-
   }
 }
     `;
@@ -154,14 +138,12 @@ import { useNavigate } from "react-router-dom";
   }, []);
 
   const industries = [
-    { name: "Technology & Software", icon: "⚙️" },
-    { name: "Health Care", icon: "🏥" },
-    { name: "Food & Beverages", icon: "🍔" },
-    { name: "Finance", icon: "💰" },
-    { name: "Education", icon: "🎓" },
-    { name: "E-Commerce", icon: "🛒" },
-    { name: "Real Estate", icon: "🏢" },
-    { name: "Retail", icon: "🏬" }
+    { name: "IT & Software Companies", icon: "💻" },
+    { name: "E-commerce & Retail", icon: "🛒" },
+    { name: "Healthcare & Clinics", icon: "🏥" },
+    { name: "Education & EdTech", icon: "🎓" },
+    { name: "Real Estate & Construction", icon: "🏗️" },
+    { name: "Startups & Local Businesses", icon: "🚀" }
   ];
 
   return (
@@ -171,9 +153,10 @@ import { useNavigate } from "react-router-dom";
       </h2>
 
       <p>
-        SHA Infotechnology delivers performance-driven digital solutions across
-        technology, healthcare, e-commerce, finance, education, and more—helping
-        businesses in Chennai and beyond grow visibility, engagement, and revenue.
+        SHA Infotechnology partners with businesses across diverse industries,
+        delivering tailored digital solutions for IT companies, e-commerce brands,
+        healthcare providers, educational institutions, real estate firms, and
+        growing startups to drive consistent growth and measurable results.
       </p>
 
       <div className="industry-slider">
@@ -189,6 +172,7 @@ import { useNavigate } from "react-router-dom";
     </section>
   );
 }
+
 function StatsHighlight() {
   const sectionRef = useRef(null);
   const [start, setStart] = useState(false);
@@ -324,10 +308,10 @@ function ProjectRunLeftImageSection() {
       <div className="projectrun-header">
         <h2 className="projectrun-title">
           <span className="projectrun-title-white">
-            How a Project With
+            Your Trusted Digital
           </span>
           <span className="projectrun-title-gradient">
-            Us Usually Runs
+            Marketing Agency for Measurable Growth
           </span>
         </h2>
         <div className="projectrun-divider"></div>
@@ -340,7 +324,7 @@ function ProjectRunLeftImageSection() {
           <div className="projectrun-image-glow">
             <img
               src="/images/projectrun.png"
-              alt="Project workflow"
+              alt="Digital marketing workflow"
             />
           </div>
         </div>
@@ -348,36 +332,33 @@ function ProjectRunLeftImageSection() {
         {/* TEXT – RIGHT */}
         <div className="projectrun-text">
           <p>
-            SHA Infotechnology is a results-driven digital marketing and software
-            development company helping businesses grow through powerful,
-            technology-focused solutions.
+            At Sha Infotechnology, we combine creativity, data, and technology to
+            deliver end-to-end digital marketing services tailored for startups,
+            SMEs, and growing enterprises.
           </p>
 
           <p>
-            Our expert team specializes in SEO, social media marketing, Google Ads,
-            website design and development, branding, and complete digital
-            marketing services.
+            From high-performance website development to ROI-focused content
+            marketing strategies, our solutions are designed to strengthen your
+            online presence and drive meaningful business outcomes.
           </p>
 
           <p>
-            We follow a data-driven approach to align digital strategies with your
-            business goals—helping you grow faster, smarter, and more sustainably.
+            We help your brand stand out in a competitive digital landscape by
+            aligning smart digital strategies with measurable growth objectives.
           </p>
         </div>
       </div>
 
       {/* STYLES */}
       <style>{`
-        /* SECTION */
         .projectrun-section {
           padding: clamp(8px, 2vw, 0px) clamp(5vw, 8vw, 9vw);
-          // background: radial-gradient(circle at top, #0b1220, #020617 70%);
           font-family: Inter, system-ui, sans-serif;
           color: #e5e7eb;
           overflow: hidden;
         }
 
-        /* HEADER */
         .projectrun-header {
           text-align: center;
           max-width: 900px;
@@ -394,7 +375,6 @@ function ProjectRunLeftImageSection() {
           display: block;
           color: #ffffff;
           -webkit-text-fill-color: #ffffff;
-          pointer-events: none;
         }
 
         .projectrun-title-gradient {
@@ -412,7 +392,6 @@ function ProjectRunLeftImageSection() {
           border-radius: 2px;
         }
 
-        /* GRID */
         .projectrun-container {
           max-width: 1200px;
           margin: auto;
@@ -422,7 +401,6 @@ function ProjectRunLeftImageSection() {
           align-items: center;
         }
 
-        /* TEXT */
         .projectrun-text p {
           font-size: clamp(15px, 1.4vw, 16px);
           line-height: 1.7;
@@ -430,7 +408,6 @@ function ProjectRunLeftImageSection() {
           color: #cbd5f5;
         }
 
-        /* IMAGE */
         .projectrun-image {
           display: flex;
           justify-content: center;
@@ -460,11 +437,8 @@ function ProjectRunLeftImageSection() {
           width: 100%;
           max-width: clamp(340px, 40vw, 520px);
           border-radius: 18px;
-          background: none;
-          box-shadow: none;
         }
 
-        /* MOBILE STACK */
         @media (max-width: 900px) {
           .projectrun-container {
             grid-template-columns: 1fr;
@@ -475,6 +449,7 @@ function ProjectRunLeftImageSection() {
   );
 }
 
+
 function SeoMarketingSection() {
   return (
     <section className="seo-section">
@@ -482,10 +457,10 @@ function SeoMarketingSection() {
       <div className="seo-header">
         <h2 className="seo-title">
           <span className="seo-title-white">
-            SEO Marketing Solutions
+            Digital Marketing
           </span>
           <span className="seo-title-gradient">
-            That Deliver Real Growth
+            Services
           </span>
         </h2>
         <div className="seo-divider"></div>
@@ -496,42 +471,40 @@ function SeoMarketingSection() {
         {/* LEFT TEXT */}
         <div className="seo-text">
           <p>
-            At SHA Infotechnology, we help businesses dominate search results with
-            powerful SEO strategies and performance-driven marketing campaigns.
+            We create customized digital marketing campaigns that align with your
+            business goals and deliver measurable outcomes.
           </p>
 
-          <p>
-            From keyword research and on-page optimization to Google Ads and local
-            SEO, our experts design campaigns that maximize ROI and increase brand
-            visibility.
-          </p>
+          <ul className="seo-list">
+            <li>Search Engine Optimization (SEO)</li>
+            <li>Google Ads & Paid Media (PPC)</li>
+            <li>Social Media Marketing (SMM)</li>
+            <li>Local SEO & Lead Generation</li>
+            <li>Analytics & Performance Tracking</li>
+          </ul>
 
           <p>
-            Using data-driven insights and continuous optimization, we ensure
-            sustainable online growth and long-term success.
+            Our strategies are designed to increase visibility, drive quality
+            traffic, and convert visitors into loyal customers.
           </p>
         </div>
 
         {/* RIGHT IMAGE */}
         <div className="seo-image">
           <div className="image-glow">
-            <img src="/images/seo.png" alt="SEO Marketing" />
+            <img src="/images/seo.png" alt="Digital Marketing Services" />
           </div>
         </div>
       </div>
 
       {/* STYLES */}
       <style>{`
-        /* SECTION */
         .seo-section {
-          // padding: clamp(48px, 6vw, 80px) clamp(5vw, 8vw, 9vw);
-          // background: radial-gradient(circle at top, #0b1220, #020617 70%);
           font-family: Inter, system-ui, sans-serif;
           color: #e5e7eb;
           overflow: hidden;
         }
 
-        /* HEADER */
         .seo-header {
           text-align: center;
           max-width: 900px;
@@ -539,18 +512,15 @@ function SeoMarketingSection() {
         }
 
         .seo-title {
-          text-align: center;
           font-size: clamp(30px, 4vw, 56px);
           font-weight: 800;
           line-height: 1.15;
-          margin-bottom: clamp(14px, 2vw, 20px);
         }
 
         .seo-title-white {
           display: block;
           color: #ffffff !important;
           -webkit-text-fill-color: #ffffff !important;
-          pointer-events: none;
         }
 
         .seo-title-gradient {
@@ -568,7 +538,6 @@ function SeoMarketingSection() {
           border-radius: 2px;
         }
 
-        /* GRID */
         .seo-container {
           max-width: 1200px;
           margin: auto;
@@ -578,16 +547,37 @@ function SeoMarketingSection() {
           align-items: center;
         }
 
-        /* TEXT */
         .seo-text p {
           font-size: clamp(15px, 1.4vw, 16px);
           line-height: 1.7;
-          // margin-bottom: clamp(10px, 2vw, 16px);
-          margin-bottom:auto;
+          margin-bottom: 16px;
           color: #cbd5f5;
         }
 
-        /* IMAGE */
+        /* LIST */
+        .seo-list {
+          list-style: none;
+          padding-left: 0;
+          margin: 18px 0 22px;
+        }
+
+        .seo-list li {
+          position: relative;
+          padding-left: 26px;
+          margin-bottom: 12px;
+          font-size: 15px;
+          color: #e5e7eb;
+        }
+
+        .seo-list li::before {
+          content: "✔";
+          position: absolute;
+          left: 0;
+          top: 0;
+          color: #8b5cf6;
+          font-weight: 700;
+        }
+
         .seo-image {
           display: flex;
           justify-content: center;
@@ -601,7 +591,6 @@ function SeoMarketingSection() {
         .image-glow::before {
           content: "";
           position: absolute;
-          // inset: clamp(-40px, -6vw, -65px);
           background: radial-gradient(
             circle,
             rgba(168, 85, 247, 0.55),
@@ -616,13 +605,10 @@ function SeoMarketingSection() {
           position: relative;
           z-index: 2;
           width: 100%;
-          max-width: clamp(320px, 42vw, 20px);
+          max-width: 420px;
           border-radius: 10px;
-          background: none;
-          box-shadow: none;
         }
 
-        /* MOBILE */
         @media (max-width: 900px) {
           .seo-container {
             grid-template-columns: 1fr;
@@ -632,8 +618,14 @@ function SeoMarketingSection() {
             text-align: center;
           }
 
+          .seo-list {
+            text-align: left;
+            max-width: 360px;
+            margin: 18px auto 22px;
+          }
+
           .seo-image {
-            margin-top: clamp(20px, 4vw, 32px);
+            margin-top: 28px;
           }
         }
       `}</style>
@@ -648,10 +640,10 @@ function SeoGrowthSectionleftimage() {
       <div className="seo-header">
         <h2 className="seo-title">
           <span className="seo-title-white">
-            Website & Software Development
+            Website Development
           </span>
           <span className="seo-title-gradient">
-            for Modern Businesses
+            That Converts
           </span>
         </h2>
         <div className="seo-divider"></div>
@@ -662,42 +654,41 @@ function SeoGrowthSectionleftimage() {
         {/* IMAGE – LEFT */}
         <div className="seo-image">
           <div className="image-glow">
-            <img src="/images/websitehome.png" alt="Website Development" />
+            <img src="/images/websitehome.png" alt="Website Development Services" />
           </div>
         </div>
 
         {/* TEXT – RIGHT */}
         <div className="seo-text">
           <p>
-            We design and develop high-performance websites and software
-            solutions that combine stunning visuals with powerful functionality.
+            Your website is your digital storefront. Our website development
+            services are designed to create strong first impressions while
+            driving real business results.
           </p>
 
-          <p>
-            Whether you need a business website, e-commerce platform, or custom
-            software application, our team ensures seamless user experiences.
-          </p>
+          <ul className="seo-list">
+            <li>SEO-friendly website architecture</li>
+            <li>Fast-loading, mobile-responsive design</li>
+            <li>UX/UI optimized for conversions</li>
+            <li>Secure and scalable development</li>
+          </ul>
 
           <p>
-            By integrating modern technologies and best practices, SHA
-            Infotechnology helps businesses build a strong digital foundation
-            for long-term success.
+            We build websites that not only look great but also convert visitors
+            into loyal customers.
           </p>
         </div>
       </div>
 
       {/* STYLES */}
       <style>{`
-        /* SECTION */
         .seo-section {
-          padding-top:40px;
-          // background: radial-gradient(circle at top, #0b1220, #020617 70%);
+          padding-top: 40px;
           font-family: Inter, system-ui, sans-serif;
           color: #e5e7eb;
           overflow: hidden;
         }
 
-        /* HEADER */
         .seo-header {
           text-align: center;
           max-width: 900px;
@@ -714,7 +705,6 @@ function SeoGrowthSectionleftimage() {
           display: block;
           color: #ffffff;
           -webkit-text-fill-color: #ffffff;
-          pointer-events: none;
         }
 
         .seo-title-gradient {
@@ -732,7 +722,6 @@ function SeoGrowthSectionleftimage() {
           border-radius: 2px;
         }
 
-        /* GRID */
         .seo-container {
           max-width: 1200px;
           margin: auto;
@@ -742,15 +731,37 @@ function SeoGrowthSectionleftimage() {
           align-items: center;
         }
 
-        /* TEXT */
         .seo-text p {
           font-size: clamp(15px, 1.4vw, 16px);
           line-height: 1.7;
-          margin-bottom: clamp(10px, 2vw, 16px);
+          margin-bottom: 16px;
           color: #cbd5f5;
         }
 
-        /* IMAGE */
+        /* LIST */
+        .seo-list {
+          list-style: none;
+          padding-left: 0;
+          margin: 18px 0 22px;
+        }
+
+        .seo-list li {
+          position: relative;
+          padding-left: 26px;
+          margin-bottom: 12px;
+          font-size: 15px;
+          color: #e5e7eb;
+        }
+
+        .seo-list li::before {
+          content: "✔";
+          position: absolute;
+          left: 0;
+          top: 0;
+          color: #8b5cf6;
+          font-weight: 700;
+        }
+
         .seo-image {
           display: flex;
           justify-content: center;
@@ -780,14 +791,198 @@ function SeoGrowthSectionleftimage() {
           width: 100%;
           max-width: clamp(320px, 42vw, 520px);
           border-radius: 18px;
-          background: none;
-          box-shadow: none;
         }
 
-        /* MOBILE */
         @media (max-width: 900px) {
           .seo-container {
             grid-template-columns: 1fr;
+          }
+        }
+      `}</style>
+    </section>
+  );
+}
+
+
+function ContentCoreSection() {
+  return (
+    <section className="contentcore-section">
+      {/* HEADER */}
+      <div className="contentcore-header">
+        <h2 className="contentcore-title">
+          <span className="contentcore-title-white">
+            Content Marketing Strategy
+          </span>
+          <span className="contentcore-title-gradient">
+            for Brand Authority
+          </span>
+        </h2>
+        <div className="contentcore-divider"></div>
+      </div>
+
+      {/* CONTENT */}
+      <div className="contentcore-container">
+        {/* LEFT TEXT */}
+        <div className="contentcore-text">
+          <p>
+            Content is the backbone of digital success. Our content marketing
+            strategy is designed to build trust, authority, and long-term brand
+            value.
+          </p>
+
+          <ul className="contentcore-list">
+            <li>SEO-optimized blog content</li>
+            <li>Website and landing page copywriting</li>
+            <li>Social media content planning</li>
+            <li>Brand storytelling and messaging</li>
+          </ul>
+
+          <p>
+            We help you attract, engage, and retain your audience with meaningful,
+            high-impact content that supports your business goals.
+          </p>
+        </div>
+
+        {/* RIGHT IMAGE */}
+        <div className="contentcore-image">
+          <div className="contentcore-image-glow">
+            <img
+              src="/images/conhome.png"
+              alt="Content Marketing Strategy"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* STYLES */}
+      <style>{`
+        .contentcore-section {
+          font-family: Inter, system-ui, sans-serif;
+          color: #e5e7eb;
+          overflow: hidden;
+        }
+
+        .contentcore-header {
+          text-align: center;
+          max-width: 900px;
+          margin: 0 auto clamp(28px, 4vw, 50px);
+        }
+
+        .contentcore-title {
+          font-size: clamp(30px, 4vw, 56px);
+          font-weight: 800;
+          line-height: 1.15;
+        }
+
+        .contentcore-title-white {
+          display: block;
+          color: #ffffff;
+          -webkit-text-fill-color: #ffffff;
+        }
+
+        .contentcore-title-gradient {
+          display: block;
+          background: linear-gradient(90deg, #8b5cf6, #ec4899);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        .contentcore-divider {
+          width: clamp(60px, 8vw, 90px);
+          height: 3px;
+          background: #8b5cf6;
+          margin: clamp(14px, 2.5vw, 22px) auto 0;
+          border-radius: 2px;
+        }
+
+        .contentcore-container {
+          max-width: 1200px;
+          margin: auto;
+          display: grid;
+          grid-template-columns: 1.1fr 1fr;
+          gap: clamp(26px, 5vw, 48px);
+          align-items: center;
+        }
+
+        .contentcore-text p {
+          font-size: clamp(15px, 1.4vw, 16px);
+          line-height: 1.7;
+          margin-bottom: 16px;
+          color: #cbd5f5;
+        }
+
+        /* LIST */
+        .contentcore-list {
+          list-style: none;
+          padding-left: 0;
+          margin: 18px 0 22px;
+        }
+
+        .contentcore-list li {
+          position: relative;
+          padding-left: 26px;
+          margin-bottom: 12px;
+          font-size: 15px;
+          color: #e5e7eb;
+        }
+
+        .contentcore-list li::before {
+          content: "✔";
+          position: absolute;
+          left: 0;
+          top: 0;
+          color: #8b5cf6;
+          font-weight: 700;
+        }
+
+        .contentcore-image {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .contentcore-image-glow {
+          position: relative;
+        }
+
+        .contentcore-image-glow::before {
+          content: "";
+          position: absolute;
+          background: radial-gradient(
+            circle,
+            rgba(168, 85, 247, 0.55),
+            rgba(236, 72, 153, 0.3),
+            transparent 50%
+          );
+          filter: blur(clamp(5px, 2vw, 65px));
+          z-index: 0;
+        }
+
+        .contentcore-image-glow img {
+          position: relative;
+          z-index: 2;
+          width: 100%;
+          max-width: 420px;
+          border-radius: 10px;
+        }
+
+        @media (max-width: 900px) {
+          .contentcore-container {
+            grid-template-columns: 1fr;
+          }
+
+          .contentcore-text {
+            text-align: center;
+          }
+
+          .contentcore-list {
+            text-align: left;
+            max-width: 360px;
+            margin: 18px auto 22px;
+          }
+
+          .contentcore-image {
+            margin-top: 28px;
           }
         }
       `}</style>
@@ -985,38 +1180,39 @@ function ProcessFlowSection() {
         <div className="process-grid">
           <div className="process-step">
             <div className="step-circle c1">1</div>
-            <h3>Research</h3>
-            <p>Understanding your business and audience</p>
+            <h3>Dicovery</h3>
+
+            {/* <p>Understanding your business and audience</p> */}
           </div>
 
           <div className="process-step">
             <div className="step-circle c2">2</div>
-            <h3>Strategy</h3>
-            <p>Building a tailored digital roadmap</p>
+            <h3>Client Onboarding </h3>
+            {/* <p>Building a tailored digital roadmap</p> */}
           </div>
 
           <div className="process-step">
             <div className="step-circle c3">3</div>
-            <h3>Execution</h3>
-            <p>Launching campaigns and solutions</p>
+            <h3>Strategy Development </h3>
+            {/* <p>Launching campaigns and solutions</p> */}
           </div>
 
           <div className="process-step">
             <div className="step-circle c4">4</div>
-            <h3>Scaling</h3>
-            <p>Growing sustainably over time</p>
+            <h3>Core Service Execution </h3>
+            {/* <p>Growing sustainably over time</p> */}
           </div>
 
           <div className="process-step">
             <div className="step-circle c5">5</div>
-            <h3>Optimization</h3>
-            <p>Improving for better outcomes</p>
+            <h3>Data Analytics and Optimization</h3>
+            {/* <p>Improving for better outcomes</p> */}
           </div>
 
           <div className="process-step">
             <div className="step-circle c6">6</div>
-            <h3>Insights</h3>
-            <p>Measuring performance and results</p>
+            <h3>Generating Reports </h3>
+            {/* <p>Measuring performance and results</p> */}
           </div>
         </div>
       </div>
@@ -1688,12 +1884,12 @@ function ServicesHighlightSection() {
         <small>SHA INFOTECHNOLOGY</small>
 
         <h1>
-          Turning Digital Strategy <br />
-          with <span className="gradient-text">Into Real Business Growth</span>
+         Digital Marketing Services <br />
+          that <span className="gradient-text">Grow Your Business</span>
         </h1>
 
         <p>
-          We help businesses grow with high-performance websites, SEO, e-commerce solutions, and result-driven digital marketing strategies.  </p>
+         Sha Infotechnology is a results-driven digital marketing agency delivering powerful digital marketing services, website development, and content marketing strategy solutions to help brands scale online, generate qualified leads, and increase revenue.  </p>
 
         {/* <div className="hero-tags">
           <span>Website Development</span>
@@ -1718,6 +1914,208 @@ function ServicesHighlightSection() {
   );
 }
 
+ function WhyChooseUs() {
+  useEffect(() => {
+    const css = `
+/* ===== WHY CHOOSE US SECTION ===== */
+.why-wrap{
+  // padding:120px 6vw;
+  // background:radial-gradient(circle at top,#0b1220,#020617 70%);
+  padding-top:30px;
+  font-family:Inter,system-ui,sans-serif;
+  color:#ffffff;
+}
+
+.why-container{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+
+/* LEFT */
+.why-left h2{
+  font-size:clamp(36px,5vw,52px);
+  font-weight:900;
+  margin-bottom:18px;
+}
+
+.why-left h2 span{
+  background:linear-gradient(90deg,#8b5cf6,#ec4899);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.why-left p{
+  font-size:17px;
+  line-height:1.8;
+  color:#cbd5f5;
+  max-width:540px;
+  margin-bottom:36px;
+}
+
+.why-tagline{
+  font-size:16px;
+  font-weight:700;
+  color:#ffffff;
+  margin-top:20px;
+}
+
+/* RIGHT */
+.why-features{
+  display:grid;
+  gap:22px;
+}
+
+.why-card{
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:20px;
+  padding:26px;
+  display:flex;
+  gap:18px;
+  align-items:flex-start;
+  transition:.35s ease;
+}
+
+.why-card:hover{
+  transform:translateY(-6px);
+  border-color:#8b5cf6;
+  box-shadow:0 25px 80px rgba(139,92,246,.35);
+}
+
+.why-icon{
+  width:46px;
+  height:46px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#8b5cf6,#ec4899);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  color:#fff;
+  flex-shrink:0;
+}
+
+.why-card h4{
+  font-size:18px;
+  font-weight:800;
+  margin-bottom:6px;
+}
+
+.why-card p{
+  font-size:14.5px;
+  color:#cbd5f5;
+  line-height:1.7;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .why-container{
+    grid-template-columns:1fr;
+  }
+
+  .why-left{
+    text-align:center;
+  }
+
+  .why-left p{
+    margin:auto;
+  }
+}
+    `;
+    const style = document.createElement("style");
+    style.innerHTML = css;
+    document.head.appendChild(style);
+    return () => style.remove();
+  }, []);
+
+  return (
+    <section className="why-wrap">
+      <div className="why-container">
+
+        {/* LEFT CONTENT */}
+        <div className="why-left">
+          <h2>
+            Why Choose <span>SHA Infotechnology</span>
+            <br />as Your Digital Marketing Agency?
+          </h2>
+
+          <p>
+            We don’t just market your brand — we help you grow it sustainably.
+            Our approach combines creativity, strategy, and performance-driven
+            execution to deliver measurable business results.
+          </p>
+
+          <div className="why-tagline">
+            Trusted by businesses looking for real digital growth.
+          </div>
+        </div>
+
+        {/* RIGHT FEATURES */}
+        <div className="why-features">
+          <div className="why-card">
+            <div className="why-icon">👨‍💻</div>
+            <div>
+              <h4>Experienced Professionals</h4>
+              <p>
+                Our team consists of skilled digital marketing experts with
+                hands-on industry experience.
+              </p>
+            </div>
+          </div>
+
+          <div className="why-card">
+            <div className="why-icon">📊</div>
+            <div>
+              <h4>Data-Driven Strategies</h4>
+              <p>
+                Every decision is backed by analytics, insights, and proven
+                performance metrics.
+              </p>
+            </div>
+          </div>
+
+          <div className="why-card">
+            <div className="why-icon">📈</div>
+            <div>
+              <h4>Transparent Reporting & ROI</h4>
+              <p>
+                Clear reports, honest communication, and measurable return on
+                investment.
+              </p>
+            </div>
+          </div>
+
+          <div className="why-card">
+            <div className="why-icon">🏢</div>
+            <div>
+              <h4>Industry-Specific Solutions</h4>
+              <p>
+                Customized strategies tailored to your business industry and
+                target audience.
+              </p>
+            </div>
+          </div>
+
+          <div className="why-card">
+            <div className="why-icon">💰</div>
+            <div>
+              <h4>Affordable & Scalable Plans</h4>
+              <p>
+                Cost-effective pricing with flexible plans that grow along with
+                your business.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+}
 
 
 
@@ -1897,12 +2295,16 @@ useEffect(() => {
        
 
      <ProjectRunLeftImageSection />
-        <ProcessFlowSection />
-       
+      
+     
         <SeoMarketingSection />
+         <SeoGrowthSectionleftimage />
+        <ContentCoreSection />
  <ServicesHighlightSection />
- <IndustriesWeServe />
-        <SeoGrowthSectionleftimage />
+ <ProcessFlowSection />
+         <WhyChooseUs />
+        
+         <IndustriesWeServe />
         <StatsHighlight />
         <HomeFAQSection /> 
         

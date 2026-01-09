@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 export default function Header() {
   const [open, setOpen] = useState(false);
 
@@ -9,13 +9,15 @@ export default function Header() {
       <div className="sf-header-inner">
         {/* Logo */}
         <div className="sf-logo">
-  <div className="mark">
+ <div className="mark">
+  <Link to="/" aria-label="Go to Home">
     <img
       src="/LOGO.jpeg"
       alt="SHA Infotechnology Logo"
       className="logo-img"
     />
-  </div>
+  </Link>
+</div>
 
   <div className="logo-text">
   <div className="title">SHA INFOTECHNOLOGY</div>
@@ -23,7 +25,7 @@ export default function Header() {
 
   <div className="phone-line">
     <span className="phone-icon">📞</span>
-    <a href="tel:9445747815" className="phone-number">
+    <a href="tel:9361046387" className="phone-number">
   94457 47815
 </a>
    
@@ -76,6 +78,14 @@ export default function Header() {
   >
     Contact
   </NavLink>
+
+   <Link
+  to="/blog"
+  onClick={() => setOpen(false)}
+  className="nav-btn"
+>
+  Blog
+</Link>
 </nav>
 
       </div>

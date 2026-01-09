@@ -12,6 +12,10 @@ import About from "./components/About";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
 import ServiceDetail from "./components/ServiceDetail";
+import Blog from "./components/Blog";
+import CallButton from "./components/CallButton";
+
+
 // import AssistantPopup from "./components/AssistantPopup";
 import {
   fadeUp,
@@ -90,13 +94,33 @@ export default function App() {
           <AnimatedPage animation={fadeUp}>
             <Contact />
           </AnimatedPage>
+          
         }
       />
+    <Route
+  path="/blog"
+  element={
+    <AnimatedPage animation={fadeUp}>
+      <Blog />
+    </AnimatedPage>
+  }
+/>
+
+<Route
+  path="/blog/:slug"
+  element={
+    <AnimatedPage animation={fadeUp}>
+      <Blog />
+    </AnimatedPage>
+  }
+/>
+
     </Routes>
          <WhatsAppFloat />
   </div>
 </AnimatePresence>
 <Footer />
+<CallButton />
 
     </>
   );
