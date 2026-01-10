@@ -80,9 +80,8 @@ import React, { useEffect } from "react";
         Sha Infotech – One of the Best Digital Marketing Companies in Chennai
       </h1>
       <p>
-        Sha Infotech is a results-focused digital marketing company in Chennai 
-        delivering customized marketing solutions for startups, SMEs, and 
-        enterprises.
+        Sha Infotech is a results-focused digital marketing company in Chennai delivering customized marketing solutions for startups, SMEs, and enterprises.<br></br>
+      We focus on ROI-driven digital strategies that align with your business goals, market trends, and local audience behavior.
       </p>
     </section>
   );
@@ -95,12 +94,7 @@ import React, { useEffect } from "react";
 /* ================= WHY SHA SECTION ================= */
 .sha-why{
   padding:90px 6vw;
-  // background:linear-gradient(
-  //   135deg,
-  //   rgba(99,102,241,0.15),
-  //   rgba(168,85,247,0.15),
-  //   rgba(236,72,153,0.12)
-  // );
+ 
   backdrop-filter:blur(10px);
   -webkit-backdrop-filter:blur(10px);
   font-family:Inter,system-ui;
@@ -187,9 +181,7 @@ import React, { useEffect } from "react";
         <div className="sha-why-card">
           <h3>Customized Digital Strategies</h3>
           <p>
-            We don’t use one-size-fits-all solutions. Every strategy is 
-            carefully tailored to your industry, business location, and 
-            long-term goals to ensure maximum results.
+            We don’t use one-size-fits-all solutions. Every strategy is tailored to your industry, location, and goals.
           </p>
         </div>
 
@@ -197,9 +189,7 @@ import React, { useEffect } from "react";
         <div className="sha-why-card">
           <h3>Transparent Reporting & Analytics</h3>
           <p>
-            We provide regular performance reports with measurable KPIs 
-            and clear insights so you always understand how your campaigns 
-            are performing.
+           Regular performance reports with measurable KPIs and clear insights.
           </p>
         </div>
 
@@ -207,8 +197,7 @@ import React, { useEffect } from "react";
         <div className="sha-why-card">
           <h3>Affordable Digital Marketing Packages</h3>
           <p>
-            Our pricing models are flexible and suitable for startups, 
-            local businesses, and growing enterprises across Chennai.
+           Flexible pricing models suitable for startups, local businesses, and growing enterprises in Chennai.
           </p>
         </div>
 
@@ -216,428 +205,13 @@ import React, { useEffect } from "react";
         <div className="sha-why-card">
           <h3>Local Market Expertise</h3>
           <p>
-            We have deep expertise in Chennai’s local audience behavior, 
-            competition landscape, and city-specific search trends.
+           Deep understanding of Chennai’s audience behavior, competition, and search trends.
           </p>
         </div>
       </div>
     </section>
   );
 }
-
-// export default function Blog() {
-
-//   /* ================= BLOG DATA ================= */
-// //   const blogs = [
-// //     {
-// //       id: 1,
-// //       slug: "digital-marketing-basics",
-// //       title: "Search Engine Optimization (SEO) Services ",
-// //       category: "SEO",
-// //       // date: "July 06, 2026",
-// //       image: "/images/seo.png",
-// //     //   short:
-// //     //     "Learn how digital marketing helps businesses grow online.",
-// //       content:
-// //       `<ul>
-// //   <li>Local SEO for Chennai-based businesses</li>
-// //   <li>On-page & technical SEO</li>
-// //   <li>Google My Business optimization</li>
-// //   <li>Link building & content optimization</li>
-// // </ul>`
-// //         // "Digital marketing is the backbone of modern business growth. It helps brands connect with customers online, build visibility, and increase revenue using SEO, social media, paid ads, and content marketing."
-// //     },
-// //     {
-// //       id: 2,
-// //       slug: "seo-growth-strategy",
-// //       title: "SEO Growth Strategy for Long-Term Success",
-// //       category: "SEO",
-// //       date: "July 10, 2026",
-// //       image: "/images/vission.png",
-// //   },
-// //     {
-// //       id: 3,
-// //       slug: "seo-growth-strategy",
-// //       title: "SEO Growth Strategy for Long-Term Success",
-// //       category: "SEO",
-// //       date: "July 10, 2026",
-// //       image: "/images/vission.png",
-
-// //     }
-// //   ];
-// const blogs = [
-//   {
-//     id: 1,
-//     slug: "digital-marketing-services-chennai",
-//     title: "Our Digital Marketing Services in Chennai",
-//     category: "Digital Marketing",
-//     date: "July 06, 2026",
-//     image: "/images/seo.png",
-//     short: "Complete digital marketing solutions for Chennai businesses.",
-//     content: `
-// <h2>Our Digital Marketing Services in Chennai</h2>
-// <p>We provide end-to-end digital marketing services tailored to startups, SMEs, and enterprise brands.</p>
-// <ul>
-//   <li>SEO & Google Rankings</li>
-//   <li>Google Ads (PPC)</li>
-//   <li>Social Media Marketing</li>
-//   <li>Content Marketing & Branding</li>
-//   <li>Website Development & Optimization</li>
-// </ul>
-// `
-//   },
-
-//   {
-//     id: 2,
-//     slug: "seo-services-chennai",
-//     title: "Search Engine Optimization (SEO) Services in Chennai",
-//     category: "SEO",
-//     date: "July 07, 2026",
-//     image: "/images/seo.png",
-//     short: "Rank higher on Google with proven SEO strategies.",
-//     content: `
-// <h2>SEO Services in Chennai</h2>
-// <p>Our SEO strategies help businesses rank on Google for local + national keywords.</p>
-// <ul>
-//   <li>Local SEO for Chennai-based businesses</li>
-//   <li>On-page & Technical SEO</li>
-//   <li>Google My Business Optimization</li>
-//   <li>Link Building & Content Optimization</li>
-// </ul>
-// `
-//   },
-
-//   {
-//     id: 3,
-//     slug: "google-ads-ppc-chennai",
-//     title: "Google Ads & PPC Management in Chennai",
-//     category: "PPC",
-//     date: "July 08, 2026",
-//     image: "/images/vission.png",
-//     short: "Instant leads using cost-effective PPC campaigns.",
-//     content: `
-// <h2>Google Ads & PPC Management</h2>
-// <p>We run high-performing paid ad campaigns that drive immediate conversions.</p>
-// <ul>
-//   <li>Keyword Research & Ad Copy Optimization</li>
-//   <li>Landing Page Optimization</li>
-//   <li>Conversion Tracking & ROI Analysis</li>
-// </ul>
-// `
-//   },
-
-//   {
-//     id: 4,
-//     slug: "social-media-marketing-chennai",
-//     title: "Social Media Marketing Services in Chennai",
-//     category: "Social Media",
-//     date: "July 09, 2026",
-//     image: "/images/vission.png",
-//     short: "Grow your brand with social media campaigns.",
-//     content: `
-// <h2>Social Media Marketing Services</h2>
-// <p>We help Chennai businesses build engagement and brand visibility.</p>
-// <ul>
-//   <li>Instagram, Facebook & LinkedIn Marketing</li>
-//   <li>Brand Awareness & Engagement</li>
-//   <li>Lead Generation Through Paid Social Ads</li>
-// </ul>
-// `
-//   },
-
-//   {
-//     id: 5,
-//     slug: "content-marketing-branding",
-//     title: "Content Marketing & Branding Strategy",
-//     category: "Content",
-//     date: "July 10, 2026",
-//     image: "/images/seo.png",
-//     short: "High-quality content that improves rankings and trust.",
-//     content: `
-// <h2>Content Marketing & Branding Strategy</h2>
-// <p>Create high-quality content that boosts rankings and brand loyalty.</p>
-// <ul>
-//   <li>SEO Blog Writing</li>
-//   <li>Website Content Optimization</li>
-//   <li>Brand Messaging & Storytelling</li>
-// </ul>
-// `
-//   },
-
-//   {
-//     id: 6,
-//     slug: "website-development-optimization",
-//     title: "Website Development & Optimization",
-//     category: "Web Development",
-//     date: "July 11, 2026",
-//     image: "/images/vission.png",
-//     short: "Build fast, responsive, SEO-friendly websites.",
-//     content: `
-// <h2>Website Development & Optimization</h2>
-// <p>We build conversion-focused websites designed to rank & convert.</p>
-// <ul>
-//   <li>SEO-Friendly Website Development</li>
-//   <li>Mobile-Responsive & Fast-Loading</li>
-//   <li>UI/UX Optimization for Engagement</li>
-// </ul>
-// `
-//   }
-// ];
-
-//   const { slug } = useParams();
-
-//   /* ================= SINGLE BLOG ================= */
-//   if (slug) {
-//     const index = blogs.findIndex(b => b.slug === slug);
-//     const blog = blogs[index];
-//     const prevBlog = blogs[index - 1];
-//     const nextBlog = blogs[index + 1];
-
-//     if (!blog) {
-//       return <p style={{ color: "#fff" }}>Blog not found</p>;
-//     }
-
-//     return (
-// //       <section className="blog-detail">
-// //         <img src={blog.image} alt={blog.title} />
-
-// //         <h1>{blog.title}</h1>
-
-// //         <p className="meta">
-// //           {blog.date} 
-// //           {/* • {blog.category} */}
-// //         </p>
-
-// //         {/* <p className="content">{blog.content}</p> */}
-// // <div
-// //   className="content"
-// //   dangerouslySetInnerHTML={{ __html: blog.content }}
-// // ></div>
-// //         {/* NEXT / PREVIOUS */}
-// //         <div className="blog-nav">
-// //           {prevBlog && (
-// //             <Link to={`/blog/${prevBlog.slug}`} className="nav-btn">
-// //               ← Previous
-// //             </Link>
-// //           )}
-
-// //           {nextBlog && (
-// //             <Link to={`/blog/${nextBlog.slug}`} className="nav-btn">
-// //               Next →
-// //             </Link>
-// //           )}
-// //         </div>
-
-// //         <Link to="/blog" className="back">
-// //           ← Back to Blog
-// //         </Link>
-
-// //         <style>{detailStyles}</style>
-// //       </section>
-// <section className="blog-detail">
-//   <div className="blog-layout">
-//     <div className="blog-content">
-//       <h1>{blog.title}</h1>
-
-//       <p className="meta">
-//         {blog.date} • {blog.category}
-//       </p>
-
-//       <div
-//         className="content"
-//         dangerouslySetInnerHTML={{ __html: blog.content }}
-//       ></div>
-//     </div>
-
-//     <div className="blog-image">
-//       <img src={blog.image} alt={blog.title} />
-//     </div>
-//   </div>
-
-//   {/* NEXT / PREVIOUS */}
-//   <div className="blog-nav">
-//     {prevBlog && (
-//       <Link to={`/blog/${prevBlog.slug}`} className="nav-btn">
-//         ← Previous
-//       </Link>
-//     )}
-
-//     {nextBlog && (
-//       <Link to={`/blog/${nextBlog.slug}`} className="nav-btn">
-//         Next →
-//       </Link>
-//     )}
-//   </div>
-
-//   <Link to="/blog" className="back">
-//     ← Back to Blog
-//   </Link>
-
-//   <style>{detailStyles}</style>
-// </section>
-
-//     );
-//   }
-
-//   /* ================= BLOG LIST ================= */
-//   return (
-//     <>
-//     <BlogHeader />
-//     <BlogWhySha />
-//     <section className="blog-list">
-//       <h1>Our Blog</h1>
-
-//       <div className="blog-grid">
-//         {blogs.map(blog => (
-//           <Link
-//             key={blog.id}
-//             to={`/blog/${blog.slug}`}
-//             className="blog-card"
-//           >
-//             <img src={blog.image} alt={blog.title} />
-
-//             <div className="card-content">
-//               <span className="tag">{blog.category}</span>
-//               <h3>{blog.title}</h3>
-//               <p>{blog.short}</p>
-//               <span className="read">Read More →</span>
-//             </div>
-//           </Link>
-//         ))}
-//       </div>
-
-//       <style>{listStyles}</style>
-//     </section>
-    
-//     </>
-//   );
-// }
-
-// /* ================= STYLES ================= */
-
-// const listStyles = `
-// .blog-list {
-//   padding: 80px 6vw;
-//   color: #ffffff;
-// }
-
-// .blog-list h1 {
-//   text-align: center;
-//   font-size: 42px;
-//   margin-bottom: 50px;
-//   background: linear-gradient(90deg,#8b5cf6,#ec4899);
-//   -webkit-background-clip: text;
-//   -webkit-text-fill-color: transparent;
-// }
-
-// .blog-grid {
-//   max-width: 1200px;
-//   margin: auto;
-//   display: grid;
-//   grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-//   gap: 34px;
-// }
-
-// .blog-card {
-//   text-decoration: none;
-//   background: radial-gradient(circle at top,#0b1220,#020617 80%);
-//   border-radius: 22px;
-//   overflow: hidden;
-//   box-shadow: 0 18px 45px rgba(0,0,0,.6);
-//   transition: transform .3s ease;
-// }
-
-// .blog-card:hover {
-//   transform: translateY(-8px);
-// }
-
-// .blog-card img {
-//   width: 100%;
-//   height: 220px;
-//   object-fit: cover;
-// }
-
-// .card-content {
-//   padding: 26px;
-// }
-
-// .tag {
-//   display: inline-block;
-//   background: linear-gradient(135deg,#8b5cf6,#ec4899);
-//   padding: 6px 14px;
-//   border-radius: 18px;
-//   font-size: 13px;
-//   font-weight: 700;
-//   color: #ffffff;
-// }
-
-// .card-content h3 {
-//   margin: 12px 0;
-//   font-size: 20px;
-//   color: #ffffff;
-// }
-
-// .card-content p {
-//   color: #cbd5f5;
-//   font-size: 15px;
-// }
-
-// .read {
-//   font-weight: 700;
-//   color: #ffffff;
-// }
-// `;
-
-// const detailStyles = `
-// .blog-detail {
-//   padding: 80px 6vw;
-//   max-width: 900px;
-//   margin: auto;
-//   color: #ffffff;
-// }
-
-// .blog-detail img {
-//   width: 100%;
-//   border-radius: 20px;
-//   margin-bottom: 30px;
-// }
-
-// .blog-detail h1 {
-//   font-size: 36px;
-//   margin-bottom: 10px;
-// }
-
-// .meta {
-//   color: #94a3b8;
-//   margin-bottom: 30px;
-// }
-
-// .content {
-//   font-size: 17px;
-//   line-height: 1.8;
-//   color: #cbd5f5;
-// }
-
-// .blog-nav {
-//   margin-top: 40px;
-//   display: flex;
-//   justify-content: space-between;
-//   gap: 20px;
-// }
-
-
-
-// .back {
-//   display: inline-block;
-//   margin-top: 30px;
-//   color: #ffffff;
-//   text-decoration: none;
-// }
-// `;
-
-
-
-
 
 export default function Blog() {
 
@@ -658,118 +232,101 @@ React.useEffect(() => {
 
 
   /* ================= BLOG DATA (SEPARATE BLOGS) ================= */
-  const blogs = [
-    {
-      id: 1,
-      slug: "digital-marketing-services-chennai",
-      title: "Our Digital Marketing Services in Chennai",
-      category: "Digital Marketing",
-      date: "July 06, 2026",
-      image: "/images/digitalstrategy.png",
-      short: "Complete digital marketing solutions for Chennai businesses.",
-      content: `
-<p>We provide end-to-end digital marketing services tailored to startups, SMEs, and enterprise brands.</p>
-<ul>
-  <li>SEO & Google Rankings</li>
-  <li>Google Ads (PPC)</li>
-  <li>Social Media Marketing</li>
-  <li>Content Marketing & Branding</li>
-  <li>Website Development & Optimization</li>
-</ul>
-`
-    },
 
-    {
-      id: 2,
-      slug: "seo-services-chennai",
-      title: "Search Engine Optimization (SEO) Services in Chennai",
-      category: "SEO",
-      date: "July 07, 2026",
-      image: "/images/seo.png",
-      short: "Rank higher on Google with proven SEO strategies.",
-      content: `
-<p>Our SEO strategies help businesses rank on Google for high-value Chennai and national keywords.</p>
+const blogs = [
+
+  {
+    id: 1,
+    slug: "seo-services-chennai",
+    title: "Search Engine Optimization (SEO) Services in Chennai",
+    category: "SEO",
+    date: "July 07, 2026",
+    image: "/images/seo.png",
+    short: "Rank higher on Google with proven SEO strategies.",
+    content: `
+<p>Our SEO strategies help businesses rank on Google for high-value local and national keywords.</p>
+<p><strong>We specialize in:</strong></p>
 <ul>
-  <li>Local SEO for Chennai businesses</li>
+  <li>Local SEO for Chennai-based businesses</li>
   <li>On-page & Technical SEO</li>
   <li>Google My Business Optimization</li>
   <li>Link Building & Content Optimization</li>
 </ul>
 `
-    },
+  },
 
-    {
-      id: 3,
-      slug: "google-ads-ppc-chennai",
-      title: "Google Ads & PPC Management in Chennai",
-      category: "GOOGLE ADS",
-      date: "July 08, 2026",
-      image: "/images/BRANDCONSULTANCY.png",
-      short: "Instant leads using high-performing PPC campaigns.",
-      content: `
-<p>We manage cost-effective Google Ads campaigns that generate immediate conversions.</p>
+  {
+    id: 2,
+    slug: "google-ads-ppc-chennai",
+    title: "Google Ads & PPC Management in Chennai",
+    category: "GOOGLE ADS",
+    date: "July 08, 2026",
+    image: "/images/BRANDCONSULTANCY.png",
+    short: "Instant leads using high-performing PPC campaigns.",
+    content: `
+<p>We manage cost-effective Google Ads campaigns that generate immediate leads and conversions.</p>
 <ul>
   <li>Keyword Research & Ad Copy Optimization</li>
   <li>Landing Page Optimization</li>
   <li>Conversion Tracking & ROI Analysis</li>
 </ul>
 `
-    },
+  },
 
-    {
-      id: 4,
-      slug: "social-media-marketing-chennai",
-      title: "Social Media Marketing Services in Chennai",
-      category: "Social Media",
-      date: "July 09, 2026",
-      image: "/images/SOCIALMEDIAMARKETING.png",
-      short: "Grow your brand with social media campaigns.",
-      content: `
-<p>We help Chennai businesses build engagement and brand visibility.</p>
+  {
+    id: 3,
+    slug: "social-media-marketing-chennai",
+    title: "Social Media Marketing Services in Chennai",
+    category: "Social Media",
+    date: "July 09, 2026",
+    image: "/images/SOCIALMEDIAMARKETING.png",
+    short: "Grow your brand with social media campaigns.",
+    content: `
+<p>Build strong customer relationships through impactful social media campaigns.</p>
 <ul>
   <li>Instagram, Facebook & LinkedIn Marketing</li>
-  <li>Brand Awareness & Engagement</li>
-  <li>Lead Generation Through Paid Ads</li>
+  <li>Brand Awareness & Engagement Campaigns</li>
+  <li>Lead Generation Through Paid Social Ads</li>
 </ul>
 `
-    },
+  },
 
-    {
-      id: 5,
-      slug: "content-marketing-branding",
-      title: "Content Marketing & Branding Strategy",
-      category: "Content",
-      date: "July 10, 2026",
-      image: "/images/CONTENTDESIGN.png",
-      short: "High-quality content that boosts rankings and trust.",
-      content: `
-<p>High-quality content improves rankings and builds strong brand trust.</p>
+  {
+    id: 4,
+    slug: "content-marketing-branding",
+    title: "Content Marketing & Branding Strategy",
+    category: "Content",
+    date: "July 10, 2026",
+    image: "/images/CONTENTDESIGN.png",
+    short: "High-quality content that boosts rankings and trust.",
+    content: `
+<p>High-quality content that improves rankings and builds trust.</p>
 <ul>
   <li>SEO Blog Writing</li>
   <li>Website Content Optimization</li>
   <li>Brand Messaging & Storytelling</li>
 </ul>
 `
-    },
+  },
 
-    {
-      id: 6,
-      slug: "website-development-optimization",
-      title: "Website Development & Optimization",
-      category: "Web Development",
-      date: "July 11, 2026",
-      image: "/images/WEBDEVELOPMENT.png",
-      short: "SEO-friendly, fast-loading, responsive websites.",
-      content: `
-<p>Get conversion-focused websites built to rank & convert.</p>
+  {
+    id: 5,
+    slug: "website-development-optimization",
+    title: "Website Development & Optimization",
+    category: "Web Development",
+    date: "July 11, 2026",
+    image: "/images/WEBDEVELOPMENT.png",
+    short: "SEO-friendly, fast-loading, responsive websites.",
+    content: `
+<p>Conversion-focused websites designed to rank and convert.</p>
 <ul>
-  <li>SEO-Friendly Websites</li>
-  <li>Responsive & Fast-Loading</li>
-  <li>UI/UX Optimization</li>
+  <li>SEO-Friendly Website Development</li>
+  <li>Mobile-Responsive & Fast-Loading Designs</li>
+  <li>UI/UX Optimization for Better Engagement</li>
 </ul>
 `
-    }
-  ];
+  }
+];
 
   const { slug } = useParams();
 
@@ -1086,30 +643,6 @@ const detailStyles = `
   font-weight: 500;
 }
 
-// /* NAV BUTTONS */
-// .blog-nav {
-//   margin-top: 40px;
-//   display: flex;
-//   justify-content: space-between;
-//   gap: 20px;
-// }
-
-// .nav-btn {
-//   padding: 10px 20px;
-//   background: #eef2ff;
-//   border: 2px solid #6366f1;
-//   border-radius: 30px;
-
-//   color: #4338ca;
-//   text-decoration: none;
-//   font-weight: 700;
-//   transition: .25s;
-// }
-
-// .nav-btn:hover {
-//   background: #6366f1;
-//   color: #ffffff;
-// }
 
 /* BACK LINK */
 .back {
@@ -1119,72 +652,23 @@ const detailStyles = `
   text-decoration: none;
   font-weight: 700;
 }
-
-/* MOBILE RESPONSIVE */
-@media(max-width:900px){
+@media (max-width: 900px) {
   .blog-layout {
     flex-direction: column;
+  }
+
+  /* IMAGE FIRST */
+  .blog-image {
+    order: 1;
+  }
+
+  /* CONTENT SECOND */
+  .blog-content {
+    order: 2;
   }
 
   .blog-image img {
     width: 100%;
   }
 }
-
-/* ============= NEW NAV DESIGN ============= */
-
-.blog-nav {
-  margin-top: 50px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.nav-new {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  padding: 12px 22px;
-  border-radius: 30px;
-  text-decoration: none;
-
-  border: 2px solid transparent;
-  background: #ffffff;
-  color: #312e81;
-
-  font-weight: 700;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
-  
-  transition: .3s ease;
-}
-
-.nav-new:hover {
-  border-color: #6366f1;
-  background: linear-gradient(90deg,#6366f1,#a855f7,#ec4899);
-  color: #ffffff;
-  transform: translateY(-4px);
-}
-
-.nav-new .arrow {
-  font-size: 20px;
-}
-
-.nav-new.back {
-  margin: auto;
-}
-
-@media(max-width:600px){
-  .blog-nav {
-    flex-direction: column;
-    align-items: center;
-  }
-  .nav-new {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-
 `;
