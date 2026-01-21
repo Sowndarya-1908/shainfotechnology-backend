@@ -1787,8 +1787,10 @@ function ServicesHighlightSection() {
 
 /* HERO */
 .home-hero{
+padding-top:20px;
+padding-left:90px;
   min-height:auto; /* ❌ remove forced full screen */
-  padding: clamp(56px, 1vw, 90px) clamp(5vw, 8vw, 9vw);
+  // padding: clamp(56px, 1vw, 90px) clamp(5vw, 8vw, 9vw);
   // background:radial-gradient(circle at top, var(--bg-dark-2), var(--bg-dark) 70%);
   display:grid;
   grid-template-columns:1.1fr 1fr;
@@ -1804,7 +1806,7 @@ function ServicesHighlightSection() {
 }
 
 .hero-left small{
-  font-size: clamp(16px, 2vw, 24px);
+  font-size: clamp(10px, 2vw, 20px);
   letter-spacing:3px;
   color:#ffffff;
   font-weight:900;
