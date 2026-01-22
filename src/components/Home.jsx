@@ -1771,9 +1771,9 @@ function ServicesHighlightSection() {
   );
 }
 
- function HomeHerohead() {
- useEffect(() => {
-  const css = `
+function HomeHerohead() {
+  useEffect(() => {
+    const css = `
 :root{
   --bg-dark:#020617;
   --bg-dark-2:#0b1220;
@@ -1787,39 +1787,35 @@ function ServicesHighlightSection() {
 
 /* HERO */
 .home-hero{
-padding-top:20px;
-padding-left:90px;
-  min-height:auto; /* ❌ remove forced full screen */
-  // padding: clamp(56px, 1vw, 90px) clamp(5vw, 8vw, 9vw);
-  // background:radial-gradient(circle at top, var(--bg-dark-2), var(--bg-dark) 70%);
+  padding-top:40px;
+  padding-left:90px;
+  padding-right:40px;              /* ⭐ keeps left/right balanced */
   display:grid;
   grid-template-columns:1.1fr 1fr;
   align-items:center;
-  gap: clamp(28px, 5vw, 40px);
+  gap: 40px;
   font-family:Inter,system-ui,sans-serif;
   overflow:hidden;
 }
 
 /* LEFT */
-.hero-left{
-  pointer-events:none;
-}
-
 .hero-left small{
-  font-size: clamp(10px, 2vw, 20px);
+  font-size: clamp(12px, 1.8vw, 18px);
   letter-spacing:3px;
   color:#ffffff;
   font-weight:900;
   display:block;
-  margin-bottom: clamp(14px, 2vw, 22px);
+  margin-bottom: 16px;
 }
 
 .hero-left h1{
-  font-size: clamp(36px, 6vw, 74px);
-  line-height:1.1;
-  margin:0 0 clamp(14px, 2vw, 18px);
+  font-size: clamp(32px, 4vw, 52px); /* ⭐ Optimized for perfect one-line fit */
+  line-height:1.15;
+  margin:0 0 18px;
   color:#ffffff;
   font-weight:900;
+  white-space:nowrap;               /* ⭐ force one line */
+  max-width:900px;                  /* ⭐ keeps line balanced */
 }
 
 .gradient-text{
@@ -1829,24 +1825,23 @@ padding-left:90px;
 }
 
 .hero-left p{
-  max-width:520px;
-  font-size: clamp(14px, 1.5vw, 15px);
+  max-width:500px;
+  font-size:16px;
   line-height:1.65;
   color:var(--muted);
-  margin-bottom: clamp(18px, 3vw, 28px);
+  margin-bottom:26px;
 }
 
 /* RIGHT */
 .hero-right{
   display:flex;
-  align-items:center;
   justify-content:center;
   pointer-events:none;
 }
 
 .hero-image{
   width:100%;
-  max-width: clamp(42px, 45vw, 820px);
+  max-width:600px;                  /* ⭐ balanced size with your one-line text */
   height:auto;
   filter:drop-shadow(0 20px 80px rgba(139,92,246,0.45));
 }
@@ -1855,55 +1850,46 @@ padding-left:90px;
 @media(max-width:900px){
   .home-hero{
     grid-template-columns:1fr;
-    padding: clamp(48px, 9vw, 70px) 6vw;
+    padding:60px 6vw;
     text-align:center;
   }
 
-  .hero-left p{
-    margin-left:auto;
-    margin-right:auto;
+  .hero-left h1{
+    white-space:normal; /* ⭐ allow wrap on mobile */
   }
 
   .hero-image{
-    max-width: clamp(320px, 70vw, 520px);
-    margin-top: clamp(20px, 5vw, 32px); /* ↓ reduced */
+    max-width:420px;
+    margin:auto;
+    margin-top:20px;
   }
 }
-  `;
+    `;
 
-  const style = document.createElement("style");
-  style.innerHTML = css;
-  document.head.appendChild(style);
+    const style = document.createElement("style");
+    style.innerHTML = css;
+    document.head.appendChild(style);
 
-  return () => document.head.removeChild(style);
-}, []);
-
+    return () => document.head.removeChild(style);
+  }, []);
 
   return (
     <section className="home-hero">
+      
       {/* LEFT */}
       <div className="hero-left">
         <small>SHA INFOTECHNOLOGY</small>
 
         <h1>
-         Digital Marketing Services <br />
-          that <span className="gradient-text">Grow Your Business</span>
+          Digital Marketing Services that <span className="gradient-text">Grow Your Business</span>
         </h1>
 
         <p>
-         Sha Infotechnology is a results-driven digital marketing agency delivering powerful digital marketing services, website development, and content marketing strategy solutions to help brands scale online, generate qualified leads, and increase revenue.  </p>
-
-        {/* <div className="hero-tags">
-          <span>Website Development</span>
-          <span>Website Design</span>
-          <span>SEO</span>
-          <span>Google Ads</span>
-          <span>E-commerce</span>
-          <span>Social Media</span>
-        </div> */}
+          Sha Infotechnology is a results-driven digital marketing agency delivering powerful digital marketing services, website development, and content marketing strategy solutions to help brands scale online, generate qualified leads, and increase revenue.
+        </p>
       </div>
 
-      {/* RIGHT IMAGE */}
+      {/* RIGHT */}
       <div className="hero-right">
         <img
           src="/images/33d.png"
@@ -1915,6 +1901,8 @@ padding-left:90px;
     </section>
   );
 }
+
+
 
  function WhyChooseUs() {
   useEffect(() => {
