@@ -44,7 +44,7 @@ export default function WhatsAppFloat() {
 /* ===== CHAT BOX ===== */
 .wa-chat{
   position:fixed;
-  bottom:96px;
+  bottom:150px;
   right:24px;
   width:320px;
   max-width:92vw;
@@ -152,7 +152,7 @@ export default function WhatsAppFloat() {
 @media(max-width:480px){
   .wa-chat{
     right:16px;
-    bottom:88px;
+    bottom:150px;
   }
 
   .wa-float{
@@ -169,7 +169,7 @@ export default function WhatsAppFloat() {
   }, []);
 
   /* ================= LOGIC ================= */
-  const phone = "919445747815";
+  const phone = "919361046387";
 
   const defaultMessage =
     "Hi SHA Infotechnology 👋 I would like to enquire about your services.";

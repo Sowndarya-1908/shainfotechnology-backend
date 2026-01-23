@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-
+import { Helmet } from "react-helmet-async";
 const BG_QUOTE_IMAGE = "/images/about/image.png";
 
  function StatsHighlight() {
@@ -2520,6 +2520,15 @@ vmItems.forEach(el => vmObserver.observe(el));
   return (
 
     <>
+         <Helmet>
+      <title>Professional Website Development Services | Shainfotech</title>
+      <meta
+        name="description"
+        content="Boost your online presence with our top-rated website development services. Our expert team offers custom design and development solutions to help your business thrive."
+      />
+      <link rel="canonical" href="https://shainfotechnology.in/about" />
+    </Helmet>
+
 <AboutWaveSection />
 {/* <AnimatedWaveBackground /> */}
     {/* <HomeHerohead /> */}

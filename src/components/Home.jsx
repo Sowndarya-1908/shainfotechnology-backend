@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { useNavigate } from "react-router-dom";
-
+import { Helmet } from "react-helmet-async";
 
  function IndustriesWeServe() {
   useEffect(() => {
@@ -2276,6 +2276,15 @@ useEffect(() => {
   return (
 
     <>
+
+
+    <Helmet>
+  <title>Best Digital Marketing services | Shainfotech </title>
+  <meta
+    name="description"
+    content="Maximize your online reach and drive business growth with our top-notch digital marketing services. Expert strategies and proven techniques to dominate the digital landscape. Contact us now!"
+  />
+</Helmet>
     <HomeHerohead />
     
     <div className="sf-wrap">

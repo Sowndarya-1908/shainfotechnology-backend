@@ -2,6 +2,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
  function ServicesWaveSection() {
@@ -2250,6 +2251,17 @@ useEffect(() => {
   
   return (
     <>
+
+    <Helmet>
+  <title>Custom Software Services - Shainfo Tech</title>
+  <meta
+    name="description"
+    content="Shainfo Technology offers custom software development and IT consulting services. Grow your business fast with our proven tech expertise. Request a free quote today."
+      data-rh="true"
+  />
+</Helmet>
+
+
   <ServicesWaveSection />
     {/* <ServicesHero /> */}
     <div className="services-wrap">
