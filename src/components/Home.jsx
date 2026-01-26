@@ -1771,51 +1771,38 @@ function ServicesHighlightSection() {
   );
 }
 
+
+
 function HomeHerohead() {
   useEffect(() => {
     const css = `
 :root{
   --bg-dark:#020617;
-  --bg-dark-2:#0b1220;
   --violet:#8b5cf6;
   --pink:#ec4899;
-  --muted:#9ca3af;
+  --muted:#94a3b8;
   --gradient:linear-gradient(90deg,#8b5cf6,#ec4899);
 }
 
 *{ box-sizing:border-box; }
 
-/* HERO */
+/* HERO SECTION */
 .home-hero{
-  padding-top:40px;
-  padding-left:90px;
-  padding-right:40px;              /* ⭐ keeps left/right balanced */
-  display:grid;
-  grid-template-columns:1.1fr 1fr;
-  align-items:center;
-  gap: 40px;
+  width:100%;
+  min-height:100vh;
+  padding:0px 8%;
+  // background:var(--bg-dark);
   font-family:Inter,system-ui,sans-serif;
-  overflow:hidden;
+  color:white;
 }
 
-/* LEFT */
-.hero-left small{
-  font-size: clamp(12px, 1.8vw, 18px);
-  letter-spacing:3px;
-  color:#ffffff;
+/* BIG HEADLINE */
+.hero-title{
+  font-size: clamp(36px, 6vw, 72px);
   font-weight:900;
-  display:block;
-  margin-bottom: 16px;
-}
-
-.hero-left h1{
-  font-size: clamp(32px, 4vw, 52px); /* ⭐ Optimized for perfect one-line fit */
-  line-height:1.15;
-  margin:0 0 18px;
-  color:#ffffff;
-  font-weight:900;
-  white-space:nowrap;               /* ⭐ force one line */
-  max-width:900px;                  /* ⭐ keeps line balanced */
+  line-height:1.05;
+  // margin-bottom:0px;
+  text-align:left;
 }
 
 .gradient-text{
@@ -1824,44 +1811,71 @@ function HomeHerohead() {
   -webkit-text-fill-color:transparent;
 }
 
-.hero-left p{
-  max-width:500px;
-  font-size:16px;
-  line-height:1.65;
+/* CONTENT BELOW HEADLINE */
+.hero-content{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:60px;
+}
+
+/* PARAGRAPH */
+.hero-text p{
+  font-size:18px;
+  line-height:1.7;
   color:var(--muted);
-  margin-bottom:26px;
+  max-width:550px;
 }
 
-/* RIGHT */
-.hero-right{
-  display:flex;
-  justify-content:center;
-  pointer-events:none;
-}
-
+/* IMAGE */
 .hero-image{
   width:100%;
-  max-width:600px;                  /* ⭐ balanced size with your one-line text */
+  max-width:650px;
   height:auto;
-  filter:drop-shadow(0 20px 80px rgba(139,92,246,0.45));
+  display:block;
+  margin-left:auto;
+  filter: drop-shadow(0 30px 100px rgba(139,92,246,0.4));
 }
 
-/* MOBILE */
-@media(max-width:900px){
-  .home-hero{
+/* TABLET */
+@media(max-width:992px){
+  .hero-content{
     grid-template-columns:1fr;
-    padding:60px 6vw;
     text-align:center;
   }
 
-  .hero-left h1{
-    white-space:normal; /* ⭐ allow wrap on mobile */
+  .hero-title{
+    text-align:center;
+  }
+
+  .hero-text p{
+    margin:auto;
   }
 
   .hero-image{
+    margin:40px auto 0;
     max-width:420px;
-    margin:auto;
-    margin-top:20px;
+  }
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .home-hero{
+    padding:0px 5%;
+  }
+
+  .hero-title{
+    font-size:30px;
+    line-height:1.2;
+    margin-bottom:20px;
+  }
+
+  .hero-text p{
+    font-size:15px;
+  }
+
+  .hero-image{
+    max-width:320px;
   }
 }
     `;
@@ -1875,32 +1889,43 @@ function HomeHerohead() {
 
   return (
     <section className="home-hero">
-      
-      {/* LEFT */}
-      <div className="hero-left">
-        <small>SHA INFOTECHNOLOGY</small>
 
-        <h1>
-          Digital Marketing Services that <span className="gradient-text">Grow Your Business</span>
-        </h1>
+      {/* BIG HEADLINE */}
+      <h1 className="hero-title">
+        Digital Marketing Services That{" "}
+        <span className="gradient-text">Grow Your Business</span>
+      </h1>
 
-        <p>
-          Sha Infotechnology is a results-driven digital marketing agency delivering powerful digital marketing services, website development, and content marketing strategy solutions to help brands scale online, generate qualified leads, and increase revenue.
-        </p>
-      </div>
+      {/* BELOW CONTENT */}
+      <div className="hero-content">
 
-      {/* RIGHT */}
-      <div className="hero-right">
-        <img
-          src="/images/33d.png"
-          alt="Digital Growth Illustration"
-          className="hero-image"
-          draggable="false"
-        />
+        {/* LEFT PARA */}
+        <div className="hero-text">
+          <p>
+            Sha Infotechnology is a results-driven digital marketing agency
+            delivering powerful digital marketing services, website development,
+            and content marketing strategy solutions to help brands scale online,
+            generate qualified leads, and increase revenue.
+          </p>
+        </div>
+
+        {/* RIGHT IMAGE */}
+        <div>
+          <img
+            src="/images/33d.png"
+            alt="Digital Growth Illustration"
+            className="hero-image"
+            draggable="false"
+          />
+        </div>
+
       </div>
     </section>
   );
 }
+
+
+
 
 
 

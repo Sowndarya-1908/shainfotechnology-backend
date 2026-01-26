@@ -80,8 +80,8 @@ import React, { useEffect } from "react";
         Sha Infotech – One of the Best Digital Marketing Companies in Chennai
       </h1>
       <p>
-        Sha Infotech is a results-focused digital marketing company in Chennai delivering customized marketing solutions for startups, SMEs, and enterprises.<br></br>
-      We focus on ROI-driven digital strategies that align with your business goals, market trends, and local audience behavior.
+       Sha Infotech is a results-focused digital marketing company in Chennai delivering customized marketing solutions for startups, SMEs, and enterprises.<br></br>
+     We focus on ROI-driven digital strategies that align with your business goals, market trends, and local audience behavior.
       </p>
     </section>
   );
@@ -107,6 +107,17 @@ import React, { useEffect } from "react";
   gap:40px;
   max-width:1100px;
   margin:0 auto;
+}
+.sha-why h5{
+  font-size:36px;
+  font-weight:900;
+  line-height:1.25;
+  max-width:900px;
+  text-align:center;
+  margin:0 auto 18px;
+  background:linear-gradient(90deg,#6366f1,#a855f7,#ec4899);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
 /* CARD */
@@ -175,8 +186,9 @@ import React, { useEffect } from "react";
 
   return (
     <section className="sha-why">
-      <div className="sha-why-grid">
+      <h5>Why Sha Infotech Stands Out Among Digital Marketing Companies in Chennai</h5>
 
+      <div className="sha-why-grid">
         {/* CARD 1 */}
         <div className="sha-why-card">
           <h3>Customized Digital Strategies</h3>
@@ -209,6 +221,190 @@ import React, { useEffect } from "react";
           </p>
         </div>
       </div>
+    </section>
+  );
+}
+ function IndustriesWeServe() {
+  useEffect(() => {
+    const css = `
+/* ===== INDUSTRIES SECTION ===== */
+.sha-industries{
+  // padding:40px 6vw;
+  // background:radial-gradient(circle at top,#0b1220,#020617 70%);
+  font-family:Inter,system-ui;
+  color:#ffffff;
+  overflow:hidden;
+  padding-bottom:60px;
+}
+
+/* HEADING */
+.sha-industries h2{
+  text-align:center;
+  font-size:clamp(34px,5vw,48px);
+  font-weight:900;
+  // margin-bottom:15px;
+}
+
+.sha-industries h2 span{
+  background:linear-gradient(90deg,#8b5cf6,#ec4899);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* DESCRIPTION */
+.sha-industries p{
+  max-width:900px;
+  margin:0 auto 70px;
+  text-align:center;
+  font-size:16px;
+  line-height:1.8;
+  color:#cbd5f5;
+}
+
+/* SLIDER */
+.industry-slider{
+  overflow:hidden;
+}
+
+/* TRACK */
+.industry-track{
+  display:flex;
+  gap:70px;
+  width:max-content;
+  animation:scroll 26s linear infinite;
+}
+
+.industry-slider:hover .industry-track{
+  animation-play-state:paused;
+}
+
+/* ITEM */
+.industry-item{
+  min-width:220px;
+   padding-top:50px;
+  text-align:center;
+}
+
+/* ICON WRAP (NO SIZE CHANGE) */
+.industry-icon{
+  width:120px;
+  height:120px;
+  margin:0 auto 18px;
+  border-radius:50%;
+  border:2px solid rgba(139,92,246,0.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:44px;
+  color:#8b5cf6;
+  background:rgba(255,255,255,0.02);
+  position:relative;
+  box-sizing:border-box;
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    background .35s ease,
+    color .35s ease;
+}
+
+/* GLOW LAYER (NO LAYOUT IMPACT) */
+.industry-icon::after{
+  content:"";
+  position:absolute;
+  inset:-14px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#8b5cf6,#ec4899);
+  opacity:0;
+  filter:blur(22px);
+  transition:opacity .35s ease;
+  z-index:-1;
+  
+}
+
+/* HOVER — NO PADDING / SIZE CHANGE */
+.industry-item:hover .industry-icon{
+  background:linear-gradient(135deg,#8b5cf6,#ec4899);
+  color:#ffffff;
+  
+  transform:translateY(-6px);
+  box-shadow:0 20px 50px rgba(139,92,246,.45);
+}
+
+.industry-item:hover .industry-icon::after{
+  opacity:.6;
+  
+}
+
+/* TITLE */
+.industry-item h4{
+  font-size:18px;
+  font-weight:800;
+  color:#ffffff;
+}
+
+/* AUTO SCROLL */
+@keyframes scroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .sha-industries{
+    padding:90px 20px;
+  }
+
+  .industry-item{
+    min-width:180px;
+  }
+
+  .industry-icon{
+    width:100px;
+    height:100px;
+    font-size:36px;
+  }
+}
+    `;
+    const style = document.createElement("style");
+    style.innerHTML = css;
+    document.head.appendChild(style);
+    return () => style.remove();
+  }, []);
+
+  const industries = [
+    { name: "Technology & Software", icon: "⚙️" },
+    { name: "Health Care", icon: "🏥" },
+    { name: "Food & Beverages", icon: "🍔" },
+    { name: "Finance", icon: "💰" },
+    { name: "Education", icon: "🎓" },
+    { name: "E-Commerce", icon: "🛒" },
+    { name: "Real Estate", icon: "🏢" },
+    { name: "Retail", icon: "🏬" }
+  ];
+
+  return (
+    <section className="sha-industries">
+      <h2>
+        Industries <span>We Serve</span>
+      </h2>
+
+      <p>
+        SHA Infotechnology delivers performance-driven digital solutions across
+        technology, healthcare, e-commerce, finance, education, and more—helping
+        businesses in Chennai and beyond grow visibility, engagement, and revenue.
+      </p>
+
+      <div className="industry-slider">
+        <div className="industry-track">
+          {[...industries, ...industries].map((item, i) => (
+            <div className="industry-item" key={i}>
+              <div className="industry-icon">{item.icon}</div>
+              <h4>{item.name}</h4>
+            </div>
+          ))}
+        </div>
+      </div>
+      <p>Our industry-focused approach helps deliver measurable results across diverse business sectors.</p>
     </section>
   );
 }
@@ -405,6 +601,7 @@ const blogs = [
     <>
       <BlogHeader />
       <BlogWhySha />
+      <IndustriesWeServe />
 
       <section className="blog-list">
         <h1>Our Blog</h1>
