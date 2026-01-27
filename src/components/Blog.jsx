@@ -904,7 +904,7 @@ const blogs = [
     slug: "our-digital-marketing-services-chennai",
     title: "Our Digital Marketing Services in Chennai",
     category: "Digital Marketing",
-    image: "/images/seo.png",
+    image: "/images/image.png",
     short: "Complete digital marketing services to grow your business in Chennai.",
     content: `
 
@@ -1019,6 +1019,17 @@ export default function Blog() {
 
   return (
     <>
+      {/* ===== GRADIENT HERO HEADER ===== */}
+    <section className="blog-hero">
+      <h1>Our Blog</h1>
+      <input
+        type="text"
+        placeholder="Search blogs..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="hero-search"
+      />
+    </section>
       <section className="blog-page">
         <div className="blog-container">
 
@@ -1095,6 +1106,46 @@ body{
 }
 
 /* ================= COMMON TYPOGRAPHY ================= */
+/* ===== HERO GRADIENT HEADER ===== */
+
+.blog-hero{
+  width:100%;
+  padding:80px 20px 100px;
+  text-align:center;
+  background: linear-gradient(90deg,#7c3aed,#ec4899);
+}
+
+.blog-hero h1{
+  font-size:42px;
+  font-weight:800;
+  color:#ffffff;
+  margin-bottom:25px;
+}
+
+.hero-search{
+  width:100%;
+  max-width:450px;
+  padding:14px 18px;
+  border-radius:10px;
+  border:none;
+  outline:none;
+  font-size:16px;
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .blog-hero{
+    padding:60px 15px 70px;
+  }
+
+  .blog-hero h1{
+    font-size:28px;
+  }
+
+  .hero-search{
+    max-width:100%;
+  }
+}
 
 .single-content h2{
   margin-top:40px;
