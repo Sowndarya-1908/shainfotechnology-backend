@@ -874,24 +874,26 @@
 
 
 
-
-
-
-
 import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+
 /* ================= EXTRA CONTENT ================= */
 
 const extraContent = `
 <hr/>
 <h2>Why Sha Infotech Stands Out Among Digital Marketing Companies in Chennai</h2>
-<p>We combine creativity, strategy, and data-driven insights to deliver measurable results for businesses in Chennai.</p>
-<ul>
-<li>Experienced digital marketing professionals</li>
-<li>Transparent reporting & measurable ROI</li>
-<li>Industry-specific strategies</li>
-<li>Affordable scalable plans</li>
-</ul>
+
+<h3>Customized Digital Strategies</h3>
+<p>We don’t use one-size-fits-all solutions. Every strategy is tailored to your industry, location, and goals.</p>
+
+<h3>Transparent Reporting & Analytics</h3>
+<p>Regular performance reports with measurable KPIs and clear insights.</p>
+
+<h3>Affordable Digital Marketing Packages</h3>
+<p>Flexible pricing models suitable for startups, local businesses, and growing enterprises in Chennai.</p>
+
+<h3>Local Market Expertise</h3>
+<p>Deep understanding of Chennai’s audience behavior, competition, and search trends.</p>
 `;
 
 /* ================= BLOG DATA ================= */
@@ -899,89 +901,71 @@ const extraContent = `
 const blogs = [
   {
     id: 1,
-    slug: "seo-services-chennai",
-    title: "Search Engine Optimization (SEO) Services in Chennai",
-    category: "SEO",
+    slug: "our-digital-marketing-services-chennai",
+    title: "Our Digital Marketing Services in Chennai",
+    category: "Digital Marketing",
     image: "/images/seo.png",
-    short: "Rank higher on Google with proven SEO strategies.",
+    short: "Complete digital marketing services to grow your business in Chennai.",
     content: `
+
+<h2 class="gradient-heading">
+Sha Infotech – One of the Best Digital Marketing Companies in Chennai
+</h2>
+
+<p>Sha Infotech is a results-focused digital marketing company in Chennai delivering customized marketing solutions for startups, SMEs, and enterprises.</p>
+
+<p>We focus on ROI-driven digital strategies that align with your business goals, market trends, and local audience behavior.</p>
+
+<hr/>
+
+<h2>Search Engine Optimization (SEO) Services in Chennai</h2>
 <p>Our SEO strategies help businesses rank on Google for high-value local and national keywords.</p>
-<h3>We Specialize In:</h3>
+<h4>We specialize in:</h4>
 <ul>
 <li>Local SEO for Chennai-based businesses</li>
 <li>On-page & technical SEO</li>
 <li>Google My Business optimization</li>
 <li>Link building & content optimization</li>
 </ul>
-` + extraContent
-  },
-  {
-    id: 2,
-    slug: "google-ads-ppc-chennai",
-    title: "Google Ads & PPC Management in Chennai",
-    category: "Google Ads",
-    image: "/images/BRANDCONSULTANCY.png",
-    short: "Generate immediate leads using high-performing PPC campaigns.",
-    content: `
+
+<h2>Google Ads & PPC Management in Chennai</h2>
 <p>We manage cost-effective Google Ads campaigns that generate immediate leads and conversions.</p>
 <ul>
 <li>Keyword research & ad copy optimization</li>
 <li>Landing page optimization</li>
 <li>Conversion tracking & ROI analysis</li>
 </ul>
-` + extraContent
-  },
-   {
-    id: 3,
-    slug: "social-media-marketing-chennai",
-    title: "Social Media Marketing Services in Chennai",
-    category: "Social Media",
-    image: "/images/SOCIALMEDIAMARKETING.png",
-    short: "Grow your brand with engaging social media campaigns.",
-    content: `
+
+<h2>Social Media Marketing Services in Chennai</h2>
 <p>Build strong customer relationships through impactful social media campaigns.</p>
 <ul>
 <li>Instagram, Facebook & LinkedIn marketing</li>
 <li>Brand awareness & engagement campaigns</li>
 <li>Lead generation through paid social ads</li>
 </ul>
-` + extraContent
-  },
-  {
-    id: 4,
-    slug: "content-marketing-branding",
-    title: "Content Marketing & Branding Strategy",
-    category: "Content",
-    image: "/images/CONTENTDESIGN.png",
-    short: "High-quality content that boosts rankings and trust.",
-    content: `
+
+<h2>Content Marketing & Branding Strategy</h2>
 <p>High-quality content that improves rankings and builds trust.</p>
 <ul>
 <li>SEO blog writing</li>
 <li>Website content optimization</li>
 <li>Brand messaging & storytelling</li>
 </ul>
-` + extraContent
-  },
-  {
-    id: 5,
-    slug: "website-development-optimization",
-    title: "Website Development & Optimization",
-    category: "Web Development",
-    image: "/images/WEBDEVELOPMENT.png",
-    short: "SEO-friendly, fast-loading, responsive websites.",
-    content: `
+
+<h2>Website Development & Optimization</h2>
 <p>Conversion-focused websites designed to rank and convert.</p>
 <ul>
 <li>SEO-friendly website development</li>
 <li>Mobile-responsive & fast-loading designs</li>
 <li>UI/UX optimization for better engagement</li>
 </ul>
+
 ` + extraContent
   }
 ];
 
 /* ================= COMPONENT ================= */
+
 export default function Blog() {
   const { slug } = useParams();
   const [searchTerm, setSearchTerm] = useState("");
@@ -989,8 +973,6 @@ export default function Blog() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [slug]);
-
-  /* ================= SINGLE BLOG VIEW ================= */
 
   if (slug) {
     const blog = blogs.find(b => b.slug === slug);
@@ -1003,7 +985,6 @@ export default function Blog() {
       <>
         <div className="single-blog">
 
-          {/* Breadcrumb */}
           <div className="breadcrumb">
             <Link to="/">Home</Link> › <Link to="/blog">Blog</Link> › {blog.title}
           </div>
@@ -1016,7 +997,6 @@ export default function Blog() {
             dangerouslySetInnerHTML={{ __html: blog.content }}
           />
 
-          {/* CTA Section */}
           <div className="cta-section">
             <h2>Ready to Grow Your Business?</h2>
             <p>Let Sha Infotechnology help you dominate search rankings and generate quality leads.</p>
@@ -1033,11 +1013,8 @@ export default function Blog() {
     );
   }
 
-  /* ================= BLOG LIST VIEW ================= */
-
   const filteredBlogs = blogs.filter(blog =>
-    blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    blog.category.toLowerCase().includes(searchTerm.toLowerCase())
+    blog.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -1045,26 +1022,16 @@ export default function Blog() {
       <section className="blog-page">
         <div className="blog-container">
 
-          {/* LEFT SIDE */}
           <div className="blog-left">
 
-            {/* Breadcrumb */}
             <div className="breadcrumb">
               <Link to="/">Home</Link> › Blog
             </div>
 
-            {filteredBlogs.length === 0 && (
-              <p style={{ color: "#ccc" }}>No blogs found.</p>
-            )}
-
             {filteredBlogs.map(blog => (
               <div key={blog.id} className="blog-card">
 
-                <img
-                  src={blog.image}
-                  alt={blog.title}
-                  className="blog-image"
-                />
+                <img src={blog.image} alt={blog.title} className="blog-image" />
 
                 <h2 className="blog-title">
                   <Link to={`/blog/${blog.slug}`}>
@@ -1072,16 +1039,9 @@ export default function Blog() {
                   </Link>
                 </h2>
 
-                <div className="blog-meta">
-                  <span>📁 {blog.category}</span>
-                </div>
-
                 <p className="blog-excerpt">{blog.short}</p>
 
-                <Link
-                  to={`/blog/${blog.slug}`}
-                  className="read-more"
-                >
+                <Link to={`/blog/${blog.slug}`} className="read-more">
                   Continue Reading →
                 </Link>
 
@@ -1089,31 +1049,19 @@ export default function Blog() {
             ))}
           </div>
 
-          {/* RIGHT SIDEBAR */}
+          {/* SIDEBAR */}
           <aside className="blog-sidebar">
 
-            {/* Search */}
             <div className="sidebar-widget">
               <h3>Search</h3>
               <input
                 type="text"
-                placeholder="Search by title or category..."
+                placeholder="Search blog..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
 
-            {/* Recent Posts */}
-            <div className="sidebar-widget">
-              <h3>Recent Posts</h3>
-              {blogs.map(post => (
-                <Link key={post.id} to={`/blog/${post.slug}`}>
-                  {post.title}
-                </Link>
-              ))}
-            </div>
-
-            {/* Contact Mini Card */}
             <div className="sidebar-widget contact-card">
               <h3>Need Help?</h3>
               <p>📞 +91 98765 43210</p>
@@ -1135,13 +1083,40 @@ export default function Blog() {
 
 /* ================= CSS ================= */
 
+
+
 const styles = `
 body{
   margin:0;
-  font-family: 'Poppins', sans-serif;
-  // background: radial-gradient(circle at 20% 20%, #1e1b4b 0%, #0b1120 40%, #050816 100%);
+  font-family:'Poppins',sans-serif;
+  background:#0b1120;
   color:#e5e7eb;
+  overflow-x:hidden;
 }
+
+/* ================= COMMON TYPOGRAPHY ================= */
+
+.single-content h2{
+  margin-top:40px;
+  margin-bottom:15px;
+  font-size:26px;
+  font-weight:800;
+  background: linear-gradient(90deg,#a855f7,#ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(168,85,247,0.4);
+}
+
+.gradient-heading{
+  background: linear-gradient(90deg,#a855f7,#ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size:28px;
+  font-weight:800;
+  margin-bottom:20px;
+}
+
+/* ================= BLOG LIST PAGE ================= */
 
 .blog-page{
   padding:80px 0;
@@ -1160,8 +1135,8 @@ body{
 }
 
 .blog-card{
-  margin-bottom:70px;
-  transition:0.3s;
+  margin-bottom:60px;
+  transition:0.3s ease;
 }
 
 .blog-card:hover{
@@ -1189,12 +1164,6 @@ body{
   -webkit-text-fill-color: transparent;
 }
 
-.blog-meta{
-  font-size:14px;
-  color:#94a3b8;
-  margin-bottom:15px;
-}
-
 .blog-excerpt{
   font-size:16px;
   line-height:1.8;
@@ -1208,9 +1177,7 @@ body{
   color:#a855f7;
 }
 
-.read-more:hover{
-  color:#ec4899;
-}
+/* ================= SIDEBAR ================= */
 
 .blog-sidebar{
   flex:1.2;
@@ -1220,7 +1187,7 @@ body{
 }
 
 .sidebar-widget{
-  margin-bottom:35px;
+  margin-bottom:30px;
   padding:20px;
   border-radius:14px;
   background: rgba(255,255,255,0.05);
@@ -1240,19 +1207,8 @@ body{
   border-radius:8px;
   border:none;
   outline:none;
-  background:#0b1120;
+  background:#111827;
   color:#fff;
-}
-
-.sidebar-widget a{
-  display:block;
-  margin-bottom:10px;
-  text-decoration:none;
-  color:#cbd5e1;
-}
-
-.sidebar-widget a:hover{
-  color:#ec4899;
 }
 
 .contact-card{
@@ -1265,6 +1221,8 @@ body{
   font-weight:600;
   color:#a855f7;
 }
+
+/* ================= SINGLE BLOG ================= */
 
 .single-blog{
   max-width:900px;
@@ -1295,6 +1253,8 @@ body{
   color:#d1d5db;
 }
 
+/* ================= CTA ================= */
+
 .cta-section{
   margin-top:60px;
   padding:40px;
@@ -1315,13 +1275,7 @@ body{
   text-decoration:none;
 }
 
-.back-btn{
-  display:inline-block;
-  margin-top:40px;
-  font-weight:600;
-  text-decoration:none;
-  color:#a855f7;
-}
+/* ================= BREADCRUMB ================= */
 
 .breadcrumb{
   margin-bottom:20px;
@@ -1334,20 +1288,82 @@ body{
   text-decoration:none;
 }
 
-@media(max-width:900px){
+.back-btn{
+  display:inline-block;
+  margin-top:40px;
+  font-weight:600;
+  text-decoration:none;
+  color:#a855f7;
+}
+
+/* ================= TABLET RESPONSIVE ================= */
+
+@media (max-width: 992px){
+
   .blog-container{
     flex-direction:column;
   }
+
   .blog-sidebar{
     position:static;
   }
+
+  .single-blog{
+    margin:60px auto;
+  }
+
+  .single-blog h1{
+    font-size:30px;
+  }
+
+  .blog-title{
+    font-size:24px;
+  }
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width: 600px){
+
+  .blog-page{
+    padding:40px 0;
+  }
+
+  .blog-image{
+    height:180px;
+  }
+
+  .single-image{
+    max-height:250px;
+  }
+
+  .blog-title{
+    font-size:20px;
+  }
+
+  .single-blog h1{
+    font-size:22px;
+  }
+
+  .single-content{
+    font-size:15px;
+    line-height:1.7;
+  }
+
+  .cta-section{
+    padding:25px 20px;
+  }
+
+  .cta-btn{
+    padding:10px 20px;
+    font-size:14px;
+  }
+
+  .sidebar-widget{
+    padding:15px;
+  }
 }
 `;
-
-
-
-
-
 
 
 
