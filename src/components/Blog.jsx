@@ -346,8 +346,8 @@ export default function Blog() {
 
             <div className="sidebar-widget contact-card">
               <h3>Need Help?</h3>
-              <p>📞 +91 98765 43210</p>
-              <p>📩 info@shainfotechnology.in</p>
+              <p>📞 +91 94457 47815</p>
+              <p>📩 shainfotech05@gmail.com</p>
               <Link to="/contact" className="mini-cta">
                 Request Proposal →
               </Link>
