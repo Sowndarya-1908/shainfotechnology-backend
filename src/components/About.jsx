@@ -1347,9 +1347,8 @@ function WhyChooseSection() {
 /* ================= WHY CHOOSE SECTION ================= */
 
 .why-section{
-  // padding: clamp(64px, 8vw, 96px) 6vw;
-  /* background: radial-gradient(circle at top, #0b1220, #020617 70%); */
   padding-top:30px;
+  padding-bottom:80px; /* better desktop spacing */
   font-family: Inter, system-ui;
   overflow:hidden;
 }
@@ -1357,12 +1356,14 @@ function WhyChooseSection() {
 .why-container{
   max-width:1300px;
   margin:auto;
+  display:flex;               /* force vertical layout */
+  flex-direction:column;      /* heading top, cards bottom */
 }
 
 /* ===== TITLE ===== */
 .why-title{
   text-align:center;
-  margin-bottom: clamp(36px, 6vw, 64px);
+  margin-bottom:20px;         /* clear separation */
   opacity:0;
   transform:translateY(24px);
   transition:.6s ease;
@@ -1385,14 +1386,15 @@ function WhyChooseSection() {
 .why-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap: clamp(22px, 3vw, 40px);
+  gap:40px; /* fixed desktop spacing */
 }
 
 /* ===== CARD ===== */
 .why-card{
+  position:relative; /* needed for gradient border */
   background:#ffffff;
   border-radius:24px;
-  padding: clamp(28px, 4vw, 40px);
+  padding:40px;
   text-align:center;
   box-shadow:0 20px 60px rgba(0,0,0,0.28);
   display:flex;
@@ -1421,9 +1423,6 @@ function WhyChooseSection() {
   align-items:center;
   justify-content:center;
   background:#ffe4e6;
-}
-
-.why-icon span{
   font-size:34px;
 }
 
@@ -1437,18 +1436,25 @@ function WhyChooseSection() {
 
 /* TEXT */
 .why-card .para{
-  font-size:15.5px;
-  line-height:1.7;
+  font-size:16px;
+  line-height:1.8;
   color:#000000;
   margin:0;
 }
-.why-card::before{ content:""; position:absolute; inset:0; border-radius:26px; padding:1.5px; background:linear-gradient(135deg,#8b5cf6,#ec4899); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite:xor; mask-composite:exclude; }
-.why-card .para{ font-size:16px; 
-line-height:1.8; 
-color:#000000 !important; /* 🔥 PURE BLACK */ 
-opacity:1 !important; /* 🔥 NO FADE */ 
-visibility:visible !important; 
+
+/* Gradient border */
+.why-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:26px;
+  padding:1.5px;
+  background:linear-gradient(135deg,#8b5cf6,#ec4899);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
 }
+
 /* ===== TABLET ===== */
 @media(max-width:1024px){
   .why-grid{
@@ -1456,7 +1462,7 @@ visibility:visible !important;
   }
 }
 
-/* ===== MOBILE ===== */
+/* ===== MOBILE (UNCHANGED) ===== */
 @media(max-width:768px){
 
   .why-section{
@@ -1591,6 +1597,7 @@ visibility:visible !important;
     </section>
   );
 }
+
 
 
 function TeamSection() {
