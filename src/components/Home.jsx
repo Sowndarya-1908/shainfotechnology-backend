@@ -456,12 +456,8 @@ function SeoMarketingSection() {
       {/* HEADER */}
       <div className="seo-header">
         <h2 className="seo-title">
-          <span className="seo-title-white">
-            Digital Marketing
-          </span>
-          <span className="seo-title-gradient">
-            Services
-          </span>
+          <span className="seo-title-white">Digital Marketing</span>
+          <span className="seo-title-gradient">Services</span>
         </h2>
         <div className="seo-divider"></div>
       </div>
@@ -484,8 +480,8 @@ function SeoMarketingSection() {
           </ul>
 
           <p>
-            Our strategies are designed to increase visibility, drive quality
-            traffic, and convert visitors into loyal customers.
+            Our strategies increase visibility, drive high-quality traffic,
+            and convert visitors into loyal customers.
           </p>
         </div>
 
@@ -497,30 +493,29 @@ function SeoMarketingSection() {
         </div>
       </div>
 
-      {/* STYLES */}
       <style>{`
         .seo-section {
           font-family: Inter, system-ui, sans-serif;
           color: #e5e7eb;
+          padding: 60px 5%;
           overflow: hidden;
         }
 
+        /* HEADER */
         .seo-header {
           text-align: center;
-          max-width: 900px;
-          margin: 0 auto clamp(28px, 4vw, 50px);
+          margin-bottom: 50px;
         }
 
         .seo-title {
-          font-size: clamp(30px, 4vw, 56px);
+          font-size: clamp(28px, 5vw, 52px);
           font-weight: 800;
-          line-height: 1.15;
+          line-height: 1.2;
         }
 
         .seo-title-white {
           display: block;
-          color: #ffffff !important;
-          -webkit-text-fill-color: #ffffff !important;
+          color: #ffffff;
         }
 
         .seo-title-gradient {
@@ -531,24 +526,24 @@ function SeoMarketingSection() {
         }
 
         .seo-divider {
-          width: clamp(60px, 8vw, 90px);
+          width: 80px;
           height: 3px;
           background: #8b5cf6;
-          margin: clamp(14px, 2.5vw, 22px) auto 0;
+          margin: 18px auto 0;
           border-radius: 2px;
         }
 
+        /* CONTAINER - MOBILE FIRST */
         .seo-container {
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
           max-width: 1200px;
           margin: auto;
-          display: grid;
-          grid-template-columns: 1.1fr 1fr;
-          gap: clamp(26px, 5vw, 48px);
-          align-items: center;
         }
 
         .seo-text p {
-          font-size: clamp(15px, 1.4vw, 16px);
+          font-size: 16px;
           line-height: 1.7;
           margin-bottom: 16px;
           color: #cbd5f5;
@@ -557,7 +552,7 @@ function SeoMarketingSection() {
         /* LIST */
         .seo-list {
           list-style: none;
-          padding-left: 0;
+          padding: 0;
           margin: 18px 0 22px;
         }
 
@@ -566,7 +561,6 @@ function SeoMarketingSection() {
           padding-left: 26px;
           margin-bottom: 12px;
           font-size: 15px;
-          color: #e5e7eb;
         }
 
         .seo-list li::before {
@@ -578,10 +572,10 @@ function SeoMarketingSection() {
           font-weight: 700;
         }
 
+        /* IMAGE */
         .seo-image {
           display: flex;
           justify-content: center;
-          align-items: center;
         }
 
         .image-glow {
@@ -591,13 +585,14 @@ function SeoMarketingSection() {
         .image-glow::before {
           content: "";
           position: absolute;
+          inset: -20%;
           background: radial-gradient(
             circle,
-            rgba(168, 85, 247, 0.55),
-            rgba(236, 72, 153, 0.3),
-            transparent 50%
+            rgba(139, 92, 246, 0.45),
+            rgba(236, 72, 153, 0.25),
+            transparent 60%
           );
-          filter: blur(clamp(5px, 2vw, 65px));
+          filter: blur(60px);
           z-index: 0;
         }
 
@@ -605,33 +600,47 @@ function SeoMarketingSection() {
           position: relative;
           z-index: 2;
           width: 100%;
-          max-width: 420px;
-          border-radius: 10px;
+          max-width: 360px;
+          border-radius: 12px;
         }
 
-        @media (max-width: 900px) {
+        /* DESKTOP */
+        @media (min-width: 992px) {
+          .seo-section {
+            padding: 100px 8%;
+          }
+
           .seo-container {
-            grid-template-columns: 1fr;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
           }
 
           .seo-text {
-            text-align: center;
+            flex: 1;
           }
 
-          .seo-list {
-            text-align: left;
-            max-width: 360px;
-            margin: 18px auto 22px;
+          .seo-text p {
+            font-size: 17px;
           }
 
           .seo-image {
-            margin-top: 28px;
+            flex: 1;
+            justify-content: flex-end;
+          }
+
+          .image-glow img {
+            max-width: 450px;
           }
         }
       `}</style>
     </section>
   );
 }
+
+
+
 
 function SeoGrowthSectionleftimage() {
   return (
@@ -826,8 +835,7 @@ function ContentCoreSection() {
         <div className="contentcore-text">
           <p>
             Content is the backbone of digital success. Our content marketing
-            strategy is designed to build trust, authority, and long-term brand
-            value.
+            strategy is designed to build trust, authority, and long-term brand value.
           </p>
 
           <ul className="contentcore-list">
@@ -854,30 +862,29 @@ function ContentCoreSection() {
         </div>
       </div>
 
-      {/* STYLES */}
       <style>{`
         .contentcore-section {
           font-family: Inter, system-ui, sans-serif;
           color: #e5e7eb;
+          padding: 60px 5%;
           overflow: hidden;
         }
 
+        /* HEADER */
         .contentcore-header {
           text-align: center;
-          max-width: 900px;
-          margin: 0 auto clamp(28px, 4vw, 50px);
+          margin-bottom: 50px;
         }
 
         .contentcore-title {
-          font-size: clamp(30px, 4vw, 56px);
+          font-size: clamp(28px, 5vw, 52px);
           font-weight: 800;
-          line-height: 1.15;
+          line-height: 1.2;
         }
 
         .contentcore-title-white {
           display: block;
           color: #ffffff;
-          -webkit-text-fill-color: #ffffff;
         }
 
         .contentcore-title-gradient {
@@ -888,24 +895,24 @@ function ContentCoreSection() {
         }
 
         .contentcore-divider {
-          width: clamp(60px, 8vw, 90px);
+          width: 80px;
           height: 3px;
           background: #8b5cf6;
-          margin: clamp(14px, 2.5vw, 22px) auto 0;
+          margin: 18px auto 0;
           border-radius: 2px;
         }
 
+        /* CONTAINER - MOBILE FIRST */
         .contentcore-container {
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
           max-width: 1200px;
           margin: auto;
-          display: grid;
-          grid-template-columns: 1.1fr 1fr;
-          gap: clamp(26px, 5vw, 48px);
-          align-items: center;
         }
 
         .contentcore-text p {
-          font-size: clamp(15px, 1.4vw, 16px);
+          font-size: 16px;
           line-height: 1.7;
           margin-bottom: 16px;
           color: #cbd5f5;
@@ -914,7 +921,7 @@ function ContentCoreSection() {
         /* LIST */
         .contentcore-list {
           list-style: none;
-          padding-left: 0;
+          padding: 0;
           margin: 18px 0 22px;
         }
 
@@ -923,7 +930,6 @@ function ContentCoreSection() {
           padding-left: 26px;
           margin-bottom: 12px;
           font-size: 15px;
-          color: #e5e7eb;
         }
 
         .contentcore-list li::before {
@@ -935,10 +941,10 @@ function ContentCoreSection() {
           font-weight: 700;
         }
 
+        /* IMAGE */
         .contentcore-image {
           display: flex;
           justify-content: center;
-          align-items: center;
         }
 
         .contentcore-image-glow {
@@ -948,13 +954,14 @@ function ContentCoreSection() {
         .contentcore-image-glow::before {
           content: "";
           position: absolute;
+          inset: -20%;
           background: radial-gradient(
             circle,
-            rgba(168, 85, 247, 0.55),
-            rgba(236, 72, 153, 0.3),
-            transparent 50%
+            rgba(139, 92, 246, 0.45),
+            rgba(236, 72, 153, 0.25),
+            transparent 60%
           );
-          filter: blur(clamp(5px, 2vw, 65px));
+          filter: blur(60px);
           z-index: 0;
         }
 
@@ -962,33 +969,46 @@ function ContentCoreSection() {
           position: relative;
           z-index: 2;
           width: 100%;
-          max-width: 420px;
-          border-radius: 10px;
+          max-width: 340px;
+          border-radius: 12px;
         }
 
-        @media (max-width: 900px) {
+        /* DESKTOP */
+        @media (min-width: 992px) {
+          .contentcore-section {
+            padding: 100px 8%;
+          }
+
           .contentcore-container {
-            grid-template-columns: 1fr;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
           }
 
           .contentcore-text {
-            text-align: center;
+            flex: 1;
           }
 
-          .contentcore-list {
-            text-align: left;
-            max-width: 360px;
-            margin: 18px auto 22px;
+          .contentcore-text p {
+            font-size: 17px;
           }
 
           .contentcore-image {
-            margin-top: 28px;
+            flex: 1;
+            justify-content: flex-end;
+          }
+
+          .contentcore-image-glow img {
+            max-width: 450px;
           }
         }
       `}</style>
     </section>
   );
 }
+
+
 
 
 function ProcessFlowSection() {
@@ -1522,65 +1542,63 @@ html,body{ margin:0; padding:0; overflow-x:hidden; }
 }
 
 
+
 function ServicesHighlightSection() {
   const navigate = useNavigate();
 
- useEffect(() => {
-  const css = `
-/* ================= SERVICES HIGHLIGHT (SPACING FIXED) ================= */
+  useEffect(() => {
+    const css = `
+/* ================= SERVICES HIGHLIGHT ================= */
 
 .sh-wrap{
-  // background:radial-gradient(circle at top,#0b1220,#020617 70%);
-  // padding: clamp(56px, 7vw, 88px) clamp(5vw, 6vw, 7vw);
-  font-family:Inter,system-ui;
+  padding:80px 5%;
+  font-family:Inter,system-ui,sans-serif;
 }
 
 /* TITLE */
 .sh-title{
   text-align:center;
-  font-size: clamp(30px, 4vw, 44px);
+  font-size:clamp(28px,5vw,44px);
   font-weight:900;
   background:linear-gradient(90deg,#8b5cf6,#ec4899);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  margin-bottom: clamp(32px, 5vw, 48px);
+  margin-bottom:60px;
 }
 
-/* GRID */
+/* GRID - MOBILE FIRST */
 .sh-grid{
   max-width:1200px;
   margin:auto;
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap: clamp(20px, 3vw, 32px);
-  align-items:stretch;
+  grid-template-columns:1fr;
+  gap:24px;
 }
 
 /* CARD */
 .sh-card{
   background:#ffffff;
-  border-radius:26px;
-  padding: clamp(22px, 3vw, 28px);
-  height:240px;
+  border-radius:22px;
+  padding:28px 20px;
   text-align:center;
   cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  min-height:220px;
 
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  gap:12px;
+  gap:14px;
 
-  position:relative;
-  overflow:hidden;
-
-  box-shadow:0 28px 70px rgba(0,0,0,0.5);
-  transition:transform .35s ease, box-shadow .35s ease;
+  box-shadow:0 20px 60px rgba(0,0,0,0.4);
+  transition:transform .3s ease, box-shadow .3s ease;
 }
 
 .sh-card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 40px 100px rgba(0,0,0,0.65);
+  transform:translateY(-6px);
+  box-shadow:0 35px 90px rgba(0,0,0,0.55);
 }
 
 /* ICON */
@@ -1594,7 +1612,7 @@ function ServicesHighlightSection() {
   font-size:26px;
   color:#ffffff;
   background:linear-gradient(135deg,#8b5cf6,#ec4899);
-  box-shadow:0 0 32px rgba(139,92,246,0.6);
+  box-shadow:0 0 25px rgba(139,92,246,0.5);
 }
 
 /* TITLE */
@@ -1612,14 +1630,14 @@ function ServicesHighlightSection() {
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:20px;
+  padding:22px;
   font-size:15px;
   line-height:1.6;
   color:#ffffff;
-  opacity:0;
-  transition:.3s;
-  z-index:1;
   text-align:center;
+  opacity:0;
+  transition:.3s ease;
+  z-index:2;
 }
 
 /* OVERLAY */
@@ -1629,14 +1647,15 @@ function ServicesHighlightSection() {
   inset:0;
   background:linear-gradient(135deg,#8b5cf6,#ec4899);
   opacity:0;
-  transition:.3s;
+  transition:.3s ease;
+  z-index:1;
 }
 
-/* HOVER ACTION */
-.sh-card:hover::before{ opacity:1; }
-.sh-card:hover .sh-hover-text{ opacity:1; }
+/* HOVER EFFECT (Desktop) */
+.sh-card:hover::before{opacity:1;}
+.sh-card:hover .sh-hover-text{opacity:1;}
 .sh-card:hover h3,
-.sh-card:hover .sh-icon{ opacity:0; }
+.sh-card:hover .sh-icon{opacity:0;}
 
 /* SCROLL REVEAL */
 .sh-reveal{
@@ -1650,26 +1669,38 @@ function ServicesHighlightSection() {
   transform:translateY(0);
 }
 
-/* RESPONSIVE */
-@media(max-width:1024px){
-  .sh-grid{grid-template-columns:1fr 1fr;}
-}
-
-@media(max-width:640px){
-  .sh-grid{grid-template-columns:1fr;}
-  .sh-title{font-size: clamp(26px, 6vw, 32px);}
-}
-  `;
-
-  const id = "services-highlight-style";
-  if (!document.getElementById(id)) {
-    const style = document.createElement("style");
-    style.id = id;
-    style.innerHTML = css;
-    document.head.appendChild(style);
+/* TABLET */
+@media(min-width:640px){
+  .sh-grid{
+    grid-template-columns:repeat(2,1fr);
   }
-}, []);
+}
 
+/* DESKTOP */
+@media(min-width:1024px){
+  .sh-wrap{
+    padding:110px 8%;
+  }
+
+  .sh-grid{
+    grid-template-columns:repeat(3,1fr);
+    gap:32px;
+  }
+
+  .sh-card{
+    min-height:240px;
+  }
+}
+`;
+
+    const id = "services-highlight-style";
+    if (!document.getElementById(id)) {
+      const style = document.createElement("style");
+      style.id = id;
+      style.innerHTML = css;
+      document.head.appendChild(style);
+    }
+  }, []);
 
   useEffect(() => {
     const items = document.querySelectorAll(".sh-reveal");
@@ -1692,84 +1723,43 @@ function ServicesHighlightSection() {
       <h2 className="sh-title sh-reveal">What We Do Best</h2>
 
       <div className="sh-grid">
-        <div className="sh-card sh-reveal" onClick={() => navigate("/services/digital-strategy")}>
-          <div className="sh-icon">🧠</div>
-          <h3>Digital Strategy</h3>
-          <div className="sh-hover-text">
-            Data-driven strategies that align technology, marketing, and business goals.
+        {/* Cards */}
+        {[
+          { icon:"🧠", title:"Digital Strategy", path:"/services/digital-strategy",
+            text:"Data-driven strategies that align technology, marketing, and business goals."},
+          { icon:"💻", title:"Web Development", path:"/services/web-development",
+            text:"High-performance, responsive websites built to convert visitors into customers."},
+          { icon:"🛒", title:"E-commerce Website", path:"/services/ecommerce-website",
+            text:"Secure, scalable online stores designed for smooth shopping and higher sales."},
+          { icon:"🔍", title:"Search Engine Optimization", path:"/services/seo",
+            text:"Improve rankings, organic traffic, and long-term online visibility."},
+          { icon:"📣", title:"Social Media Marketing", path:"/services/social-media-marketing",
+            text:"Build brand awareness, engagement, and trust across social platforms."},
+          { icon:"✍️", title:"Content Design", path:"/services/content-design",
+            text:"Compelling content that informs, engages, and converts your audience."},
+          { icon:"📊", title:"Business Analysis", path:"/services/business-analysis",
+            text:"Insight-driven analysis to optimize processes, performance, and growth."},
+          { icon:"🎨", title:"Creative Design", path:"/services/creative-design",
+            text:"Eye-catching visuals and branding that make your business stand out."},
+          { icon:"🏷️", title:"Brand Consultancy", path:"/services/brand-consultancy",
+            text:"Build a strong, consistent brand identity that drives long-term trust and growth."}
+        ].map((card, i) => (
+          <div
+            key={i}
+            className="sh-card sh-reveal"
+            onClick={() => navigate(card.path)}
+          >
+            <div className="sh-icon">{card.icon}</div>
+            <h3>{card.title}</h3>
+            <div className="sh-hover-text">{card.text}</div>
           </div>
-        </div>
-
-        <div className="sh-card sh-reveal" onClick={() => navigate("/services/web-development")}>
-          <div className="sh-icon">💻</div>
-          <h3>Web Development</h3>
-          <div className="sh-hover-text">
-            High-performance, responsive websites built to convert visitors into customers.
-          </div>
-        </div>
-
-        <div className="sh-card sh-reveal" onClick={() => navigate("/services/ecommerce-website")}>
-          <div className="sh-icon">🛒</div>
-          <h3>E-commerce Website</h3>
-          <div className="sh-hover-text">
-            Secure, scalable online stores designed for smooth shopping and higher sales.
-          </div>
-        </div>
-
-        <div className="sh-card sh-reveal" onClick={() => navigate("/services/seo")}>
-          <div className="sh-icon">🔍</div>
-          <h3>Search Engine Optimization</h3>
-          <div className="sh-hover-text">
-            Improve rankings, organic traffic, and long-term online visibility.
-          </div>
-        </div>
-
-        <div className="sh-card sh-reveal" onClick={() => navigate("/services/social-media-marketing")}>
-          <div className="sh-icon">📣</div>
-          <h3>Social Media Marketing</h3>
-          <div className="sh-hover-text">
-            Build brand awareness, engagement, and trust across social platforms.
-          </div>
-        </div>
-
-        <div className="sh-card sh-reveal" onClick={() => navigate("/services/content-design")}>
-          <div className="sh-icon">✍️</div>
-          <h3>Content Design</h3>
-          <div className="sh-hover-text">
-            Compelling content that informs, engages, and converts your audience.
-          </div>
-        </div>
-
-        <div className="sh-card sh-reveal" onClick={() => navigate("/services/business-analysis")}>
-          <div className="sh-icon">📊</div>
-          <h3>Business Analysis</h3>
-          <div className="sh-hover-text">
-            Insight-driven analysis to optimize processes, performance, and growth.
-          </div>
-        </div>
-
-        <div className="sh-card sh-reveal" onClick={() => navigate("/services/creative-design")}>
-          <div className="sh-icon">🎨</div>
-          <h3>Creative Design</h3>
-          <div className="sh-hover-text">
-            Eye-catching visuals and branding that make your business stand out.
-          </div>
-        </div>
-        <div
-  className="sh-card sh-reveal"
-  onClick={() => navigate("/services/brand-consultancy")}
->
-  <div className="sh-icon">🏷️</div>
-  <h3>Brand Consultancy</h3>
-  <div className="sh-hover-text">
-    Build a strong, consistent brand identity that connects with your audience
-    and drives long-term trust and growth.
-  </div>
-</div>
+        ))}
       </div>
     </section>
   );
 }
+
+
 
 
 
@@ -1784,25 +1774,26 @@ function HomeHerohead() {
   --gradient:linear-gradient(90deg,#8b5cf6,#ec4899);
 }
 
-*{ box-sizing:border-box; }
+*{box-sizing:border-box;margin:0;padding:0;}
 
-/* HERO SECTION */
 .home-hero{
   width:100%;
   min-height:100vh;
-  padding:0px 8%;
-  // background:var(--bg-dark);
+  padding:60px 5%;
   font-family:Inter,system-ui,sans-serif;
-  color:white;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
 }
 
-/* BIG HEADLINE */
+/* HEADLINE */
 .hero-title{
-  font-size: clamp(36px, 6vw, 72px);
+  font-size:clamp(30px,6vw,70px);
   font-weight:900;
-  line-height:1.05;
-  // margin-bottom:0px;
-  text-align:left;
+  line-height:1.1;
+  margin-bottom:40px;
+  text-align:center;
 }
 
 .gradient-text{
@@ -1811,74 +1802,63 @@ function HomeHerohead() {
   -webkit-text-fill-color:transparent;
 }
 
-/* CONTENT BELOW HEADLINE */
+/* CONTENT */
 .hero-content{
-  display:grid;
-  grid-template-columns:1fr 1fr;
+  display:flex;
+  flex-direction:column;
   align-items:center;
-  gap:60px;
+  gap:40px;
+  text-align:center;
 }
 
-/* PARAGRAPH */
+/* TEXT */
 .hero-text p{
-  font-size:18px;
+  font-size:16px;
   line-height:1.7;
   color:var(--muted);
-  max-width:550px;
+  max-width:600px;
 }
 
 /* IMAGE */
 .hero-image{
   width:100%;
-  max-width:650px;
+  max-width:320px;
   height:auto;
-  display:block;
-  margin-left:auto;
-  filter: drop-shadow(0 30px 100px rgba(139,92,246,0.4));
+  filter:drop-shadow(0 30px 80px rgba(139,92,246,0.35));
 }
 
-/* TABLET */
-@media(max-width:992px){
-  .hero-content{
-    grid-template-columns:1fr;
-    text-align:center;
-  }
-
-  .hero-title{
-    text-align:center;
-  }
-
-  .hero-text p{
-    margin:auto;
-  }
-
-  .hero-image{
-    margin:40px auto 0;
-    max-width:420px;
-  }
-}
-
-/* MOBILE */
-@media(max-width:600px){
+/* DESKTOP */
+@media(min-width:992px){
   .home-hero{
-    padding:0px 5%;
+    padding:80px 8%;
   }
 
   .hero-title{
-    font-size:30px;
-    line-height:1.2;
-    margin-bottom:20px;
+    text-align:left;
+    margin-bottom:60px;
+  }
+
+  .hero-content{
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    text-align:left;
+    gap:60px;
+  }
+
+  .hero-text{
+    flex:1;
   }
 
   .hero-text p{
-    font-size:15px;
+    font-size:18px;
   }
 
   .hero-image{
-    max-width:320px;
+    max-width:600px;
   }
 }
-    `;
+`;
 
     const style = document.createElement("style");
     style.innerHTML = css;
@@ -1889,17 +1869,12 @@ function HomeHerohead() {
 
   return (
     <section className="home-hero">
-
-      {/* BIG HEADLINE */}
       <h1 className="hero-title">
         Digital Marketing Services That{" "}
         <span className="gradient-text">Grow Your Business</span>
       </h1>
 
-      {/* BELOW CONTENT */}
       <div className="hero-content">
-
-        {/* LEFT PARA */}
         <div className="hero-text">
           <p>
             Sha Infotechnology is a results-driven digital marketing agency
@@ -1909,7 +1884,6 @@ function HomeHerohead() {
           </p>
         </div>
 
-        {/* RIGHT IMAGE */}
         <div>
           <img
             src="/images/33d.png"
@@ -1918,7 +1892,6 @@ function HomeHerohead() {
             draggable="false"
           />
         </div>
-
       </div>
     </section>
   );
@@ -1929,32 +1902,38 @@ function HomeHerohead() {
 
 
 
- function WhyChooseUs() {
+
+
+function WhyChooseUs() {
   useEffect(() => {
     const css = `
-/* ===== WHY CHOOSE US SECTION ===== */
+/* ===== WHY CHOOSE US ===== */
+
 .why-wrap{
-  // padding:120px 6vw;
-  // background:radial-gradient(circle at top,#0b1220,#020617 70%);
-  padding-top:30px;
+  padding:80px 5%;
   font-family:Inter,system-ui,sans-serif;
   color:#ffffff;
 }
 
+/* CONTAINER - MOBILE FIRST */
 .why-container{
   max-width:1200px;
   margin:auto;
-  display:grid;
-  grid-template-columns:1.1fr 1fr;
-  gap:70px;
-  align-items:center;
+  display:flex;
+  flex-direction:column;
+  gap:50px;
 }
 
-/* LEFT */
+/* LEFT SIDE */
+.why-left{
+  text-align:center;
+}
+
 .why-left h2{
-  font-size:clamp(36px,5vw,52px);
+  font-size:clamp(28px,5vw,48px);
   font-weight:900;
-  margin-bottom:18px;
+  line-height:1.2;
+  margin-bottom:20px;
 }
 
 .why-left h2 span{
@@ -1964,87 +1943,102 @@ function HomeHerohead() {
 }
 
 .why-left p{
-  font-size:17px;
+  font-size:16px;
   line-height:1.8;
   color:#cbd5f5;
-  max-width:540px;
-  margin-bottom:36px;
+  max-width:600px;
+  margin:0 auto 28px;
 }
 
 .why-tagline{
-  font-size:16px;
+  font-size:15px;
   font-weight:700;
-  color:#ffffff;
-  margin-top:20px;
 }
 
-/* RIGHT */
+/* FEATURES */
 .why-features{
-  display:grid;
-  gap:22px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
 }
 
+/* CARD */
 .why-card{
-  background:rgba(255,255,255,0.06);
-  border:1px solid rgba(255,255,255,0.12);
-  border-radius:20px;
-  padding:26px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:18px;
+  padding:22px;
   display:flex;
-  gap:18px;
+  gap:16px;
   align-items:flex-start;
-  transition:.35s ease;
+  transition:.3s ease;
 }
 
 .why-card:hover{
-  transform:translateY(-6px);
+  transform:translateY(-5px);
   border-color:#8b5cf6;
-  box-shadow:0 25px 80px rgba(139,92,246,.35);
+  box-shadow:0 20px 60px rgba(139,92,246,0.35);
 }
 
 .why-icon{
-  width:46px;
-  height:46px;
-  border-radius:14px;
+  width:44px;
+  height:44px;
+  border-radius:12px;
   background:linear-gradient(135deg,#8b5cf6,#ec4899);
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:22px;
-  color:#fff;
+  font-size:20px;
   flex-shrink:0;
 }
 
 .why-card h4{
-  font-size:18px;
+  font-size:17px;
   font-weight:800;
   margin-bottom:6px;
 }
 
 .why-card p{
-  font-size:14.5px;
+  font-size:14px;
   color:#cbd5f5;
   line-height:1.7;
 }
 
-/* MOBILE */
-@media(max-width:900px){
+/* DESKTOP */
+@media(min-width:992px){
+  .why-wrap{
+    padding:110px 8%;
+  }
+
   .why-container{
-    grid-template-columns:1fr;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+    gap:70px;
   }
 
   .why-left{
-    text-align:center;
+    flex:1;
+    text-align:left;
   }
 
   .why-left p{
-    margin:auto;
+    margin:0 0 32px 0;
+  }
+
+  .why-features{
+    flex:1;
   }
 }
     `;
-    const style = document.createElement("style");
-    style.innerHTML = css;
-    document.head.appendChild(style);
-    return () => style.remove();
+
+    const id = "why-choose-style";
+    if (!document.getElementById(id)) {
+      const style = document.createElement("style");
+      style.id = id;
+      style.innerHTML = css;
+      document.head.appendChild(style);
+    }
   }, []);
 
   return (
@@ -2071,13 +2065,13 @@ function HomeHerohead() {
 
         {/* RIGHT FEATURES */}
         <div className="why-features">
+
           <div className="why-card">
             <div className="why-icon">👨‍💻</div>
             <div>
               <h4>Experienced Professionals</h4>
               <p>
-                Our team consists of skilled digital marketing experts with
-                hands-on industry experience.
+                Skilled digital marketing experts with hands-on industry experience.
               </p>
             </div>
           </div>
@@ -2087,8 +2081,7 @@ function HomeHerohead() {
             <div>
               <h4>Data-Driven Strategies</h4>
               <p>
-                Every decision is backed by analytics, insights, and proven
-                performance metrics.
+                Every decision backed by analytics, insights, and proven metrics.
               </p>
             </div>
           </div>
@@ -2098,8 +2091,7 @@ function HomeHerohead() {
             <div>
               <h4>Transparent Reporting & ROI</h4>
               <p>
-                Clear reports, honest communication, and measurable return on
-                investment.
+                Clear reports, honest communication, and measurable return on investment.
               </p>
             </div>
           </div>
@@ -2109,8 +2101,7 @@ function HomeHerohead() {
             <div>
               <h4>Industry-Specific Solutions</h4>
               <p>
-                Customized strategies tailored to your business industry and
-                target audience.
+                Customized strategies tailored to your business and target audience.
               </p>
             </div>
           </div>
@@ -2120,17 +2111,19 @@ function HomeHerohead() {
             <div>
               <h4>Affordable & Scalable Plans</h4>
               <p>
-                Cost-effective pricing with flexible plans that grow along with
-                your business.
+                Flexible pricing plans that grow along with your business.
               </p>
             </div>
           </div>
+
         </div>
 
       </div>
     </section>
   );
 }
+
+
 
 
 

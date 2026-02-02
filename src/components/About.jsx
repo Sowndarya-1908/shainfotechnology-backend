@@ -342,6 +342,7 @@ function AboutWaveSection() {
 }
 
 
+
 function Testimonials() {
   const [index, setIndex] = useState(0);
   const startX = useRef(0);
@@ -384,34 +385,33 @@ function Testimonials() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex(prev => (prev + 1) % testimonials.length);
-    }, 5000); // 5 seconds
+    }, 5000);
 
     return () => clearInterval(interval);
-  }, [testimonials.length]);
+  }, []);
 
   /* ===== STYLES ===== */
   useEffect(() => {
     const css = `
 /* ===== TESTIMONIAL SECTION ===== */
+
 .sha-testimonial{
-  // background:radial-gradient(circle at top,#0b1220,#020617 70%);
-  // padding:10px 6vw;
-  padding-top:30px;
-  padding-bottom:30px;
-  font-family:Inter,system-ui;
+  padding:80px 5%;
+  font-family:Inter,system-ui,sans-serif;
   color:#ffffff;
 }
 
 .sha-testimonial-inner{
   max-width:960px;
   margin:auto;
+  text-align:center;
 }
 
 /* HEADING */
 .sha-testimonial h2{
-  font-size:clamp(32px,4.5vw,48px);
+  font-size:clamp(26px,5vw,44px);
   font-weight:900;
-  line-height:1.15;
+  line-height:1.2;
   margin-bottom:14px;
 }
 
@@ -422,9 +422,9 @@ function Testimonials() {
 }
 
 .sha-testimonial p.lead{
-  font-size:16px;
+  font-size:15px;
   color:#cbd5f5;
-  margin-bottom:50px;
+  margin-bottom:40px;
 }
 
 /* SLIDER */
@@ -443,9 +443,10 @@ function Testimonials() {
   min-width:100%;
   background:linear-gradient(180deg,#0f172a,#020617);
   border:1px solid rgba(255,255,255,0.08);
-  border-radius:28px;
-  padding:42px;
-  box-shadow:0 40px 120px rgba(0,0,0,.7);
+  border-radius:24px;
+  padding:32px;
+  box-shadow:0 30px 90px rgba(0,0,0,.6);
+  text-align:left;
 }
 
 /* STARS */
@@ -453,28 +454,28 @@ function Testimonials() {
   background:linear-gradient(90deg,#8b5cf6,#ec4899);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  font-size:18px;
-  margin-bottom:16px;
+  font-size:16px;
+  margin-bottom:14px;
 }
 
 /* QUOTE */
 .testimonial-quote{
-  font-size:18px;
-  line-height:1.85;
+  font-size:16px;
+  line-height:1.8;
   color:#f1f5f9;
-  margin-bottom:32px;
+  margin-bottom:28px;
 }
 
 /* AUTHOR */
 .testimonial-author{
   display:flex;
   align-items:center;
-  gap:14px;
+  gap:12px;
 }
 
 .author-avatar{
-  width:48px;
-  height:48px;
+  width:44px;
+  height:44px;
   border-radius:50%;
   background:linear-gradient(135deg,#8b5cf6,#ec4899);
   display:flex;
@@ -485,10 +486,11 @@ function Testimonials() {
 
 .author-name{
   font-weight:800;
+  font-size:15px;
 }
 
 .author-role{
-  font-size:14px;
+  font-size:13px;
   color:#9ca3af;
 }
 
@@ -496,8 +498,8 @@ function Testimonials() {
 .testimonial-dots{
   display:flex;
   justify-content:center;
-  gap:12px;
-  margin-top:28px;
+  gap:10px;
+  margin-top:24px;
 }
 
 .testimonial-dots span{
@@ -511,23 +513,43 @@ function Testimonials() {
 
 .testimonial-dots span.active{
   background:linear-gradient(135deg,#8b5cf6,#ec4899);
-  box-shadow:0 0 14px rgba(139,92,246,.9);
+  box-shadow:0 0 12px rgba(139,92,246,.8);
 }
 
-/* MOBILE */
-@media(max-width:640px){
+/* TABLET */
+@media(min-width:640px){
   .testimonial-card{
-    padding:28px;
+    padding:38px;
+  }
+
+  .testimonial-quote{
+    font-size:17px;
+  }
+}
+
+/* DESKTOP */
+@media(min-width:1024px){
+  .sha-testimonial{
+    padding:110px 8%;
+  }
+
+  .testimonial-card{
+    padding:44px;
+  }
+
+  .testimonial-quote{
+    font-size:18px;
   }
 }
     `;
+
     const style = document.createElement("style");
     style.innerHTML = css;
     document.head.appendChild(style);
     return () => style.remove();
   }, []);
 
-  /* ===== DRAG / SWIPE ===== */
+  /* ===== SWIPE ===== */
   const handleStart = e => {
     isDragging.current = true;
     startX.current = e.touches ? e.touches[0].clientX : e.clientX;
@@ -535,14 +557,16 @@ function Testimonials() {
 
   const handleEnd = e => {
     if (!isDragging.current) return;
+
     const endX = e.changedTouches
       ? e.changedTouches[0].clientX
       : e.clientX;
 
     const diff = startX.current - endX;
 
-    if (diff > 60) setIndex(i => Math.min(i + 1, testimonials.length - 1));
-    if (diff < -60) setIndex(i => Math.max(i - 1, 0));
+    if (diff > 60) setIndex(i => (i + 1) % testimonials.length);
+    if (diff < -60)
+      setIndex(i => (i - 1 + testimonials.length) % testimonials.length);
 
     isDragging.current = false;
   };
@@ -603,6 +627,7 @@ function Testimonials() {
 }
 
 
+
 function Vission() {
   const sectionRef = useRef(null);
 
@@ -622,7 +647,7 @@ function Vission() {
           divider.classList.add("draw");
           image.classList.add("reveal");
           paragraphs.forEach((p, i) =>
-            setTimeout(() => p.classList.add("reveal"), i * 150)
+            setTimeout(() => p.classList.add("reveal"), i * 120)
           );
           observer.disconnect();
         }
@@ -636,25 +661,23 @@ function Vission() {
 
   return (
     <section className="vision-section" ref={sectionRef}>
-      {/* HEADER */}
       <div className="vision-header">
         <h2 className="vision-title">
           <span className="vision-title-white">Our Vision</span>
-          <span className="vision-title-gradient">Driving Digital Growth</span>
+          <span className="vision-title-gradient">
+            Driving Digital Growth
+          </span>
         </h2>
         <div className="vision-divider"></div>
       </div>
 
-      {/* CONTENT */}
       <div className="vision-container">
-        {/* IMAGE */}
         <div className="vision-image">
           <div className="vision-image-glow">
             <img src="/images/vission.png" alt="Our Vision" />
           </div>
         </div>
 
-        {/* TEXT */}
         <div className="vision-text">
           <p>
             At SHA Infotechnology, we believe sustainable growth comes from the
@@ -674,25 +697,23 @@ function Vission() {
         </div>
       </div>
 
-      {/* STYLES */}
       <style>{`
 /* ================= VISION SECTION ================= */
 
 .vision-section{
-  padding: clamp(30px, 8vw) 6vw;
-  /* background: radial-gradient(circle at top, #0b1220, #020617 70%); */
-  font-family: Inter, system-ui, sans-serif;
-  color: #e5e7eb;
+  padding:60px 5%;
+  font-family:Inter,system-ui,sans-serif;
+  color:#e5e7eb;
   overflow:hidden;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 .vision-header{
   text-align:center;
-  max-width:900px;
-  margin:0 auto clamp(32px, 6vw, 60px);
+  max-width:800px;
+  margin:0 auto 36px;
   opacity:0;
-  transform:translateY(24px);
+  transform:translateY(20px);
   transition:all .8s ease;
 }
 
@@ -702,7 +723,7 @@ function Vission() {
 }
 
 .vision-title{
-  font-size:clamp(30px,4vw,54px);
+  font-size:clamp(26px,5vw,42px);
   font-weight:800;
   line-height:1.2;
 }
@@ -718,45 +739,27 @@ function Vission() {
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
-// .vision-title::after{
-//   content:"";
-//   display:block;
-//   width:80px;
-//   height:3px;
-//   margin:16px auto 0;
-//   background:linear-gradient(90deg,#8b5cf6,#ec4899);
-//   border-radius:2px;
-// }
 
 .vision-divider{
-  width:90px;
+  width:70px;
   height:3px;
   background:#8b5cf6;
-  margin:18px auto 0;
+  margin:14px auto 0;
   border-radius:2px;
-  opacity:1;                /* 🔥 REMOVE opacity animation */
-  transform:translateZ(0);  /* 🔥 GPU fix */
-  backface-visibility:hidden;
-  will-change:transform;
 }
 
-
-/* ===== LAYOUT ===== */
+/* LAYOUT */
 .vision-container{
-  max-width:1200px;
-   margin:auto;
-  display:grid;
-  grid-template-columns:1fr 1.1fr;
-  gap:clamp(28px,5vw,60px);
-  align-items:center;
-}
-
-/* ===== IMAGE ===== */
-.vision-image{
+  max-width:1100px;
+  margin:auto;
   display:flex;
-  justify-content:center;
+  flex-direction:column;
+  gap:40px;
+  align-items:center;
+  text-align:center;
 }
 
+/* IMAGE */
 .vision-image-glow{
   position:relative;
   opacity:0;
@@ -772,14 +775,14 @@ function Vission() {
 .vision-image-glow::before{
   content:"";
   position:absolute;
-  inset:-50px;
+  inset:-35px;
   background:radial-gradient(
     circle,
-    rgba(168,85,247,.45),
-    rgba(236,72,153,.25),
+    rgba(168,85,247,.35),
+    rgba(236,72,153,.2),
     transparent 70%
   );
-  filter:blur(60px);
+  filter:blur(45px);
   z-index:0;
 }
 
@@ -787,19 +790,23 @@ function Vission() {
   position:relative;
   z-index:2;
   width:100%;
-  max-width:480px;
-  border-radius:18px;
+  max-width:360px;
+  border-radius:16px;
 }
 
-/* ===== TEXT ===== */
+/* TEXT */
 .vision-text p{
-  font-size:16px;
-  line-height:1.75;
-  // margin-bottom:14px;
+  font-size:clamp(15px,2vw,16px);
+  line-height:1.7;
   color:#cbd5f5;
+  margin-bottom:14px;
   opacity:0;
   transform:translateY(20px);
   transition:all .6s ease;
+}
+
+.vision-text p:last-child{
+  margin-bottom:0;
 }
 
 .vision-text p.reveal{
@@ -807,25 +814,32 @@ function Vission() {
   transform:none;
 }
 
-/* ===== MOBILE ===== */
-@media (max-width:900px){
-  .vision-container{
-    grid-template-columns:1fr;
-    text-align:center;
+/* DESKTOP */
+@media(min-width:992px){
+  .vision-section{
+    padding:90px 8%;
   }
 
-  .vision-text p{
-    font-size:15px;
+  .vision-container{
+    display:grid;
+    grid-template-columns:1fr 1.1fr;
+    gap:60px;
+    align-items:center;
+    text-align:left;
   }
 
   .vision-image-glow img{
-    max-width:360px;
+    max-width:480px;
   }
 }
       `}</style>
     </section>
   );
 }
+
+
+
+
 
 function TrustTimelineSticky() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -838,28 +852,21 @@ function TrustTimelineSticky() {
   useEffect(() => {
     const css = `
 /* ================= TRUST SECTION ================= */
+
 .trust-wrap{
-  // background:radial-gradient(circle at top,#0b1220,#020617 70%);
-  // padding:120px 6vw;
-  padding-bottom:20px;
-  font-family:Inter,system-ui;
+  padding:80px 5%;
+  font-family:Inter,system-ui,sans-serif;
   color:#e5e7eb;
 }
 
-/* ================= HEADING ================= */
+/* HEADING */
 .trust-heading{
   text-align:center;
-  margin-bottom:90px;
-}
-
-.trust-heading h5{
-  font-size:14px;
-  letter-spacing:.14em;
-  color:#cbd5f5;
+  margin-bottom:60px;
 }
 
 .trust-heading h2{
-  font-size:clamp(32px,5vw,56px);
+  font-size:clamp(28px,5vw,52px);
   font-weight:900;
 }
 
@@ -870,52 +877,51 @@ function TrustTimelineSticky() {
 }
 
 .trust-underline{
-  width:72px;
+  width:70px;
   height:4px;
-  margin:18px auto 0;
+  margin:16px auto 0;
   border-radius:999px;
   background:linear-gradient(90deg,#8b5cf6,#ec4899);
 }
 
-/* ================= GRID ================= */
+/* GRID - MOBILE FIRST */
 .trust-grid{
   max-width:1200px;
   margin:auto;
-  display:grid;
-  grid-template-columns:1.15fr .85fr;
-  gap:70px;
+  display:flex;
+  flex-direction:column;
+  gap:60px;
 }
 
-/* ================= TIMELINE ================= */
+/* TIMELINE */
 .trust-timeline{
   position:relative;
-  display:grid;
-  gap:60px;
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+  padding-left:30px;
 }
 
 .trust-timeline::before{
   content:"";
   position:absolute;
-  left:10px;
+  left:8px;
   top:0;
   bottom:0;
   width:3px;
   background:linear-gradient(180deg,#8b5cf6,#ec4899);
 }
 
-/* ITEM – ALWAYS VISIBLE */
 .trust-item{
   position:relative;
-  padding-left:72px;
 }
 
-/* DOT */
 .trust-dot{
   position:absolute;
-  left:1px;
-  top:8px;
-  width:18px;
-  height:18px;
+  left:-2px;
+  top:6px;
+  width:16px;
+  height:16px;
   border-radius:50%;
   background:#020617;
   border:2px solid var(--accent);
@@ -923,53 +929,49 @@ function TrustTimelineSticky() {
 
 .trust-item.active .trust-dot{
   background:var(--accent);
-  box-shadow:0 0 18px var(--accent);
+  box-shadow:0 0 12px var(--accent);
 }
 
-/* CARD */
 .trust-card{
-  background:rgba(255,255,255,0.06);
+  background:rgba(255,255,255,0.05);
   border:1px solid var(--accent-soft);
-  border-radius:22px;
-  padding:26px;
-  box-shadow:0 30px 80px rgba(0,0,0,.6);
+  border-radius:18px;
+  padding:20px;
 }
 
 .trust-icon{
-  width:46px;
-  height:46px;
-  border-radius:14px;
+  width:42px;
+  height:42px;
+  border-radius:12px;
   background:linear-gradient(135deg,var(--accent),#ffffff22);
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:22px;
-  margin-bottom:14px;
+  font-size:20px;
+  margin-bottom:12px;
 }
 
 .trust-card h4{
-  font-size:18px;
-  font-weight:900;
+  font-size:16px;
+  font-weight:800;
 }
 
 .trust-card p{
-  font-size:15px;
-  line-height:1.7;
+  font-size:14px;
   color:#cbd5f5;
+  line-height:1.6;
 }
 
-/* ================= STICKY RIGHT ================= */
+/* RIGHT SIDE */
 .trust-sticky{
-  position:sticky;
-  top:110px;
+  position:relative;
 }
 
 .trust-box{
   background:linear-gradient(180deg,#0f172a,#020617);
   border:1px solid var(--accent-soft);
-  border-radius:26px;
-  padding:38px;
-  box-shadow:0 40px 120px rgba(0,0,0,.75);
+  border-radius:22px;
+  padding:28px;
 }
 
 .trust-box h3 span{
@@ -978,16 +980,16 @@ function TrustTimelineSticky() {
   -webkit-text-fill-color:transparent;
 }
 
-/* EXTRA CONTENT */
 .trust-points{
-  display:grid;
-  gap:12px;
-  margin:22px 0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin:20px 0;
 }
 
 .trust-point{
   display:flex;
-  gap:10px;
+  gap:8px;
   font-size:14px;
 }
 
@@ -1000,41 +1002,72 @@ function TrustTimelineSticky() {
 .trust-counters{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:18px;
+  gap:14px;
 }
 
 .counter-box{
   background:rgba(255,255,255,0.05);
-  border-radius:18px;
-  padding:18px;
+  border-radius:14px;
+  padding:14px;
   border:1px solid var(--accent-soft);
   text-align:center;
 }
 
 .counter-box strong{
-  font-size:26px;
+  font-size:22px;
+  display:block;
 }
 
-/* ================= MOBILE ================= */
-@media(max-width:900px){
-  .trust-grid{
-    grid-template-columns:1fr;
-  }
-  .trust-sticky{
-    position:relative;
-    top:auto;
-  }
-}
-
-@media(max-width:480px){
+/* TABLET */
+@media(min-width:640px){
   .trust-counters{
-    grid-template-columns:1fr;
+    grid-template-columns:repeat(3,1fr);
   }
 }
-`;
-    const style = document.createElement("style");
-    style.innerHTML = css;
-    document.head.appendChild(style);
+
+/* DESKTOP */
+@media(min-width:992px){
+  .trust-wrap{
+    padding:110px 8%;
+  }
+
+  .trust-grid{
+    flex-direction:row;
+    gap:70px;
+    align-items:flex-start;
+  }
+
+  .trust-timeline{
+    flex:1.1;
+  }
+
+  .trust-sticky{
+    flex:.9;
+    position:sticky;
+    top:120px;
+  }
+
+  .trust-card{
+    padding:26px;
+  }
+
+  .trust-box{
+    padding:38px;
+  }
+
+  .counter-box strong{
+    font-size:26px;
+  }
+}
+    `;
+
+    const id = "trust-section-style";
+    if (!document.getElementById(id)) {
+      const style = document.createElement("style");
+      style.id = id;
+      style.innerHTML = css;
+      document.head.appendChild(style);
+    }
 
     let step = 0;
     const timer = setInterval(() => {
@@ -1047,7 +1080,7 @@ function TrustTimelineSticky() {
       if (step >= 20) clearInterval(timer);
     }, 60);
 
-    return () => style.remove();
+    return () => clearInterval(timer);
   }, []);
 
   const timeline = [
@@ -1060,13 +1093,13 @@ function TrustTimelineSticky() {
   return (
     <section className="trust-wrap">
       <div className="trust-heading">
-        
         <h2><span>Our Journey</span></h2>
         <div className="trust-underline"></div>
       </div>
 
       <div className="trust-grid">
-        {/* LEFT */}
+
+        {/* LEFT TIMELINE */}
         <div className="trust-timeline">
           {timeline.map((item, i) => (
             <div
@@ -1088,7 +1121,7 @@ function TrustTimelineSticky() {
           ))}
         </div>
 
-        {/* RIGHT */}
+        {/* RIGHT STICKY */}
         <div className="trust-sticky">
           <div
             className="trust-box"
@@ -1107,16 +1140,20 @@ function TrustTimelineSticky() {
             </div>
 
             <div className="trust-counters">
-              <div className="counter-box"><strong>{counters.clients}+</strong><span>Clients</span></div>
-              <div className="counter-box"><strong>{counters.projects}+</strong><span>Projects</span></div>
-              <div className="counter-box"><strong>{counters.years}+</strong><span>Years</span></div>
+              <div className="counter-box"><strong>{counters.clients}+</strong>Clients</div>
+              <div className="counter-box"><strong>{counters.projects}+</strong>Projects</div>
+              <div className="counter-box"><strong>{counters.years}+</strong>Years</div>
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );
 }
+
+
+
 
 
 function IdeasSection() {
@@ -1395,7 +1432,7 @@ function WhyChooseSection() {
   font-size:20px;
   font-weight:800;
   margin-bottom:14px;
-  color:#ff1f1f;
+  color:#EC4899;
 }
 
 /* TEXT */
@@ -1689,12 +1726,14 @@ function TeamSection() {
   .team-grid{
     display:flex !important;
     flex-direction:column !important;
-    
     gap:20px !important;
+    align-items:center !important;   /* Added to center cards */
   }
 
   .team-card{
-    width:100% !important;
+    width:90% !important;            /* Reduced width */
+    max-width:340px !important;      /* Keeps it clean */
+    margin:0 auto !important;        /* Centered */
     height:auto !important;
     background:#ffffff !important;
     border-radius:20px !important;
