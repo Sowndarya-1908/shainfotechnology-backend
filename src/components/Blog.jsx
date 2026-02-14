@@ -33,6 +33,7 @@ const blogs = [
   title: "Our Digital Marketing Services in Chennai",
   category: "Digital Marketing",
   image: "/images/blog11.jpg",
+  date : "10 Jan 2026",
   short: "Complete digital marketing services to grow your business in Chennai.",
   content: `
 
@@ -44,7 +45,7 @@ const blogs = [
 
   <p>We focus on ROI-driven digital strategies that align with your business goals, market trends, and local audience behavior.</p>
 
-  <hr/>
+  
 
   <h2>Our Digital Marketing Services in Chennai</h2>
 
@@ -89,7 +90,7 @@ const blogs = [
     <li>UI/UX optimization</li>
   </ul>
 
-  <hr/>
+ 
 
   <h2>Why Sha Infotech Stands Out Among Digital Marketing Companies in Chennai</h2>
 
@@ -105,7 +106,7 @@ const blogs = [
   <h3>Local Market Expertise</h3>
   <p>Deep understanding of Chennai’s audience behavior, competition, and search trends.</p>
 
-  <hr/>
+
 
   <h2>Industries We Serve in Chennai</h2>
 
@@ -121,7 +122,6 @@ const blogs = [
 
   <p>Our industry-focused approach helps deliver measurable results across diverse business sectors.</p>
 
-  <hr/>
 
   <h2>Contact Sha Infotech – Your Local Digital Marketing Partner in Chennai</h2>
 
@@ -139,6 +139,7 @@ const blogs = [
     title: "Crafting Digital Excellence in Chennai – Custom Software Solutions for Your Business",
     category: "Software Development",
     image: "/images/blog12.jpeg",
+    date : "25 Jan 2026",
     short: "Discover how custom software solutions can transform businesses in Chennai.",
     content: `
 
@@ -152,7 +153,7 @@ const blogs = [
   This blog is your go-to resource for insights, trends, and expert advice on web development, software engineering, and digital strategy.
   </p>
 
-  <hr/>
+ 
 
   <h3>Why Custom Software Development is a Game-Changer for Chennai Businesses</h3>
   <p>
@@ -162,7 +163,7 @@ const blogs = [
   Learn why Chennai-based companies are turning to custom software to stay ahead.
   </p>
 
-  <hr/>
+ 
 
   <h3>Top 5 Web Development Trends in 2025 You Can’t Ignore</h3>
   <p>
@@ -173,21 +174,21 @@ const blogs = [
 
  
 
-  <hr/>
+ 
 
   <h3>How We Built a Scalable E-Commerce Platform for a Chennai Retail Brand</h3>
   <p>
  A case study on how Sha Infotech designed and developed a custom e-commerce solution that increased our client’s sales by 200%. Explore our process, from ideation to deployment, and the technologies we used.  
   </p>
 
-  <hr/>
+  
 
   <h3>The Importance of UI/UX in Custom Software Development</h3>
   <p>
  User experience can make or break your software. Dive into our design philosophy and learn how we create intuitive, user-centric interfaces that enhance engagement and satisfaction.  
   </p>
 
-  <hr/>
+ 
 
   <h3>Cybersecurity Best Practices for Your Custom Software</h3>
   <p>
@@ -196,7 +197,7 @@ const blogs = [
 
   
 
-  <hr/>
+
 
   <h3>Why Choose Sha Infotech?</h3>
   <ul>
@@ -207,7 +208,7 @@ const blogs = [
     <li><strong>Chennai-Based, Globally Minded:</strong> We serve clients locally and internationally with the same dedication to quality.  </li>
   </ul>
 
-  <hr/>
+  
 
   <h3>Our Services</h3>
   <ul>
@@ -219,7 +220,7 @@ const blogs = [
     <li>Software Maintenance & Support</li>
   </ul>
 
-  <hr/>
+
 
   <h3>Industry Insight: The Rise of SaaS in Chennai’s Startup Ecosystem</h3>
   <p>
@@ -230,7 +231,193 @@ const blogs = [
   </p>
 
 `
-  }
+  },
+  {
+  id: 3,
+  slug: "digital-marketing-web-development-chennai",
+  title: "Empowering Brands Through Strategy, Design & Technology – SHA Infotechnology",
+  category: "Digital Marketing",
+  image: "/images/blog80.jpg",
+  date : "5 Feb 2026",
+  short: "Explore how SHA Infotechnology delivers web development, SEO, branding, and digital strategy solutions to grow modern businesses.",
+  content: `
+
+  <h2 class="gradient-heading">
+  Empowering Brands Through Strategy, Design & Technology
+  </h2>
+
+  <p>
+  At <strong>SHA Infotechnology</strong>, we empower businesses to grow, scale, and lead in the digital era.
+  As a full-service digital marketing agency, we combine web development, SEO, digital strategy,
+  creative design, business analysis, and brand consultancy to build powerful digital ecosystems.
+  Our mission is simple — transform ideas into measurable digital success.
+  </p>
+
+  <h3>Why Digital Strategy is the Foundation of Business Growth</h3>
+  <p>
+  In today’s competitive landscape, having just a website is not enough.
+  Businesses need a clear and performance-driven digital strategy.
+  At SHA Infotechnology, we create result-oriented roadmaps integrating SEO,
+  social media marketing, and content strategy to maximize ROI and long-term growth.
+  </p>
+
+  <h3>Web Development & E-Commerce Solutions That Perform</h3>
+  <p>
+  Your website is your digital storefront. Our expert development team builds fast,
+  secure, and responsive websites designed to convert visitors into customers.
+  From corporate websites to advanced e-commerce platforms,
+  we deliver scalable and high-performance digital solutions.
+  </p>
+
+  <ul>
+    <li>Custom Website Development</li>
+    <li>E-Commerce Development Solutions</li>
+    <li>UI/UX Optimized Design</li>
+    <li>Mobile-Responsive Interfaces</li>
+    <li>Secure & Scalable Architecture</li>
+  </ul>
+
+  <h3>Digital Marketing & SEO for Maximum Online Visibility</h3>
+  <p>
+  Visibility drives growth. Our digital marketing and SEO services ensure
+  your brand reaches the right audience at the right time.
+  We use data-driven strategies to increase traffic,
+  generate quality leads, and improve conversion rates.
+  </p>
+
+  <ul>
+    <li>Search Engine Optimization (SEO)</li>
+    <li>Social Media Marketing</li>
+    <li>Content Marketing & Strategy</li>
+    <li>Performance Marketing Campaigns</li>
+    <li>Online Reputation Management</li>
+  </ul>
+
+  <h3>Creative Design, Brand Consultancy & Business Analysis</h3>
+  <p>
+  A strong brand identity sets you apart from competitors.
+  Our creative and strategic team helps businesses build impactful brands
+  through thoughtful design and data-backed insights.
+  </p>
+
+  <ul>
+    <li>Brand Strategy Development</li>
+    <li>Logo & Visual Identity Design</li>
+    <li>Content & Creative Design</li>
+    <li>Business & Market Analysis</li>
+    <li>Digital Growth Strategy Planning</li>
+  </ul>
+
+  <h3>Why Choose SHA Infotechnology?</h3>
+  <ul>
+    <li><strong>Tailored Solutions:</strong> Every project is customized to meet your business objectives.</li>
+    <li><strong>Expert Team:</strong> Skilled developers, marketers, and strategists delivering measurable results.</li>
+    <li><strong>End-to-End Digital Services:</strong> From strategy to execution and optimization.</li>
+    <li><strong>Result-Oriented Approach:</strong> Focused on ROI, scalability, and sustainable growth.</li>
+  </ul>
+
+  <h3>Conclusion</h3>
+  <p>
+  In the fast-evolving digital world, businesses need more than services — they need a strategic partner.
+  SHA Infotechnology combines innovation, creativity, and technology to deliver comprehensive
+  digital solutions that drive real business growth.
+  Whether it’s web development, SEO, branding, digital marketing, or e-commerce,
+  we help brands innovate, compete, and succeed in the digital marketplace.
+  </p>
+
+  `
+},
+{
+  id: 4,
+  slug: "digital-excellence-sha-infotechnology",
+  title: "Transforming Businesses with Digital Excellence – SHA Infotechnology",
+  category: "Digital Marketing",
+  image: "/images/blog45.jpg",
+   date : "14 Feb 2026",
+  short: "Discover how SHA Infotechnology transforms businesses through web development, SEO, digital marketing, branding, and strategic innovation.",
+  content: `
+
+  <h2 class="gradient-heading">
+  Transforming Businesses with Digital Excellence – SHA Infotechnology
+  </h2>
+
+  <p>
+  At <strong>SHA Infotechnology</strong>, we specialize in transforming businesses through innovative digital solutions.
+  As a leading digital marketing and web development agency, we combine strategy, creativity,
+  and technology to help brands grow, compete, and succeed in today’s digital-first world.
+  </p>
+
+  <p>
+  From startups to enterprises, we deliver scalable solutions including web development,
+  SEO, social media marketing, digital strategy, creative design, business analysis,
+  brand consultancy, and e-commerce development — all under one roof.
+  </p>
+
+  <h3>Strategic Digital Marketing for Business Growth</h3>
+  <p>
+  Digital success starts with a clear strategy. Our data-driven digital marketing approach
+  focuses on increasing visibility, generating qualified leads, and improving conversion rates.
+  We help businesses build strong online presence and sustainable growth models.
+  </p>
+
+  <ul>
+    <li>Search Engine Optimization (SEO)</li>
+    <li>Social Media Marketing</li>
+    <li>Performance Marketing Campaigns</li>
+    <li>Content Marketing Strategy</li>
+    <li>Online Reputation Management</li>
+  </ul>
+
+  <h3>Custom Web Development & E-Commerce Solutions</h3>
+  <p>
+  Your website is the foundation of your digital identity.
+  Our expert developers create responsive, secure, and high-performing websites
+  tailored to your business goals. We build digital platforms that deliver real results.
+  </p>
+
+  <ul>
+    <li>Custom Website Development</li>
+    <li>E-Commerce Website Development</li>
+    <li>Mobile-Responsive Design</li>
+    <li>UI/UX Optimized Interfaces</li>
+    <li>Secure & Scalable Architecture</li>
+  </ul>
+
+  <h3>Creative Design & Brand Consultancy</h3>
+  <p>
+  A powerful brand creates lasting impact.
+  Our creative design and brand consultancy services help businesses establish
+  a strong visual identity and clear market positioning.
+  </p>
+
+  <ul>
+    <li>Brand Strategy & Identity Development</li>
+    <li>Logo & Creative Design</li>
+    <li>Content Design & Visual Storytelling</li>
+    <li>Business Analysis & Market Research</li>
+    <li>Digital Growth Planning</li>
+  </ul>
+
+  <h3>Why Choose SHA Infotechnology?</h3>
+  <ul>
+    <li><strong>Comprehensive Digital Services:</strong> End-to-end solutions from strategy to execution.</li>
+    <li><strong>Experienced Team:</strong> Skilled professionals with industry expertise.</li>
+    <li><strong>Customized Solutions:</strong> Every project is tailored to business objectives.</li>
+    <li><strong>Performance-Focused Approach:</strong> We prioritize measurable results and ROI.</li>
+  </ul>
+
+  <h3>Conclusion</h3>
+  <p>
+  In an ever-evolving digital landscape, businesses need more than just services —
+  they need a reliable growth partner. SHA Infotechnology combines innovation,
+  strategy, and technology to deliver digital excellence that drives real business impact.
+  Partner with us to transform your vision into measurable digital success.
+  </p>
+
+  `
+}
+
+
 
 ];
 
@@ -322,6 +509,7 @@ export default function Blog() {
                 </h2>
 
                 <p className="blog-excerpt">{blog.short}</p>
+                <p>{blog.date}</p>
 
                 <Link to={`/blog/${blog.slug}`} className="read-more">
                   Continue Reading →
