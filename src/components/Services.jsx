@@ -202,8 +202,6 @@ function ServicesHighlightSection() {
 /* ================= SERVICES HIGHLIGHT ================= */
 
 .sh-wrap{
-  // background:radial-gradient(circle at top,#0b1220,#020617 70%);
-  // padding:clamp(56px, 7vw, 88px) 6vw;   /* 🔥 FIXED */
   font-family:Inter,system-ui;
   padding-bottom:30px;
 }
@@ -216,24 +214,47 @@ function ServicesHighlightSection() {
   background:linear-gradient(90deg,#8b5cf6,#ec4899);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  margin-bottom:clamp(36px, 5vw, 56px); /* 🔥 FIXED */
+  margin-bottom:clamp(36px, 5vw, 56px);
 }
 
-/* GRID */
+/* ================= GRID STRUCTURE ================= */
+
+/* 12 column layout for full control */
 .sh-grid{
   max-width:1200px;
   margin:auto;
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:28px;                            /* 🔥 tighter */
+  grid-template-columns:repeat(12,1fr);
+  gap:28px;
 }
 
-/* CARD */
+/* ---------- FIRST 6 CARDS (3 PER ROW) ---------- */
+/* 12 columns / 3 cards = span 4 */
+.sh-card:nth-child(1),
+.sh-card:nth-child(2),
+.sh-card:nth-child(3),
+.sh-card:nth-child(4),
+.sh-card:nth-child(5),
+.sh-card:nth-child(6){
+  grid-column:span 4;
+}
+
+/* ---------- LAST 4 CARDS (4 IN FINAL ROW) ---------- */
+/* 12 columns / 4 cards = span 3 */
+.sh-card:nth-child(7),
+.sh-card:nth-child(8),
+.sh-card:nth-child(9),
+.sh-card:nth-child(10){
+  grid-column:span 3;
+}
+
+/* ================= CARD ================= */
+
 .sh-card{
   background:#ffffff;
   border-radius:22px;
   padding:26px;
-  min-height:220px;                    /* 🔥 instead of fixed height */
+  min-height:220px;
   text-align:center;
   cursor:pointer;
 
@@ -304,7 +325,7 @@ function ServicesHighlightSection() {
   transition:.3s;
 }
 
-/* HOVER (DESKTOP ONLY) */
+/* HOVER EFFECT */
 .sh-card:hover::before{ opacity:1; }
 .sh-card:hover .sh-hover-text{ opacity:1; }
 .sh-card:hover h3,
@@ -324,28 +345,32 @@ function ServicesHighlightSection() {
 
 /* ================= RESPONSIVE ================= */
 
+/* Tablet */
 @media(max-width:1024px){
   .sh-grid{
     grid-template-columns:1fr 1fr;
   }
+  .sh-card{
+    grid-column:span 1 !important;
+  }
 }
 
+/* Mobile */
 @media(max-width:768px){
   .sh-wrap{
-    padding:56px 20px;                 /* 🔥 no extra gap */
+    padding:56px 20px;
   }
 
   .sh-grid{
     grid-template-columns:1fr;
-    gap:22px;
   }
 
   .sh-card{
-    min-height:auto;                   /* 🔥 auto height */
+    grid-column:span 1 !important;
+    min-height:auto;
     padding:24px;
   }
 
-  /* 🔥 Disable hover overlay on mobile */
   .sh-card::before,
   .sh-hover-text{
     display:none;
@@ -397,7 +422,8 @@ function ServicesHighlightSection() {
           ["✍️","Content Design","/services/content-design","Compelling content that informs, engages, and converts your audience."],
           ["📊","Business Analysis","/services/business-analysis","Insight-driven analysis to optimize processes, performance, and growth."],
           ["🎨","Creative Design","/services/creative-design","Eye-catching visuals and branding that make your business stand out."],
-          ["🏷️","Brand Consultancy","/services/brand-consultancy","Build a strong, consistent brand identity that drives trust and growth."]
+          ["🏷️","Brand Consultancy","/services/brand-consultancy","Build a strong, consistent brand identity that drives trust and growth."],
+["⚙️","AI Marketing","/services/ai-marketing","AI-powered marketing strategies that analyze data, predict customer behavior, automate campaigns, and maximize conversions for smarter business growth."]
         ].map(([icon,title,link,text],i)=>(
           <div key={i} className="sh-card sh-reveal" onClick={()=>navigate(link)}>
             <div className="sh-icon">{icon}</div>
@@ -409,6 +435,7 @@ function ServicesHighlightSection() {
     </section>
   );
 }
+
 
 function ServicesHero() {
   useEffect(() => {

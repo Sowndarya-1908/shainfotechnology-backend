@@ -77,6 +77,15 @@ import {
   FAQDigitalStrategy
 } from "./DigitalStrategy";
 
+import {
+  AimarketingHero,
+  SecondSlideAimarketing,
+  ServicesGridAimarketing,
+  WhyAimarketingHeroDark,
+  FAQAimarketing
+} from "./Aimarketing";
+
+
 /* ===== MAP ===== */
 const SERVICE_MAP = {
   seo: {
@@ -149,7 +158,16 @@ const SERVICE_MAP = {
     third: ServicesGridDigitalStrategy,
     fourth: WhyDigitalStrategyHeroDark,
     fifth: FAQDigitalStrategy
+  },
+
+    "ai-marketing": {
+    first: AimarketingHero,
+    second: SecondSlideAimarketing,
+    third: ServicesGridAimarketing,
+    fourth: WhyAimarketingHeroDark,
+    fifth: FAQAimarketing
   }
+
 };
 
 export default function ServiceDetail() {

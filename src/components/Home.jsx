@@ -1551,54 +1551,78 @@ function ServicesHighlightSection() {
 /* ================= SERVICES HIGHLIGHT ================= */
 
 .sh-wrap{
-  padding:80px 5%;
-  font-family:Inter,system-ui,sans-serif;
+  font-family:Inter,system-ui;
+  padding-bottom:30px;
 }
 
 /* TITLE */
 .sh-title{
   text-align:center;
-  font-size:clamp(28px,5vw,44px);
+  font-size:clamp(30px, 4vw, 44px);
   font-weight:900;
   background:linear-gradient(90deg,#8b5cf6,#ec4899);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  margin-bottom:60px;
+  margin-bottom:clamp(36px, 5vw, 56px);
 }
 
-/* GRID - MOBILE FIRST */
+/* ================= GRID STRUCTURE ================= */
+
+/* 12 column layout for full control */
 .sh-grid{
   max-width:1200px;
   margin:auto;
   display:grid;
-  grid-template-columns:1fr;
-  gap:24px;
+  grid-template-columns:repeat(12,1fr);
+  gap:28px;
 }
 
-/* CARD */
+/* ---------- FIRST 6 CARDS (3 PER ROW) ---------- */
+/* 12 columns / 3 cards = span 4 */
+.sh-card:nth-child(1),
+.sh-card:nth-child(2),
+.sh-card:nth-child(3),
+.sh-card:nth-child(4),
+.sh-card:nth-child(5),
+.sh-card:nth-child(6){
+  grid-column:span 4;
+}
+
+/* ---------- LAST 4 CARDS (4 IN FINAL ROW) ---------- */
+/* 12 columns / 4 cards = span 3 */
+.sh-card:nth-child(7),
+.sh-card:nth-child(8),
+.sh-card:nth-child(9),
+.sh-card:nth-child(10){
+  grid-column:span 3;
+}
+
+/* ================= CARD ================= */
+
 .sh-card{
   background:#ffffff;
   border-radius:22px;
-  padding:28px 20px;
+  padding:26px;
+  min-height:220px;
   text-align:center;
   cursor:pointer;
-  position:relative;
-  overflow:hidden;
-  min-height:220px;
 
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  gap:14px;
+  gap:12px;
 
-  box-shadow:0 20px 60px rgba(0,0,0,0.4);
+  position:relative;
+  overflow:hidden;
+
+  box-shadow:0 22px 60px rgba(0,0,0,0.45);
   transition:transform .3s ease, box-shadow .3s ease;
 }
 
 .sh-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 35px 90px rgba(0,0,0,0.55);
+  transform:translateY(-8px);
+  box-shadow:0 35px 90px rgba(0,0,0,0.6);
 }
 
 /* ICON */
@@ -1612,12 +1636,12 @@ function ServicesHighlightSection() {
   font-size:26px;
   color:#ffffff;
   background:linear-gradient(135deg,#8b5cf6,#ec4899);
-  box-shadow:0 0 25px rgba(139,92,246,0.5);
+  box-shadow:0 0 32px rgba(139,92,246,0.5);
 }
 
 /* TITLE */
 .sh-card h3{
-  font-size:18px;
+  font-size:19px;
   font-weight:800;
   color:#020617;
   margin:0;
@@ -1630,14 +1654,14 @@ function ServicesHighlightSection() {
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:22px;
+  padding:20px;
   font-size:15px;
   line-height:1.6;
   color:#ffffff;
-  text-align:center;
   opacity:0;
-  transition:.3s ease;
-  z-index:2;
+  transition:.3s;
+  z-index:1;
+  text-align:center;
 }
 
 /* OVERLAY */
@@ -1647,51 +1671,66 @@ function ServicesHighlightSection() {
   inset:0;
   background:linear-gradient(135deg,#8b5cf6,#ec4899);
   opacity:0;
-  transition:.3s ease;
-  z-index:1;
+  transition:.3s;
 }
 
-/* HOVER EFFECT (Desktop) */
-.sh-card:hover::before{opacity:1;}
-.sh-card:hover .sh-hover-text{opacity:1;}
+/* HOVER EFFECT */
+.sh-card:hover::before{ opacity:1; }
+.sh-card:hover .sh-hover-text{ opacity:1; }
 .sh-card:hover h3,
-.sh-card:hover .sh-icon{opacity:0;}
+.sh-card:hover .sh-icon{ opacity:0; }
 
 /* SCROLL REVEAL */
 .sh-reveal{
   opacity:0;
-  transform:translateY(40px);
+  transform:translateY(32px);
   transition:.8s cubic-bezier(0.16,1,0.3,1);
 }
 
 .sh-reveal.show{
   opacity:1;
-  transform:translateY(0);
+  transform:none;
 }
 
-/* TABLET */
-@media(min-width:640px){
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media(max-width:1024px){
   .sh-grid{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:1fr 1fr;
+  }
+  .sh-card{
+    grid-column:span 1 !important;
   }
 }
 
-/* DESKTOP */
-@media(min-width:1024px){
+/* Mobile */
+@media(max-width:768px){
   .sh-wrap{
-    padding:110px 8%;
+    padding:56px 20px;
   }
 
   .sh-grid{
-    grid-template-columns:repeat(3,1fr);
-    gap:32px;
+    grid-template-columns:1fr;
   }
 
   .sh-card{
-    min-height:240px;
+    grid-column:span 1 !important;
+    min-height:auto;
+    padding:24px;
+  }
+
+  .sh-card::before,
+  .sh-hover-text{
+    display:none;
+  }
+
+  .sh-card h3,
+  .sh-icon{
+    opacity:1 !important;
   }
 }
-`;
+    `;
 
     const id = "services-highlight-style";
     if (!document.getElementById(id)) {
@@ -1723,35 +1762,22 @@ function ServicesHighlightSection() {
       <h2 className="sh-title sh-reveal">What We Do Best</h2>
 
       <div className="sh-grid">
-        {/* Cards */}
         {[
-          { icon:"🧠", title:"Digital Strategy", path:"/services/digital-strategy",
-            text:"Data-driven strategies that align technology, marketing, and business goals."},
-          { icon:"💻", title:"Web Development", path:"/services/web-development",
-            text:"High-performance, responsive websites built to convert visitors into customers."},
-          { icon:"🛒", title:"E-commerce Website", path:"/services/ecommerce-website",
-            text:"Secure, scalable online stores designed for smooth shopping and higher sales."},
-          { icon:"🔍", title:"Search Engine Optimization", path:"/services/seo",
-            text:"Improve rankings, organic traffic, and long-term online visibility."},
-          { icon:"📣", title:"Social Media Marketing", path:"/services/social-media-marketing",
-            text:"Build brand awareness, engagement, and trust across social platforms."},
-          { icon:"✍️", title:"Content Design", path:"/services/content-design",
-            text:"Compelling content that informs, engages, and converts your audience."},
-          { icon:"📊", title:"Business Analysis", path:"/services/business-analysis",
-            text:"Insight-driven analysis to optimize processes, performance, and growth."},
-          { icon:"🎨", title:"Creative Design", path:"/services/creative-design",
-            text:"Eye-catching visuals and branding that make your business stand out."},
-          { icon:"🏷️", title:"Brand Consultancy", path:"/services/brand-consultancy",
-            text:"Build a strong, consistent brand identity that drives long-term trust and growth."}
-        ].map((card, i) => (
-          <div
-            key={i}
-            className="sh-card sh-reveal"
-            onClick={() => navigate(card.path)}
-          >
-            <div className="sh-icon">{card.icon}</div>
-            <h3>{card.title}</h3>
-            <div className="sh-hover-text">{card.text}</div>
+          ["🧠","Digital Strategy","/services/digital-strategy","Data-driven strategies that align technology, marketing, and business goals."],
+          ["💻","Web Development","/services/web-development","High-performance, responsive websites built to convert visitors into customers."],
+          ["🛒","E-commerce Website","/services/ecommerce-website","Secure, scalable online stores designed for smooth shopping and higher sales."],
+          ["🔍","Search Engine Optimization","/services/seo","Improve rankings, organic traffic, and long-term online visibility."],
+          ["📣","Social Media Marketing","/services/social-media-marketing","Build brand awareness, engagement, and trust across social platforms."],
+          ["✍️","Content Design","/services/content-design","Compelling content that informs, engages, and converts your audience."],
+          ["📊","Business Analysis","/services/business-analysis","Insight-driven analysis to optimize processes, performance, and growth."],
+          ["🎨","Creative Design","/services/creative-design","Eye-catching visuals and branding that make your business stand out."],
+          ["🏷️","Brand Consultancy","/services/brand-consultancy","Build a strong, consistent brand identity that drives trust and growth."],
+          ["⚙️","AI Marketing","/services/ai-marketing","AI-powered marketing strategies that analyze data, predict customer behavior, automate campaigns, and maximize conversions for smarter business growth."]
+        ].map(([icon,title,link,text],i)=>(
+          <div key={i} className="sh-card sh-reveal" onClick={()=>navigate(link)}>
+            <div className="sh-icon">{icon}</div>
+            <h3>{title}</h3>
+            <div className="sh-hover-text">{text}</div>
           </div>
         ))}
       </div>
