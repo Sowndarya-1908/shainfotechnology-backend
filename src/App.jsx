@@ -10,6 +10,8 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import About from "./components/About";
 import Services from "./components/Services";
+
+import Courses from "./components/Courses";
 import Contact from "./components/Contact";
 import ServiceDetail from "./components/ServiceDetail";
 import Blog from "./components/Blog";
@@ -84,6 +86,15 @@ export default function App() {
         element={
           <AnimatedPage animation={slideRight}>
             <ServiceDetail />
+          </AnimatedPage>
+        }
+      />
+       
+          <Route
+        path="/courses"
+        element={
+          <AnimatedPage animation={slideRight}>
+            <Courses />
           </AnimatedPage>
         }
       />

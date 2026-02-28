@@ -187,7 +187,9 @@ export default function Footer() {
             <li><a href="/">Home</a></li>
             <li><a href="/about">About Us</a></li>
             <li><a href="/services">Services</a></li>
+            <li><a href="/courses">Courses</a></li>
             <li><a href="/contact">Contact</a></li>
+            <li><a href="/blog">Blog</a></li>
           </ul>
         </div>
 
@@ -203,20 +205,21 @@ export default function Footer() {
             <li><a href="/services/content-design">Content Design</a></li>
             <li><a href="/services/business-analysis">Business Analysis</a></li>
             <li><a href="/services/creative-design">Creative Design</a></li>
+            <li><a href="/services/ai-marketing">AI Marketing</a></li>
           </ul>
         </div>
 
         {/* CONTACT */}
         <div className="sps-footer-contact">
           <h4>Contact Us</h4>
-          <p>📞 +91 94457 47815</p>
+          <p>📞 +91 93610 46387</p>
           <p>📧 shainfotech05@gmail.com</p>
           <p>📍 Chennai, India</p>
 
           <div className="sps-footer-actions">
-            <a href="tel:919445747815">Call Now</a>
+            <a href="tel:919361046387">Call Now</a>
             <a
-              href="https://wa.me/919445747815"
+              href="https://wa.me/919361046387"
               target="_blank"
               rel="noopener noreferrer"
             >
