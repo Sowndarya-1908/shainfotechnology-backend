@@ -5,12 +5,14 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 // 1
 export function WebDevelopmentHero() {
+
   useEffect(() => {
-   const css = `
 
-/* ================= HERO (MOBILE FIRST) ================= */
+    const css = `
 
-.smm-hero{
+/* ================= HERO ================= */
+
+.webdev-hero{
   background:radial-gradient(circle at top,#0b0b16,#05050c 70%);
   display:flex;
   flex-direction:column;
@@ -22,8 +24,9 @@ export function WebDevelopmentHero() {
   text-align:center;
 }
 
-/* SMALL LABEL */
-.smm-left small{
+/* LABEL */
+
+.webdev-left small{
   font-size:13px;
   letter-spacing:0.12em;
   text-transform:uppercase;
@@ -32,21 +35,23 @@ export function WebDevelopmentHero() {
 }
 
 /* TITLE */
-.smm-title{
+
+.webdev-title{
   font-size:clamp(28px,6vw,56px);
   font-weight:900;
   line-height:1.15;
   margin:16px 0;
 }
 
-.smm-title .accent{
+.webdev-title .accent{
   background:linear-gradient(135deg,#7c7cff,#c084fc,#f472b6);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
 /* DESCRIPTION */
-.smm-desc{
+
+.webdev-desc{
   font-size:clamp(15px,2vw,18px);
   color:#cfcfe5;
   max-width:600px;
@@ -54,8 +59,9 @@ export function WebDevelopmentHero() {
   margin:12px auto 0;
 }
 
-/* RIGHT SIDE */
-.smm-right{
+/* RIGHT */
+
+.webdev-right{
   margin-top:40px;
   display:flex;
   align-items:center;
@@ -63,14 +69,16 @@ export function WebDevelopmentHero() {
 }
 
 /* ICON CLOUD */
-.icon-cloud{
+
+.webdev-icon-cloud{
   position:relative;
   width:clamp(260px,60vw,360px);
   height:clamp(260px,60vw,360px);
 }
 
 /* ICON */
-.icon{
+
+.webdev-icon{
   position:absolute;
   width:clamp(42px,6vw,56px);
   height:clamp(42px,6vw,56px);
@@ -84,25 +92,28 @@ export function WebDevelopmentHero() {
   animation:float 6s ease-in-out infinite;
 }
 
-/* ICON POSITIONS */
-.icon:nth-child(2){top:20%;left:15%;animation-delay:1s}
-.icon:nth-child(3){top:10%;right:18%;animation-delay:2s}
-.icon:nth-child(4){top:45%;left:0;animation-delay:1.5s}
-.icon:nth-child(5){top:45%;right:0;animation-delay:.8s}
-.icon:nth-child(6){bottom:15%;left:20%;animation-delay:2.4s}
-.icon:nth-child(7){bottom:15%;right:20%;animation-delay:1.9s}
+/* POSITIONS */
+
+.webdev-icon:nth-child(2){top:20%;left:15%;animation-delay:1s}
+.webdev-icon:nth-child(3){top:10%;right:18%;animation-delay:2s}
+.webdev-icon:nth-child(4){top:45%;left:0;animation-delay:1.5s}
+.webdev-icon:nth-child(5){top:45%;right:0;animation-delay:.8s}
+.webdev-icon:nth-child(6){bottom:15%;left:20%;animation-delay:2.4s}
+.webdev-icon:nth-child(7){bottom:15%;right:20%;animation-delay:1.9s}
 
 /* FLOAT */
+
 @keyframes float{
   0%{transform:translateY(0)}
   50%{transform:translateY(-14px)}
   100%{transform:translateY(0)}
 }
 
-/* ================= DESKTOP ================= */
+/* DESKTOP */
 
 @media(min-width:992px){
-  .smm-hero{
+
+  .webdev-hero{
     display:grid;
     grid-template-columns:1.2fr 1fr;
     align-items:center;
@@ -110,83 +121,102 @@ export function WebDevelopmentHero() {
     text-align:left;
   }
 
-  .smm-desc{
+  .webdev-desc{
     margin-left:0;
   }
 
-  .smm-right{
+  .webdev-right{
     margin-top:0;
   }
+
 }
+
 `;
 
+    const styleId = "web-development-hero-style";
 
-    const id = "web-dev-hero-clean-spacing";
-    if (!document.getElementById(id)) {
+    if (!document.getElementById(styleId)) {
+
       const style = document.createElement("style");
-      style.id = id;
+      style.id = styleId;
       style.innerHTML = css;
+
       document.head.appendChild(style);
+
     }
 
     return () => {
-      const s = document.getElementById(id);
-      if (s) s.remove();
+      const style = document.getElementById(styleId);
+      if (style) style.remove();
     };
+
   }, []);
 
   return (
-    <section className="smm-hero">
-      <div className="smm-left">
+
+    <section className="webdev-hero">
+
+      <div className="webdev-left">
+
         <small>Website Development</small>
 
-        <h1 className="smm-title">
-          Build a <span className="accent">Website Designed for</span><br />
-          Performance and Growth <br />
+        <h1 className="webdev-title">
+          Build a <span className="accent">Website Designed for</span><br/>
+          Performance and Growth<br/>
           <span className="accent">Modern, Responsive, and Conversion-Focused</span>
         </h1>
 
-        <p className="smm-desc">
+        <p className="webdev-desc">
           We develop fast, secure, and scalable websites tailored to your business goals.
           Every website is built to deliver a seamless user experience and support
           long-term digital success.
         </p>
+
       </div>
 
-      <div className="smm-right">
-        <div className="icon-cloud">
-          <div className="icon">G</div>
-          <div className="icon">🔍</div>
-          <div className="icon">📈</div>
-          <div className="icon">📍</div>
-          <div className="icon">📝</div>
-          <div className="icon">⚙️</div>
-          <div className="icon">⭐</div>
+      <div className="webdev-right">
+
+        <div className="webdev-icon-cloud">
+
+          <div className="webdev-icon">💻</div>
+          <div className="webdev-icon">⚡</div>
+          <div className="webdev-icon">📱</div>
+          <div className="webdev-icon">🌐</div>
+          <div className="webdev-icon">🧩</div>
+          <div className="webdev-icon">🔒</div>
+          <div className="webdev-icon">🚀</div>
+
         </div>
+
       </div>
+
     </section>
+
   );
+
 }
 
 
 
-
 export function SecondSlideWebDevelopment() {
+
   const sectionRef = useRef(null);
 
   useEffect(() => {
+
     const css = `
 
-/* ================= BRAND SECTION (MOBILE FIRST) ================= */
+/* ================= WEB DEVELOPMENT SECTION ================= */
 
-.brand-section{
+.webdev-brand-section{
   padding:70px 5%;
   font-family:Inter,system-ui,sans-serif;
   overflow:hidden;
 }
 
 /* GRID */
-.brand-grid{
+
+.webdev-brand-grid{
   max-width:1200px;
   margin:auto;
   display:flex;
@@ -195,20 +225,22 @@ export function SecondSlideWebDevelopment() {
 }
 
 /* LEFT CONTENT */
-.brand-left{
+
+.webdev-brand-left{
   opacity:0;
   transform:translateY(30px);
   transition:all .8s ease;
   text-align:center;
 }
 
-.brand-section.show .brand-left{
+.webdev-brand-section.show .webdev-brand-left{
   opacity:1;
   transform:none;
 }
 
 /* HEADING */
-.brand-left h2{
+
+.webdev-brand-left h2{
   font-size:clamp(26px,5vw,42px);
   font-weight:900;
   margin-bottom:18px;
@@ -216,18 +248,20 @@ export function SecondSlideWebDevelopment() {
 }
 
 /* GRADIENT */
-.brand-gradient{
+
+.webdev-brand-gradient{
   background:linear-gradient(90deg,#8b5cf6,#ec4899);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
-.brand-white{
+.webdev-brand-white{
   color:#ffffff;
 }
 
 /* PARAGRAPH */
-.brand-left p{
+
+.webdev-brand-left p{
   font-size:clamp(15px,2vw,17px);
   line-height:1.7;
   color:#ffffff;
@@ -236,7 +270,8 @@ export function SecondSlideWebDevelopment() {
 }
 
 /* RIGHT IMAGE */
-.brand-right{
+
+.webdev-brand-right{
   display:flex;
   justify-content:center;
   align-items:center;
@@ -245,12 +280,12 @@ export function SecondSlideWebDevelopment() {
   transition:all .8s ease .2s;
 }
 
-.brand-section.show .brand-right{
+.webdev-brand-section.show .webdev-brand-right{
   opacity:1;
   transform:none;
 }
 
-.brand-right img{
+.webdev-brand-right img{
   width:100%;
   max-width:380px;
   height:auto;
@@ -259,98 +294,142 @@ export function SecondSlideWebDevelopment() {
 /* ================= DESKTOP ================= */
 
 @media(min-width:992px){
-  .brand-section{
+
+  .webdev-brand-section{
     padding:100px 8%;
   }
 
-  .brand-grid{
+  .webdev-brand-grid{
     display:grid;
     grid-template-columns:1.1fr 0.9fr;
     align-items:center;
     gap:60px;
   }
 
-  .brand-left{
+  .webdev-brand-left{
     text-align:left;
   }
 
-  .brand-left p{
+  .webdev-brand-left p{
     margin:0 0 16px 0;
   }
 
-  .brand-right img{
+  .webdev-brand-right img{
     max-width:480px;
   }
+
 }
+
 `;
 
+    const styleId = "webdev-second-slide-style";
 
-    const style = document.createElement("style");
-    style.innerHTML = css;
-    document.head.appendChild(style);
+    if (!document.getElementById(styleId)) {
+
+      const style = document.createElement("style");
+      style.id = styleId;
+      style.innerHTML = css;
+
+      document.head.appendChild(style);
+
+    }
 
     const observer = new IntersectionObserver(
+
       ([entry]) => {
+
         if (entry.isIntersecting) {
           entry.target.classList.add("show");
         }
+
       },
-      { threshold: 0.25 }
+
+      { threshold:0.25 }
+
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
 
     return () => {
-      style.remove();
+
+      const style = document.getElementById(styleId);
+      if (style) style.remove();
+
       if (sectionRef.current) observer.unobserve(sectionRef.current);
+
     };
+
   }, []);
 
   return (
-    <section className="brand-section" ref={sectionRef}>
-      <div className="brand-grid">
 
-        {/* LEFT CONTENT */}
-        <div className="brand-left">
+    <section className="webdev-brand-section" ref={sectionRef}>
+
+      <div className="webdev-brand-grid">
+
+        {/* LEFT */}
+
+        <div className="webdev-brand-left">
+
           <h2>
-  <span className="brand-white">What is </span>
-  <span className="brand-gradient">Web Development</span>
-  <span className="brand-white">?</span>
-</h2>
+
+            <span className="webdev-brand-white">What is </span>
+
+            <span className="webdev-brand-gradient">
+              Web Development
+            </span>
+
+            <span className="webdev-brand-white">?</span>
+
+          </h2>
 
           <p>
-           Web development is the process of designing, building, and maintaining websites that are functional, fast, and user-friendly. A well-developed website acts as the digital foundation of your business, supporting marketing, sales, and customer engagement.
+            Web development is the process of designing, building, and maintaining
+            websites that are functional, fast, and user-friendly. A well-developed
+            website acts as the digital foundation of your business, supporting
+            marketing, sales, and customer engagement.
           </p>
 
           <p>
-           We focus on creating responsive, performance-optimized websites that work seamlessly across all devices. Our development approach ensures clean code, scalability, and SEO-ready structure—so your website grows with your business and delivers a strong user experience.
+            We create responsive, performance-optimised websites that work
+            seamlessly across all devices. Our development approach focuses on
+            clean code, scalability, and SEO-ready structure so your website can
+            grow with your business while delivering a powerful user experience.
           </p>
+
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="brand-right">
+
+        <div className="webdev-brand-right">
+
           <img
             src="/images/about/whyss.png"
-            alt="Brand Consultancy Illustration"
+            alt="Web Development Process Illustration"
           />
+
         </div>
 
       </div>
-    </section>
-  );
-}
 
+    </section>
+
+  );
+
+}
 
 // 3
 
 
 export function ServicesGridWebDevelopment() {
+
   useEffect(() => {
+
     const css = `
 
-/* ================= SERVICES SECTION (MOBILE FIRST) ================= */
+/* ================= WEB DEV SERVICES ================= */
 
-.services-wrap{
+.webdev-services-wrap{
   font-family:Inter,system-ui,sans-serif;
   color:#e5e7eb;
   padding:60px 5%;
@@ -358,7 +437,8 @@ export function ServicesGridWebDevelopment() {
 }
 
 /* GRID */
-.services-grid{
+
+.webdev-services-grid{
   max-width:1100px;
   margin:auto;
   display:grid;
@@ -367,7 +447,8 @@ export function ServicesGridWebDevelopment() {
 }
 
 /* CARD */
-.service-card{
+
+.webdev-service-card{
   background:#ffffff;
   border-radius:18px;
   padding:28px 22px;
@@ -378,13 +459,14 @@ export function ServicesGridWebDevelopment() {
   overflow:hidden;
 }
 
-.service-card:hover{
+.webdev-service-card:hover{
   transform:translateY(-6px);
   box-shadow:0 25px 70px rgba(185,5,4,0.35);
 }
 
 /* NUMBER */
-.service-number{
+
+.webdev-service-number{
   position:absolute;
   top:14px;
   right:18px;
@@ -394,7 +476,8 @@ export function ServicesGridWebDevelopment() {
 }
 
 /* ICON */
-.service-icon{
+
+.webdev-service-icon{
   width:48px;
   height:48px;
   border-radius:12px;
@@ -408,14 +491,15 @@ export function ServicesGridWebDevelopment() {
 }
 
 /* TEXT */
-.service-title{
+
+.webdev-service-title{
   font-size:18px;
   font-weight:800;
   margin-bottom:10px;
   color:#000000;
 }
 
-.service-desc{
+.webdev-service-desc{
   font-size:14px;
   line-height:1.6;
   color:#000000;
@@ -424,120 +508,161 @@ export function ServicesGridWebDevelopment() {
 /* ================= TABLET ================= */
 
 @media(min-width:640px){
-  .services-grid{
+
+  .webdev-services-grid{
     grid-template-columns:repeat(2,1fr);
     gap:24px;
   }
+
 }
 
 /* ================= DESKTOP ================= */
 
 @media(min-width:992px){
-  .services-wrap{
+
+  .webdev-services-wrap{
     padding:90px 8%;
   }
 
-  .services-grid{
+  .webdev-services-grid{
     grid-template-columns:repeat(3,1fr);
     gap:28px;
   }
 
-  .service-card{
+  .webdev-service-card{
     padding:34px 28px;
   }
 
-  .service-number{
+  .webdev-service-number{
     font-size:56px;
   }
+
 }
+
 `;
 
+    const styleId = "webdev-services-grid-style";
 
-    const id = "services-grid-dark-style";
-    if (!document.getElementById(id)) {
+    if (!document.getElementById(styleId)) {
+
       const style = document.createElement("style");
-      style.id = id;
+      style.id = styleId;
       style.innerHTML = css;
+
       document.head.appendChild(style);
+
     }
 
     return () => {
-      const s = document.getElementById(id);
-      if (s) s.remove();
+
+      const style = document.getElementById(styleId);
+      if (style) style.remove();
+
     };
+
   }, []);
 
   const services = [
+
     {
-      title: "Purpose-Driven Web Architecture",
-      desc: "Websites structured around user flow, clarity, and business objectives.",
-      icon: "🧭"
+      title:"Purpose-Driven Web Architecture",
+      desc:"Websites structured around user flow, clarity, and business objectives.",
+      icon:"🧭"
     },
+
     {
-      title: "Device-First Responsive Builds",
-      desc: "Layouts engineered to adapt flawlessly across all modern devices.",
-      icon: "📐"
+      title:"Device-First Responsive Builds",
+      desc:"Layouts engineered to adapt flawlessly across all modern devices.",
+      icon:"📐"
     },
+
     {
-      title: "Speed-Focused Engineering",
-      desc: "Lean code and optimized assets for faster load times and smoother interactions.",
-      icon: "⚡"
+      title:"Speed-Focused Engineering",
+      desc:"Lean code and optimized assets for faster load times and smoother interactions.",
+      icon:"⚡"
     },
+
     {
-      title: "Search-Ready Codebase",
-      desc: "Technically sound foundations built for long-term search visibility.",
-      icon: "🔎"
+      title:"Search-Ready Codebase",
+      desc:"Technically sound foundations built for long-term search visibility.",
+      icon:"🔎"
     },
+
     {
-      title: "Scalable Content Management",
-      desc: "Flexible CMS setups that grow with your content and team.",
-      icon: "🧩"
+      title:"Scalable Content Management",
+      desc:"Flexible CMS setups that grow with your content and team.",
+      icon:"🧩"
     },
+
     {
-      title: "Security-First Development",
-      desc: "Hardened builds with best-practice protections from day one.",
-      icon: "🛡️"
+      title:"Security-First Development",
+      desc:"Hardened builds with best-practice protections from day one.",
+      icon:"🛡️"
     }
+
   ];
 
   return (
-    <section className="services-wrap">
-      <div className="services-grid">
-        {services.map((s, i) => (
-          <div className="service-card" key={i}>
-            <div className="service-number">{i + 1}</div>
-            <div className="service-icon">{s.icon}</div>
-            <div className="service-title">{s.title}</div>
-            <div className="service-desc">{s.desc}</div>
+
+    <section className="webdev-services-wrap">
+
+      <div className="webdev-services-grid">
+
+        {services.map((s,i)=>(
+
+          <div className="webdev-service-card" key={i}>
+
+            <div className="webdev-service-number">
+              {i+1}
+            </div>
+
+            <div className="webdev-service-icon">
+              {s.icon}
+            </div>
+
+            <div className="webdev-service-title">
+              {s.title}
+            </div>
+
+            <div className="webdev-service-desc">
+              {s.desc}
+            </div>
+
           </div>
+
         ))}
+
       </div>
+
     </section>
+
   );
+
 }
 
 
 // 4
 
-
 export function WhyWebDevelopmentHeroDark() {
+
   const ref = useRef(null);
 
   useEffect(() => {
-   const css = `
 
-/* ================= HERO DARK (MOBILE FIRST) ================= */
+    const css = `
 
-.seo-hero-dark{
+/* ================= WHY WEB DEVELOPMENT ================= */
+
+.webdev-why-section{
   padding:60px 5%;
   font-family:Inter,system-ui,sans-serif;
   color:#e5e7eb;
   overflow:hidden;
-  margin:0;
 }
 
 /* GRID */
-.seo-hero-grid{
+
+.webdev-why-grid{
   max-width:1200px;
   margin:auto;
   display:flex;
@@ -548,18 +673,19 @@ export function WhyWebDevelopmentHeroDark() {
 }
 
 /* LEFT */
-.seo-left{
+
+.webdev-why-left{
   opacity:0;
   transform:translateY(30px);
   transition:all .8s ease;
 }
 
-.seo-hero-dark.show .seo-left{
+.webdev-why-section.show .webdev-why-left{
   opacity:1;
   transform:none;
 }
 
-.seo-left h1{
+.webdev-why-left h1{
   font-size:clamp(26px,5vw,42px);
   font-weight:900;
   line-height:1.2;
@@ -567,25 +693,31 @@ export function WhyWebDevelopmentHeroDark() {
   color:#fff;
 }
 
-.seo-left h1 span{
+.webdev-why-left h1 span{
   background:linear-gradient(90deg,#8b5cf6,#ec4899);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
 /* LIST */
-.seo-left li{
+
+.webdev-why-left ul{
+  padding:0;
+  margin:0;
+}
+
+.webdev-why-left li{
   font-size:clamp(15px,2vw,18px);
   line-height:1.7;
   color:#cbd5f5;
   max-width:600px;
   margin:0 auto 14px;
-  padding:0;
   list-style:none;
 }
 
 /* RIGHT IMAGE */
-.seo-right{
+
+.webdev-why-right{
   position:relative;
   display:flex;
   align-items:center;
@@ -595,13 +727,14 @@ export function WhyWebDevelopmentHeroDark() {
   transition:all .8s ease .2s;
 }
 
-.seo-hero-dark.show .seo-right{
+.webdev-why-section.show .webdev-why-right{
   opacity:1;
   transform:scale(1);
 }
 
-/* IMAGE + GLOW */
-.seo-image-wrap::before{
+/* IMAGE GLOW */
+
+.webdev-image-wrap::before{
   content:"";
   position:absolute;
   width:280px;
@@ -611,22 +744,22 @@ export function WhyWebDevelopmentHeroDark() {
   z-index:0;
 }
 
-.seo-image-wrap img{
+.webdev-image-wrap img{
   position:relative;
   z-index:1;
   width:100%;
   max-width:280px;
-  height:auto;
 }
 
-/* ================= DESKTOP ================= */
+/* DESKTOP */
 
 @media(min-width:992px){
-  .seo-hero-dark{
+
+  .webdev-why-section{
     padding:90px 8%;
   }
 
-  .seo-hero-grid{
+  .webdev-why-grid{
     display:grid;
     grid-template-columns:1.1fr .9fr;
     align-items:center;
@@ -634,125 +767,156 @@ export function WhyWebDevelopmentHeroDark() {
     text-align:left;
   }
 
-  .seo-left li{
+  .webdev-why-left li{
     margin:0 0 16px 0;
   }
 
-  .seo-image-wrap::before{
+  .webdev-image-wrap::before{
     width:420px;
     height:420px;
   }
 
-  .seo-image-wrap img{
+  .webdev-image-wrap img{
     max-width:420px;
   }
+
 }
+
 `;
 
-    const style = document.createElement("style");
-    style.innerHTML = css;
-    document.head.appendChild(style);
+    const styleId = "webdev-why-section-style";
+
+    if (!document.getElementById(styleId)) {
+
+      const style = document.createElement("style");
+      style.id = styleId;
+      style.innerHTML = css;
+
+      document.head.appendChild(style);
+
+    }
 
     const observer = new IntersectionObserver(
-      ([e]) => {
-        if (e.isIntersecting) e.target.classList.add("show");
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
       },
-      { threshold: 0.3 }
+      { threshold:0.3 }
     );
 
     if (ref.current) observer.observe(ref.current);
 
     return () => {
-      style.remove();
+
+      const style = document.getElementById(styleId);
+      if (style) style.remove();
+
       if (ref.current) observer.unobserve(ref.current);
+
     };
+
   }, []);
 
   return (
-    <section className="seo-hero-dark" ref={ref}>
-      <div className="seo-hero-grid">
+
+    <section className="webdev-why-section" ref={ref}>
+
+      <div className="webdev-why-grid">
 
         {/* LEFT */}
-        <div className="seo-left">
+
+        <div className="webdev-why-left">
+
           <h1>
             Why <span>Website Development</span>?
           </h1>
- 
-          <li>
-            Your website is your digital foundation. A well-built website builds
-            trust, improves engagement, and supports every marketing effort you
-            invest in. It creates strong first impressions and guides visitors
-            smoothly toward taking action.
-          </li>
 
-          <li>
-            Beyond design, a powerful website is built for performance and growth.
-            With fast load times, mobile responsiveness, SEO-ready structure, and
-            strong security, your website becomes a long-term asset that scales
-            with your business.
-          </li>
+          <ul>
+
+            <li>
+              Your website is your digital foundation. A well-built website builds
+              trust, improves engagement, and supports every marketing effort you
+              invest in. It creates strong first impressions and guides visitors
+              smoothly toward taking action.
+            </li>
+
+            <li>
+              Beyond design, a powerful website is built for performance and growth.
+              With fast load times, mobile responsiveness, SEO-ready structure,
+              and strong security, your website becomes a long-term asset that
+              scales with your business.
+            </li>
+
+          </ul>
+
         </div>
 
-        {/* RIGHT IMAGE */}
-       
- <div className="seo-left">
-         
- <div className="seo-right seo-image-wrap">
+        {/* RIGHT */}
+
+        <div className="webdev-why-right webdev-image-wrap">
+
           <img
             src="/images/WEBDEVELOPMENT.png"
-            alt="Website Development Illustration"
+            alt="Professional Website Development Illustration"
           />
-        </div>
-        
-        </div>
-      </div>
-    </section>
-  );
-}
 
+        </div>
+
+      </div>
+
+    </section>
+
+  );
+
+}
 
 // 5
 
 export function FAQWebDevelopment() {
-  const [openFaq, setOpenFaq] = useState(-1);
+
+  const [openFaq,setOpenFaq] = useState(-1);
   const sectionRef = useRef(null);
 
   /* ================= STYLES ================= */
-  useEffect(() => {
-   const css = `
 
-/* ================= FAQ SECTION (MOBILE FIRST) ================= */
+  useEffect(()=>{
 
-.home-faq-wrap{
+    const css = `
+
+/* ================= WEB DEV FAQ ================= */
+
+.webdev-faq-wrap{
   padding:70px 5%;
   font-family:Inter,system-ui,sans-serif;
   color:#ffffff;
 }
 
-.home-faq-container{
+.webdev-faq-container{
   max-width:1000px;
   margin:auto;
 }
 
 /* TITLE */
-.home-faq-title{
+
+.webdev-faq-title{
   text-align:center;
   font-size:clamp(26px,5vw,42px);
   font-weight:900;
   margin-bottom:10px;
 }
 
-.home-faq-title .faq-title-white{
+.webdev-faq-title-white{
   color:#ffffff;
 }
 
-.home-faq-title .faq-title-gradient{
+.webdev-faq-title-gradient{
   background:linear-gradient(90deg,#8b5cf6,#ec4899);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
-.home-faq-sub{
+.webdev-faq-sub{
   text-align:center;
   font-size:15px;
   color:#cbd5f5;
@@ -760,29 +924,32 @@ export function FAQWebDevelopment() {
 }
 
 /* CARD */
-.home-faq-card{
+
+.webdev-faq-card{
   border-radius:22px;
   padding:24px;
   box-shadow:0 20px 60px rgba(0,0,0,0.25);
 }
 
 /* ITEM */
-.home-faq-item{
+
+.webdev-faq-item{
   border-top:1px solid rgba(255,255,255,0.08);
   padding:16px 4px;
   transition:background .25s ease;
 }
 
-.home-faq-item:last-child{
+.webdev-faq-item:last-child{
   border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
-.home-faq-item:hover{
+.webdev-faq-item:hover{
   background:#1b1b1b;
 }
 
 /* HEADER */
-.home-faq-header{
+
+.webdev-faq-header{
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -791,14 +958,16 @@ export function FAQWebDevelopment() {
 }
 
 /* QUESTION */
-.home-faq-question{
+
+.webdev-faq-question{
   font-size:clamp(15px,2vw,18px);
   font-weight:700;
   color:#ffffff;
 }
 
 /* TOGGLE */
-.home-faq-toggle{
+
+.webdev-faq-toggle{
   width:30px;
   height:30px;
   border-radius:50%;
@@ -812,182 +981,217 @@ export function FAQWebDevelopment() {
   transition:transform .3s ease;
 }
 
-.home-faq-item.open .home-faq-toggle{
+.webdev-faq-item.open .webdev-faq-toggle{
   transform:rotate(180deg);
 }
 
 /* ANSWER */
-.home-faq-answer{
+
+.webdev-faq-answer{
   max-height:0;
   overflow:hidden;
   opacity:0;
-  transition:max-height .4s ease, opacity .3s ease;
+  transition:max-height .4s ease,opacity .3s ease;
 }
 
-.home-faq-item.open .home-faq-answer{
+.webdev-faq-item.open .webdev-faq-answer{
   max-height:260px;
   opacity:1;
 }
 
-.home-faq-answer p{
+.webdev-faq-answer p{
   margin-top:10px;
   font-size:14px;
   line-height:1.6;
   color:#e2e8f0;
 }
 
-/* CTA */
-.home-faq-cta{
-  margin-top:36px;
-  padding:28px;
-  border-radius:18px;
-  background:#ffffff;
-  text-align:center;
-  box-shadow:0 20px 60px rgba(0,0,0,0.2);
-}
-
-.home-faq-cta h3{
-  font-size:20px;
-  font-weight:800;
-  margin-bottom:8px;
-  color:#020617;
-}
-
-.home-faq-cta p{
-  font-size:14px;
-  color:#475569;
-  margin-bottom:18px;
-}
-
-.home-faq-cta button{
-  padding:12px 28px;
-  border-radius:999px;
-  border:none;
-  background:linear-gradient(135deg,#8b5cf6,#ec4899);
-  color:#ffffff;
-  font-size:14px;
-  font-weight:700;
-  cursor:pointer;
-  transition:transform .3s ease;
-}
-
-.home-faq-cta button:hover{
-  transform:translateY(-3px);
-}
-
-/* ================= DESKTOP ================= */
+/* DESKTOP */
 
 @media(min-width:992px){
-  .home-faq-wrap{
+
+  .webdev-faq-wrap{
     padding:90px 8%;
   }
 
-  .home-faq-card{
+  .webdev-faq-card{
     padding:32px;
   }
 
-  .home-faq-cta{
-    margin-top:48px;
-    padding:36px;
-  }
 }
+
 `;
 
+    const styleId = "webdev-faq-style";
 
-    const id = "home-faq-style-upgraded";
-    if (!document.getElementById(id)) {
+    if(!document.getElementById(styleId)){
+
       const style = document.createElement("style");
-      style.id = id;
+      style.id = styleId;
       style.innerHTML = css;
-      document.head.appendChild(style);
-    }
-  }, []);
 
-  /* ================= AUTO-OPEN ON SCROLL ================= */
-  useEffect(() => {
+      document.head.appendChild(style);
+
+    }
+
+    return ()=>{
+      const style = document.getElementById(styleId);
+      if(style) style.remove();
+    };
+
+  },[]);
+
+  /* ================= AUTO OPEN ================= */
+
+  useEffect(()=>{
+
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
+
+      ([entry])=>{
+        if(entry.isIntersecting){
           setOpenFaq(0);
           observer.disconnect();
         }
       },
-      { threshold: 0.35 }
+
+      {threshold:0.35}
+
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
+    if(sectionRef.current) observer.observe(sectionRef.current);
+
+    return ()=>observer.disconnect();
+
+  },[]);
 
   const faqs = [
+
     {
-      q: "How long does it take to build a website?",
-      a: "Most websites are completed within 2–4 weeks, depending on features, content readiness, and feedback cycles."
+      q:"How long does it take to build a website?",
+      a:"Most websites are completed within 2–4 weeks depending on features, content readiness, and feedback cycles."
     },
+
     {
-      q: "Will my website be mobile-friendly?",
-      a: "Yes. All our websites are fully responsive and optimized for mobile, tablet, and desktop devices."
+      q:"Will my website be mobile-friendly?",
+      a:"Yes. Every website we build is fully responsive and optimized for mobile, tablet, and desktop devices."
     },
+
     {
-      q: "Can I update the website content myself?",
-      a: "Absolutely. We build CMS-based websites so you can easily update content without technical knowledge."
+      q:"Can I update website content myself?",
+      a:"Yes. We build CMS-based websites so you can easily edit content, add pages, and update information without technical skills."
     },
+
     {
-      q: "Do you provide support after the website launch?",
-      a: "Yes. We offer ongoing maintenance, security updates, performance optimization, and technical support."
+      q:"Do you provide support after launch?",
+      a:"Yes. We offer maintenance, security updates, performance optimization, and technical support after your website goes live."
     },
+
     {
-      q: "How do I get started with website development?",
-      a: "Fill out our contact form or call us. We’ll discuss your requirements and share a clear plan and timeline."
+      q:"How do I get started with website development?",
+      a:"Contact us with your requirements and we will share a project plan, timeline, and strategy for building your website."
     }
+
   ];
 
-  return (
-    <section className="home-faq-wrap" ref={sectionRef}>
-      <div className="home-faq-container">
-        <h2 className="home-faq-title">
-          <span className="faq-title-white">Frequently Asked</span>{" "}
-          <span className="faq-title-gradient">Questions</span>
+  /* ================= SEO SCHEMA ================= */
+
+  useEffect(()=>{
+
+    const schema = {
+
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+
+      mainEntity:faqs.map(f=>({
+
+        "@type":"Question",
+        name:f.q,
+
+        acceptedAnswer:{
+          "@type":"Answer",
+          text:f.a
+        }
+
+      }))
+
+    };
+
+    const script = document.createElement("script");
+    script.type="application/ld+json";
+    script.innerHTML = JSON.stringify(schema);
+
+    document.head.appendChild(script);
+
+    return ()=>{
+      if(document.head.contains(script)){
+        document.head.removeChild(script);
+      }
+    };
+
+  },[]);
+
+  return(
+
+    <section className="webdev-faq-wrap" ref={sectionRef}>
+
+      <div className="webdev-faq-container">
+
+        <h2 className="webdev-faq-title">
+          <span className="webdev-faq-title-white">Frequently Asked</span>{" "}
+          <span className="webdev-faq-title-gradient">Questions</span>
         </h2>
 
-        <p className="home-faq-sub">
+        <p className="webdev-faq-sub">
           Clear answers to help you move forward with confidence.
         </p>
 
-        <div className="home-faq-card">
-          {faqs.map((item, i) => {
+        <div className="webdev-faq-card">
+
+          {faqs.map((item,i)=>{
+
             const open = openFaq === i;
-            return (
+
+            return(
+
               <div
                 key={item.q}
-                className={"home-faq-item" + (open ? " open" : "")}
+                className={"webdev-faq-item"+(open?" open":"")}
               >
+
                 <div
-                  className="home-faq-header"
-                  onClick={() => setOpenFaq(open ? -1 : i)}
+                  className="webdev-faq-header"
+                  role="button"
+                  tabIndex="0"
+                  onClick={()=>setOpenFaq(open ? -1 : i)}
                 >
-                  <div className="home-faq-question">{item.q}</div>
-                  <div className="home-faq-toggle">{open ? "−" : "+"}</div>
+
+                  <div className="webdev-faq-question">
+                    {item.q}
+                  </div>
+
+                  <div className="webdev-faq-toggle">
+                    {open ? "−" : "+"}
+                  </div>
+
                 </div>
 
-                <div className="home-faq-answer">
+                <div className="webdev-faq-answer">
                   <p>{item.a}</p>
                 </div>
+
               </div>
+
             );
+
           })}
+
         </div>
 
-        {/* CTA */}
-        <div className="home-faq-cta">
-          <h3>Still have questions?</h3>
-          <p>Talk directly with our experts and get a custom growth plan.</p>
-          <Link to="/contact">
-            <button>BOOK FREE CONSULTATION →</button>
-          </Link>
-        </div>
       </div>
+
     </section>
+
   );
+
 }
 // 6

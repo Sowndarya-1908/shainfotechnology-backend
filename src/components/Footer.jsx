@@ -1,16 +1,23 @@
 import React, { useEffect } from "react";
 
+import { Link } from "react-router-dom";
+
 export default function Footer() {
+
   useEffect(() => {
+
     const css = `
-/* ===== FOOTER (GLASS GRADIENT) ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===== FOOTER ===== */
+
 .sps-footer{
-  position: relative;
+  position:relative;
   padding:90px 6vw 30px;
-  font-family:Inter,system-ui;
+  font-family:'Poppins',sans-serif;
   color:#e5e7eb;
 
-  /* 🌈 LIGHT GRADIENT */
   background:
     linear-gradient(
       135deg,
@@ -19,15 +26,13 @@ export default function Footer() {
       rgba(236,72,153,0.25)
     );
 
-  /* 🧊 GLASS EFFECT */
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
 
   border-top:1px solid rgba(255,255,255,0.18);
   overflow:hidden;
 }
 
-/* SOFT OVERLAY FOR DEPTH */
 .sps-footer::before{
   content:"";
   position:absolute;
@@ -37,6 +42,7 @@ export default function Footer() {
 }
 
 /* GRID */
+
 .sps-footer-grid{
   display:grid;
   grid-template-columns:2fr 1.2fr 1.2fr 1.6fr;
@@ -45,29 +51,32 @@ export default function Footer() {
 }
 
 /* BRAND */
+
 .sps-footer-brand h3{
   font-size:26px;
-  font-weight:900;
+  font-weight:800;
   margin-bottom:14px;
   color:#ffffff;
 }
 
 .sps-footer-brand p{
-  font-size:14px;
-  line-height:1.8;
+  font-size:15px;
+  line-height:1.7;
   color:#dbeafe;
   max-width:380px;
 }
 
 /* HEADINGS */
+
 .sps-footer h4{
-  font-size:16px;
-  font-weight:800;
+  font-size:17px;
+  font-weight:700;
   margin-bottom:16px;
   color:#ffffff;
 }
 
 /* LINKS */
+
 .sps-footer ul{
   list-style:none;
   padding:0;
@@ -82,7 +91,7 @@ export default function Footer() {
   text-decoration:none;
   font-size:14px;
   color:#c7d2fe;
-  transition:0.25s;
+  transition:.25s;
 }
 
 .sps-footer ul li a:hover{
@@ -90,6 +99,7 @@ export default function Footer() {
 }
 
 /* CONTACT */
+
 .sps-footer-contact p{
   font-size:14px;
   color:#dbeafe;
@@ -97,6 +107,7 @@ export default function Footer() {
 }
 
 /* CTA BUTTONS */
+
 .sps-footer-actions{
   display:flex;
   gap:12px;
@@ -108,7 +119,7 @@ export default function Footer() {
   padding:10px 18px;
   border-radius:999px;
   font-size:14px;
-  font-weight:800;
+  font-weight:700;
   text-decoration:none;
   color:#ffffff;
 
@@ -124,6 +135,7 @@ export default function Footer() {
 }
 
 /* BOTTOM */
+
 .sps-footer-bottom{
   border-top:1px solid rgba(255,255,255,0.12);
   padding-top:18px;
@@ -135,7 +147,8 @@ export default function Footer() {
   color:#e0e7ff;
 }
 
-/* ===== RESPONSIVE ===== */
+/* RESPONSIVE */
+
 @media(max-width:1000px){
   .sps-footer-grid{
     grid-template-columns:1fr 1fr;
@@ -143,6 +156,7 @@ export default function Footer() {
 }
 
 @media(max-width:600px){
+
   .sps-footer{
     padding:70px 5vw 25px;
   }
@@ -156,60 +170,63 @@ export default function Footer() {
     flex-direction:column;
     text-align:center;
   }
-}
-    `;
 
-    const style = document.createElement("style");
-    style.innerHTML = css;
-    document.head.appendChild(style);
+}
+`;
+
+    const id = "footer-style";
+
+    if (!document.getElementById(id)) {
+      const style = document.createElement("style");
+      style.id = id;
+      style.innerHTML = css;
+      document.head.appendChild(style);
+    }
+
   }, []);
 
   return (
     <footer className="sps-footer">
-      {/* TOP GRID */}
+
       <div className="sps-footer-grid">
 
-        {/* BRAND */}
         <div className="sps-footer-brand">
           <h3>SHA INFOTECHNOLOGY</h3>
           <p>
             SHA Infotechnology is a Chennai-based digital solutions company
             delivering result-driven strategies in digital marketing, web
-            development, and brand growth. We help businesses build a strong,
-            scalable, and future-ready online presence.
+            development, and brand growth.
           </p>
         </div>
 
-        {/* QUICK LINKS */}
         <div>
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/courses">Courses</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/blog">Blog</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/services">Services</Link></li>
+            <li><Link to="/courses">Courses</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+            <li><Link to="/blog">Blog</Link></li>
           </ul>
         </div>
 
-        {/* SERVICES */}
         <div>
           <h4>Our Services</h4>
           <ul>
-            <li><a href="/services/digital-strategy">Digital Strategy</a></li>
-            <li><a href="/services/web-development">Web Development</a></li>
-            <li><a href="/services/ecommerce">Ecommerce Website</a></li>
-            <li><a href="/services/seo">SEO</a></li>
-            <li><a href="/services/social-media-marketing">Social Media Marketing</a></li>
-            <li><a href="/services/content-design">Content Design</a></li>
-            <li><a href="/services/business-analysis">Business Analysis</a></li>
-            <li><a href="/services/creative-design">Creative Design</a></li>
-            <li><a href="/services/ai-marketing">AI Marketing</a></li>
+            <li><Link to="/services/digital-strategy">Digital Strategy</Link></li>
+            <li><Link to="/services/web-development">Web Development</Link></li>
+            <li><Link to="/services/ecommerce">Ecommerce Website</Link></li>
+            <li><Link to="/services/seo">SEO</Link></li>
+            <li><Link to="/services/social-media-marketing">Social Media Marketing</Link></li>
+            <li><Link to="/services/ai-marketing">AI Marketing</Link></li>
+            <li><Link to="/services/business-analysis">Business Analysis</Link></li>
+            <li><Link to="/services/content-design">Content Design</Link></li>
+            <li><Link to="/services/creative-design">Creative Design </Link></li>
+            <li><Link to="/services/brand-consultancy">Brand Consultancy </Link></li>
           </ul>
         </div>
 
-        {/* CONTACT */}
         <div className="sps-footer-contact">
           <h4>Contact Us</h4>
           <p>📞 +91 93610 46387</p>
@@ -218,18 +235,14 @@ export default function Footer() {
 
           <div className="sps-footer-actions">
             <a href="tel:919361046387">Call Now</a>
-            <a
-              href="https://wa.me/919361046387"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://wa.me/919361046387" target="_blank" rel="noopener noreferrer">
               WhatsApp
             </a>
           </div>
         </div>
+
       </div>
 
-      {/* BOTTOM */}
       <div className="sps-footer-bottom">
         <span>
           © {new Date().getFullYear()} SHA INFOTECHNOLOGY. All rights reserved.
@@ -238,6 +251,7 @@ export default function Footer() {
           Digital Strategy • Web Development • SEO • Ecommerce • Branding
         </span>
       </div>
+
     </footer>
   );
 }

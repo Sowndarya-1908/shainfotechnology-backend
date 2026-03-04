@@ -5,9 +5,11 @@ import { Link } from "react-router-dom";
 // 1
 export function EcommerceHero() {
   useEffect(() => {
-  const css = `
+    const css = `
 
-/* ================= HERO (MOBILE FIRST) ================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ================= HERO ================= */
 
 .smm-hero{
   background:radial-gradient(circle at top,#0b0b16,#05050c 70%);
@@ -15,27 +17,31 @@ export function EcommerceHero() {
   flex-direction:column;
   justify-content:center;
   padding:60px 5%;
-  font-family:Inter,system-ui,sans-serif;
+  font-family:'Poppins',sans-serif;
   color:#fff;
   overflow:hidden;
   text-align:center;
 }
 
 /* SMALL LABEL */
+
 .smm-left small{
   font-size:13px;
   letter-spacing:0.12em;
   text-transform:uppercase;
   color:#c7c7ff;
   font-weight:700;
+  font-family:'Poppins',sans-serif;
 }
 
 /* TITLE */
+
 .smm-title{
-  font-size:clamp(28px,6vw,56px);
-  font-weight:900;
-  line-height:1.15;
-  margin:16px 0;
+  font-size:clamp(32px,5vw,52px);
+  font-weight:800;
+  line-height:1.2;
+  margin:14px 0 10px;
+  font-family:'Poppins',sans-serif;
 }
 
 .smm-title .accent{
@@ -45,45 +51,52 @@ export function EcommerceHero() {
 }
 
 /* DESCRIPTION */
+
 .smm-desc{
-  font-size:clamp(15px,2vw,18px);
+  font-size:16px;
   color:#cfcfe5;
   max-width:600px;
-  line-height:1.7;
-  margin:12px auto 0;
+  line-height:1.6;
+  margin:0 auto;
+  font-weight:400;
+  font-family:'Poppins',sans-serif;
 }
 
-/* RIGHT SIDE */
+/* RIGHT */
+
 .smm-right{
-  margin-top:40px;
+  margin-top:35px;
   display:flex;
   align-items:center;
   justify-content:center;
 }
 
 /* ICON CLOUD */
+
 .icon-cloud{
   position:relative;
-  width:clamp(260px,60vw,360px);
-  height:clamp(260px,60vw,360px);
+  width:320px;
+  height:320px;
 }
 
 /* ICON */
+
 .icon{
   position:absolute;
-  width:clamp(42px,6vw,56px);
-  height:clamp(42px,6vw,56px);
+  width:54px;
+  height:54px;
   border-radius:14px;
   background:linear-gradient(135deg,#7c7cff,#c084fc);
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:clamp(18px,3vw,26px);
-  box-shadow:0 20px 50px rgba(124,124,255,.45);
+  font-size:22px;
+  box-shadow:0 18px 40px rgba(124,124,255,.45);
   animation:float 6s ease-in-out infinite;
 }
 
 /* ICON POSITIONS */
+
 .icon:nth-child(2){top:20%;left:15%;animation-delay:1s}
 .icon:nth-child(3){top:10%;right:18%;animation-delay:2s}
 .icon:nth-child(4){top:45%;left:0;animation-delay:1.5s}
@@ -92,6 +105,7 @@ export function EcommerceHero() {
 .icon:nth-child(7){bottom:15%;right:20%;animation-delay:1.9s}
 
 /* FLOAT */
+
 @keyframes float{
   0%{transform:translateY(0)}
   50%{transform:translateY(-14px)}
@@ -101,26 +115,29 @@ export function EcommerceHero() {
 /* ================= DESKTOP ================= */
 
 @media(min-width:992px){
+
   .smm-hero{
     display:grid;
     grid-template-columns:1.2fr 1fr;
     align-items:center;
-    padding:100px 8%;
+    padding:90px 8%;
     text-align:left;
   }
 
   .smm-desc{
-    margin-left:0;
+    margin-top:6px;
   }
 
   .smm-right{
     margin-top:0;
   }
+
 }
+
 `;
 
+    const id = "ecommerce-hero-style";
 
-    const id = "seo-hero-style";
     if (!document.getElementById(id)) {
       const style = document.createElement("style");
       style.id = id;
@@ -137,17 +154,19 @@ export function EcommerceHero() {
   return (
     <section className="smm-hero">
       <div className="smm-left">
+
         <small>E-commerce</small>
 
         <h1 className="smm-title">
-         Build an Online Store <span className="accent">That Converts Visitors</span><br />
-       into Customers<br />
+          Build an Online Store <span className="accent">That Converts Visitors</span><br/>
+          into Customers<br/>
           <span className="accent">Sell Smarter with a Scalable E-commerce Platform</span>
         </h1>
 
         <p className="smm-desc">
           We develop secure, high-performance e-commerce websites designed to maximise conversions. From product pages to checkout optimisation, every element is built to increase sales and support long-term business growth.
         </p>
+
       </div>
 
       <div className="smm-right">
@@ -161,10 +180,10 @@ export function EcommerceHero() {
           <div className="icon">⭐</div>
         </div>
       </div>
+
     </section>
   );
 }
-
 
 export function SecondSlideEcommerce() {
   const sectionRef = useRef(null);
@@ -172,27 +191,31 @@ export function SecondSlideEcommerce() {
   useEffect(() => {
     const css = `
 
-/* ================= BRAND SECTION (MOBILE FIRST) ================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ================= SECTION ================= */
 
 .brand-section{
-  padding:70px 5%;
-  font-family:Inter,system-ui,sans-serif;
+  padding:60px 5%;
+  font-family:'Poppins',sans-serif;
   overflow:hidden;
 }
 
 /* GRID */
+
 .brand-grid{
   max-width:1200px;
   margin:auto;
   display:flex;
   flex-direction:column;
-  gap:40px;
+  gap:32px;
 }
 
-/* LEFT CONTENT */
+/* LEFT */
+
 .brand-left{
   opacity:0;
-  transform:translateY(30px);
+  transform:translateY(25px);
   transition:all .8s ease;
   text-align:center;
 }
@@ -203,14 +226,16 @@ export function SecondSlideEcommerce() {
 }
 
 /* HEADING */
+
 .brand-left h2{
-  font-size:clamp(26px,5vw,42px);
-  font-weight:900;
-  margin-bottom:18px;
-  line-height:1.2;
+  font-size:clamp(30px,4vw,42px);
+  font-weight:800;
+  margin-bottom:14px;
+  line-height:1.25;
 }
 
 /* GRADIENT */
+
 .brand-gradient{
   background:linear-gradient(90deg,#8b5cf6,#ec4899);
   -webkit-background-clip:text;
@@ -222,21 +247,24 @@ export function SecondSlideEcommerce() {
 }
 
 /* PARAGRAPH */
+
 .brand-left p{
-  font-size:clamp(15px,2vw,17px);
-  line-height:1.7;
+  font-size:16px;
+  line-height:1.6;
   color:#ffffff;
-  max-width:600px;
-  margin:0 auto 14px;
+  max-width:620px;
+  margin:0 auto 12px;
+  font-weight:400;
 }
 
 /* RIGHT IMAGE */
+
 .brand-right{
   display:flex;
   justify-content:center;
   align-items:center;
   opacity:0;
-  transform:translateY(30px);
+  transform:translateY(25px);
   transition:all .8s ease .2s;
 }
 
@@ -254,13 +282,14 @@ export function SecondSlideEcommerce() {
 /* ================= DESKTOP ================= */
 
 @media(min-width:992px){
+
   .brand-section{
-    padding:100px 8%;
+    padding:90px 8%;
   }
 
   .brand-grid{
     display:grid;
-    grid-template-columns:1.1fr 0.9fr;
+    grid-template-columns:1.1fr .9fr;
     align-items:center;
     gap:60px;
   }
@@ -270,19 +299,25 @@ export function SecondSlideEcommerce() {
   }
 
   .brand-left p{
-    margin:0 0 16px 0;
+    margin:0 0 14px 0;
   }
 
   .brand-right img{
-    max-width:480px;
+    max-width:460px;
   }
+
 }
+
 `;
 
+    const id = "ecommerce-about-style";
 
-    const style = document.createElement("style");
-    style.innerHTML = css;
-    document.head.appendChild(style);
+    if (!document.getElementById(id)) {
+      const style = document.createElement("style");
+      style.id = id;
+      style.innerHTML = css;
+      document.head.appendChild(style);
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -296,7 +331,8 @@ export function SecondSlideEcommerce() {
     if (sectionRef.current) observer.observe(sectionRef.current);
 
     return () => {
-      style.remove();
+      const s = document.getElementById(id);
+      if (s) s.remove();
       if (sectionRef.current) observer.unobserve(sectionRef.current);
     };
   }, []);
@@ -305,28 +341,28 @@ export function SecondSlideEcommerce() {
     <section className="brand-section" ref={sectionRef}>
       <div className="brand-grid">
 
-        {/* LEFT CONTENT */}
         <div className="brand-left">
+
           <h2>
-  <span className="brand-white">What is </span>
-  <span className="brand-gradient">E-Commerce Website Development</span>
-  <span className="brand-white">?</span>
-</h2>
+            <span className="brand-white">What is </span>
+            <span className="brand-gradient">E-Commerce Website Development</span>
+            <span className="brand-white">?</span>
+          </h2>
 
           <p>
             E-commerce website development focuses on building online stores that are secure, scalable, and conversion-focused. A well-designed e-commerce site ensures smooth product discovery, checkout, and customer experience.
           </p>
 
           <p>
-          We create e-commerce platforms optimized for performance, mobile usability, and secure transactions. Our solutions support growth, easy management, and customer trust—helping businesses sell efficiently online.
+            We create e-commerce platforms optimized for performance, mobile usability, and secure transactions. Our solutions support growth, easy management, and customer trust—helping businesses sell efficiently online.
           </p>
+
         </div>
 
-        {/* RIGHT IMAGE */}
         <div className="brand-right">
           <img
             src="/images/about/whyss.png"
-            alt="Brand Consultancy Illustration"
+            alt="E-commerce Illustration"
           />
         </div>
 
@@ -338,113 +374,132 @@ export function SecondSlideEcommerce() {
 // 3
 export function ServicesGridEcommerce() {
   useEffect(() => {
-   const css = `
+    const css = `
 
-/* ================= SERVICES SECTION (MOBILE FIRST) ================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ================= SERVICES SECTION ================= */
 
 .services-wrap{
-  font-family:Inter,system-ui,sans-serif;
+  font-family:'Poppins',sans-serif;
   color:#e5e7eb;
   padding:60px 5%;
   margin:0;
 }
 
 /* GRID */
+
 .services-grid{
   max-width:1100px;
   margin:auto;
   display:grid;
   grid-template-columns:1fr;
-  gap:22px;
+  gap:20px;
 }
 
 /* CARD */
+
 .service-card{
   background:#ffffff;
   border-radius:18px;
-  padding:28px 22px;
+  padding:26px 22px;
   position:relative;
   border:1px solid rgba(0,0,0,0.05);
-  box-shadow:0 15px 40px rgba(0,0,0,0.15);
+  box-shadow:0 14px 35px rgba(0,0,0,0.15);
   transition:all .3s ease;
   overflow:hidden;
 }
 
 .service-card:hover{
   transform:translateY(-6px);
-  box-shadow:0 25px 70px rgba(185,5,4,0.35);
+  box-shadow:0 24px 60px rgba(185,5,4,0.35);
 }
 
 /* NUMBER */
+
 .service-number{
   position:absolute;
-  top:14px;
-  right:18px;
-  font-size:42px;
-  font-weight:900;
+  top:12px;
+  right:16px;
+  font-size:40px;
+  font-weight:800;
   color:rgba(0,0,0,0.05);
+  font-family:'Poppins',sans-serif;
 }
 
 /* ICON */
+
 .service-icon{
-  width:48px;
-  height:48px;
+  width:46px;
+  height:46px;
   border-radius:12px;
   background:linear-gradient(135deg,#8b5cf6,#ec4899);
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:22px;
+  font-size:20px;
   color:#ffffff;
-  margin-bottom:16px;
+  margin-bottom:14px;
 }
 
-/* TEXT */
+/* TITLE */
+
 .service-title{
-  font-size:18px;
-  font-weight:800;
-  margin-bottom:10px;
+  font-size:17px;
+  font-weight:700;
+  margin-bottom:8px;
   color:#000000;
+  font-family:'Poppins',sans-serif;
 }
+
+/* DESCRIPTION */
 
 .service-desc{
   font-size:14px;
   line-height:1.6;
   color:#000000;
+  font-weight:400;
+  font-family:'Poppins',sans-serif;
 }
 
 /* ================= TABLET ================= */
 
 @media(min-width:640px){
+
   .services-grid{
     grid-template-columns:repeat(2,1fr);
-    gap:24px;
+    gap:22px;
   }
+
 }
 
 /* ================= DESKTOP ================= */
 
 @media(min-width:992px){
+
   .services-wrap{
     padding:90px 8%;
   }
 
   .services-grid{
     grid-template-columns:repeat(3,1fr);
-    gap:28px;
+    gap:26px;
   }
 
   .service-card{
-    padding:34px 28px;
+    padding:32px 26px;
   }
 
   .service-number{
-    font-size:56px;
+    font-size:54px;
   }
+
 }
+
 `;
 
-    const id = "services-grid-dark-style";
+    const id = "services-grid-ecommerce-style";
+
     if (!document.getElementById(id)) {
       const style = document.createElement("style");
       style.id = id;
@@ -458,45 +513,44 @@ export function ServicesGridEcommerce() {
     };
   }, []);
 
- const services = [
-  {
-    title: "Ecommerce Platform Setup",
-    desc:
-      "Scalable ecommerce foundations built for smooth selling and future growth.",
-    icon: "🛍️"
-  },
-  {
-    title: "Product & Catalog Management",
-    desc:
-      "Well-structured product listings for easy browsing and higher conversions.",
-    icon: "📦"
-  },
-  {
-    title: "Checkout & Payment Integration",
-    desc:
-      "Secure, frictionless checkout with trusted payment gateways.",
-    icon: "💳"
-  },
-  {
-    title: "Conversion-Focused UX",
-    desc:
-      "User journeys designed to reduce drop-offs and increase sales.",
-    icon: "🧠"
-  },
-  {
-    title: "Order, Shipping & Inventory Flow",
-    desc:
-      "Automated systems to manage orders, stock, and delivery efficiently.",
-    icon: "🚚"
-  },
-  {
-    title: "Ecommerce Security & Compliance",
-    desc:
-      "Protected transactions and data with industry-standard security practices.",
-    icon: "🔐"
-  }
-];
-
+  const services = [
+    {
+      title: "Ecommerce Platform Setup",
+      desc:
+        "Scalable ecommerce foundations built for smooth selling and future growth.",
+      icon: "🛍️"
+    },
+    {
+      title: "Product & Catalog Management",
+      desc:
+        "Well-structured product listings for easy browsing and higher conversions.",
+      icon: "📦"
+    },
+    {
+      title: "Checkout & Payment Integration",
+      desc:
+        "Secure, frictionless checkout with trusted payment gateways.",
+      icon: "💳"
+    },
+    {
+      title: "Conversion-Focused UX",
+      desc:
+        "User journeys designed to reduce drop-offs and increase sales.",
+      icon: "🧠"
+    },
+    {
+      title: "Order, Shipping & Inventory Flow",
+      desc:
+        "Automated systems to manage orders, stock, and delivery efficiently.",
+      icon: "🚚"
+    },
+    {
+      title: "Ecommerce Security & Compliance",
+      desc:
+        "Protected transactions and data with industry-standard security practices.",
+      icon: "🔐"
+    }
+  ];
 
   return (
     <section className="services-wrap">
@@ -520,33 +574,37 @@ export function WhyEcommerceHeroDark() {
   const ref = useRef(null);
 
   useEffect(() => {
-   const css = `
+    const css = `
 
-/* ================= HERO DARK (MOBILE FIRST) ================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ================= HERO DARK ================= */
 
 .seo-hero-dark{
   padding:60px 5%;
-  font-family:Inter,system-ui,sans-serif;
+  font-family:'Poppins',sans-serif;
   color:#e5e7eb;
   overflow:hidden;
   margin:0;
 }
 
 /* GRID */
+
 .seo-hero-grid{
   max-width:1200px;
   margin:auto;
   display:flex;
   flex-direction:column;
-  gap:40px;
+  gap:36px;
   align-items:center;
   text-align:center;
 }
 
 /* LEFT */
+
 .seo-left{
   opacity:0;
-  transform:translateY(30px);
+  transform:translateY(25px);
   transition:all .8s ease;
 }
 
@@ -555,11 +613,13 @@ export function WhyEcommerceHeroDark() {
   transform:none;
 }
 
+/* HEADING */
+
 .seo-left h1{
-  font-size:clamp(26px,5vw,42px);
-  font-weight:900;
-  line-height:1.2;
-  margin-bottom:16px;
+  font-size:clamp(30px,4vw,42px);
+  font-weight:800;
+  line-height:1.25;
+  margin-bottom:14px;
   color:#fff;
 }
 
@@ -570,17 +630,20 @@ export function WhyEcommerceHeroDark() {
 }
 
 /* LIST */
+
 .seo-left li{
-  font-size:clamp(15px,2vw,18px);
-  line-height:1.7;
+  font-size:16px;
+  line-height:1.6;
   color:#cbd5f5;
-  max-width:600px;
-  margin:0 auto 14px;
+  max-width:620px;
+  margin:0 auto 12px;
   padding:0;
   list-style:none;
+  font-weight:400;
 }
 
 /* RIGHT IMAGE */
+
 .seo-right{
   position:relative;
   display:flex;
@@ -596,7 +659,8 @@ export function WhyEcommerceHeroDark() {
   transform:scale(1);
 }
 
-/* IMAGE + GLOW */
+/* IMAGE GLOW */
+
 .seo-image-wrap::before{
   content:"";
   position:absolute;
@@ -618,6 +682,7 @@ export function WhyEcommerceHeroDark() {
 /* ================= DESKTOP ================= */
 
 @media(min-width:992px){
+
   .seo-hero-dark{
     padding:90px 8%;
   }
@@ -631,7 +696,7 @@ export function WhyEcommerceHeroDark() {
   }
 
   .seo-left li{
-    margin:0 0 16px 0;
+    margin:0 0 14px 0;
   }
 
   .seo-image-wrap::before{
@@ -642,13 +707,18 @@ export function WhyEcommerceHeroDark() {
   .seo-image-wrap img{
     max-width:420px;
   }
+
 }
 `;
 
+    const id = "why-ecommerce-style";
 
-    const style = document.createElement("style");
-    style.innerHTML = css;
-    document.head.appendChild(style);
+    if (!document.getElementById(id)) {
+      const style = document.createElement("style");
+      style.id = id;
+      style.innerHTML = css;
+      document.head.appendChild(style);
+    }
 
     const observer = new IntersectionObserver(
       ([e]) => {
@@ -660,7 +730,8 @@ export function WhyEcommerceHeroDark() {
     if (ref.current) observer.observe(ref.current);
 
     return () => {
-      style.remove();
+      const s = document.getElementById(id);
+      if (s) s.remove();
       if (ref.current) observer.unobserve(ref.current);
     };
   }, []);
@@ -669,8 +740,8 @@ export function WhyEcommerceHeroDark() {
     <section className="seo-hero-dark" ref={ref}>
       <div className="seo-hero-grid">
 
-        {/* LEFT */}
         <div className="seo-left">
+
           <h1>
             Why <span>E-commerce Website</span>?
           </h1>
@@ -688,16 +759,16 @@ export function WhyEcommerceHeroDark() {
             experiences, secure payments, and streamlined order management turn
             your online store into a reliable growth engine.
           </li>
+
         </div>
 
-        {/* RIGHT IMAGE */}
-       
- <div className="seo-right seo-image-wrap">
+        <div className="seo-right seo-image-wrap">
           <img
             src="/images/ECOMMERCE.png"
             alt="E-commerce Website Illustration"
           />
         </div>
+
       </div>
     </section>
   );
@@ -710,15 +781,16 @@ export function FAQEcommerce() {
   const [openFaq, setOpenFaq] = useState(-1);
   const sectionRef = useRef(null);
 
-  /* ================= STYLES ================= */
   useEffect(() => {
     const css = `
 
-/* ================= FAQ SECTION (MOBILE FIRST) ================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ================= FAQ SECTION ================= */
 
 .home-faq-wrap{
   padding:70px 5%;
-  font-family:Inter,system-ui,sans-serif;
+  font-family:'Poppins',sans-serif;
   color:#ffffff;
 }
 
@@ -728,38 +800,43 @@ export function FAQEcommerce() {
 }
 
 /* TITLE */
+
 .home-faq-title{
   text-align:center;
-  font-size:clamp(26px,5vw,42px);
-  font-weight:900;
+  font-size:clamp(30px,4vw,42px);
+  font-weight:800;
   margin-bottom:10px;
 }
 
-.home-faq-title .faq-title-white{
+.faq-title-white{
   color:#ffffff;
 }
 
-.home-faq-title .faq-title-gradient{
+.faq-title-gradient{
   background:linear-gradient(90deg,#8b5cf6,#ec4899);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
+/* SUBTEXT */
+
 .home-faq-sub{
   text-align:center;
-  font-size:15px;
+  font-size:16px;
   color:#cbd5f5;
-  margin-bottom:36px;
+  margin-bottom:34px;
 }
 
 /* CARD */
+
 .home-faq-card{
-  border-radius:22px;
+  border-radius:20px;
   padding:24px;
   box-shadow:0 20px 60px rgba(0,0,0,0.25);
 }
 
 /* ITEM */
+
 .home-faq-item{
   border-top:1px solid rgba(255,255,255,0.08);
   padding:16px 4px;
@@ -775,6 +852,7 @@ export function FAQEcommerce() {
 }
 
 /* HEADER */
+
 .home-faq-header{
   display:flex;
   justify-content:space-between;
@@ -784,13 +862,15 @@ export function FAQEcommerce() {
 }
 
 /* QUESTION */
+
 .home-faq-question{
-  font-size:clamp(15px,2vw,18px);
-  font-weight:700;
+  font-size:17px;
+  font-weight:600;
   color:#ffffff;
 }
 
 /* TOGGLE */
+
 .home-faq-toggle{
   width:30px;
   height:30px;
@@ -800,7 +880,7 @@ export function FAQEcommerce() {
   align-items:center;
   justify-content:center;
   font-size:16px;
-  font-weight:900;
+  font-weight:700;
   color:#ffffff;
   transition:transform .3s ease;
 }
@@ -810,6 +890,7 @@ export function FAQEcommerce() {
 }
 
 /* ANSWER */
+
 .home-faq-answer{
   max-height:0;
   overflow:hidden;
@@ -824,53 +905,15 @@ export function FAQEcommerce() {
 
 .home-faq-answer p{
   margin-top:10px;
-  font-size:14px;
+  font-size:15px;
   line-height:1.6;
   color:#e2e8f0;
 }
 
-/* CTA */
-.home-faq-cta{
-  margin-top:36px;
-  padding:28px;
-  border-radius:18px;
-  background:#ffffff;
-  text-align:center;
-  box-shadow:0 20px 60px rgba(0,0,0,0.2);
-}
-
-.home-faq-cta h3{
-  font-size:20px;
-  font-weight:800;
-  margin-bottom:8px;
-  color:#020617;
-}
-
-.home-faq-cta p{
-  font-size:14px;
-  color:#475569;
-  margin-bottom:18px;
-}
-
-.home-faq-cta button{
-  padding:12px 28px;
-  border-radius:999px;
-  border:none;
-  background:linear-gradient(135deg,#8b5cf6,#ec4899);
-  color:#ffffff;
-  font-size:14px;
-  font-weight:700;
-  cursor:pointer;
-  transition:transform .3s ease;
-}
-
-.home-faq-cta button:hover{
-  transform:translateY(-3px);
-}
-
-/* ================= DESKTOP ================= */
+/* DESKTOP */
 
 @media(min-width:992px){
+
   .home-faq-wrap{
     padding:90px 8%;
   }
@@ -879,15 +922,11 @@ export function FAQEcommerce() {
     padding:32px;
   }
 
-  .home-faq-cta{
-    margin-top:48px;
-    padding:36px;
-  }
 }
 `;
 
+    const id = "faq-ecommerce-style";
 
-    const id = "home-faq-style-upgraded";
     if (!document.getElementById(id)) {
       const style = document.createElement("style");
       style.id = id;
@@ -896,12 +935,13 @@ export function FAQEcommerce() {
     }
   }, []);
 
-  /* ================= AUTO-OPEN ON SCROLL ================= */
+  /* AUTO OPEN FIRST FAQ */
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setOpenFaq(0); // open first FAQ automatically
+          setOpenFaq(0);
           observer.disconnect();
         }
       },
@@ -913,73 +953,53 @@ export function FAQEcommerce() {
   }, []);
 
   const faqs = [
-  {
-    q: "What type of ecommerce websites do you build?",
-    a: "We build scalable ecommerce websites for products and services, including custom, Shopify, and WooCommerce solutions."
-  },
-  {
-    q: "Will my ecommerce website be mobile-friendly?",
-    a: "Yes. All our ecommerce websites are fully responsive and optimized for mobile, tablet, and desktop users."
-  },
-  {
-    q: "Can I manage products and orders myself?",
-    a: "Absolutely. You’ll get an easy-to-use admin panel to manage products, orders, pricing, and inventory."
-  },
-  {
-    q: "Is payment and checkout secure?",
-    a: "Yes. We integrate trusted payment gateways and follow secure development standards to protect transactions."
-  },
-  {
-    q: "How do we get started with an ecommerce website?",
-    a: "Contact us with your business requirements, and we’ll guide you through the platform, timeline, and next steps."
-  }
-];
-
-
-  /* ================= SEO SCHEMA ================= */
-  useEffect(() => {
-    const schema = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": faqs.map(f => ({
-        "@type": "Question",
-        "name": f.q,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": f.a
-        }
-      }))
-    };
-
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.innerHTML = JSON.stringify(schema);
-    document.head.appendChild(script);
-
-    return () => document.head.removeChild(script);
-  }, []);
+    {
+      q: "What type of ecommerce websites do you build?",
+      a: "We build scalable ecommerce websites for products and services, including custom, Shopify, and WooCommerce solutions."
+    },
+    {
+      q: "Will my ecommerce website be mobile-friendly?",
+      a: "Yes. All our ecommerce websites are fully responsive and optimized for mobile, tablet, and desktop users."
+    },
+    {
+      q: "Can I manage products and orders myself?",
+      a: "Absolutely. You’ll get an easy-to-use admin panel to manage products, orders, pricing, and inventory."
+    },
+    {
+      q: "Is payment and checkout secure?",
+      a: "Yes. We integrate trusted payment gateways and follow secure development standards to protect transactions."
+    },
+    {
+      q: "How do we get started with an ecommerce website?",
+      a: "Contact us with your business requirements, and we’ll guide you through the platform, timeline, and next steps."
+    }
+  ];
 
   return (
     <section className="home-faq-wrap" ref={sectionRef}>
       <div className="home-faq-container">
-        <h2 className="home-faq-title">
-  <span className="faq-title-white">Frequently Asked</span>{" "}
-  <span className="faq-title-gradient">Questions</span>
-</h2>
 
-        {/* <h2 className="home-faq-title">Frequently Asked Questions</h2> */}
+        <h2 className="home-faq-title">
+          <span className="faq-title-white">Frequently Asked</span>{" "}
+          <span className="faq-title-gradient">Questions</span>
+        </h2>
+
         <p className="home-faq-sub">
           Clear answers to help you move forward with confidence.
         </p>
 
         <div className="home-faq-card">
+
           {faqs.map((item, i) => {
+
             const open = openFaq === i;
+
             return (
               <div
                 key={item.q}
                 className={"home-faq-item" + (open ? " open" : "")}
               >
+
                 <div
                   className="home-faq-header"
                   onClick={() => setOpenFaq(open ? -1 : i)}
@@ -991,19 +1011,14 @@ export function FAQEcommerce() {
                 <div className="home-faq-answer">
                   <p>{item.a}</p>
                 </div>
+
               </div>
             );
+
           })}
+
         </div>
 
-        {/* CTA */}
-        <div className="home-faq-cta">
-          <h3>Still have questions?</h3>
-          <p>Talk directly with our experts and get a custom growth plan.</p>
-           <Link to="/contact"> <button >
-            BOOK FREE CONSULTATION →
-          </button></Link>
-        </div>
       </div>
     </section>
   );

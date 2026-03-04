@@ -3,18 +3,22 @@ import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import emailjs from "@emailjs/browser";
 
-
- function ServicesWaveSection() {
+function ServicesWaveSection() {
   useEffect(() => {
     const css = `
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 /* ===== ANIMATED GRADIENT BACKGROUND ===== */
+
 .about-wave-bg{
   position:relative;
   min-height:30vh;
   width:100%;
   overflow:hidden;
-  font-family:Inter,system-ui,sans-serif;
+  font-family:'Poppins',sans-serif;
   background:linear-gradient(
     315deg,
     rgba(174, 84, 211, 1) 3%,
@@ -43,7 +47,8 @@ import { Helmet } from "react-helmet-async";
   z-index:10;
 }
 
-/* WAVES */
+/* ===== WAVES ===== */
+
 .about-wave{
   background:rgba(255,255,255,0.25);
   border-radius:1000% 1000% 0 0;
@@ -75,8 +80,12 @@ import { Helmet } from "react-helmet-async";
   100%{transform:translateX(0)}
 }
 
-/* CONTENT */
-.about-wave-content{position:relative;z-index:5}
+/* ===== CONTENT ===== */
+
+.about-wave-content{
+  position:relative;
+  z-index:5;
+}
 
 .about-section{
   min-height:50vh;
@@ -88,32 +97,38 @@ import { Helmet } from "react-helmet-async";
   text-align:center;
 }
 
-.about-container{max-width:900px}
+.about-container{
+  max-width:900px;
+}
+
+/* BADGE */
 
 .about-badge{
   display:inline-flex;
   align-items:center;
-  gap:10px;
-  padding:10px 20px;
+  gap:8px;
+  padding:8px 18px;
   border-radius:999px;
   border:1px solid rgba(255,255,255,0.35);
   font-size:14px;
   font-weight:600;
-  margin-bottom:28px;
+  margin-bottom:20px;
 }
 
 .about-badge span{
-  width:10px;
-  height:10px;
+  width:8px;
+  height:8px;
   background:#ffffff;
   border-radius:50%;
 }
 
+/* HEADING */
+
 .about-heading{
-  font-size:clamp(38px,6vw,64px);
-  font-weight:900;
+  font-size:56px;
+  font-weight:800;
   line-height:1.1;
-  margin-bottom:24px;
+  margin-bottom:16px;
 }
 
 .about-heading span{
@@ -122,35 +137,59 @@ import { Helmet } from "react-helmet-async";
   -webkit-text-fill-color:transparent;
 }
 
+/* TEXT */
+
 .about-text{
   font-size:18px;
-  line-height:1.85;
+  line-height:1.7;
   color:#f5f3ff;
-  margin-bottom:46px;
+  margin-bottom:28px;
 }
+
+/* FEATURES */
 
 .about-features{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:22px;
+  gap:18px;
 }
 
 .feature-card{
   background:rgba(101,5,87,0.15);
   backdrop-filter:blur(12px);
-  border-radius:20px;
-  padding:22px;
-  font-size:15px;
-  font-weight:600;
+  border-radius:18px;
+  padding:18px;
+  font-size:18px;
+  font-weight:500;
 }
 
-/* MOBILE */
+/* ===== MOBILE ===== */
+
 @media(max-width:900px){
-  .about-features{grid-template-columns:1fr}
-  .about-wave-bg{min-height:100vh}
-  .about-text{font-size:16px}
+
+  .about-features{
+    grid-template-columns:1fr;
+  }
+
+  .about-wave-bg{
+    min-height:100vh;
+  }
+
+  .about-heading{
+    font-size:36px;
+  }
+
+  .about-text{
+    font-size:16px;
+  }
+
+  .feature-card{
+    font-size:16px;
+  }
+
 }
-    `;
+
+`;
     const style = document.createElement("style");
     style.innerHTML = css;
     document.head.appendChild(style);
@@ -159,6 +198,7 @@ import { Helmet } from "react-helmet-async";
 
   return (
     <section className="about-wave-bg">
+
       <div className="about-wave-content">
         <section className="about-section">
           <div className="about-container">
@@ -189,6 +229,7 @@ import { Helmet } from "react-helmet-async";
       <div className="about-wave"></div>
       <div className="about-wave"></div>
       <div className="about-wave"></div>
+
     </section>
   );
 }
@@ -199,37 +240,40 @@ function ServicesHighlightSection() {
 
   useEffect(() => {
     const css = `
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 /* ================= SERVICES HIGHLIGHT ================= */
 
 .sh-wrap{
-  font-family:Inter,system-ui;
-  padding-bottom:30px;
+  font-family:'Poppins',sans-serif;
+  padding-bottom:24px;
 }
 
 /* TITLE */
+
 .sh-title{
   text-align:center;
-  font-size:clamp(30px, 4vw, 44px);
-  font-weight:900;
+  font-size:56px;
+  font-weight:800;
   background:linear-gradient(90deg,#8b5cf6,#ec4899);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  margin-bottom:clamp(36px, 5vw, 56px);
+  margin-bottom:32px;
 }
 
 /* ================= GRID STRUCTURE ================= */
 
-/* 12 column layout for full control */
 .sh-grid{
   max-width:1200px;
   margin:auto;
   display:grid;
   grid-template-columns:repeat(12,1fr);
-  gap:28px;
+  gap:24px;
 }
 
 /* ---------- FIRST 6 CARDS (3 PER ROW) ---------- */
-/* 12 columns / 3 cards = span 4 */
+
 .sh-card:nth-child(1),
 .sh-card:nth-child(2),
 .sh-card:nth-child(3),
@@ -240,7 +284,7 @@ function ServicesHighlightSection() {
 }
 
 /* ---------- LAST 4 CARDS (4 IN FINAL ROW) ---------- */
-/* 12 columns / 4 cards = span 3 */
+
 .sh-card:nth-child(7),
 .sh-card:nth-child(8),
 .sh-card:nth-child(9),
@@ -252,9 +296,9 @@ function ServicesHighlightSection() {
 
 .sh-card{
   background:#ffffff;
-  border-radius:22px;
-  padding:26px;
-  min-height:220px;
+  border-radius:20px;
+  padding:24px;
+  min-height:210px;
   text-align:center;
   cursor:pointer;
 
@@ -262,43 +306,46 @@ function ServicesHighlightSection() {
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  gap:12px;
+  gap:10px;
 
   position:relative;
   overflow:hidden;
 
-  box-shadow:0 22px 60px rgba(0,0,0,0.45);
+  box-shadow:0 18px 50px rgba(0,0,0,0.35);
   transition:transform .3s ease, box-shadow .3s ease;
 }
 
 .sh-card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 35px 90px rgba(0,0,0,0.6);
+  transform:translateY(-6px);
+  box-shadow:0 28px 70px rgba(0,0,0,0.5);
 }
 
 /* ICON */
+
 .sh-icon{
-  width:56px;
-  height:56px;
+  width:54px;
+  height:54px;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:26px;
+  font-size:24px;
   color:#ffffff;
   background:linear-gradient(135deg,#8b5cf6,#ec4899);
-  box-shadow:0 0 32px rgba(139,92,246,0.5);
+  box-shadow:0 0 26px rgba(139,92,246,0.45);
 }
 
 /* TITLE */
+
 .sh-card h3{
-  font-size:19px;
-  font-weight:800;
+  font-size:18px;
+  font-weight:600;
   color:#020617;
   margin:0;
 }
 
 /* HOVER TEXT */
+
 .sh-hover-text{
   position:absolute;
   inset:0;
@@ -306,7 +353,7 @@ function ServicesHighlightSection() {
   align-items:center;
   justify-content:center;
   padding:20px;
-  font-size:15px;
+  font-size:18px;
   line-height:1.6;
   color:#ffffff;
   opacity:0;
@@ -316,6 +363,7 @@ function ServicesHighlightSection() {
 }
 
 /* OVERLAY */
+
 .sh-card::before{
   content:"";
   position:absolute;
@@ -326,12 +374,14 @@ function ServicesHighlightSection() {
 }
 
 /* HOVER EFFECT */
+
 .sh-card:hover::before{ opacity:1; }
 .sh-card:hover .sh-hover-text{ opacity:1; }
 .sh-card:hover h3,
 .sh-card:hover .sh-icon{ opacity:0; }
 
 /* SCROLL REVEAL */
+
 .sh-reveal{
   opacity:0;
   transform:translateY(32px);
@@ -346,19 +396,27 @@ function ServicesHighlightSection() {
 /* ================= RESPONSIVE ================= */
 
 /* Tablet */
+
 @media(max-width:1024px){
   .sh-grid{
     grid-template-columns:1fr 1fr;
   }
+
   .sh-card{
     grid-column:span 1 !important;
   }
 }
 
 /* Mobile */
+
 @media(max-width:768px){
+
   .sh-wrap{
-    padding:56px 20px;
+    padding:40px 20px;
+  }
+
+  .sh-title{
+    font-size:36px;
   }
 
   .sh-grid{
@@ -368,7 +426,7 @@ function ServicesHighlightSection() {
   .sh-card{
     grid-column:span 1 !important;
     min-height:auto;
-    padding:24px;
+    padding:22px;
   }
 
   .sh-card::before,
@@ -380,10 +438,13 @@ function ServicesHighlightSection() {
   .sh-icon{
     opacity:1 !important;
   }
+
 }
+
     `;
 
     const id = "services-highlight-style";
+
     if (!document.getElementById(id)) {
       const style = document.createElement("style");
       style.id = id;
@@ -404,15 +465,20 @@ function ServicesHighlightSection() {
       },
       { threshold: 0.2 }
     );
+
     items.forEach(el => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
   return (
     <section className="sh-wrap">
-      <h2 className="sh-title sh-reveal">What We Do Best</h2>
+
+      <h2 className="sh-title sh-reveal">
+        What We Do Best
+      </h2>
 
       <div className="sh-grid">
+
         {[
           ["🧠","Digital Strategy","/services/digital-strategy","Data-driven strategies that align technology, marketing, and business goals."],
           ["💻","Web Development","/services/web-development","High-performance, responsive websites built to convert visitors into customers."],
@@ -423,14 +489,19 @@ function ServicesHighlightSection() {
           ["📊","Business Analysis","/services/business-analysis","Insight-driven analysis to optimize processes, performance, and growth."],
           ["🎨","Creative Design","/services/creative-design","Eye-catching visuals and branding that make your business stand out."],
           ["🏷️","Brand Consultancy","/services/brand-consultancy","Build a strong, consistent brand identity that drives trust and growth."],
-["⚙️","AI Marketing","/services/ai-marketing","AI-powered marketing strategies that analyze data, predict customer behavior, automate campaigns, and maximize conversions for smarter business growth."]
+          ["⚙️","AI Marketing","/services/ai-marketing","AI-powered marketing strategies that analyze data, predict customer behavior, automate campaigns, and maximize conversions for smarter business growth."]
         ].map(([icon,title,link,text],i)=>(
-          <div key={i} className="sh-card sh-reveal" onClick={()=>navigate(link)}>
+          <div
+            key={i}
+            className="sh-card sh-reveal"
+            onClick={()=>navigate(link)}
+          >
             <div className="sh-icon">{icon}</div>
             <h3>{title}</h3>
             <div className="sh-hover-text">{text}</div>
           </div>
         ))}
+
       </div>
     </section>
   );
@@ -611,9 +682,10 @@ body{ margin:0; overflow-x:hidden; }
 function GrowthPartnerSection() {
   React.useEffect(() => {
     const css = `
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 :root{
-  // --bg-dark:#020617;
-  // --bg-dark-2:#0b1220;
   --red:#B90504;
   --violet:#8b5cf6;
   --pink:#ec4899;
@@ -621,21 +693,22 @@ function GrowthPartnerSection() {
 }
 
 /* ================= SECTION ================= */
+
 .gp-wrap{
-  // background:radial-gradient(circle at top, var(--bg-dark-2), var(--bg-dark) 70%);
-  // padding:clamp(60px,8vw,100px) 6vw;   
-  font-family:Inter,system-ui;
+  font-family:'Poppins',sans-serif;
+  padding-top:0px;
+  padding-bottom:0px;
 }
 
 /* ================= HEADING ================= */
+
 .gp-title{
-  font-size:clamp(30px,4vw,44px);
-  font-weight:900;
+  font-size:56px;
+  font-weight:800;
   line-height:1.2;
   color:#ffffff;
-  margin-bottom:48px;                 
+  margin-bottom:6px;
   text-align:left;
-
 }
 
 .gp-title span{
@@ -645,73 +718,85 @@ function GrowthPartnerSection() {
 }
 
 /* ================= GRID ================= */
+
 .gp-grid{
   max-width:1200px;
   margin:auto;
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:24px;                            /* 🔥 no extra gap */
+  gap:20px;
 }
 
 /* ================= CARD ================= */
+
 .gp-card{
-  background:#ffffff !important;       /* 🔒 FORCE WHITE */
+  background:#ffffff !important;
   color:#020617;
-  border-radius:20px;
-  padding:36px 20px;                   /* 🔥 balanced padding */
+  border-radius:18px;
+  padding:30px 18px;
   text-align:center;
-  box-shadow:0 20px 60px rgba(0,0,0,0.25);
+  box-shadow:0 18px 50px rgba(0,0,0,0.22);
   transition:transform .3s ease, box-shadow .3s ease;
 }
 
 .gp-card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 30px 90px rgba(185,5,4,0.35);
+  transform:translateY(-6px);
+  box-shadow:0 28px 70px rgba(185,5,4,0.35);
 }
 
 /* ICON */
+
 .gp-icon{
-  font-size:30px;
-  margin-bottom:14px;
+  font-size:28px;
+  margin-bottom:10px;
 }
 
 /* TITLE */
+
 .gp-card h4{
-  font-size:15px;
-  font-weight:800;
+  font-size:18px;
+  font-weight:600;
   color:var(--red) !important;
   margin:0;
 }
 
 /* ================= TABLET ================= */
+
 @media(max-width:1024px){
+
   .gp-grid{
     grid-template-columns:repeat(2,1fr);
-    gap:22px;
-  }
-}
-
-/* ================= MOBILE ================= */
-@media(max-width:640px){
-  .gp-wrap{
-    padding:56px 20px;                 /* 🔥 no side overflow */
-  }
-
-  .gp-title{
-    text-align:center;
-    margin-bottom:36px;
-  }
-
-  .gp-grid{
-    grid-template-columns:1fr;         /* 🔥 single column */
     gap:18px;
   }
 
-  .gp-card{
-    padding:28px 18px;                 /* 🔥 compact but safe */
-  }
 }
-    `;
+
+/* ================= MOBILE ================= */
+
+@media(max-width:640px){
+
+  .gp-wrap{
+    padding:40px 20px;
+  }
+
+  .gp-title{
+    font-size:36px;
+    text-align:center;
+    margin-bottom:28px;
+  }
+
+  .gp-grid{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+
+  .gp-card{
+    padding:24px 16px;
+  }
+
+}
+
+`;
 
     const id = "growth-partner-fixed-style";
     const old = document.getElementById(id);
@@ -725,12 +810,14 @@ function GrowthPartnerSection() {
 
   return (
     <section className="gp-wrap">
+
       <h2 className="gp-title">
         What Makes Us Your Perfect <br />
         <span>Growth Partner?</span>
       </h2>
 
       <div className="gp-grid">
+
         <div className="gp-card">
           <div className="gp-icon">🤖</div>
           <h4>AI-Driven Precision</h4>
@@ -770,32 +857,37 @@ function GrowthPartnerSection() {
           <div className="gp-icon">✅</div>
           <h4>Quality Assurance</h4>
         </div>
+
       </div>
+
     </section>
   );
 }
 
- function IndustriesWeServe() {
+function IndustriesWeServe() {
+
   useEffect(() => {
     const css = `
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 /* ===== INDUSTRIES SECTION ===== */
 .sha-industries{
-  // padding:40px 6vw;
-  // background:radial-gradient(circle at top,#0b1220,#020617 70%);
-  font-family:Inter,system-ui;
+  padding-top:0px;
+  font-family:'Poppins', sans-serif;
   color:#ffffff;
   overflow:hidden;
-  padding-bottom:60px;
 }
 
 /* HEADING */
 .sha-industries h2{
   text-align:center;
-  font-size:clamp(34px,5vw,48px);
-  font-weight:900;
-  // margin-bottom:15px;
+  font-size:48px;
+  font-weight:800;
+  font-family:'Poppins', sans-serif;
 }
 
+/* GRADIENT TEXT */
 .sha-industries h2 span{
   background:linear-gradient(90deg,#8b5cf6,#ec4899);
   -webkit-background-clip:text;
@@ -805,11 +897,13 @@ function GrowthPartnerSection() {
 /* DESCRIPTION */
 .sha-industries p{
   max-width:900px;
-  margin:0 auto 70px;
+  margin:0 auto 0px;
   text-align:center;
-  font-size:16px;
+  font-size:17px;
+  font-weight:400;
   line-height:1.8;
   color:#cbd5f5;
+  font-family:'Poppins', sans-serif;
 }
 
 /* SLIDER */
@@ -820,7 +914,7 @@ function GrowthPartnerSection() {
 /* TRACK */
 .industry-track{
   display:flex;
-  gap:70px;
+  gap:50px;
   width:max-content;
   animation:scroll 26s linear infinite;
 }
@@ -832,11 +926,11 @@ function GrowthPartnerSection() {
 /* ITEM */
 .industry-item{
   min-width:220px;
-   padding-top:50px;
+  padding-top:50px;
   text-align:center;
 }
 
-/* ICON WRAP (NO SIZE CHANGE) */
+/* ICON */
 .industry-icon{
   width:120px;
   height:120px;
@@ -850,15 +944,9 @@ function GrowthPartnerSection() {
   color:#8b5cf6;
   background:rgba(255,255,255,0.02);
   position:relative;
-  box-sizing:border-box;
-  transition:
-    transform .35s ease,
-    box-shadow .35s ease,
-    background .35s ease,
-    color .35s ease;
+  transition:all .35s ease;
 }
 
-/* GLOW LAYER (NO LAYOUT IMPACT) */
 .industry-icon::after{
   content:"";
   position:absolute;
@@ -869,31 +957,28 @@ function GrowthPartnerSection() {
   filter:blur(22px);
   transition:opacity .35s ease;
   z-index:-1;
-  
 }
 
-/* HOVER — NO PADDING / SIZE CHANGE */
 .industry-item:hover .industry-icon{
   background:linear-gradient(135deg,#8b5cf6,#ec4899);
   color:#ffffff;
-  
   transform:translateY(-6px);
   box-shadow:0 20px 50px rgba(139,92,246,.45);
 }
 
 .industry-item:hover .industry-icon::after{
   opacity:.6;
-  
 }
 
-/* TITLE */
+/* INDUSTRY TITLE */
 .industry-item h4{
-  font-size:18px;
-  font-weight:800;
+  font-size:16px;
+  font-weight:600;
   color:#ffffff;
+  font-family:'Poppins', sans-serif;
 }
 
-/* AUTO SCROLL */
+/* SCROLL */
 @keyframes scroll{
   from{transform:translateX(0)}
   to{transform:translateX(-50%)}
@@ -903,6 +988,14 @@ function GrowthPartnerSection() {
 @media(max-width:768px){
   .sha-industries{
     padding:90px 20px;
+  }
+
+  .sha-industries h2{
+    font-size:36px;
+  }
+
+  .sha-industries p{
+    font-size:16px;
   }
 
   .industry-item{
@@ -915,7 +1008,8 @@ function GrowthPartnerSection() {
     font-size:36px;
   }
 }
-    `;
+
+`;
     const style = document.createElement("style");
     style.innerHTML = css;
     document.head.appendChild(style);
@@ -923,26 +1017,26 @@ function GrowthPartnerSection() {
   }, []);
 
   const industries = [
-    { name: "Technology & Software", icon: "⚙️" },
-    { name: "Health Care", icon: "🏥" },
-    { name: "Food & Beverages", icon: "🍔" },
-    { name: "Finance", icon: "💰" },
-    { name: "Education", icon: "🎓" },
-    { name: "E-Commerce", icon: "🛒" },
-    { name: "Real Estate", icon: "🏢" },
-    { name: "Retail", icon: "🏬" }
+    { name: "IT & Software Companies", icon: "💻" },
+    { name: "E-commerce & Retail", icon: "🛒" },
+    { name: "Healthcare & Clinics", icon: "🏥" },
+    { name: "Education & EdTech", icon: "🎓" },
+    { name: "Real Estate & Construction", icon: "🏗️" },
+    { name: "Startups & Local Businesses", icon: "🚀" }
   ];
 
   return (
     <section className="sha-industries">
+
       <h2>
         Industries <span>We Serve</span>
       </h2>
 
       <p>
-        SHA Infotechnology delivers performance-driven digital solutions across
-        technology, healthcare, e-commerce, finance, education, and more—helping
-        businesses in Chennai and beyond grow visibility, engagement, and revenue.
+        SHA Infotechnology partners with businesses across diverse industries,
+        delivering tailored digital solutions for IT companies, e-commerce brands,
+        healthcare providers, educational institutions, real estate firms, and
+        growing startups to drive consistent growth and measurable results.
       </p>
 
       <div className="industry-slider">
@@ -955,6 +1049,7 @@ function GrowthPartnerSection() {
           ))}
         </div>
       </div>
+
     </section>
   );
 }
@@ -962,46 +1057,53 @@ function GrowthPartnerSection() {
 function ProjectWorkflowSection() {
   useEffect(() => {
     const css = `
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 :root{
-  // --bg-dark:#020617;
-  // --bg-dark-2:#0b1220;
   --violet:#8b5cf6;
   --pink:#ec4899;
   --muted:#9ca3af;
 }
 
 /* ================= SECTION ================= */
+
 .pw-section{
-  // background:radial-gradient(circle at top, var(--bg-dark-2), var(--bg-dark) 70%);
-  // padding:clamp(56px,8vw,90px) 6vw; /* 🔥 reduced vertical gap */
-  font-family:Inter, system-ui, sans-serif;
+  font-family:'Poppins',sans-serif;
   color:#e5e7eb;
-  padding-top:30px;
+  padding-top:20px;
+  padding-bottom:30px;
 }
 
 /* ================= CONTAINER ================= */
+
 .pw-container{
   max-width:1200px;
   margin:auto;
   display:grid;
   grid-template-columns:1.1fr 0.9fr;
-  gap:48px; /* 🔥 reduced from 70px */
+  gap:36px;
   align-items:center;
 }
 
 /* ---------- LEFT CONTENT ---------- */
+
 .pw-left h2{
-  font-size:clamp(28px,4vw,44px);
+  font-size:56px;
+  font-weight:800;
+  line-height:1.2;
   margin-bottom:16px;
   color:#ffffff;
 }
 
 .pw-left p{
-  font-size:16px;
+  font-size:17px;
   line-height:1.7;
   color:var(--muted);
-  margin:0 0 14px; /* 🔥 normalized spacing */
+  margin:0 0 14px;
 }
+
+/* Highlight text */
 
 .highlight{
   background:linear-gradient(90deg,var(--violet),var(--pink));
@@ -1011,20 +1113,21 @@ function ProjectWorkflowSection() {
 }
 
 /* ---------- RIGHT FLOATING CARDS ---------- */
+
 .pw-right{
   display:grid;
-  gap:18px; /* 🔥 tighter spacing */
+  gap:16px;
 }
 
 .pw-card{
   background:rgba(139,92,246,0.08);
   border:1px solid rgba(139,92,246,0.25);
   border-radius:18px;
-  padding:20px 24px; /* 🔥 reduced padding */
+  padding:18px 22px;
   display:flex;
-  gap:14px;
+  gap:12px;
   align-items:flex-start;
-  box-shadow:0 30px 60px rgba(0,0,0,0.45);
+  box-shadow:0 26px 60px rgba(0,0,0,0.4);
   transform:translateY(40px);
   opacity:0;
   transition:all 0.6s ease;
@@ -1037,8 +1140,10 @@ function ProjectWorkflowSection() {
 
 .pw-card:hover{
   transform:translateY(-6px);
-  box-shadow:0 40px 80px rgba(139,92,246,0.35);
+  box-shadow:0 36px 70px rgba(139,92,246,0.35);
 }
+
+/* STEP NUMBER */
 
 .pw-step{
   min-width:34px;
@@ -1047,25 +1152,27 @@ function ProjectWorkflowSection() {
   background:linear-gradient(135deg,var(--violet),var(--pink));
   color:#fff;
   font-weight:700;
+  font-size:14px;
   display:flex;
   align-items:center;
   justify-content:center;
-  box-shadow:0 0 18px rgba(139,92,246,0.6);
-  margin-top:2px; /* 🔥 reduced */
+  box-shadow:0 0 16px rgba(139,92,246,0.6);
+  margin-top:2px;
 }
 
 .pw-card p{
   margin:0;
-  font-size:15px;
+  font-size:16px;
   line-height:1.6;
   color:#d1d5db;
 }
 
 /* ---------- TITLE ---------- */
+
 .pw-title{
-  font-size:clamp(32px,5vw,48px);
+  font-size:56px;
   font-weight:800;
-  line-height:1.15;
+  line-height:1.2;
   color:#ffffff;
 }
 
@@ -1076,23 +1183,30 @@ function ProjectWorkflowSection() {
 }
 
 /* ---------- MOBILE ---------- */
+
 @media(max-width:900px){
+
   .pw-container{
     grid-template-columns:1fr;
-    gap:36px; /* 🔥 reduced mobile gap */
+    gap:28px;
   }
 
   .pw-right{
-    margin-top:12px; /* 🔥 remove empty space */
+    margin-top:10px;
   }
 
   .pw-section{
-    padding:56px 20px; /* 🔥 tight mobile padding */
+    padding:40px 20px;
+  }
+
+  .pw-left h2{
+    font-size:36px;
   }
 
   .pw-left p{
-    font-size:15px;
+    font-size:16px;
   }
+
 }
     `;
 
@@ -1101,6 +1215,7 @@ function ProjectWorkflowSection() {
     document.head.appendChild(style);
 
     const cards = document.querySelectorAll(".pw-card");
+
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
@@ -1118,6 +1233,7 @@ function ProjectWorkflowSection() {
       document.head.removeChild(style);
       observer.disconnect();
     };
+
   }, []);
 
   return (
@@ -1125,6 +1241,7 @@ function ProjectWorkflowSection() {
       <div className="pw-container">
 
         <div className="pw-left">
+
           <h2 className="pw-title">
             How a Project With Us <br />
             <span className="pw-gradient-text">Usually Runs</span>
@@ -1149,9 +1266,11 @@ function ProjectWorkflowSection() {
             <span className="highlight">Growth is continuously refined.</span>
             We monitor performance, refine strategies, and scale what works to deliver long-term business impact.
           </p>
+
         </div>
 
         <div className="pw-right">
+
           <div className="pw-card">
             <div className="pw-step">1</div>
             <p>Understanding your business, audience, and market.</p>
@@ -1171,6 +1290,7 @@ function ProjectWorkflowSection() {
             <div className="pw-step">4</div>
             <p>Improving performance and expanding results.</p>
           </div>
+
         </div>
 
       </div>
@@ -1179,28 +1299,375 @@ function ProjectWorkflowSection() {
 }
 
 
+function Demo() {
+
+const sectionRef = useRef(null);
+
+const [loading,setLoading] = useState(false);
+
+const [formData,setFormData] = useState({
+name:"",
+phone:"",
+email:"",
+selection:"",
+message:""
+});
+
+useEffect(()=>{
+
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+},{threshold:0.2});
+
+if(sectionRef.current){
+observer.observe(sectionRef.current);
+}
+
+},[]);
+
+
+const handleChange=(e)=>{
+setFormData({
+...formData,
+[e.target.name]:e.target.value
+});
+};
+
+const handleSubmit=(e)=>{
+e.preventDefault();
+setLoading(true);
+
+emailjs.send(
+"service_pznbx9s",
+"template_8wwwast",
+formData,
+"yxT-hRvX41RhpOdfZ"
+)
+.then(()=>{
+alert("Enquiry Sent Successfully!");
+setFormData({
+name:"",
+phone:"",
+email:"",
+selection:"",
+message:""
+});
+})
+.catch(()=>{
+alert("Failed to send enquiry");
+})
+.finally(()=>{
+setLoading(false);
+});
+};
+
+return(
+<>
+<section ref={sectionRef} className="demo-banner reveal">
+
+<div className="mesh-bg"></div>
+
+<div className="demo-inner">
+
+<div className="banner-text">
+<h2>
+  Connect With Our Digital Marketing
+
+<span> & Web Experts</span>
+</h2>
+<p>Courses • Services • Expert Support</p>
+<p>Whether you want to learn Digital Marketing or grow your business online, our experts are here to guide you.</p>
+</div>
+
+<form className="banner-form" onSubmit={handleSubmit}>
+
+<input
+type="text"
+name="name"
+placeholder="Name"
+value={formData.name}
+onChange={handleChange}
+required
+/>
+
+<input
+type="tel"
+name="phone"
+placeholder="Phone"
+value={formData.phone}
+onChange={handleChange}
+required
+/>
+
+<input
+type="email"
+name="email"
+placeholder="Email"
+value={formData.email}
+onChange={handleChange}
+required
+/>
+
+<select
+name="selection"
+value={formData.selection}
+onChange={handleChange}
+required
+>
+<option value="">Select Service / Course</option>
+                  <option value="Digital Strategy">Digital Strategy</option>
+                  <option value="Digital Marketing Course">Digital Marketing Course</option>
+                  <option value="Web Development">Web Development</option>
+                  <option value="E-commerce Website">E-commerce Website</option>
+                  <option value="Search Engine Optimization">Search Engine Optimization</option>
+                  <option value="Social Media Marketing">Social Media Marketing</option>
+                  <option value="Content Design">Content Design</option>
+                  <option value="Business Analysis">Business Analysis</option>
+                  <option value="Creative Design">Creative Design</option>
+                  <option value="Brand Consultancy">Brand Consultancy</option>
+                  <option value="AI Marketing">AI Marketing</option>
+</select>
+
+<textarea
+name="message"
+placeholder="Message"
+value={formData.message}
+onChange={handleChange}
+></textarea>
+
+<button type="submit">
+{loading ? "Sending..." : "Connect with us"}
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<style>{`
+
+/* ================= BANNER ================= */
+
+.demo-banner{
+position:relative;
+padding:45px 6%;
+overflow:hidden;
+background:#ffffff;
+}
+
+/* ================= MESH GRADIENT BG ================= */
+
+.mesh-bg{
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at 20% 30%, rgba(124,58,237,0.25), transparent 40%),
+radial-gradient(circle at 80% 70%, rgba(236,72,153,0.25), transparent 40%),
+radial-gradient(circle at 50% 50%, rgba(168,85,247,0.2), transparent 50%);
+animation:meshMove 12s infinite alternate ease-in-out;
+z-index:0;
+}
+
+@keyframes meshMove{
+0%{
+transform:scale(1) translate(0,0);
+}
+50%{
+transform:scale(1.2) translate(30px,-20px);
+}
+100%{
+transform:scale(1) translate(-20px,20px);
+}
+}
+
+/* ================= LAYOUT ================= */
+
+.demo-inner{
+position:relative;
+z-index:2;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:30px;
+flex-wrap:wrap;
+}
+
+/* ================= TEXT ================= */
+
+.banner-text{
+flex:1;
+}
+
+.banner-text h2{
+font-size:24px;
+font-weight:700;
+color:#0f172a;
+margin-bottom:5px;
+}
+
+.banner-text span{
+background:linear-gradient(90deg,#7C3AED,#EC4899);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.banner-text p{
+font-size:14px;
+color:#475569;
+}
+
+/* ================= FORM ================= */
+
+.banner-form{
+flex:2;
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+padding:14px;
+border-radius:14px;
+background:#ffffff;
+
+background:
+linear-gradient(#fff,#fff) padding-box,
+linear-gradient(120deg,#7C3AED,#EC4899,#7C3AED) border-box;
+
+border:2px solid transparent;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.banner-form input,
+.banner-form select,
+.banner-form textarea{
+padding:9px 10px;
+border-radius:8px;
+border:1px solid #e2e8f0;
+font-size:13px;
+min-width:120px;
+transition:all .3s;
+}
+
+.banner-form textarea{
+min-width:180px;
+}
+
+.banner-form input:focus,
+.banner-form select:focus,
+.banner-form textarea:focus{
+border-color:#7C3AED;
+box-shadow:0 0 0 2px rgba(124,58,237,0.2);
+outline:none;
+}
+
+/* ================= SHIMMER BUTTON ================= */
+
+.banner-form button{
+position:relative;
+overflow:hidden;
+padding:10px 20px;
+border:none;
+border-radius:8px;
+background:linear-gradient(90deg,#7C3AED,#EC4899);
+color:white;
+font-weight:600;
+cursor:pointer;
+}
+
+.banner-form button::before{
+content:"";
+position:absolute;
+top:0;
+left:-120%;
+width:120%;
+height:100%;
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,0.6),
+transparent
+);
+transition:all .6s;
+}
+
+.banner-form button:hover::before{
+left:120%;
+}
+
+/* ================= SCROLL REVEAL ================= */
+
+.reveal{
+opacity:0;
+transform:translateY(60px);
+transition:all 0.9s ease;
+}
+
+.reveal.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+.demo-inner{
+flex-direction:column;
+text-align:center;
+}
+
+.banner-form{
+width:100%;
+max-width:420px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
+
+.banner-form textarea{
+grid-column:1 / span 2;
+}
+
+.banner-form button{
+grid-column:1 / span 2;
+padding:12px;
+}
+
+}
+
+`}</style>
+
+</>
+);
+}
+
+
 function HomeFAQSection() {
   const [openFaq, setOpenFaq] = useState(-1);
   const sectionRef = useRef(null);
 
-  /* ================= STYLES ================= */
   useEffect(() => {
     const css = `
-/* ================= HOME FAQ (UPGRADED) ================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ================= HOME FAQ ================= */
 
 .home-faq-wrap{
-  // background: radial-gradient(circle at top, #0b1220, #020617 70%);
-  // padding:110px 6vw;
+  font-family:'Poppins',sans-serif;
+  padding-top:20px;
+  padding-bottom:30px;
   color:#ffffff;
-  font-family:Inter,system-ui;
-}
-/* ================= GAP / STRIP FIX ================= */
-
-*{
-  box-sizing:border-box;
 }
 
-html, body{
+/* RESET */
+*{ box-sizing:border-box; }
+
+html,body{
   margin:0;
   padding:0;
   overflow-x:hidden;
@@ -1211,95 +1678,110 @@ html, body{
   margin:auto;
 }
 
+/* ================= TITLE ================= */
+
 .home-faq-title{
   text-align:center;
-  font-size:42px;
-  font-weight:900;
-  margin-bottom:12px;
-  color:#B90504;
+  font-size:56px;
+  font-weight:800;
+  margin-bottom:8px;
+  color:transparent;
+}
+
+.home-faq-title .faq-title-white{
+  color:#ffffff;
+}
+
+.home-faq-title .faq-title-gradient{
+  background:linear-gradient(90deg,#8b5cf6,#ec4899);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.home-faq-title,
+.home-faq-title *{
+  pointer-events:none;
 }
 
 .home-faq-sub{
   text-align:center;
-  color:#cfcfcf;
-  font-size:16px;
-  margin-bottom:50px;
+  color:#cbd5f5;
+  font-size:17px;
+  margin-bottom:36px;
 }
 
-/* CARD */
+/* ================= CARD ================= */
+
 .home-faq-card{
-  // background:#141414;
-  border-radius:26px;
-  padding:36px;
-  box-shadow:0 30px 90px rgba(185,5,4,0.35);
+  border-radius:24px;
+  padding:6px;
+  box-shadow:0 25px 70px rgba(139,92,246,0.35);
 }
 
-/* ITEM */
+/* ================= ITEM ================= */
+
 .home-faq-item{
-  border-top:1px solid rgba(255,255,255,0.1);
-  padding:20px 8px;
-  transition:background .25s ease, transform .25s ease;
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding:18px 8px;
+  transition:background .25s ease;
 }
 
 .home-faq-item:last-child{
-  border-bottom:1px solid rgba(255,255,255,0.1);
+  border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
 .home-faq-item:hover{
-  background:#1b1b1b;
-  transform:translateY(-4px);
+  background:#141414;
 }
 
 /* HEADER */
+
 .home-faq-header{
   display:flex;
   align-items:center;
   justify-content:space-between;
   cursor:pointer;
-  gap:16px;
+  gap:14px;
 }
 
 /* QUESTION */
+
 .home-faq-question{
   font-size:18px;
-  font-weight:700;
+  font-weight:600;
   color:#ffffff;
-  transition:color .25s ease;
 }
 
-.home-faq-item.open .home-faq-question{
-  color:#B90504;
-}
+/* TOGGLE BUTTON */
 
-/* TOGGLE */
 .home-faq-toggle{
   width:34px;
   height:34px;
   border-radius:50%;
-  border:2px solid #B90504;
   display:flex;
   align-items:center;
   justify-content:center;
   font-size:18px;
-  font-weight:900;
-  color:#B90504;
-  transition:all .3s ease;
+  font-weight:800;
+  color:#ffffff;
+  background:linear-gradient(135deg,#8b5cf6,#ec4899);
+  box-shadow:0 0 16px rgba(139,92,246,0.6);
+  transition:transform .3s ease;
 }
 
 .home-faq-item.open .home-faq-toggle{
-  background:#B90504;
-  color:#ffffff;
   transform:rotate(180deg);
 }
 
-/* ANSWER – SMOOTH */
+/* ================= ANSWER ================= */
+
 .home-faq-answer{
   max-height:0;
   overflow:hidden;
   opacity:0;
   transform:translateY(-6px);
   transition:
-    max-height .45s cubic-bezier(0.16,1,0.3,1),
+    max-height .4s cubic-bezier(0.16,1,0.3,1),
     opacity .3s ease,
     transform .3s ease;
 }
@@ -1312,131 +1794,34 @@ html, body{
 
 .home-faq-answer p{
   margin-top:14px;
-  font-size:15px;
-  line-height:1.7;
-  color:#cfcfcf;
-}
-
-/* CTA */
-.home-faq-cta{
-  margin-top:48px;
-  padding:36px;
-  border-radius:22px;
-  background:linear-gradient(135deg,#B90504,#ff3b3b);
-  text-align:center;
-  box-shadow:0 30px 90px rgba(185,5,4,0.45);
-}
-
-.home-faq-cta h3{
-  font-size:26px;
-  font-weight:900;
-  margin-bottom:12px;
-  color:#ffffff;
-}
-
-.home-faq-cta p{
   font-size:16px;
-  color:#ffffff;
-  margin-bottom:22px;
+  line-height:1.7;
+  color:#cbd5f5;
 }
 
-.home-faq-cta button{
-  padding:14px 36px;
-  border-radius:999px;
-  border:none;
-  background:#ffffff;
-  color:#000;
-  font-size:15px;
-  font-weight:800;
-  cursor:pointer;
-  transition:all .3s ease;
-}
+/* ================= MOBILE ================= */
 
-.home-faq-cta button:hover{
-  transform:translateY(-4px) scale(1.05);
-  box-shadow:0 20px 60px rgba(0,0,0,0.4);
-}
-
-/* MOBILE */
 @media(max-width:768px){
-  .home-faq-wrap{padding:70px 20px;}
-  .home-faq-title{font-size:28px;}
-  .home-faq-question{font-size:16px;}
+
+  .home-faq-wrap{
+    padding:40px 20px;
+  }
+
+  .home-faq-title{
+    font-size:36px;
+  }
+
+  .home-faq-question{
+    font-size:16px;
+  }
+
+  .home-faq-answer p{
+    font-size:15px;
+  }
+
 }
 
-
-/* ----- FAQ TITLE ----- */
-.home-faq-title{
-  color:transparent !important;
-  text-align:center;
-}
-
-/* White part */
-.home-faq-title .faq-title-white{
-  color:#ffffff !important;
-}
-
-/* Gradient part */
-.home-faq-title .faq-title-gradient{
-  background:linear-gradient(90deg,#8b5cf6,#ec4899);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-/* Disable hover on FAQ title */
-.home-faq-title,
-.home-faq-title *{
-  pointer-events:none;
-}
-
-/* ----- FAQ QUESTIONS ----- */
-.home-faq-question{
-  color:#ffffff !important;
-}
-
-/* ----- FAQ ANSWERS ----- */
-.home-faq-answer p{
-  color:#ffffff !important;
-}
-
-/* ----- PLUS / MINUS BUTTON (GRADIENT) ----- */
-.home-faq-toggle{
-  border:none !important;
-  background:linear-gradient(135deg,#8b5cf6,#ec4899) !important;
-  color:#ffffff !important;
-  box-shadow:0 0 20px rgba(139,92,246,0.6);
-}
-
-/* Minus state */
-.home-faq-item.open .home-faq-toggle{
-  background:linear-gradient(135deg,#7c3aed,#db2777) !important;
-  color:#ffffff !important;
-}
-
-/* Remove red hover influence */
-.home-faq-toggle:hover{
-  background:linear-gradient(135deg,#8b5cf6,#ec4899) !important;
-}
-
-
-/* ================= FAQ CTA WHITE BOX FIX ================= */
-
-/* White container */
-.home-faq-cta{
-  background:#ffffff !important;
-  box-shadow:0 30px 90px rgba(0,0,0,0.25);
-}
-
-/* Heading inside CTA */
-.home-faq-cta h3{
-  color:#020617 !important;   /* dark text */
-}
-
-/* Subtitle text */
-.home-faq-cta p{
-  color:#475569 !important;   /* soft dark grey */
-}
-    `;
+`;
 
     const id = "home-faq-style-upgraded";
     if (!document.getElementById(id)) {
@@ -1447,12 +1832,13 @@ html, body{
     }
   }, []);
 
-  /* ================= AUTO-OPEN ON SCROLL ================= */
+  /* ================= AUTO OPEN ================= */
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setOpenFaq(0); // open first FAQ automatically
+          setOpenFaq(0);
           observer.disconnect();
         }
       },
@@ -1465,100 +1851,98 @@ html, body{
 
   const faqs = [
     {
-      q: "What services does SHA Infotechnology offer?",
-      a: "We provide end-to-end digital solutions including website development, e-commerce websites, SEO, Google Ads, social media marketing, business profile creation, and content marketing."
+      q:"What services does SHA Infotechnology offer?",
+      a:"We provide end-to-end digital solutions including website development, e-commerce websites, SEO, Google Ads, social media marketing, business profile creation, and content marketing."
     },
     {
-      q: "Which service is best to start with?",
-      a: "If you’re just starting, we recommend a professional website combined with basic SEO. For faster leads, Google Ads and social media marketing are ideal."
+      q:"Which service is best to start with?",
+      a:"If you’re just starting, we recommend a professional website combined with basic SEO. For faster leads, Google Ads and social media marketing are ideal."
     },
     {
-      q: "Do you work with small businesses and startups?",
-      a: "Yes. We work with startups, small businesses, and growing brands, offering scalable solutions tailored to different budgets and growth stages."
+      q:"Do you work with small businesses and startups?",
+      a:"Yes. We work with startups, small businesses, and growing brands, offering scalable solutions tailored to different budgets and growth stages."
     },
     {
-      q: "How long does it take to see results?",
-      a: "SEO typically shows noticeable improvement within 2–3 months. Paid ads and social media campaigns can start generating leads much faster, often within weeks."
+      q:"How long does it take to see results?",
+      a:"SEO typically shows noticeable improvement within 2–3 months. Paid ads and social media campaigns can start generating leads much faster, often within weeks."
     },
     {
-      q: "How do I get started?",
-      a: "Simply contact us for a free consultation. We’ll understand your requirements and recommend the best strategy for your business."
+      q:"How do I get started?",
+      a:"Simply contact us for a free consultation. We’ll understand your requirements and recommend the best strategy for your business."
     }
   ];
 
   /* ================= SEO SCHEMA ================= */
+
   useEffect(() => {
     const schema = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": faqs.map(f => ({
-        "@type": "Question",
-        "name": f.q,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": f.a
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity":faqs.map(f=>({
+        "@type":"Question",
+        "name":f.q,
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":f.a
         }
       }))
     };
 
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.innerHTML = JSON.stringify(schema);
+    const script=document.createElement("script");
+    script.type="application/ld+json";
+    script.innerHTML=JSON.stringify(schema);
     document.head.appendChild(script);
 
-    return () => document.head.removeChild(script);
-  }, []);
+    return ()=>document.head.removeChild(script);
+
+  },[]);
 
   return (
     <section className="home-faq-wrap" ref={sectionRef}>
       <div className="home-faq-container">
-        <h2 className="home-faq-title">
-  <span className="faq-title-white">Frequently Asked</span>{" "}
-  <span className="faq-title-gradient">Questions</span>
-</h2>
 
-        {/* <h2 className="home-faq-title">Frequently Asked Questions</h2> */}
+        <h2 className="home-faq-title">
+          <span className="faq-title-white">Frequently Asked</span>{" "}
+          <span className="faq-title-gradient">Questions</span>
+        </h2>
+
         <p className="home-faq-sub">
           Clear answers to help you move forward with confidence.
         </p>
 
         <div className="home-faq-card">
-          {faqs.map((item, i) => {
-            const open = openFaq === i;
-            return (
-              <div
-                key={item.q}
-                className={"home-faq-item" + (open ? " open" : "")}
-              >
+          {faqs.map((item,i)=>{
+            const open=openFaq===i;
+
+            return(
+              <div key={item.q} className={"home-faq-item"+(open?" open":"")}>
+
                 <div
                   className="home-faq-header"
-                  onClick={() => setOpenFaq(open ? -1 : i)}
+                  onClick={()=>setOpenFaq(open?-1:i)}
                 >
+
                   <div className="home-faq-question">{item.q}</div>
-                  <div className="home-faq-toggle">{open ? "−" : "+"}</div>
+
+                  <div className="home-faq-toggle">
+                    {open?"−":"+"}
+                  </div>
+
                 </div>
 
                 <div className="home-faq-answer">
                   <p>{item.a}</p>
                 </div>
+
               </div>
             );
           })}
         </div>
 
-        {/* CTA */}
-        <div className="home-faq-cta">
-          <h3>Still have questions?</h3>
-          <p>Talk directly with our experts and get a custom growth plan.</p>
-         <Link to="/contact"> <button >
-            BOOK FREE CONSULTATION →
-          </button></Link>
-        </div>
       </div>
     </section>
   );
 }
-
 export default function ServicesPage() {
   
 
@@ -2299,8 +2683,9 @@ useEffect(() => {
       
       <GrowthPartnerSection />
 
-
+<Demo />
 <HomeFAQSection />
+
 
        
     </div>

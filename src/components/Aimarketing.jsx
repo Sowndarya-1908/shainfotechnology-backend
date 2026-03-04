@@ -3,25 +3,31 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 // 1
 
+
 export function AimarketingHero() {
+
   useEffect(() => {
+
    const css = `
 
-/* ================= HERO (MOBILE FIRST) ================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* ================= HERO ================= */
 
 .smm-hero{
   background:radial-gradient(circle at top,#0b0b16,#05050c 70%);
   display:flex;
   flex-direction:column;
   justify-content:center;
-  padding:60px 5%;
-  font-family:Inter,system-ui,sans-serif;
+  padding:60px 6%;
+  font-family:'Inter',system-ui,sans-serif;
   color:#fff;
   overflow:hidden;
   text-align:center;
 }
 
 /* SMALL LABEL */
+
 .smm-left small{
   font-size:13px;
   letter-spacing:0.12em;
@@ -31,11 +37,12 @@ export function AimarketingHero() {
 }
 
 /* TITLE */
+
 .smm-title{
-  font-size:clamp(28px,6vw,56px);
-  font-weight:900;
-  line-height:1.15;
-  margin:16px 0;
+  font-size:clamp(28px,5vw,48px);
+  font-weight:800;
+  line-height:1.2;
+  margin:14px 0;
 }
 
 .smm-title .accent{
@@ -45,45 +52,50 @@ export function AimarketingHero() {
 }
 
 /* DESCRIPTION */
+
 .smm-desc{
-  font-size:clamp(15px,2vw,18px);
+  font-size:16px;
   color:#cfcfe5;
-  max-width:600px;
+  max-width:620px;
   line-height:1.7;
-  margin:12px auto 0;
+  margin:10px auto 0;
 }
 
 /* RIGHT SIDE */
+
 .smm-right{
-  margin-top:40px;
+  margin-top:30px;
   display:flex;
   align-items:center;
   justify-content:center;
 }
 
 /* ICON CLOUD */
+
 .icon-cloud{
   position:relative;
-  width:clamp(260px,60vw,360px);
-  height:clamp(260px,60vw,360px);
+  width:clamp(260px,60vw,340px);
+  height:clamp(260px,60vw,340px);
 }
 
 /* ICON */
+
 .icon{
   position:absolute;
-  width:clamp(42px,6vw,56px);
-  height:clamp(42px,6vw,56px);
+  width:clamp(42px,6vw,54px);
+  height:clamp(42px,6vw,54px);
   border-radius:14px;
   background:linear-gradient(135deg,#7c7cff,#c084fc);
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:clamp(18px,3vw,26px);
-  box-shadow:0 20px 50px rgba(124,124,255,.45);
+  font-size:clamp(18px,3vw,24px);
+  box-shadow:0 20px 45px rgba(124,124,255,.45);
   animation:float 6s ease-in-out infinite;
 }
 
 /* ICON POSITIONS */
+
 .icon:nth-child(2){top:20%;left:15%;animation-delay:1s}
 .icon:nth-child(3){top:10%;right:18%;animation-delay:2s}
 .icon:nth-child(4){top:45%;left:0;animation-delay:1.5s}
@@ -92,20 +104,22 @@ export function AimarketingHero() {
 .icon:nth-child(7){bottom:15%;right:20%;animation-delay:1.9s}
 
 /* FLOAT */
+
 @keyframes float{
   0%{transform:translateY(0)}
-  50%{transform:translateY(-14px)}
+  50%{transform:translateY(-12px)}
   100%{transform:translateY(0)}
 }
 
 /* ================= DESKTOP ================= */
 
 @media(min-width:992px){
+
   .smm-hero{
     display:grid;
     grid-template-columns:1.2fr 1fr;
     align-items:center;
-    padding:100px 8%;
+    padding:90px 8%;
     text-align:left;
   }
 
@@ -116,11 +130,12 @@ export function AimarketingHero() {
   .smm-right{
     margin-top:0;
   }
+
 }
 `;
 
+    const id = "ai-marketing-hero-style";
 
-    const id = "seo-hero-style";
     if (!document.getElementById(id)) {
       const style = document.createElement("style");
       style.id = id;
@@ -132,28 +147,37 @@ export function AimarketingHero() {
       const s = document.getElementById(id);
       if (s) s.remove();
     };
+
   }, []);
 
   return (
     <section className="smm-hero">
+
       <div className="smm-left">
-         <small>ai marketing</small>
+
+        <small>AI Marketing</small>
 
         <h1 className="smm-title">
-         Grow Faster with <span className="accent">Intelligent Automation</span><br />
-          Powered by <br />
+          Grow Faster with <span className="accent">Intelligent Automation</span><br/>
+          Powered by <br/>
           <span className="accent">Sha Infotech</span>
         </h1>
 
         <p className="smm-desc">
-        At Sha Infotech, we help businesses generate more traffic, more leads, and more revenue using advanced AI-powered marketing strategies.<br/>
-Our AI solutions analyze data, predict customer behavior, automate campaigns, and optimize performance so you get better results with lower marketing costs.
+          At Sha Infotech, we help businesses generate more traffic, more leads, 
+          and more revenue using advanced AI-powered marketing strategies.<br/><br/>
 
+          Our AI solutions analyze data, predict customer behavior, automate 
+          campaigns, and optimize performance so you get better results with 
+          lower marketing costs.
         </p>
+
       </div>
 
       <div className="smm-right">
+
         <div className="icon-cloud">
+
           <div className="icon">G</div>
           <div className="icon">🔍</div>
           <div className="icon">📈</div>
@@ -161,8 +185,11 @@ Our AI solutions analyze data, predict customer behavior, automate campaigns, an
           <div className="icon">📝</div>
           <div className="icon">⚙️</div>
           <div className="icon">⭐</div>
+
         </div>
+
       </div>
+
     </section>
   );
 }
@@ -171,34 +198,39 @@ Our AI solutions analyze data, predict customer behavior, automate campaigns, an
 
 
 
-
 export function SecondSlideAimarketing() {
+
   const sectionRef = useRef(null);
 
   useEffect(() => {
+
  const css = `
 
-/* ================= BRAND SECTION (MOBILE FIRST) ================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ================= BRAND SECTION ================= */
 
 .brand-section{
-  padding:70px 5%;
-  font-family:Inter,system-ui,sans-serif;
+  padding:0px 0%;
+  font-family:'Inter',system-ui,sans-serif;
   overflow:hidden;
 }
 
 /* GRID */
+
 .brand-grid{
   max-width:1200px;
   margin:auto;
   display:flex;
   flex-direction:column;
-  gap:40px;
+  gap:30px;
 }
 
 /* LEFT CONTENT */
+
 .brand-left{
   opacity:0;
-  transform:translateY(30px);
+  transform:translateY(25px);
   transition:all .8s ease;
   text-align:center;
 }
@@ -209,14 +241,16 @@ export function SecondSlideAimarketing() {
 }
 
 /* HEADING */
+
 .brand-left h2{
-  font-size:clamp(26px,5vw,42px);
-  font-weight:900;
-  margin-bottom:18px;
-  line-height:1.2;
+  font-size:clamp(26px,4vw,38px);
+  font-weight:800;
+  margin-bottom:14px;
+  line-height:1.25;
 }
 
 /* GRADIENT */
+
 .brand-gradient{
   background:linear-gradient(90deg,#8b5cf6,#ec4899);
   -webkit-background-clip:text;
@@ -228,21 +262,23 @@ export function SecondSlideAimarketing() {
 }
 
 /* PARAGRAPH */
+
 .brand-left p{
-  font-size:clamp(15px,2vw,17px);
+  font-size:16px;
   line-height:1.7;
   color:#ffffff;
-  max-width:600px;
-  margin:0 auto 14px;
+  max-width:620px;
+  margin:0 auto 12px;
 }
 
 /* RIGHT IMAGE */
+
 .brand-right{
   display:flex;
   justify-content:center;
   align-items:center;
   opacity:0;
-  transform:translateY(30px);
+  transform:translateY(25px);
   transition:all .8s ease .2s;
 }
 
@@ -253,22 +289,23 @@ export function SecondSlideAimarketing() {
 
 .brand-right img{
   width:100%;
-  max-width:380px;
+  max-width:360px;
   height:auto;
 }
 
 /* ================= DESKTOP ================= */
 
 @media(min-width:992px){
+
   .brand-section{
-    padding:100px 8%;
+    padding:80px 8%;
   }
 
   .brand-grid{
     display:grid;
     grid-template-columns:1.1fr 0.9fr;
     align-items:center;
-    gap:60px;
+    gap:50px;
   }
 
   .brand-left{
@@ -276,19 +313,24 @@ export function SecondSlideAimarketing() {
   }
 
   .brand-left p{
-    margin:0 0 16px 0;
+    margin:0 0 14px 0;
   }
 
   .brand-right img{
-    max-width:480px;
+    max-width:460px;
   }
+
 }
 `;
 
+    const id = "ai-brand-section-style";
 
-    const style = document.createElement("style");
-    style.innerHTML = css;
-    document.head.appendChild(style);
+    if (!document.getElementById(id)) {
+      const style = document.createElement("style");
+      style.id = id;
+      style.innerHTML = css;
+      document.head.appendChild(style);
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -302,160 +344,192 @@ export function SecondSlideAimarketing() {
     if (sectionRef.current) observer.observe(sectionRef.current);
 
     return () => {
-      style.remove();
+      const s = document.getElementById(id);
+      if (s) s.remove();
+
       if (sectionRef.current) observer.unobserve(sectionRef.current);
     };
+
   }, []);
 
   return (
     <section className="brand-section" ref={sectionRef}>
+
       <div className="brand-grid">
 
         {/* LEFT CONTENT */}
+
         <div className="brand-left">
-          <h2> 
-  <span className="brand-white">What is </span>
-  <span className="brand-gradient">AI Marketing</span>
-  <span className="brand-white">?</span>
-</h2>
+
+          <h2>
+            <span className="brand-white">What is </span>
+            <span className="brand-gradient">AI Marketing</span>
+            <span className="brand-white">?</span>
+          </h2>
 
           <p>
-            AI Marketing is the use of artificial intelligence technologies to analyze data, predict customer behavior, automate campaigns, and optimize marketing performance. It helps businesses move from guesswork to data-driven decision-making, ensuring smarter strategies and better results.
+            AI Marketing is the use of artificial intelligence technologies to analyze
+            data, predict customer behavior, automate campaigns, and optimize marketing
+            performance. It helps businesses move from guesswork to data-driven
+            decision-making, ensuring smarter strategies and better results.
           </p>
 
           <p>
-           At our company, AI Marketing goes beyond basic automation. We leverage advanced AI-powered tools to identify high-intent audiences, personalize campaigns, optimize ad performance in real-time, and improve overall marketing efficiency. By combining intelligent data insights with strategic execution, we help businesses increase conversions, reduce marketing waste, and achieve sustainable growth in a competitive digital landscape.
+            At our company, AI Marketing goes beyond basic automation. We leverage
+            advanced AI-powered tools to identify high-intent audiences, personalize
+            campaigns, optimize ad performance in real-time, and improve overall
+            marketing efficiency. By combining intelligent data insights with strategic
+            execution, we help businesses increase conversions, reduce marketing waste,
+            and achieve sustainable growth in a competitive digital landscape.
           </p>
+
         </div>
 
         {/* RIGHT IMAGE */}
+
         <div className="brand-right">
           <img
             src="/images/about/whyss.png"
-            alt="Brand Consultancy Illustration"
+            alt="AI Marketing Illustration"
           />
         </div>
 
       </div>
+
     </section>
   );
 }
 
 
-
 // 3
 
 
+
 export function ServicesGridAimarketing() {
+
   useEffect(() => {
+
     const css = `
 
-/* ================= SERVICES SECTION (MOBILE FIRST) ================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ================= SERVICES SECTION ================= */
 
 .services-wrap{
-  font-family:Inter,system-ui,sans-serif;
+  font-family:'Inter',system-ui,sans-serif;
   color:#e5e7eb;
-  padding:60px 5%;
+  padding:0px 0%;
   margin:0;
 }
 
 /* GRID */
+
 .services-grid{
   max-width:1100px;
   margin:auto;
   display:grid;
   grid-template-columns:1fr;
-  gap:22px;
+  gap:20px;
 }
 
 /* CARD */
+
 .service-card{
   background:#ffffff;
-  border-radius:18px;
-  padding:28px 22px;
+  border-radius:16px;
+  padding:24px 20px;
   position:relative;
   border:1px solid rgba(0,0,0,0.05);
-  box-shadow:0 15px 40px rgba(0,0,0,0.15);
+  box-shadow:0 12px 32px rgba(0,0,0,0.15);
   transition:all .3s ease;
   overflow:hidden;
 }
 
 .service-card:hover{
   transform:translateY(-6px);
-  box-shadow:0 25px 70px rgba(185,5,4,0.35);
+  box-shadow:0 22px 60px rgba(185,5,4,0.35);
 }
 
 /* NUMBER */
+
 .service-number{
   position:absolute;
-  top:14px;
-  right:18px;
-  font-size:42px;
-  font-weight:900;
+  top:12px;
+  right:16px;
+  font-size:36px;
+  font-weight:800;
   color:rgba(0,0,0,0.05);
 }
 
 /* ICON */
+
 .service-icon{
-  width:48px;
-  height:48px;
+  width:46px;
+  height:46px;
   border-radius:12px;
   background:linear-gradient(135deg,#8b5cf6,#ec4899);
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:22px;
+  font-size:20px;
   color:#ffffff;
-  margin-bottom:16px;
+  margin-bottom:14px;
 }
 
-/* TEXT */
+/* TITLE */
+
 .service-title{
-  font-size:18px;
-  font-weight:800;
-  margin-bottom:10px;
+  font-size:17px;
+  font-weight:700;
+  margin-bottom:8px;
   color:#000000;
 }
 
+/* DESCRIPTION */
+
 .service-desc{
   font-size:14px;
-  line-height:1.6;
+  line-height:1.65;
   color:#000000;
 }
 
 /* ================= TABLET ================= */
 
 @media(min-width:640px){
+
   .services-grid{
     grid-template-columns:repeat(2,1fr);
-    gap:24px;
+    gap:22px;
   }
+
 }
 
 /* ================= DESKTOP ================= */
 
 @media(min-width:992px){
+
   .services-wrap{
-    padding:90px 8%;
+    padding:70px 8%;
   }
 
   .services-grid{
     grid-template-columns:repeat(3,1fr);
-    gap:28px;
+    gap:24px;
   }
 
   .service-card{
-    padding:34px 28px;
+    padding:28px 24px;
   }
 
   .service-number{
-    font-size:56px;
+    font-size:48px;
   }
+
 }
 `;
 
+    const id = "services-grid-ai-style";
 
-    const id = "services-grid-dark-style";
     if (!document.getElementById(id)) {
       const style = document.createElement("style");
       style.id = id;
@@ -467,105 +541,115 @@ export function ServicesGridAimarketing() {
       const s = document.getElementById(id);
       if (s) s.remove();
     };
+
   }, []);
 
-const services = [
-  {
-    title: "AI-Powered SEO Optimization",
-    desc:
-      "	Discover high-ranking keywords, Analyze competitors, Optimize on-page & technical SEO ,Improve content relevance, Increase organic traffic",
-    icon: "🔎"
-  },
-  {
-    title: "AI-Based Performance Marketing",
-    desc:
-      "	Google Ads, Meta Ads (Facebook & Instagram),  Ads, YouTube Ads",
-    icon: "📍"
-  },
-  {
-    title: "AI Content Generation & Optimization",
-    desc:
-      "Blog posts, Website copy, Landing pages, Ad creatives, Email campaigns",
-    icon: "👥"
-  },
-  {
-    title: "Marketing Automation & Lead Nurturing",
-    desc:
-      "AI Chatbots, Automated email workflows, CRM integration, Customer segmentation, Predictive follow-ups",
-    icon: "📖"
-  },
-  {
-    title: "AI Analytics & Predictive Insights",
-    desc:
-      "Customer behavior tracking, Sales forecasting, Conversion funnel analysis, ROI tracking dashboards",
-    icon: "🧩"
-
-
-    
-
-  },
-  {
-    title: "AI-Powered Social Media Intelligence",
-    desc:
-      "Audience behavior analysis, Content performance tracking, Best posting time prediction, Sentiment analysis, Trend forecasting",
-    icon: "🚀"
-  }
-
-  
-
-];
-
-
+  const services = [
+    {
+      title: "AI-Powered SEO Optimization",
+      desc:
+        "Discover high-ranking keywords, analyze competitors, optimize on-page & technical SEO, improve content relevance, and increase organic traffic.",
+      icon: "🔎"
+    },
+    {
+      title: "AI-Based Performance Marketing",
+      desc:
+        "Run smarter ad campaigns using AI across Google Ads, Meta Ads (Facebook & Instagram), and YouTube Ads for higher ROI.",
+      icon: "📍"
+    },
+    {
+      title: "AI Content Generation & Optimization",
+      desc:
+        "Create high-performing blog posts, website copy, landing pages, ad creatives, and email campaigns using AI tools.",
+      icon: "👥"
+    },
+    {
+      title: "Marketing Automation & Lead Nurturing",
+      desc:
+        "Use AI chatbots, automated email workflows, CRM integration, customer segmentation, and predictive follow-ups.",
+      icon: "📖"
+    },
+    {
+      title: "AI Analytics & Predictive Insights",
+      desc:
+        "Track customer behavior, forecast sales, analyze conversion funnels, and monitor performance with AI dashboards.",
+      icon: "🧩"
+    },
+    {
+      title: "AI-Powered Social Media Intelligence",
+      desc:
+        "Understand audience behavior, track content performance, predict best posting times, and analyze trends.",
+      icon: "🚀"
+    }
+  ];
 
   return (
     <section className="services-wrap">
+
       <div className="services-grid">
+
         {services.map((s, i) => (
+
           <div className="service-card" key={i}>
+
             <div className="service-number">{i + 1}</div>
+
             <div className="service-icon">{s.icon}</div>
+
             <div className="service-title">{s.title}</div>
+
             <div className="service-desc">{s.desc}</div>
+
           </div>
+
         ))}
+
       </div>
+
     </section>
   );
 }
 
 // 4
+
 export function WhyAimarketingHeroDark() {
+
   const ref = useRef(null);
 
   useEffect(() => {
+
     const css = `
 
-/* ================= HERO DARK (MOBILE FIRST) ================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ================= HERO DARK ================= */
 
 .seo-hero-dark{
-  padding:60px 5%;
-  font-family:Inter,system-ui,sans-serif;
+  padding:0px 0%;
+  font-family:'Inter',system-ui,sans-serif;
   color:#e5e7eb;
   overflow:hidden;
   margin:0;
 }
 
 /* GRID */
+
 .seo-hero-grid{
   max-width:1200px;
   margin:auto;
   display:flex;
   flex-direction:column;
-  gap:40px;
+  gap:32px;
   align-items:center;
   text-align:center;
 }
 
 /* LEFT */
+
 .seo-left{
   opacity:0;
-  transform:translateY(30px);
-  transition:all .8s ease;
+  transform:translateY(24px);
+  transition:all .7s ease;
 }
 
 .seo-hero-dark.show .seo-left{
@@ -573,12 +657,14 @@ export function WhyAimarketingHeroDark() {
   transform:none;
 }
 
+/* TITLE */
+
 .seo-left h1{
-  font-size:clamp(26px,5vw,42px);
-  font-weight:900;
+  font-size:clamp(28px,5vw,40px);
+  font-weight:800;
   line-height:1.2;
-  margin-bottom:16px;
-  color:#fff;
+  margin-bottom:18px;
+  color:#ffffff;
 }
 
 .seo-left h1 span{
@@ -588,17 +674,22 @@ export function WhyAimarketingHeroDark() {
 }
 
 /* LIST */
+
+.seo-left ul{
+  padding:0;
+  margin:0;
+}
+
 .seo-left li{
-  font-size:clamp(15px,2vw,18px);
+  font-size:16px;
   line-height:1.7;
   color:#cbd5f5;
-  max-width:600px;
-  margin:0 auto 14px;
-  padding:0;
+  margin-bottom:10px;
   list-style:none;
 }
 
 /* RIGHT IMAGE */
+
 .seo-right{
   position:relative;
   display:flex;
@@ -606,7 +697,7 @@ export function WhyAimarketingHeroDark() {
   justify-content:center;
   opacity:0;
   transform:scale(.95);
-  transition:all .8s ease .2s;
+  transition:all .7s ease .2s;
 }
 
 .seo-hero-dark.show .seo-right{
@@ -614,12 +705,13 @@ export function WhyAimarketingHeroDark() {
   transform:scale(1);
 }
 
-/* IMAGE + GLOW */
+/* IMAGE GLOW */
+
 .seo-image-wrap::before{
   content:"";
   position:absolute;
-  width:280px;
-  height:280px;
+  width:260px;
+  height:260px;
   background:radial-gradient(circle,rgba(139,92,246,.45),transparent 70%);
   filter:blur(40px);
   z-index:0;
@@ -629,47 +721,57 @@ export function WhyAimarketingHeroDark() {
   position:relative;
   z-index:1;
   width:100%;
-  max-width:280px;
+  max-width:260px;
   height:auto;
 }
 
 /* ================= DESKTOP ================= */
 
 @media(min-width:992px){
+
   .seo-hero-dark{
-    padding:90px 8%;
+    padding:80px 8%;
   }
 
   .seo-hero-grid{
     display:grid;
     grid-template-columns:1.1fr .9fr;
     align-items:center;
-    gap:60px;
+    gap:50px;
     text-align:left;
   }
 
   .seo-left li{
-    margin:0 0 16px 0;
+    font-size:17px;
+    margin-bottom:12px;
   }
 
   .seo-image-wrap::before{
-    width:420px;
-    height:420px;
+    width:400px;
+    height:400px;
   }
 
   .seo-image-wrap img{
-    max-width:420px;
+    max-width:400px;
   }
+
 }
 `;
 
-    const style = document.createElement("style");
-    style.innerHTML = css;
-    document.head.appendChild(style);
+    const id = "ai-hero-dark-style";
+
+    if (!document.getElementById(id)) {
+      const style = document.createElement("style");
+      style.id = id;
+      style.innerHTML = css;
+      document.head.appendChild(style);
+    }
 
     const observer = new IntersectionObserver(
-      ([e]) => {
-        if (e.isIntersecting) e.target.classList.add("show");
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
       },
       { threshold: 0.3 }
     );
@@ -677,64 +779,82 @@ export function WhyAimarketingHeroDark() {
     if (ref.current) observer.observe(ref.current);
 
     return () => {
-      style.remove();
+      const s = document.getElementById(id);
+      if (s) s.remove();
       if (ref.current) observer.unobserve(ref.current);
     };
+
   }, []);
 
   return (
+
     <section className="seo-hero-dark" ref={ref}>
+
       <div className="seo-hero-grid">
 
         {/* LEFT CONTENT */}
+
         <div className="seo-left">
+
           <h1>
             Why Choose <span>AI Marketing</span>?
           </h1>
 
-          <li>Traditional marketing guesses.</li>
-          <li><strong>AI Marketing predicts.</strong></li>
+          <ul>
+            <li>Traditional marketing guesses.</li>
+            <li><strong>AI Marketing predicts.</strong></li>
+            <li>With AI-powered systems, you can:</li>
 
-          <li>With AI-powered systems, you can:</li>
+            <li>✅ Identify high-intent customers</li>
+            <li>✅ Automate personalized campaigns</li>
+            <li>✅ Improve ad targeting accuracy</li>
+            <li>✅ Increase website conversions</li>
+            <li>✅ Reduce marketing waste</li>
+            <li>✅ Get real-time performance insights</li>
+          </ul>
 
-          <li>✅ Identify high-intent customers</li>
-          <li>✅ Automate personalized campaigns</li>
-          <li>✅ Improve ad targeting accuracy</li>
-          <li>✅ Increase website conversions</li>
-          <li>✅ Reduce marketing waste</li>
-          <li>✅ Get real-time performance insights</li>
         </div>
 
         {/* RIGHT IMAGE */}
+
         <div className="seo-right seo-image-wrap">
+
           <img
             src="/images/about/ai.png"
             alt="AI Marketing Illustration"
           />
+
         </div>
 
       </div>
+
     </section>
+
   );
+
 }
 
 
 
 
 // 5
+
 export function FAQAimarketing() {
+
   const [openFaq, setOpenFaq] = useState(-1);
   const sectionRef = useRef(null);
 
-  /* ================= STYLES ================= */
   useEffect(() => {
+
     const css = `
 
-/* ================= FAQ SECTION (MOBILE FIRST) ================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ================= FAQ SECTION ================= */
 
 .home-faq-wrap{
-  padding:70px 5%;
-  font-family:Inter,system-ui,sans-serif;
+  padding:60px 6%;
+  font-family:'Inter',system-ui,sans-serif;
   color:#ffffff;
 }
 
@@ -744,79 +864,82 @@ export function FAQAimarketing() {
 }
 
 /* TITLE */
+
 .home-faq-title{
   text-align:center;
-  font-size:clamp(26px,5vw,42px);
-  font-weight:900;
+  font-size:clamp(28px,5vw,40px);
+  font-weight:800;
   margin-bottom:10px;
 }
 
-.home-faq-title .faq-title-white{
+.faq-title-white{
   color:#ffffff;
 }
 
-.home-faq-title .faq-title-gradient{
+.faq-title-gradient{
   background:linear-gradient(90deg,#8b5cf6,#ec4899);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
+/* SUBTITLE */
+
 .home-faq-sub{
   text-align:center;
   font-size:15px;
   color:#cbd5f5;
-  margin-bottom:36px;
+  margin-bottom:32px;
 }
 
 /* CARD */
+
 .home-faq-card{
-  border-radius:22px;
-  padding:24px;
-  box-shadow:0 20px 60px rgba(0,0,0,0.25);
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 15px 45px rgba(0,0,0,0.25);
 }
 
-/* ITEM */
+/* FAQ ITEM */
+
 .home-faq-item{
   border-top:1px solid rgba(255,255,255,0.08);
-  padding:16px 4px;
-  transition:background .25s ease;
+  padding:14px 2px;
 }
 
 .home-faq-item:last-child{
   border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
-.home-faq-item:hover{
-  background:#1b1b1b;
-}
-
 /* HEADER */
+
 .home-faq-header{
   display:flex;
   justify-content:space-between;
   align-items:center;
   cursor:pointer;
-  gap:12px;
+  gap:10px;
 }
 
 /* QUESTION */
+
 .home-faq-question{
-  font-size:clamp(15px,2vw,18px);
-  font-weight:700;
+  font-size:16px;
+  font-weight:600;
   color:#ffffff;
 }
 
-/* TOGGLE */
+/* TOGGLE BUTTON */
+
 .home-faq-toggle{
-  width:30px;
-  height:30px;
+  width:28px;
+  height:28px;
   border-radius:50%;
   background:linear-gradient(135deg,#8b5cf6,#ec4899);
   display:flex;
   align-items:center;
   justify-content:center;
   font-size:16px;
-  font-weight:900;
+  font-weight:700;
   color:#ffffff;
   transition:transform .3s ease;
 }
@@ -826,6 +949,7 @@ export function FAQAimarketing() {
 }
 
 /* ANSWER */
+
 .home-faq-answer{
   max-height:0;
   overflow:hidden;
@@ -839,25 +963,26 @@ export function FAQAimarketing() {
 }
 
 .home-faq-answer p{
-  margin-top:10px;
+  margin-top:8px;
   font-size:14px;
   line-height:1.6;
   color:#e2e8f0;
 }
 
 /* CTA */
+
 .home-faq-cta{
   margin-top:36px;
-  padding:28px;
-  border-radius:18px;
+  padding:26px;
+  border-radius:16px;
   background:#ffffff;
   text-align:center;
-  box-shadow:0 20px 60px rgba(0,0,0,0.2);
+  box-shadow:0 15px 45px rgba(0,0,0,0.2);
 }
 
 .home-faq-cta h3{
   font-size:20px;
-  font-weight:800;
+  font-weight:700;
   margin-bottom:8px;
   color:#020617;
 }
@@ -865,11 +990,11 @@ export function FAQAimarketing() {
 .home-faq-cta p{
   font-size:14px;
   color:#475569;
-  margin-bottom:18px;
+  margin-bottom:16px;
 }
 
 .home-faq-cta button{
-  padding:12px 28px;
+  padding:12px 26px;
   border-radius:999px;
   border:none;
   background:linear-gradient(135deg,#8b5cf6,#ec4899);
@@ -884,33 +1009,45 @@ export function FAQAimarketing() {
   transform:translateY(-3px);
 }
 
+/* DESKTOP */
+
 @media(min-width:992px){
+
   .home-faq-wrap{
-    padding:90px 8%;
+    padding:80px 8%;
   }
 
   .home-faq-card{
-    padding:32px;
+    padding:30px;
   }
 
-  .home-faq-cta{
-    margin-top:48px;
-    padding:36px;
+  .home-faq-question{
+    font-size:17px;
   }
+
 }
 `;
 
-    const id = "home-faq-style-upgraded";
+    const id = "faq-ai-style";
+
     if (!document.getElementById(id)) {
       const style = document.createElement("style");
       style.id = id;
       style.innerHTML = css;
       document.head.appendChild(style);
     }
+
+    return () => {
+      const s = document.getElementById(id);
+      if (s) s.remove();
+    };
+
   }, []);
 
-  /* ================= AUTO-OPEN ON SCROLL ================= */
+  /* AUTO OPEN FIRST FAQ ON SCROLL */
+
   useEffect(() => {
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -922,10 +1059,10 @@ export function FAQAimarketing() {
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
 
-  /* ================= AI MARKETING FAQ ================= */
+    return () => observer.disconnect();
+
+  }, []);
 
   const faqs = [
     {
@@ -946,40 +1083,19 @@ export function FAQAimarketing() {
     },
     {
       q: "How do we get started with AI Marketing?",
-      a: "Contact our team for a consultation. We’ll analyze your business goals and build a customized AI-driven marketing strategy."
+      a: "Contact our team for a consultation. We'll analyze your business goals and build a customized AI-driven marketing strategy."
     }
   ];
 
-  /* ================= SEO SCHEMA ================= */
-  useEffect(() => {
-    const schema = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": faqs.map(f => ({
-        "@type": "Question",
-        "name": f.q,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": f.a
-        }
-      }))
-    };
-
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.innerHTML = JSON.stringify(schema);
-    document.head.appendChild(script);
-
-    return () => document.head.removeChild(script);
-  }, []);
-
   return (
+
     <section className="home-faq-wrap" ref={sectionRef}>
+
       <div className="home-faq-container">
 
         <h2 className="home-faq-title">
-          <span className="faq-title-white">Frequently asked</span>{" "}
-          <span className="faq-title-gradient">Question</span>
+          <span className="faq-title-white">Frequently Asked</span>{" "}
+          <span className="faq-title-gradient">Questions</span>
         </h2>
 
         <p className="home-faq-sub">
@@ -987,42 +1103,63 @@ export function FAQAimarketing() {
         </p>
 
         <div className="home-faq-card">
+
           {faqs.map((item, i) => {
+
             const open = openFaq === i;
+
             return (
-              <div
-                key={item.q}
-                className={"home-faq-item" + (open ? " open" : "")}
-              >
+
+              <div key={item.q} className={"home-faq-item" + (open ? " open" : "")}>
+
                 <div
                   className="home-faq-header"
                   onClick={() => setOpenFaq(open ? -1 : i)}
                 >
+
                   <div className="home-faq-question">{item.q}</div>
-                  <div className="home-faq-toggle">{open ? "−" : "+"}</div>
+
+                  <div className="home-faq-toggle">
+                    {open ? "−" : "+"}
+                  </div>
+
                 </div>
 
                 <div className="home-faq-answer">
                   <p>{item.a}</p>
                 </div>
+
               </div>
+
             );
+
           })}
+
         </div>
 
         <div className="home-faq-cta">
+
           <h3>Ready to grow with AI?</h3>
-          <p>Let our experts build a smart marketing system for your business.</p>
+
+          <p>
+            Let our experts build a smart marketing system for your business.
+          </p>
+
           <Link to="/contact">
-            <button>BOOK FREE AI CONSULTATION →</button>
+            <button>
+              BOOK FREE AI CONSULTATION →
+            </button>
           </Link>
+
         </div>
 
       </div>
-    </section>
-  );
-}
 
+    </section>
+
+  );
+
+}
 
 
 // 6

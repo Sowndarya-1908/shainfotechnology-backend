@@ -6,8 +6,11 @@ import { Link } from "react-router-dom";
 
 
 export function SocialMediaHero() {
+
   useEffect(() => {
+
     const css = `
+
 /* ================= HERO ================= */
 
 .smm-hero{
@@ -18,11 +21,12 @@ export function SocialMediaHero() {
   justify-content:center;
   padding:80px 5%;
   font-family:Inter,system-ui,sans-serif;
-  color:#fff;
+  color:#ffffff;
   overflow:hidden;
 }
 
 /* LEFT CONTENT */
+
 .smm-left{
   text-align:center;
 }
@@ -57,11 +61,14 @@ export function SocialMediaHero() {
 }
 
 /* RIGHT SIDE */
+
 .smm-right{
   margin-top:60px;
   display:flex;
   justify-content:center;
 }
+
+/* ICON CLOUD */
 
 .icon-cloud{
   position:relative;
@@ -84,6 +91,7 @@ export function SocialMediaHero() {
 }
 
 /* ICON POSITIONS */
+
 .icon:nth-child(1){top:40%;left:40%}
 .icon:nth-child(2){top:15%;left:10%;animation-delay:1s}
 .icon:nth-child(3){top:5%;right:15%;animation-delay:2s}
@@ -92,7 +100,8 @@ export function SocialMediaHero() {
 .icon:nth-child(6){bottom:10%;left:20%;animation-delay:2.4s}
 .icon:nth-child(7){bottom:10%;right:20%;animation-delay:1.9s}
 
-/* FLOAT ANIMATION */
+/* FLOAT */
+
 @keyframes float{
   0%{transform:translateY(0)}
   50%{transform:translateY(-12px)}
@@ -100,14 +109,19 @@ export function SocialMediaHero() {
 }
 
 /* ================= TABLET ================= */
+
 @media(min-width:768px){
+
   .smm-hero{
     padding:100px 6%;
   }
+
 }
 
 /* ================= DESKTOP ================= */
+
 @media(min-width:992px){
+
   .smm-hero{
     display:grid;
     grid-template-columns:1.2fr 1fr;
@@ -137,45 +151,66 @@ export function SocialMediaHero() {
     height:56px;
     font-size:26px;
   }
-}
-    `;
 
-    const id = "smm-hero-style";
-    if (!document.getElementById(id)) {
+}
+
+`;
+
+    const styleId = "social-media-hero-style";
+
+    if (!document.getElementById(styleId)) {
+
       const style = document.createElement("style");
-      style.id = id;
+      style.id = styleId;
       style.innerHTML = css;
+
       document.head.appendChild(style);
+
     }
 
     return () => {
-      const s = document.getElementById(id);
-      if (s) s.remove();
+
+      const style = document.getElementById(styleId);
+      if (style) style.remove();
+
     };
+
   }, []);
 
   return (
+
     <section className="smm-hero">
+
       <div className="smm-left">
+
         <small>Social Media Marketing</small>
 
         <h1 className="smm-title">
+
           Turn <span className="accent">Social Media Attention</span><br />
+
           into Brand Growth<br />
+
           <span className="accent">
             Engage the Right Audience Across Every Platform
           </span>
+
         </h1>
 
         <p className="smm-desc">
+
           We create data-driven social media strategies that build trust,
           increase engagement, and drive real results. From content planning
           to campaign execution, we help your brand stay visible and relevant.
+
         </p>
+
       </div>
 
       <div className="smm-right">
+
         <div className="icon-cloud">
+
           <div className="icon">G</div>
           <div className="icon">🔍</div>
           <div className="icon">📈</div>
@@ -183,20 +218,26 @@ export function SocialMediaHero() {
           <div className="icon">📝</div>
           <div className="icon">⚙️</div>
           <div className="icon">⭐</div>
+
         </div>
+
       </div>
+
     </section>
+
   );
+
 }
 
-
 export function SecondSlideSocialMedia() {
+
   const sectionRef = useRef(null);
 
   useEffect(() => {
-   const css = `
 
-/* ================= BRAND SECTION (MOBILE FIRST) ================= */
+    const css = `
+
+/* ================= BRAND SECTION ================= */
 
 .brand-section{
   padding:70px 5%;
@@ -205,6 +246,7 @@ export function SecondSlideSocialMedia() {
 }
 
 /* GRID */
+
 .brand-grid{
   max-width:1200px;
   margin:auto;
@@ -214,6 +256,7 @@ export function SecondSlideSocialMedia() {
 }
 
 /* LEFT CONTENT */
+
 .brand-left{
   opacity:0;
   transform:translateY(30px);
@@ -227,6 +270,7 @@ export function SecondSlideSocialMedia() {
 }
 
 /* HEADING */
+
 .brand-left h2{
   font-size:clamp(26px,5vw,42px);
   font-weight:900;
@@ -235,6 +279,7 @@ export function SecondSlideSocialMedia() {
 }
 
 /* GRADIENT */
+
 .brand-gradient{
   background:linear-gradient(90deg,#8b5cf6,#ec4899);
   -webkit-background-clip:text;
@@ -246,6 +291,7 @@ export function SecondSlideSocialMedia() {
 }
 
 /* PARAGRAPH */
+
 .brand-left p{
   font-size:clamp(15px,2vw,17px);
   line-height:1.7;
@@ -255,6 +301,7 @@ export function SecondSlideSocialMedia() {
 }
 
 /* RIGHT IMAGE */
+
 .brand-right{
   display:flex;
   justify-content:center;
@@ -278,6 +325,7 @@ export function SecondSlideSocialMedia() {
 /* ================= DESKTOP ================= */
 
 @media(min-width:992px){
+
   .brand-section{
     padding:100px 8%;
   }
@@ -300,63 +348,105 @@ export function SecondSlideSocialMedia() {
   .brand-right img{
     max-width:480px;
   }
+
 }
+
 `;
 
+    const styleId = "social-media-about-style";
 
-    const style = document.createElement("style");
-    style.innerHTML = css;
-    document.head.appendChild(style);
+    if (!document.getElementById(styleId)) {
+
+      const style = document.createElement("style");
+      style.id = styleId;
+      style.innerHTML = css;
+
+      document.head.appendChild(style);
+
+    }
 
     const observer = new IntersectionObserver(
+
       ([entry]) => {
+
         if (entry.isIntersecting) {
           entry.target.classList.add("show");
         }
+
       },
-      { threshold: 0.25 }
+
+      { threshold:0.25 }
+
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
 
     return () => {
-      style.remove();
+
+      const style = document.getElementById(styleId);
+      if (style) style.remove();
+
       if (sectionRef.current) observer.unobserve(sectionRef.current);
+
     };
+
   }, []);
 
   return (
+
     <section className="brand-section" ref={sectionRef}>
+
       <div className="brand-grid">
 
         {/* LEFT CONTENT */}
+
         <div className="brand-left">
+
           <h2>
-  <span className="brand-white">What is </span>
-  <span className="brand-gradient">Social Media Marketing</span>
-  <span className="brand-white">?</span>
-</h2>
+
+            <span className="brand-white">What is </span>
+            <span className="brand-gradient">Social Media Marketing</span>
+            <span className="brand-white">?</span>
+
+          </h2>
 
           <p>
-            Social media marketing uses platforms like Instagram, Facebook, and LinkedIn to build brand awareness, engage audiences, and drive business growth. It focuses on meaningful interaction rather than just posting content.
+
+            Social media marketing uses platforms like Instagram, Facebook,
+            and LinkedIn to build brand awareness, engage audiences,
+            and drive business growth. It focuses on meaningful interaction
+            rather than simply posting content.
+
           </p>
 
           <p>
-           We develop platform-specific strategies, create engaging content, and manage community interactions to strengthen brand presence. Our approach helps businesses connect with their audience, build trust, and achieve measurable results.
+
+            We develop platform-specific strategies, create engaging content,
+            and manage community interactions to strengthen brand presence.
+            Our approach helps businesses connect with their audience,
+            build trust, and achieve measurable results.
+
           </p>
+
         </div>
 
         {/* RIGHT IMAGE */}
+
         <div className="brand-right">
+
           <img
             src="/images/about/whyss.png"
-            alt="Brand Consultancy Illustration"
+            alt="Social Media Marketing Strategy Illustration"
           />
+
         </div>
 
       </div>
+
     </section>
+
   );
+
 }
 
 
@@ -541,22 +631,24 @@ export function ServicesGridSocialMedia() {
 
 
 export function WhySocialMediaHeroDark() {
+
   const ref = useRef(null);
 
   useEffect(() => {
-   const css = `
 
-/* ================= HERO DARK (MOBILE FIRST) ================= */
+    const css = `
+
+/* ================= HERO DARK ================= */
 
 .seo-hero-dark{
   padding:60px 5%;
   font-family:Inter,system-ui,sans-serif;
   color:#e5e7eb;
   overflow:hidden;
-  margin:0;
 }
 
 /* GRID */
+
 .seo-hero-grid{
   max-width:1200px;
   margin:auto;
@@ -568,6 +660,7 @@ export function WhySocialMediaHeroDark() {
 }
 
 /* LEFT */
+
 .seo-left{
   opacity:0;
   transform:translateY(30px);
@@ -594,17 +687,23 @@ export function WhySocialMediaHeroDark() {
 }
 
 /* LIST */
+
+.seo-left ul{
+  padding:0;
+  margin:0;
+}
+
 .seo-left li{
   font-size:clamp(15px,2vw,18px);
   line-height:1.7;
   color:#cbd5f5;
   max-width:600px;
   margin:0 auto 14px;
-  padding:0;
   list-style:none;
 }
 
 /* RIGHT IMAGE */
+
 .seo-right{
   position:relative;
   display:flex;
@@ -620,7 +719,8 @@ export function WhySocialMediaHeroDark() {
   transform:scale(1);
 }
 
-/* IMAGE + GLOW */
+/* IMAGE GLOW */
+
 .seo-image-wrap::before{
   content:"";
   position:absolute;
@@ -636,12 +736,12 @@ export function WhySocialMediaHeroDark() {
   z-index:1;
   width:100%;
   max-width:280px;
-  height:auto;
 }
 
-/* ================= DESKTOP ================= */
+/* DESKTOP */
 
 @media(min-width:992px){
+
   .seo-hero-dark{
     padding:90px 8%;
   }
@@ -666,77 +766,111 @@ export function WhySocialMediaHeroDark() {
   .seo-image-wrap img{
     max-width:420px;
   }
+
 }
+
 `;
 
+    const styleId = "social-media-why-style";
 
-    const style = document.createElement("style");
-    style.innerHTML = css;
-    document.head.appendChild(style);
+    if (!document.getElementById(styleId)) {
+
+      const style = document.createElement("style");
+      style.id = styleId;
+      style.innerHTML = css;
+
+      document.head.appendChild(style);
+
+    }
 
     const observer = new IntersectionObserver(
-      ([e]) => {
-        if (e.isIntersecting) e.target.classList.add("show");
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
       },
-      { threshold: 0.3 }
+      { threshold:0.3 }
     );
 
     if (ref.current) observer.observe(ref.current);
 
     return () => {
-      style.remove();
+
+      const style = document.getElementById(styleId);
+      if (style) style.remove();
+
       if (ref.current) observer.unobserve(ref.current);
+
     };
+
   }, []);
 
   return (
+
     <section className="seo-hero-dark" ref={ref}>
+
       <div className="seo-hero-grid">
 
         {/* LEFT */}
+
         <div className="seo-left">
+
           <h1>
             Why <span>Social Media Marketing</span>?
           </h1>
 
-          <li>
-            Social media marketing connects your brand with the right audience
-            through consistent, engaging, and relevant content. It builds
-            awareness, trust, and meaningful relationships that turn followers
-            into loyal customers.
-          </li>
+          <ul>
 
-          <li>
-            With a strategic and data-driven approach, social media goes beyond
-            likes and shares. Targeted campaigns, performance tracking, and
-            continuous optimisation help generate leads, drive traffic, and
-            support measurable business growth.
-          </li>
+            <li>
+              Social media marketing connects your brand with the right audience
+              through consistent, engaging, and relevant content. It builds
+              awareness, trust, and meaningful relationships that turn followers
+              into loyal customers.
+            </li>
+
+            <li>
+              With a strategic and data-driven approach, social media goes beyond
+              likes and shares. Targeted campaigns, performance tracking, and
+              continuous optimisation help generate leads, drive traffic, and
+              support measurable business growth.
+            </li>
+
+          </ul>
+
         </div>
 
         {/* RIGHT IMAGE */}
-        
-<div className="seo-right seo-image-wrap">
+
+        <div className="seo-right seo-image-wrap">
+
           <img
             src="/images/SOCIALMEDIAMARKETING.png"
-            alt="Social Media Marketing Illustration"
+            alt="Social Media Marketing Strategy Illustration"
           />
+
         </div>
+
       </div>
+
     </section>
+
   );
+
 }
 
 
 export function FAQSocialMedia() {
+
   const [openFaq, setOpenFaq] = useState(-1);
   const sectionRef = useRef(null);
 
   /* ================= STYLES ================= */
-  useEffect(() => {
-  const css = `
 
-/* ================= FAQ SECTION (MOBILE FIRST) ================= */
+  useEffect(() => {
+
+    const css = `
+
+/* ================= FAQ SECTION ================= */
 
 .home-faq-wrap{
   padding:70px 5%;
@@ -750,6 +884,7 @@ export function FAQSocialMedia() {
 }
 
 /* TITLE */
+
 .home-faq-title{
   text-align:center;
   font-size:clamp(26px,5vw,42px);
@@ -775,6 +910,7 @@ export function FAQSocialMedia() {
 }
 
 /* CARD */
+
 .home-faq-card{
   border-radius:22px;
   padding:24px;
@@ -782,6 +918,7 @@ export function FAQSocialMedia() {
 }
 
 /* ITEM */
+
 .home-faq-item{
   border-top:1px solid rgba(255,255,255,0.08);
   padding:16px 4px;
@@ -797,6 +934,7 @@ export function FAQSocialMedia() {
 }
 
 /* HEADER */
+
 .home-faq-header{
   display:flex;
   justify-content:space-between;
@@ -806,6 +944,7 @@ export function FAQSocialMedia() {
 }
 
 /* QUESTION */
+
 .home-faq-question{
   font-size:clamp(15px,2vw,18px);
   font-weight:700;
@@ -813,6 +952,7 @@ export function FAQSocialMedia() {
 }
 
 /* TOGGLE */
+
 .home-faq-toggle{
   width:30px;
   height:30px;
@@ -832,6 +972,7 @@ export function FAQSocialMedia() {
 }
 
 /* ANSWER */
+
 .home-faq-answer{
   max-height:0;
   overflow:hidden;
@@ -851,48 +992,10 @@ export function FAQSocialMedia() {
   color:#e2e8f0;
 }
 
-/* CTA */
-.home-faq-cta{
-  margin-top:36px;
-  padding:28px;
-  border-radius:18px;
-  background:#ffffff;
-  text-align:center;
-  box-shadow:0 20px 60px rgba(0,0,0,0.2);
-}
-
-.home-faq-cta h3{
-  font-size:20px;
-  font-weight:800;
-  margin-bottom:8px;
-  color:#020617;
-}
-
-.home-faq-cta p{
-  font-size:14px;
-  color:#475569;
-  margin-bottom:18px;
-}
-
-.home-faq-cta button{
-  padding:12px 28px;
-  border-radius:999px;
-  border:none;
-  background:linear-gradient(135deg,#8b5cf6,#ec4899);
-  color:#ffffff;
-  font-size:14px;
-  font-weight:700;
-  cursor:pointer;
-  transition:transform .3s ease;
-}
-
-.home-faq-cta button:hover{
-  transform:translateY(-3px);
-}
-
-/* ================= DESKTOP ================= */
+/* DESKTOP */
 
 @media(min-width:992px){
+
   .home-faq-wrap{
     padding:90px 8%;
   }
@@ -901,132 +1004,183 @@ export function FAQSocialMedia() {
     padding:32px;
   }
 
-  .home-faq-cta{
-    margin-top:48px;
-    padding:36px;
-  }
 }
+
 `;
 
+    const styleId = "faq-social-media-style";
 
-    const id = "home-faq-style-upgraded";
-    if (!document.getElementById(id)) {
+    if (!document.getElementById(styleId)) {
+
       const style = document.createElement("style");
-      style.id = id;
+      style.id = styleId;
       style.innerHTML = css;
+
       document.head.appendChild(style);
+
     }
+
+    return () => {
+      const style = document.getElementById(styleId);
+      if (style) style.remove();
+    };
+
   }, []);
 
-  /* ================= AUTO-OPEN ON SCROLL ================= */
+  /* ================= AUTO OPEN ================= */
+
   useEffect(() => {
+
     const observer = new IntersectionObserver(
+
       ([entry]) => {
+
         if (entry.isIntersecting) {
-          setOpenFaq(0); // open first FAQ automatically
+          setOpenFaq(0);
           observer.disconnect();
         }
+
       },
-      { threshold: 0.35 }
+
+      { threshold:0.35 }
+
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
+
     return () => observer.disconnect();
+
   }, []);
 
- const faqs = [
-  {
-    q: "Which social media platforms do you manage?",
-    a: "We manage platforms like Instagram, Facebook, LinkedIn, and YouTube based on where your audience is most active."
-  },
-  {
-    q: "Do you create content or only manage posting?",
-    a: "We handle everything—from content planning and design to posting, captions, and engagement."
-  },
-  {
-    q: "How often will you post on social media?",
-    a: "Posting frequency depends on your goals, but most plans include consistent weekly or daily content."
-  },
-  {
-    q: "Will social media marketing help generate leads?",
-    a: "Yes. With the right strategy, content, and ads, social media can drive leads, traffic, and brand growth."
-  },
-  {
-    q: "How do we get started with social media marketing?",
-    a: "Contact us to discuss your goals, and we’ll create a tailored social media strategy for your brand."
-  }
-];
+  const faqs = [
 
+    {
+      q:"Which social media platforms do you manage?",
+      a:"We manage platforms such as Instagram, Facebook, LinkedIn, and YouTube depending on where your target audience is most active."
+    },
 
-  /* ================= SEO SCHEMA ================= */
+    {
+      q:"Do you create content or only manage posting?",
+      a:"We handle the entire process including strategy, content creation, design, captions, scheduling, and audience engagement."
+    },
+
+    {
+      q:"How often will you post on social media?",
+      a:"Posting frequency depends on your business goals and plan, but most strategies include consistent weekly or daily content."
+    },
+
+    {
+      q:"Will social media marketing help generate leads?",
+      a:"Yes. With the right strategy, content, and targeted campaigns, social media can generate leads, increase traffic, and grow your brand."
+    },
+
+    {
+      q:"How do we get started with social media marketing?",
+      a:"Simply contact us to discuss your business goals and we will create a customised social media strategy for your brand."
+    }
+
+  ];
+
+  /* ================= SCHEMA ================= */
+
   useEffect(() => {
+
     const schema = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": faqs.map(f => ({
-        "@type": "Question",
-        "name": f.q,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": f.a
+
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+
+      mainEntity:faqs.map(f => ({
+
+        "@type":"Question",
+        name:f.q,
+
+        acceptedAnswer:{
+          "@type":"Answer",
+          text:f.a
         }
+
       }))
+
     };
 
     const script = document.createElement("script");
     script.type = "application/ld+json";
     script.innerHTML = JSON.stringify(schema);
+
     document.head.appendChild(script);
 
-    return () => document.head.removeChild(script);
+    return () => {
+
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+
+    };
+
   }, []);
 
   return (
-    <section className="home-faq-wrap" ref={sectionRef}>
-      <div className="home-faq-container">
-        <h2 className="home-faq-title">
-  <span className="faq-title-white">Frequently Asked</span>{" "}
-  <span className="faq-title-gradient">Questions</span>
-</h2>
 
-        {/* <h2 className="home-faq-title">Frequently Asked Questions</h2> */}
+    <section className="home-faq-wrap" ref={sectionRef}>
+
+      <div className="home-faq-container">
+
+        <h2 className="home-faq-title">
+          <span className="faq-title-white">Frequently Asked</span>{" "}
+          <span className="faq-title-gradient">Questions</span>
+        </h2>
+
         <p className="home-faq-sub">
           Clear answers to help you move forward with confidence.
         </p>
 
         <div className="home-faq-card">
-          {faqs.map((item, i) => {
+
+          {faqs.map((item,i)=>{
+
             const open = openFaq === i;
-            return (
+
+            return(
+
               <div
                 key={item.q}
                 className={"home-faq-item" + (open ? " open" : "")}
               >
+
                 <div
                   className="home-faq-header"
-                  onClick={() => setOpenFaq(open ? -1 : i)}
+                  role="button"
+                  tabIndex="0"
+                  onClick={()=>setOpenFaq(open ? -1 : i)}
                 >
-                  <div className="home-faq-question">{item.q}</div>
-                  <div className="home-faq-toggle">{open ? "−" : "+"}</div>
+
+                  <div className="home-faq-question">
+                    {item.q}
+                  </div>
+
+                  <div className="home-faq-toggle">
+                    {open ? "−" : "+"}
+                  </div>
+
                 </div>
 
                 <div className="home-faq-answer">
                   <p>{item.a}</p>
                 </div>
+
               </div>
+
             );
+
           })}
+
         </div>
 
-        {/* CTA */}
-        <div className="home-faq-cta">
-          <h3>Still have questions?</h3>
-          <p>Talk directly with our experts and get a custom growth plan.</p>
-         <Link to="/contact"> <button >
-            BOOK FREE CONSULTATION →
-          </button></Link>
-        </div>
       </div>
+
     </section>
+
   );
+
 }

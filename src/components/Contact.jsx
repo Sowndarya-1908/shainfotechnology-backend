@@ -1,296 +1,398 @@
 import React, { useState, useEffect } from "react";
+import emailjs from "@emailjs/browser";
 
 /* ================= CONSTANTS ================= */
-const CONTACT_PHONE = "919361046387"; // WhatsApp number with country code
+
 const CONTACT_PHONE_DISPLAY = "93610 46387";
 const CONTACT_EMAIL = "shainfotech05@gmail.com";
-
 const CONTACT_MAP_LINK =
   "https://www.google.com/maps/place/Porur,+Chennai";
 
-/* ================= COMPONENT ================= */
 export default function Contact() {
+
   const [form, setForm] = useState({
     name: "",
+    LastName: "",
     phone: "",
+    email: "",
     service: "",
+    subject: "",
     message: "",
   });
 
-  /* 🛡️ CAPTCHA-FREE SPAM PROTECTION */
-  const [honeypot, setHoneypot] = useState("");
-  const [startTime] = useState(Date.now());
-  const [human, setHuman] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  /* ================= SERVICE AUTO MESSAGE ================= */
-  const getServiceMessage = () => {
-    switch (form.service) {
-      case "Digital Strategy":
-        return "I want a digital growth strategy for my business.";
-      case "Web Development":
-        return "I want a modern, responsive website for my business.";
-      case "Ecommerce Website":
-        return "I want to build an eCommerce website.";
-      case "SEO":
-        return "I want SEO services to improve my rankings.";
-      case "Social Media Marketing":
-        return "I want social media marketing services.";
-      case "Content Design":
-        return "I need content design services.";
-      case "Business Analysis":
-        return "I need business analysis support.";
-      case "Creative Design":
-        return "I need creative & branding design services.";
-      default:
-        return "I want to know more about your services.";
-    }
-  };
-
-  /* ================= FORM HANDLERS ================= */
   const handleChange = (e) => {
-    setHuman(true);
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
+
     e.preventDefault();
 
-    const timeTaken = (Date.now() - startTime) / 1000;
+    setLoading(true);
 
-    /* 🚫 BOT CHECKS */
-    if (honeypot) return;
-    if (!human) return;
-    if (timeTaken < 3) return;
+    emailjs.send(
+      "service_pznbx9s",
+      "template_8wwwast",
+      form,
+      "yxT-hRvX41RhpOdfZ"
+    )
+      .then(() => {
 
-    const text = `
-Hi SHA INFOTECHNOLOGY 👋
+        alert("Message sent successfully!");
 
-Name: ${form.name}
-Phone: ${form.phone}
-Service: ${form.service}
+        setForm({
+          name: "",
+          LastName: "",
+          phone: "",
+          email: "",
+          service: "",
+          subject: "",
+          message: "",
+        });
 
-Message:
-${form.message || getServiceMessage()}
-    `;
-
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(
-      navigator.userAgent
-    );
-
-    if (isMobile) {
-      window.location.href = `whatsapp://send?phone=${CONTACT_PHONE}&text=${encodeURIComponent(
-        text
-      )}`;
-    } else {
-      window.open(
-        `https://web.whatsapp.com/send?phone=${CONTACT_PHONE}&text=${encodeURIComponent(
-          text
-        )}`,
-        "_blank"
-      );
-    }
+      })
+      .catch(() => alert("Failed to send message"))
+      .finally(() => setLoading(false));
   };
 
   /* ================= STYLES ================= */
+
   useEffect(() => {
+
     const css = `
-.contact-cards-ui{
-  padding:100px 6vw;
-  background:radial-gradient(circle at top,#0b1220,#020617 70%);
-  font-family:Inter,system-ui;
-  color:#ffffff;
+
+.contact-main{
+padding:10px 0vw;
+background:#020617;
+font-family:Inter,system-ui;
 }
 
-.contact-tag{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  padding:10px 18px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,0.35);
-  font-weight:600;
-  font-size:14px;
-  margin-bottom:30px;
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+max-width:1100px;
+margin:auto;
+gap:40px;
 }
 
-.contact-tag span{
-  width:10px;
-  height:10px;
-  background:#ffb703;
-  border-radius:50%;
+/* LEFT PANEL */
+
+.contact-left{
+background:
+linear-gradient(135deg,#8b5cf6cc,#ec4899cc),
+url("/images/contact-bg.jpg");
+background-size:cover;
+background-position:center;
+color:#fff;
+padding:50px;
+border-radius:20px;
+display:flex;
+flex-direction:column;
+justify-content:center;
 }
 
-.contact-heading{
-  font-size:clamp(36px,5vw,56px);
-  font-weight:900;
-  margin-bottom:60px;
+.contact-left small{
+color:#fbbf24;
+font-weight:700;
+letter-spacing:1px;
 }
 
-.gradient-text{
-  background:linear-gradient(90deg,#8b5cf6,#ec4899);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+.contact-left h2{
+font-size:34px;
+font-weight:900;
+margin:16px 0;
+line-height:1.3;
 }
 
-.contact-grid-ui{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:28px;
+.contact-left p{
+opacity:0.9;
+margin-bottom:30px;
 }
 
-.contact-card-ui{
-  background:#ffffff;
-  color:#000;
-  border-radius:20px;
-  padding:28px;
+/* CONTACT INFO */
+
+.contact-info{
+display:flex;
+gap:16px;
+margin-bottom:24px;
+align-items:flex-start;
 }
 
-.icon-box{
-  width:56px;
-  height:56px;
-  border-radius:14px;
-  background:linear-gradient(135deg,#8b5cf6,#ec4899);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-bottom:20px;
-  color:#fff;
+.contact-icon{
+width:46px;
+height:46px;
+border-radius:10px;
+background:#000;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:20px;
+color:#fff;
 }
 
-.card-title{
-  font-size:22px;
-  font-weight:800;
-}
-
-.contact-section{
-  padding:80px 6vw;
-  background:#020617;
-}
+/* RIGHT FORM */
 
 .contact-right{
-  max-width:720px;
-  margin:auto;
-  background:linear-gradient(180deg,#0f172a,#020617);
-  padding:48px;
-  border-radius:24px;
+background:#ffffff;
+padding:20px;
+border-radius:20px;
 }
 
-.contact-form{
-  display:grid;
-  gap:18px;
+.contact-right h3{
+font-size:26px;
+font-weight:900;
+margin-bottom:0px;
+color: #000;
 }
+
+.contact-right p{
+color:#7d0695;
+margin-bottom:10px;
+}
+
+/* FORM */
+
+.contact-form{
+display:grid;
+gap:18px;
+}
+
+.contact-row{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:16px;
+}
+
+/* FIELD BOX */
+
+.form-field{
+border:2px solid #7a0955;
+border-radius:10px;
+padding:6px;
+background:#fff;
+transition:all .2s ease;
+}
+
+/* PURPLE FOCUS BORDER */
+
+.form-field:focus-within{
+border:2px solid #8b5cf6;
+box-shadow:0 0 0 2px rgba(139,92,246,0.15);
+}
+
+/* INPUTS */
 
 .contact-form input,
 .contact-form select,
 .contact-form textarea{
-  width:100%;
-  padding:16px 18px;
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,0.15);
-  background:#020617;
-  color:#fff;
+width:100%;
+padding:5px 14px;
+border:none;
+outline:none;
+font-size:14px;
+background:transparent;
 }
+
+.contact-form textarea{
+min-height:120px;
+resize:none;
+}
+
+/* BUTTON */
 
 .contact-form button{
-  padding:18px;
-  border-radius:999px;
-  background:linear-gradient(135deg,#8b5cf6,#ec4899);
-  font-size:17px;
-  font-weight:900;
-  border:none;
-  cursor:pointer;
-  color:#fff;
+margin-top:10px;
+padding:14px;
+border:none;
+border-radius:8px;
+background:linear-gradient(135deg,#8b5cf6,#ec4899);
+color:#fff;
+font-weight:700;
+cursor:pointer;
 }
 
+/* MOBILE */
+
 @media(max-width:900px){
-  .contact-grid-ui{grid-template-columns:1fr}
+
+.contact-grid{
+grid-template-columns:1fr;
 }
-    `;
+
+.contact-row{
+grid-template-columns:1fr;
+}
+
+}
+
+`;
+
     const style = document.createElement("style");
     style.innerHTML = css;
     document.head.appendChild(style);
-    return () => style.remove();
+
+    return () => document.head.removeChild(style);
+
   }, []);
 
   /* ================= JSX ================= */
+
   return (
-    <>
-      {/* CONTACT CARDS */}
-      <section className="contact-cards-ui">
-        <div className="contact-tag">
-          <span></span> GET IN TOUCH
-        </div>
 
-        <h1 className="contact-heading">
-          Let’s make <span className="gradient-text">something great!</span>
-        </h1>
+<section className="contact-main">
 
-        <div className="contact-grid-ui">
-          <div className="contact-card-ui">
-            <div className="icon-box">✉️</div>
-            <div className="card-title">Send Message</div>
-            <div>{CONTACT_EMAIL}</div>
-          </div>
+<div className="contact-grid">
 
-          <div className="contact-card-ui">
-            <div className="icon-box">📞</div>
-            <div className="card-title">Let's Talk</div>
-            <div>{CONTACT_PHONE_DISPLAY}</div>
-          </div>
+{/* LEFT INFO PANEL */}
 
-          <div className="contact-card-ui">
-            <div className="icon-box">💬</div>
-            <div className="card-title">Chat Us</div>
-            <div>@{CONTACT_PHONE_DISPLAY}</div>
-          </div>
+<div className="contact-left">
 
-          <div className="contact-card-ui">
-            <div className="icon-box">📍</div>
-            <div className="card-title">Our Office</div>
-            <a href={CONTACT_MAP_LINK} target="_blank" rel="noreferrer">
-              Porur, Chennai
-            </a>
-          </div>
-        </div>
-      </section>
+<small>GET IN TOUCH</small>
 
-      {/* CONTACT FORM */}
-      <section className="contact-section">
-        <div className="contact-right">
-          <form className="contact-form" onSubmit={handleSubmit}>
-            {/* Honeypot */}
-            <input
-              type="text"
-              value={honeypot}
-              onChange={(e) => setHoneypot(e.target.value)}
-              style={{ display: "none" }}
-            />
+<h2>
+Don't hesitate to contact us for more information.
+</h2>
 
-            <input name="name" placeholder="Name" required onChange={handleChange} />
-            <input name="phone" placeholder="Phone" required onChange={handleChange} />
+<p>
+Reach out anytime and our team will respond quickly.
+</p>
 
-            <select name="service" required onChange={handleChange}>
-              <option value="">Select Service</option>
-              <option>Digital Strategy</option>
-              <option>Web Development</option>
-              <option>Ecommerce Website</option>
-              <option>SEO</option>
-              <option>Social Media Marketing</option>
-              <option>Content Design</option>
-              <option>Business Analysis</option>
-              <option>Creative Design</option>
-            </select>
+<div className="contact-info">
+<div className="contact-icon">📍</div>
+<div>
+<h4>Head Office</h4>
+<div>Porur, Chennai</div>
+</div>
+</div>
 
-            <textarea
-              name="message"
-              placeholder="Message (optional)"
-              onChange={handleChange}
-            />
+<div className="contact-info">
+<div className="contact-icon">✉️</div>
+<div>
+<h4>Email Us</h4>
+<div>{CONTACT_EMAIL}</div>
+</div>
+</div>
 
-            <button type="submit">CONTACT ON WHATSAPP</button>
-          </form>
-        </div>
-      </section>
-    </>
+<div className="contact-info">
+<div className="contact-icon">📞</div>
+<div>
+<h4>Call Us</h4>
+<div>{CONTACT_PHONE_DISPLAY}</div>
+</div>
+</div>
+
+</div>
+
+{/* RIGHT FORM */}
+
+<div className="contact-right">
+
+<h3>Send us a message</h3>
+
+<p>Fill the form and we will contact you soon.</p>
+
+<form className="contact-form" onSubmit={handleSubmit}>
+
+<div className="contact-row">
+
+<div className="form-field">
+<input
+name="name"
+placeholder="Name"
+value={form.name}
+onChange={handleChange}
+required
+/>
+</div>
+
+<div className="form-field">
+<input
+name="LastName"
+placeholder="LastName"
+value={form.LastName}
+onChange={handleChange}
+/>
+</div>
+
+</div>
+
+<div className="contact-row">
+
+<div className="form-field">
+<input
+name="phone"
+placeholder="Phone"
+value={form.phone}
+onChange={handleChange}
+required
+/>
+</div>
+
+<div className="form-field">
+<input
+name="email"
+placeholder="Email"
+value={form.email}
+onChange={handleChange}
+required
+/>
+</div>
+
+</div>
+
+<div className="form-field">
+<select
+name="service"
+value={form.service}
+onChange={handleChange}
+required
+>
+<option value="">Select Service</option>
+<option>Digital Strategy</option>
+<option>Digital Marketing Course</option>
+<option>Web Development</option>
+<option>E-commerce Website</option>
+<option>Search Engine Optimization</option>
+<option>Social Media Marketing</option>
+<option>Content Design</option>
+<option>Business Analysis</option>
+<option>Creative Design</option>
+<option>Brand Consultancy</option>
+<option>AI Marketing</option>
+</select>
+</div>
+
+<div className="form-field">
+<input
+name="subject"
+placeholder="Subject"
+value={form.subject}
+onChange={handleChange}
+/>
+</div>
+
+<div className="form-field">
+<textarea
+name="message"
+placeholder="Message"
+value={form.message}
+onChange={handleChange}
+/>
+</div>
+
+<button type="submit">
+{loading ? "Sending..." : "SEND MESSAGE"}
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
   );
 }
