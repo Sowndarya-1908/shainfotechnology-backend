@@ -1,6 +1,7 @@
 
 import { useEffect,useState } from "react";
 import { useRef } from "react";
+import { Helmet } from "react-helmet-async";
 
 import { Link } from "react-router-dom";
 // 1
@@ -153,6 +154,14 @@ export function WebDevelopmentHero() {
   }, []);
 
   return (
+<>
+  <Helmet>
+      <title>Top Web Dev Company  in Chennai | Shainfo Technology </title>
+      <meta
+        name="description"
+        content="Choose Shainfo Technology for expert web development services. From e-commerce to blogs, we deliver high-performance sites. See results fast. Book a consultation today."
+      />
+    </Helmet>
 
     <section className="webdev-hero">
 
@@ -191,6 +200,7 @@ export function WebDevelopmentHero() {
       </div>
 
     </section>
+    </>
 
   );
 

@@ -1,6 +1,7 @@
 import { useEffect,useState } from "react";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 // 1
 export function ContentDesignHero() {
@@ -152,6 +153,15 @@ export function ContentDesignHero() {
   }, []);
 
   return (
+    <>
+      <Helmet>
+      <title>Professional Content Design India | Shainfo Tech </title>
+      <meta
+        name="description"
+        content="	Shainfo Technology offers smart content design that fits your brand. Create flows users love on any device. See real results fast. Reach out now."
+      />
+    </Helmet>
+
     <section className="smm-hero">
       <div className="smm-left">
 
@@ -183,6 +193,7 @@ export function ContentDesignHero() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 

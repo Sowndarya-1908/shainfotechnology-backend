@@ -1,6 +1,8 @@
 import { useEffect,useState } from "react";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+
+import { Helmet } from "react-helmet-async";
 // 1
 
 
@@ -151,6 +153,17 @@ export function AimarketingHero() {
   }, []);
 
   return (
+
+    <>
+   
+      <Helmet>
+      <title>AI-Powered Marketing Solutions Shainfo | Shainfotech </title>
+      <meta
+        name="description"
+        content="Build winning strategies with our AI marketing at Shainfo Technology. Chatbots, analytics, and optimization in one. Cut waste and win big. Try it free."
+      />
+    </Helmet>
+    
     <section className="smm-hero">
 
       <div className="smm-left">
@@ -191,6 +204,7 @@ export function AimarketingHero() {
       </div>
 
     </section>
+    </>
   );
 }
 

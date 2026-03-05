@@ -2,6 +2,8 @@
 import { useEffect,useState } from "react";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+
 // 1
 
 export function DigitalStrategyHero() {
@@ -153,6 +155,14 @@ export function DigitalStrategyHero() {
   }, []);
 
   return (
+    <>
+      <Helmet>
+      <title>Expert Digital Marketing Strategy in Chennai  |Shainfotechnology</title>
+      <meta
+        name="description"
+        content="Shainfo Technology's digital Marketing  strategy services spark business success. Plan ahead, engage users, measure wins. Claim your strategy audit now."
+      />
+    </Helmet>
     <section className="smm-hero">
       <div className="smm-left">
 
@@ -184,6 +194,7 @@ export function DigitalStrategyHero() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 

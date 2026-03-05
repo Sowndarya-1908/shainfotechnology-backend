@@ -2,6 +2,7 @@ import { useEffect,useState } from "react";
 // import { useEffect } from "react";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 // 1
 export function EcommerceHero() {
   useEffect(() => {
@@ -152,6 +153,15 @@ export function EcommerceHero() {
   }, []);
 
   return (
+    <>
+      <Helmet>
+      <title>Custom Ecommerce Websites by Shainfo Tech</title>
+      <meta
+        name="description"
+        content="Need a top ecommerce website? Shainfo Technology creates user-friendly stores with mobile support and easy inventory tools. Launch yours and sell more—contact us!"
+      />
+    </Helmet>
+
     <section className="smm-hero">
       <div className="smm-left">
 
@@ -182,6 +192,7 @@ export function EcommerceHero() {
       </div>
 
     </section>
+    </>
   );
 }
 

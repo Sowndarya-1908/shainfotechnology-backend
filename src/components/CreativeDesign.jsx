@@ -1,6 +1,7 @@
 import { useEffect,useState } from "react";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 export function CreativeDesignHero() {
   useEffect(() => {
     const css = `
@@ -150,6 +151,14 @@ export function CreativeDesignHero() {
   }, []);
 
   return (
+    <>
+      <Helmet>
+      <title>Creative Design Services | Transform Your Brand | Shainfotechnology  </title>
+      <meta
+        name="description"
+        content="Transform your business with compelling creative design services that enhance your brand's identity and leave a lasting impression on customers."
+      />
+    </Helmet>
     <section className="smm-hero">
       <div className="smm-left">
 
@@ -181,6 +190,7 @@ export function CreativeDesignHero() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 

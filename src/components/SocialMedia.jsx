@@ -3,6 +3,7 @@
 import { useEffect,useState } from "react";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 export function SocialMediaHero() {
@@ -179,6 +180,16 @@ export function SocialMediaHero() {
 
   return (
 
+    <>
+      <Helmet>
+      <title>Social Media Marketing Services in chennai | Shainfo Tech </title>
+      <meta
+        name="description"
+        content="Grow your brand fast with Shainfo Technology's social media marketing. We boost engagement, reach more customers, and spark sales. Claim your free plan today!"
+      />
+    </Helmet>
+
+
     <section className="smm-hero">
 
       <div className="smm-left">
@@ -224,6 +235,7 @@ export function SocialMediaHero() {
       </div>
 
     </section>
+    </>
 
   );
 

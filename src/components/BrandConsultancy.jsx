@@ -1,6 +1,7 @@
 import { useEffect,useState } from "react";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 // 1
 
 
@@ -152,6 +153,15 @@ export function BrandConsultancyHero() {
 
   return (
 
+    <>
+         <Helmet>
+      <title>Top Brand Strategy Consultancy Firm</title>
+      <meta
+        name="description"
+        content="Elevate your brand with Shainfo Technology's expert brand consultancy services. Discover strategies to enhance your identity and engage your audience."
+      />
+    </Helmet>
+  
     <section className="smm-hero">
 
       <div className="smm-left">
@@ -189,7 +199,7 @@ export function BrandConsultancyHero() {
       </div>
 
     </section>
-
+  </>
   );
 
 }

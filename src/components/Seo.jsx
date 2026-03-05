@@ -3,6 +3,8 @@
 import { useEffect, useState} from "react";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+
+import { Helmet } from "react-helmet-async";
 export function SEOHero() {
 
   useEffect(() => {
@@ -150,6 +152,15 @@ export function SEOHero() {
   }, []);
 
   return (
+    <>
+      <Helmet>
+      <title>Best SEO Company India - Shainfo Tech</title>
+      <meta
+        name="description"
+        content="Shainfo Technology delivers top SEO services to boost your site rankings. Gain more traffic and leads. Call now for a free audit."
+      />
+    </Helmet>
+
     <section className="smm-hero">
 
       <div className="smm-left">
@@ -190,6 +201,8 @@ export function SEOHero() {
       </div>
 
     </section>
+
+    </>
   );
 }
 

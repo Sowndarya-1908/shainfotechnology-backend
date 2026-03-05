@@ -2,7 +2,7 @@
 
 import { useState, useEffect,useRef } from "react";
 import emailjs from "@emailjs/browser";
-
+import { Helmet } from "react-helmet-async";
 
 
 function CurriculumSection() {
@@ -1332,6 +1332,15 @@ export default function Courses() {
 
   return (
     <>
+
+
+     <Helmet>
+          <title>Master software training with Shainfo Technology courses | Shainfotech </title>
+          <meta
+            name="description"
+            content="Get live projects, certs, and mentor support. Sign up today to land better tech jobs."
+          />
+        </Helmet>
       <section className="hero-section">
         <div className="hero-container">
 

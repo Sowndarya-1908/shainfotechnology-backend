@@ -1,6 +1,7 @@
 import { useEffect,useState } from "react";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 // 1
 export function BusinessAnalysisHero() {
   useEffect(() => {
@@ -150,6 +151,15 @@ export function BusinessAnalysisHero() {
   }, []);
 
   return (
+    <>
+      <Helmet>
+      <title>Expert Business Analysts - Shainfo Tech </title>
+      <meta
+        name="description"
+        content="Shainfo Technology delivers smart business analysis to fix gaps and fuel success. Tailored plans for your needs. Reach out now."
+      />
+    </Helmet>
+    
     <section className="smm-hero">
       <div className="smm-left">
 
@@ -181,6 +191,7 @@ export function BusinessAnalysisHero() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 
