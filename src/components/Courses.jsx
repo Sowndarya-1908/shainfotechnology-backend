@@ -485,7 +485,7 @@ function WhyRegisterSection() {
 
 function UrgencySection() {
 
-  const targetDate = new Date("March 15, 2026 00:00:00").getTime();
+  const targetDate = new Date("April 20, 2026 00:00:00").getTime();
 
   const [timeLeft, setTimeLeft] = useState({});
   const [seatsLeft, setSeatsLeft] = useState(15);
