@@ -38,6 +38,206 @@ const blogs = [
 
 // s
 {
+  id: 12,
+  slug: "why-social-media-marketing-essential-business-growth-2026",
+  title: "Why Social Media Marketing Is Essential for Business Growth in 2026",
+  category: "Digital Marketing",
+  image: "/images/socialblog.png",
+  date: "18 Mar 2026",
+  short: "Learn why social media marketing is crucial for brand awareness, customer engagement, and business growth in 2026.",
+  content: `
+
+  <h2 class="gradient-heading">
+Introduction  </h2>
+
+  <p>In today’s digital world, social media has become one of the most powerful tools for businesses to connect with customers, build brand awareness, and drive growth. Platforms like Facebook, Instagram, LinkedIn, and Twitter are no longer just for social interaction—they have evolved into powerful marketing channels that allow companies to reach millions of potential customers.
+As we move further into 2026, businesses that leverage social media marketing effectively gain a strong competitive advantage. Whether it is a startup, small business, or large enterprise, social media plays a key role in expanding reach, engaging audiences, and increasing revenue.
+</p>
+
+
+  <h2>Expanding Brand Awareness</h2>
+
+  <p>One of the biggest benefits of social media marketing is the ability to increase brand visibility. Social media platforms allow businesses to showcase their products, services, and brand personality to a wide audience.</p>
+
+  <p>Through consistent posting, engaging content, and strategic campaigns, businesses can build a recognizable brand presence online. When customers frequently see a company’s posts or advertisements on their feeds, it helps strengthen brand recall and trust.</p>
+
+  <p>For businesses, this means greater visibility and a stronger connection with their target audience.</p>
+
+
+  <h2>Direct Engagement with Customers</h2>
+
+  <p>Social media platforms enable businesses to communicate directly with their customers in real time. Unlike traditional marketing methods, social media allows two-way communication between companies and their audience.</p>
+
+  <p>Businesses can interact with customers through comments, messages, and live sessions. This direct engagement helps companies understand customer needs, answer questions quickly, and build stronger relationships.</p>
+
+  <p>When businesses actively engage with their audience, it creates a sense of trust and loyalty among customers.</p>
+
+
+  <h2>Cost-Effective Marketing Strategy</h2>
+
+  <p>Compared to traditional marketing methods such as television or print advertising, social media marketing is significantly more cost-effective. Even small businesses with limited budgets can promote their services and reach a large audience through social media platforms.</p>
+
+  <p>Paid advertising on social media also offers advanced targeting options, allowing businesses to reach specific audiences based on age, location, interests, and behavior. This ensures that marketing efforts reach the right people at the right time.</p>
+
+  <p>As a result, businesses can achieve better results while optimizing their marketing budgets.</p>
+
+
+  <h2>Driving Website Traffic and Leads</h2>
+
+  <p>Social media marketing is also an effective way to drive traffic to business websites. By sharing valuable content, blog posts, and service updates, businesses can encourage users to visit their website and learn more about their offerings.</p>
+
+  <p>For companies like SHA Infotechnology, social media can help attract businesses that are looking for IT solutions, web development services, and digital transformation support.</p>
+
+  <p>With the right strategy, social media can generate high-quality leads and convert visitors into customers.</p>
+
+
+  <h2>Building a Competitive Advantage</h2>
+
+  <p>In the modern business environment, most companies are already using social media marketing. Businesses that fail to adopt social media strategies risk falling behind competitors.</p>
+
+  <p>A strong social media presence allows businesses to showcase their expertise, highlight customer success stories, and demonstrate industry knowledge. This positions the company as a trusted authority in its field.</p>
+
+  <p>Companies that consistently share valuable and informative content often gain a competitive edge in their industry.</p>
+
+
+  <h2>Supporting Long-Term Business Growth</h2>
+
+  <p>Social media marketing is not just about short-term promotions—it is also an important strategy for long-term growth. Businesses can build communities around their brand, maintain continuous engagement with customers, and strengthen relationships over time.</p>
+
+  <p>Consistent social media activity helps businesses stay relevant in the minds of their audience and adapt quickly to changing market trends.</p>
+
+  <p>As digital communication continues to grow, social media marketing will remain one of the most important tools for business expansion.</p>
+
+
+  <h2>Conclusion</h2>
+
+  <p>Social media marketing has become a fundamental part of modern business strategies. It helps companies increase brand awareness, engage with customers, drive website traffic, and generate leads in a cost-effective way.</p>
+
+  <p>In 2026 and beyond, businesses that invest in social media marketing will be better positioned to compete in the digital marketplace.</p>
+
+  <p><strong>By developing a clear strategy and consistently delivering valuable content, companies can build strong relationships with their audience and achieve sustainable growth.</strong></p>
+
+  `
+},
+{
+  id: 11,
+  slug: "why-every-business-needs-a-website-2026",
+  title: "Why Every Business Needs a Website in 2026",
+  category: "Web Development",
+  image: "/images/whyblog.webp",
+  date: "16 Mar 2026",
+  short: "Discover why having a professional website is essential for business growth, credibility, and lead generation in 2026.",
+  content: `
+
+  <h2 class="gradient-heading">
+  Introduction
+  </h2>
+
+  <p>In today’s digital-first world, having a website is no longer optional for businesses—it is a necessity. Customers now search online before choosing products or services, and companies without a professional online presence risk losing valuable opportunities. A well-designed website helps businesses build credibility, reach a larger audience, and generate consistent leads.
+As technology continues to evolve in 2026, businesses must adapt to digital transformation to stay competitive. A website acts as the foundation of your online presence and plays a critical role in marketing, branding, and customer engagement.
+</p>
+
+
+  <h2> A Website Makes Your Business Available 24/7</h2>
+
+  <p>One of the biggest advantages of having a website is that it keeps your business accessible at all times. Unlike a physical store with limited working hours, a website allows customers to learn about your services anytime and from anywhere.</p>
+
+  <p>Customers today often search for businesses online before making a decision. A website ensures that your business is always visible to potential clients, even outside regular business hours.</p>
+
+  <p>This continuous availability helps businesses attract new customers and generate leads without constant manual effort.</p>
+
+
+  <h2> Builds Credibility and Trust</h2>
+
+  <p>Consumers tend to trust businesses that have a professional website. When potential customers search for a company and cannot find a website, it often creates doubt about the company’s legitimacy.</p>
+
+  <p>A professional website allows businesses to showcase:</p>
+
+  <ul>
+    <li>Services and expertise</li>
+    <li>Customer testimonials</li>
+    <li>Portfolio or completed projects</li>
+    <li>Contact information and company details</li>
+  </ul>
+
+  <p>Studies show that a majority of consumers believe a business with a website appears more credible than one without an online presence.</p>
+
+
+  <h2>Expands Your Reach to More Customers</h2>
+
+  <p>A physical store can only attract customers from nearby locations, but a website removes geographical limitations. With a strong online presence, businesses can reach customers across cities, countries, and even globally.</p>
+
+  <p>This expanded reach helps businesses:</p>
+
+  <ul>
+    <li>Target new markets</li>
+    <li>Increase brand awareness</li>
+    <li>Attract international clients</li>
+    <li>Grow beyond local boundaries</li>
+  </ul>
+
+  <p>In the digital era, businesses that invest in online visibility gain a significant advantage over competitors who rely only on traditional marketing.</p>
+
+
+  <h2> Improves Marketing and Lead Generation</h2>
+
+  <p>A website acts as the central hub for all digital marketing activities. Whether you use social media, email marketing, or search engine optimization (SEO), all campaigns eventually direct users to your website.</p>
+
+  <p>A well-optimized website helps businesses:</p>
+
+  <ul>
+    <li>Generate leads through contact forms</li>
+    <li>Collect customer inquiries</li>
+    <li>Showcase products and services</li>
+    <li>Convert visitors into paying customers</li>
+  </ul>
+
+  <p>Many businesses experience increased revenue after launching a website because it helps generate more leads and customer engagement.</p>
+
+
+  <h2> Helps Your Business Compete in the Digital Market</h2>
+
+  <p>Competition in the modern business world is stronger than ever. Companies that embrace digital technologies have a clear advantage.</p>
+
+  <p>A professional website allows businesses to compete with larger companies by:</p>
+
+  <ul>
+    <li>Building a strong online brand</li>
+    <li>Providing valuable information to customers</li>
+    <li>Offering digital customer support</li>
+    <li>Promoting products and services effectively</li>
+  </ul>
+
+  <p>Even small businesses can compete with established brands when they maintain a strong digital presence.</p>
+
+
+  <h2>Supports Long-Term Business Growth</h2>
+
+  <p>A website is more than just an online brochure—it is a long-term investment. Over time, it becomes a powerful tool for marketing, customer engagement, and brand development.</p>
+
+  <p>Businesses can continuously improve their websites by adding:</p>
+
+  <ul>
+    <li>Blog content</li>
+    <li>New services</li>
+    <li>Customer reviews</li>
+    <li>Updated portfolios</li>
+  </ul>
+
+  <p>These updates help attract more visitors and strengthen the company’s online reputation.</p>
+
+
+  <h2>Conclusion</h2>
+
+  <p>In 2026, businesses that succeed are those that adapt to digital transformation. A professional website provides the foundation for building credibility, reaching new customers, and growing in an increasingly competitive market.</p>
+
+  <p>Whether you run a startup, a small business, or a large enterprise, investing in a high-quality website is one of the most important steps toward long-term success.</p>
+
+  <p><strong>A strong online presence not only improves visibility but also helps businesses connect with customers and generate consistent growth.</strong></p>
+
+  `
+},
+{
   id: 10,
   slug: "online-digital-marketing-course-career-investment",
   title: "Kickstart Your Career: Why Enrolling in an Online Digital Marketing Course is Your Best Investment",
@@ -754,9 +954,11 @@ export default function Blog() {
 
     return (
       <>
+     
         <div className="single-blog">
 
           <div className="breadcrumb">
+         
             <Link to="/">Home</Link> › <Link to="/blog">Blog</Link> › {blog.title}
           </div>
 
@@ -802,6 +1004,9 @@ export default function Blog() {
       </section> */}
 
       <section className="blog-page">
+           <h1>
+        Our Blog
+      </h1>
         <div className="blog-container">
 
           <div className="blog-left">
@@ -884,6 +1089,15 @@ body{
 .blog-page{
   padding:60px 0;
 }
+  .blog-page h1{
+  display: flex;
+  justify-content: center;
+ font-size: 48px;
+  font-weight: 700;
+  margin: 0;
+  color: #c86dd7; /* purple/pink text */
+  letter-spacing: 1px;
+  }
 
 .blog-container{
   max-width:1200px;

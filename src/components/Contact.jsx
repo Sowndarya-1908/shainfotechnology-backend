@@ -99,7 +99,7 @@ font-weight:700;
 letter-spacing:1px;
 }
 
-.contact-left h2{
+.contact-left h1{
 font-size:34px;
 font-weight:900;
 margin:16px 0;
@@ -251,9 +251,9 @@ grid-template-columns:1fr;
 
 <small>GET IN TOUCH</small>
 
-<h2>
+<h1>
 Don't hesitate to contact us for more information.
-</h2>
+</h1>
 
 <p>
 Reach out anytime and our team will respond quickly.
