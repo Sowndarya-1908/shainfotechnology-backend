@@ -51,13 +51,13 @@ const blogs = [
 Introduction  </h2>
 
   <p>In today’s digital world, social media has become one of the most powerful tools for businesses to connect with customers, build brand awareness, and drive growth. Platforms like Facebook, Instagram, LinkedIn, and Twitter are no longer just for social interaction—they have evolved into powerful marketing channels that allow companies to reach millions of potential customers.
-As we move further into 2026, businesses that leverage social media marketing effectively gain a strong competitive advantage. Whether it is a startup, small business, or large enterprise, social media plays a key role in expanding reach, engaging audiences, and increasing revenue.
+As we move further into 2026, businesses that leverage <a href="/services/social-media-marketing">social media marketing</a> effectively gain a strong competitive advantage. Whether it is a startup, small business, or large enterprise, social media plays a key role in expanding reach, engaging audiences, and increasing revenue.
 </p>
 
 
   <h2>Expanding Brand Awareness</h2>
 
-  <p>One of the biggest benefits of social media marketing is the ability to increase brand visibility. Social media platforms allow businesses to showcase their products, services, and brand personality to a wide audience.</p>
+  <p>One of the biggest benefits of <a href="/services/social-media-marketing">social media marketing</a>  social media marketing is the ability to increase brand visibility. Social media platforms allow businesses to showcase their products, services, and brand personality to a wide audience.</p>
 
   <p>Through consistent posting, engaging content, and strategic campaigns, businesses can build a recognizable brand presence online. When customers frequently see a company’s posts or advertisements on their feeds, it helps strengthen brand recall and trust.</p>
 
@@ -86,7 +86,7 @@ As we move further into 2026, businesses that leverage social media marketing ef
 
   <p>Social media marketing is also an effective way to drive traffic to business websites. By sharing valuable content, blog posts, and service updates, businesses can encourage users to visit their website and learn more about their offerings.</p>
 
-  <p>For companies like SHA Infotechnology, social media can help attract businesses that are looking for IT solutions, web development services, and digital transformation support.</p>
+  <p>For companies like <a href="/">SHA Infotechnology</a>, social media can help attract businesses that are looking for IT solutions, web development services, and digital transformation support.</p>
 
   <p>With the right strategy, social media can generate high-quality leads and convert visitors into customers.</p>
 
@@ -134,7 +134,7 @@ As we move further into 2026, businesses that leverage social media marketing ef
   </h2>
 
   <p>In today’s digital-first world, having a website is no longer optional for businesses—it is a necessity. Customers now search online before choosing products or services, and companies without a professional online presence risk losing valuable opportunities. A well-designed website helps businesses build credibility, reach a larger audience, and generate consistent leads.
-As technology continues to evolve in 2026, businesses must adapt to digital transformation to stay competitive. A website acts as the foundation of your online presence and plays a critical role in marketing, branding, and customer engagement.
+As technology continues to evolve in 2026, businesses must adapt to digital transformation to stay competitive. A <a href="/">website</a> acts as the foundation of your online presence and plays a critical role in marketing, branding, and customer engagement.
 </p>
 
 
@@ -181,7 +181,7 @@ As technology continues to evolve in 2026, businesses must adapt to digital tran
 
   <h2> Improves Marketing and Lead Generation</h2>
 
-  <p>A website acts as the central hub for all digital marketing activities. Whether you use social media, email marketing, or search engine optimization (SEO), all campaigns eventually direct users to your website.</p>
+  <p>A website acts as the central hub for all digital marketing activities. Whether you use social media, email marketing, or <a href="/services/seo">search engine optimization (SEO)</a>, all campaigns eventually direct users to your website.</p>
 
   <p>A well-optimized website helps businesses:</p>
 
@@ -213,13 +213,13 @@ As technology continues to evolve in 2026, businesses must adapt to digital tran
 
   <h2>Supports Long-Term Business Growth</h2>
 
-  <p>A website is more than just an online brochure—it is a long-term investment. Over time, it becomes a powerful tool for marketing, customer engagement, and brand development.</p>
+  <p>A website is more than just an online brochure—it is a long-term investment. Over time, it becomes a powerful tool for marketing, customer engagement, and <a href="/services/brand-consultancy">brand development</a>brand development.</p>
 
   <p>Businesses can continuously improve their websites by adding:</p>
 
   <ul>
     <li>Blog content</li>
-    <li>New services</li>
+    <li><a href="/services">New services</a></li>
     <li>Customer reviews</li>
     <li>Updated portfolios</li>
   </ul>
@@ -249,7 +249,7 @@ As technology continues to evolve in 2026, businesses must adapt to digital tran
 
 <h2 class="gradient-heading">Introduction</h2>
 
-<p>The digital economy is booming, and companies are desperately searching for talent who can navigate the complexities of the online world. Whether you’re a recent graduate or looking to switch careers, there has never been a better time to upskill. But with so many options available, why should you choose a structured <strong>online digital marketing course</strong>? Because in an industry that changes by the minute, having a guided, up-to-date curriculum is the only way to ensure you’re learning skills that are actually in demand.</p>
+<p>The digital economy is booming, and companies are desperately searching for talent who can navigate the complexities of the online world. Whether you’re a recent graduate or looking to switch careers, there has never been a better time to upskill. But with so many options available, why should you choose a structured <strong>online <a href="/courses">digital marketing course</a></strong>? Because in an industry that changes by the minute, having a guided, up-to-date curriculum is the only way to ensure you’re learning skills that are actually in demand.</p>
 
 
 <h2>From Beginner to Professional: What You Will Learn</h2>
@@ -273,14 +273,14 @@ As technology continues to evolve in 2026, businesses must adapt to digital tran
 
 <h2>Beyond the Classroom: Placement Assistance</h2>
 
-<p>The ultimate goal of learning is earning. The fear of "what next?" holds many people back from starting their learning journey. That’s why we provide dedicated <strong>placement assistance</strong> to our graduates. From resume workshops to mock interviews, we bridge the gap between education and employment. We don’t just hand you a certificate; we help you walk into your first <strong>career in digital marketing</strong> with confidence.</p>
+<p>The ultimate goal of learning is earning. The fear of "what next?" holds many people back from starting their learning journey. That’s why we provide dedicated <strong>placement assistance</strong> to our graduates. From resume workshops to mock interviews, we bridge the gap between education and employment. We don’t just hand you a certificate; we help you walk into your first <strong><a href="/courses">career in digital marketing</a></strong> with confidence.</p>
 
 
 <h2>Conclusion</h2>
 
 <p>Your future in digital is waiting. Don’t let another year pass by wondering "what if."</p>
 
-<p>Take control of your career today by exploring <strong>Shainfotechnology’s comprehensive training program</strong>. Enroll now and start your journey toward a high-growth, exciting career in digital marketing.</p>
+<p>Take control of your career today by exploring <strong> <a href="/">Shainfotechnology’s</a> comprehensive training program</strong>. Enroll now and start your journey toward a high-growth, exciting career in digital marketing.</p>
 
 `
 },
@@ -296,7 +296,7 @@ As technology continues to evolve in 2026, businesses must adapt to digital tran
 
 <h2 class="gradient-heading">Introduction</h2>
 
-<p>Is your business on Instagram, LinkedIn, and Facebook, yet you’re seeing little to no return? You are not alone. In a world where the average user is bombarded with thousands of ads daily, simply "posting" isn't enough. To truly capture attention, you need a strategic partner. Hiring a dedicated <strong>social media marketing agency</strong> like Shainfotech can be the difference between shouting into the void and starting a meaningful conversation with your ideal customers.</p>
+<p>Is your business on Instagram, LinkedIn, and Facebook, yet you’re seeing little to no return? You are not alone. In a world where the average user is bombarded with thousands of ads daily, simply "posting" isn't enough. To truly capture attention, you need a strategic partner. Hiring a dedicated <strong><a href="/services/social-media-marketing">social media marketing agency</a></strong> like Shainfotech can be the difference between shouting into the void and starting a meaningful conversation with your ideal customers.</p>
 
 <h2>The Death of Organic Reach (and What to Do About It)</h2>
 
@@ -304,7 +304,7 @@ As technology continues to evolve in 2026, businesses must adapt to digital tran
 
 <h2>Building a Community, Not Just a Follower Count</h2>
 
-<p>Vanity metrics (likes and follows) don't pay the bills. What matters is <strong>engagement strategy</strong>. How do you turn a casual scroller into a loyal customer? It requires a robust <strong>content calendar</strong> that balances promotional material with value-added content, interactive stories, and community management. We help you respond to comments, engage in trending conversations, and build a tribe of brand advocates who trust you.</p>
+<p>Vanity metrics (likes and follows) don't pay the bills. What matters is <strong>engagement strategy</strong>. How do you turn a casual scroller into a loyal customer? It requires a robust <strong><a href="/services/content-design">content calendar</a></strong> that balances promotional material with value-added content, interactive stories, and community management. We help you respond to comments, engage in trending conversations, and build a tribe of brand advocates who trust you.</p>
 
 <h2>Measuring What Matters: Social Media ROI</h2>
 
@@ -329,7 +329,7 @@ As technology continues to evolve in 2026, businesses must adapt to digital tran
   <h2 class="gradient-heading">
 Introduction  </h2>
 
-  <p>Remember when marketing meant casting a wide net and hoping for the best? Those days are fading fast. In today’s digital landscape, the winners aren’t just the ones with the biggest budgets, they are the ones with the smartest strategies. This is where AI marketing tools step in to transform raw data into actionable insights. At Shainfotech, we’ve watched artificial intelligence shift from a "nice-to-have" to a critical component of sustainable growth. Let’s break down how AI is actually changing the game and how you can leverage it to maximize your return on investment.</p>
+  <p>Remember when marketing meant casting a wide net and hoping for the best? Those days are fading fast. In today’s digital landscape, the winners aren’t just the ones with the biggest budgets, they are the ones with the smartest strategies. This is where <a href="/services/ai-marketing">Our AI marketing</a> tools step in to transform raw data into actionable insights. At Shainfotech, we’ve watched artificial intelligence shift from a "nice-to-have" to a critical component of sustainable growth. Let’s break down how AI is actually changing the game and how you can leverage it to maximize your return on investment.</p>
 
 
 
@@ -352,7 +352,7 @@ Introduction  </h2>
 
   <h2>Implementing Your AI Strategy</h2>
 
-  <p>Implementing AI might sound complex, but it doesn't have to be disruptive. The key is starting with a clear goal. Are you trying to reduce ad spend waste? Improve customer service response times? At Shainfotech, we specialize in integrating that fit seamlessly into your existing workflow, ensuring you’re not just keeping up with the competition, but leaving them behind.</p>
+  <p>Implementing AI might sound complex, but it doesn't have to be disruptive. The key is starting with a clear goal. Are you trying to reduce ad spend waste? Improve customer service response times? At <a href="/">Shainfotech</a>, we specialize in integrating that fit seamlessly into your existing workflow, ensuring you’re not just keeping up with the competition, but leaving them behind.</p>
 
   <h3>Conclusion</h3>
 
@@ -373,12 +373,12 @@ content: `
 
 <h2>Introduction</h2>
 
-<p>Artificial Intelligence is no longer a futuristic concept—it is a present-day reality transforming how businesses market themselves. As one of the emerging <strong>AI marketing companies in Chennai</strong>, SHA Infotech is at the forefront of this revolution, helping brands leverage machine learning and automation to gain a competitive edge.</p>
+<p>Artificial Intelligence is no longer a futuristic concept—it is a present-day reality transforming how businesses market themselves. As one of the emerging <strong><a href="/services/ai-marketing">AI marketing</a> companies in Chennai</strong>, SHA Infotech is at the forefront of this revolution, helping brands leverage machine learning and automation to gain a competitive edge.</p>
 
 
 <h2>What is AI Marketing<strong>?</strong></h2>
 
-<p>AI Marketing involves using artificial intelligence technologies to make automated decisions based on data collection, data analysis, and observations of audience or economic trends. This allows for hyper-personalization and predictive analysis that was impossible a decade ago. Companies like Zocket and Innovoot in Chennai are already leveraging AI for ad creatives and development, and SHA Infotech is integrating these principles to benefit your business.</p>
+<p>AI Marketing involves using artificial intelligence technologies to make automated decisions based on data collection, data analysis, and observations of audience or economic trends. This allows for hyper-personalization and predictive analysis that was impossible a decade ago. Companies like Zocket and Innovoot in Chennai are already leveraging AI for ad creatives and development, and <a href="/">Our SHA Infotech</a> is integrating these principles to benefit your business.</p>
 
 
 <h2>SHA Infotech’s AI-Powered Services</h2>
@@ -432,7 +432,7 @@ content: `
 
 <h2>The Digital Landscape in Chennai</h2>
 
-<p>Businesses in Chennai are competing for the attention of a tech-savvy audience. Traditional marketing methods are no longer sufficient. Digital marketing offers measurable ROI, targeted reach, and real-time engagement. Services like SEO, PPC, and Social Media Marketing are crucial for businesses looking to thrive.</p>
+<p>Businesses in Chennai are competing for the attention of a tech-savvy audience. Traditional marketing methods are no longer sufficient. Digital marketing offers measurable ROI, targeted reach, and real-time engagement. Services like <a href="/services/seo">SEO</a>, PPC, and <a href="/services/social-media-marketing">Social Media Marketing</a> are crucial for businesses looking to thrive.</p>
 
 
 <h2>Our Integrated Digital Marketing Approach</h2>
@@ -442,7 +442,7 @@ content: `
 <p>Here’s how we help Chennai businesses grow:</p>
 
 <ul>
-<li><strong>Search Engine Optimization (SEO):</strong> We optimize your website to rank higher for local keywords like "Best restaurants in Chennai" or "IT services near me," driving organic traffic that converts.</li>
+<li><strong><a href="/services/seo">Search Engine Optimization (SEO)</a>:</strong> We optimize your website to rank higher for local keywords like "Best restaurants in Chennai" or "IT services near me," driving organic traffic that converts.</li>
 
 <li><strong>Social Media Marketing (SMM):</strong> Building communities and engaging with your audience on platforms where they spend most of their time.</li>
 
@@ -452,7 +452,7 @@ content: `
 
 <h2>Data-Driven Decisions</h2>
 
-<p>Unlike traditional agencies that rely on guesswork, SHA Infotech uses <strong>Web Analytics</strong> and <strong>Big Data Analytics</strong> to refine marketing strategies. By analyzing user behavior, we continuously tweak campaigns to improve performance, ensuring that every rupee of your marketing budget is well spent. Choosing the right digital marketing partner is a game-changer. SHA Infotech combines technical IT prowess with creative marketing flair to deliver campaigns that resonate with your audience and drive sales.</p>
+<p>Unlike traditional agencies that rely on guesswork, <a href="/">SHA Infotech</a> uses <strong>Web Analytics</strong> and <strong>Big Data Analytics</strong> to refine marketing strategies. By analyzing user behavior, we continuously tweak campaigns to improve performance, ensuring that every rupee of your marketing budget is well spent. Choosing the right digital marketing partner is a game-changer. SHA Infotech combines technical IT prowess with creative marketing flair to deliver campaigns that resonate with your audience and drive sales.</p>
 
 
 <h2>Call to Action</h2>
@@ -473,13 +473,11 @@ date : "20 Feb 2026",
 short: "Discover why choosing a professional web designing company in Chennai can help your business grow and build a strong digital presence.",
 content: `
 
-<h2 class="gradient-heading">
-Top Reasons to Choose a Professional Web Designing Company in Chennai for Your Business Growth
-</h2>
 
-<h2>Introduction</h2>
 
-<p>In today’s digital age, your website is the face of your business. For businesses in Chennai, a rapidly growing hub for startups and enterprises, having a robust online presence is no longer optional—it’s essential.</p>
+<h2 class="gradient-heading">Introduction</h2>
+
+<p>In today’s digital age, your <a href="/">website</a> is the face of your business. For businesses in Chennai, a rapidly growing hub for startups and enterprises, having a robust online presence is no longer optional—it’s essential.</p>
 
 <p>Partnering with a reliable <strong>web designing company in Chennai</strong> like SHA Infotech ensures that your brand stands out in a crowded marketplace.</p>
 
@@ -495,7 +493,7 @@ Top Reasons to Choose a Professional Web Designing Company in Chennai for Your B
 
 <h2>The SHA Infotech Advantage in Chennai</h2>
 
-<p>At SHA Infotech, we understand the local market dynamics. Based in West Bengal with a global outreach, our expertise in <strong>Web Design</strong> and <strong>Web Development</strong> allows us to serve Chennai-based clients with precision.</p>
+<p>At SHA Infotech, we understand the local market dynamics. Based in West Bengal with a global outreach, our expertise in <strong>Web Design</strong> and <strong><a href="/services/web-development">Web Development</a></strong> allows us to serve Chennai-based clients with precision.</p>
 
 <p>We don’t just build websites; we build digital experiences that are powerful, scalable, and designed to grow your business online.</p>
 
@@ -506,7 +504,7 @@ Top Reasons to Choose a Professional Web Designing Company in Chennai for Your B
 
 <li><strong>SEO-Optimized:</strong> Structuring your website in a way that helps it rank higher on search engines from day one.</li>
 
-<li><strong>E-commerce Ready:</strong> Integrating secure payment gateways and advanced shopping features to help you sell products and services online.</li>
+<li><strong><a href="/services/ecommerce-website">E-commerce</a> Ready:</strong> Integrating secure payment gateways and advanced shopping features to help you sell products and services online.</li>
 </ul>
 
 
@@ -557,7 +555,7 @@ Top Reasons to Choose a Professional Web Designing Company in Chennai for Your B
   </h2>
 
   <p>
-  At <strong>SHA Infotechnology</strong>, we specialize in transforming businesses through innovative digital solutions.
+  At <strong><a href="/">SHA Infotechnology</a></strong>, we specialize in transforming businesses through innovative digital solutions.
   As a leading digital marketing and web development agency, we combine strategy, creativity,
   and technology to help brands grow, compete, and succeed in today’s digital-first world.
   </p>
@@ -579,7 +577,7 @@ Top Reasons to Choose a Professional Web Designing Company in Chennai for Your B
     <li>Search Engine Optimization (SEO)</li>
     <li>Social Media Marketing</li>
     <li>Performance Marketing Campaigns</li>
-    <li>Content Marketing Strategy</li>
+    <li><a href="/services/content-design">Content Marketing Strategy</a></li>
     <li>Online Reputation Management</li>
   </ul>
 
@@ -592,7 +590,7 @@ Top Reasons to Choose a Professional Web Designing Company in Chennai for Your B
 
   <ul>
     <li>Custom Website Development</li>
-    <li>E-Commerce Website Development</li>
+    <li><a href="/services/ecommerce-website">E-Commerce Website Development</a></li>
     <li>Mobile-Responsive Design</li>
     <li>UI/UX Optimized Interfaces</li>
     <li>Secure & Scalable Architecture</li>
@@ -642,12 +640,12 @@ Top Reasons to Choose a Professional Web Designing Company in Chennai for Your B
   content: `
 
   <h2 class="gradient-heading">
-  Empowering Brands Through Strategy, Design & Technology
+Introduction
   </h2>
 
   <p>
   At <strong>SHA Infotechnology</strong>, we empower businesses to grow, scale, and lead in the digital era.
-  As a full-service digital marketing agency, we combine web development, SEO, digital strategy,
+  As a full-service digital marketing agency, we combine <a href="/services/web-development">web development</a>, <a href="/services/seo">SEO</a>, <a href="/services/digital-strategy">digital strategy</a>,
   creative design, business analysis, and brand consultancy to build powerful digital ecosystems.
   Our mission is simple — transform ideas into measurable digital success.
   </p>
@@ -737,11 +735,11 @@ Top Reasons to Choose a Professional Web Designing Company in Chennai for Your B
     content: `
 
      <h2 class="gradient-heading">
-  Crafting Digital Excellence in Chennai – Custom Software Solutions for Your Business
+  Introduction
   </h2>
 
   <p>
-  At <strong>Sha Infotech</strong>, a premier website development company in Chennai, we believe in the power of technology to transform businesses.
+  At <strong><a href="/">Sha Infotech</a></strong>, a premier website development company in Chennai, we believe in the power of technology to transform businesses.
   Specializing in <strong>custom software services</strong>, we help enterprises across industries build scalable, secure, and innovative digital solutions.
   This blog is your go-to resource for insights, trends, and expert advice on web development, software engineering, and digital strategy.
   </p>
@@ -807,7 +805,7 @@ Top Reasons to Choose a Professional Web Designing Company in Chennai for Your B
   <ul>
     <li>Custom Web Development</li>
     <li>Mobile App Development</li>
-    <li>E-Commerce Solutions</li>
+    <li><a href="/services/ecommerce-website">E-Commerce Solutions</a></li>
     <li>Enterprise Software</li>
     <li>UI/UX Design</li>
     <li>Software Maintenance & Support</li>
@@ -818,7 +816,7 @@ Top Reasons to Choose a Professional Web Designing Company in Chennai for Your B
   <h3>Industry Insight: The Rise of SaaS in Chennai’s Startup Ecosystem</h3>
   <p>
   Chennai is emerging as a hub for SaaS startups.
-  Custom software development is fueling this growth,
+  Custom <a href="/services/web-development">software development</a> is fueling this growth,
   and Sha Infotech partners with innovators to build scalable,
   future-ready digital products.
   </p>
@@ -836,7 +834,7 @@ Top Reasons to Choose a Professional Web Designing Company in Chennai for Your B
   content: `
 
   <h2 class="gradient-heading">
-  Sha Infotech – One of the Best Digital Marketing Companies in Chennai
+ Introduction
   </h2>
 
   <p>Sha Infotech is a results-focused digital marketing company in Chennai delivering customized marketing solutions for startups, SMEs, and enterprises.</p>
@@ -847,7 +845,7 @@ Top Reasons to Choose a Professional Web Designing Company in Chennai for Your B
 
   <h2>Our Digital Marketing Services in Chennai</h2>
 
-  <h3>Search Engine Optimization (SEO)</h3>
+  <h3>Search Engine Optimization (SEO):</h3>
   <p>Our SEO strategies help businesses rank on Google for high-value local and national keywords.</p>
   <ul>
     <li>Local SEO for Chennai businesses</li>
@@ -856,7 +854,7 @@ Top Reasons to Choose a Professional Web Designing Company in Chennai for Your B
     <li>Link building & content optimization</li>
   </ul>
 
-  <h3>Google Ads & PPC Management</h3>
+  <h3>Google Ads & PPC Management:</h3>
   <p>We manage cost-effective Google Ads campaigns that generate immediate leads and conversions.</p>
   <ul>
     <li>Keyword research & ad copy optimization</li>
@@ -864,7 +862,7 @@ Top Reasons to Choose a Professional Web Designing Company in Chennai for Your B
     <li>Conversion tracking & ROI analysis</li>
   </ul>
 
-  <h3>Social Media Marketing</h3>
+  <h3>Social Media Marketing:</h3>
   <p>Build strong customer relationships through impactful social media campaigns.</p>
   <ul>
     <li>Instagram, Facebook & LinkedIn marketing</li>
@@ -872,7 +870,7 @@ Top Reasons to Choose a Professional Web Designing Company in Chennai for Your B
     <li>Paid social lead generation</li>
   </ul>
 
-  <h3>Content Marketing & Branding Strategy</h3>
+  <h3>Content Marketing & Branding Strategy:</h3>
   <p>High-quality content that improves rankings and builds trust.</p>
   <ul>
     <li>SEO blog writing</li>
@@ -880,7 +878,7 @@ Top Reasons to Choose a Professional Web Designing Company in Chennai for Your B
     <li>Brand messaging & storytelling</li>
   </ul>
 
-  <h3>Website Development & Optimization</h3>
+  <h3>Website Development & Optimization:</h3>
   <p>Conversion-focused websites designed to rank and convert.</p>
   <ul>
     <li>SEO-friendly website development</li>
@@ -890,7 +888,7 @@ Top Reasons to Choose a Professional Web Designing Company in Chennai for Your B
 
  
 
-  <h2>Why Sha Infotech Stands Out Among Digital Marketing Companies in Chennai</h2>
+  <h2>Why Sha Infotech Stands Out Among Digital Marketing Companies in Chennai:</h2>
 
   <h3>Customized Digital Strategies</h3>
   <p>We don’t use one-size-fits-all solutions. Every strategy is tailored to your industry, location, and goals.</p>
@@ -906,11 +904,11 @@ Top Reasons to Choose a Professional Web Designing Company in Chennai for Your B
 
 
 
-  <h2>Industries We Serve in Chennai</h2>
+  <h2>Industries We Serve in Chennai:</h2>
 
   <ul>
     <li>IT & Software Companies</li>
-    <li>E-commerce & Retail Brands</li>
+    <li><a href="/services/ecommerce-website">E-commerce</a> & Retail Brands</li>
     <li>Real Estate & Construction</li>
     <li>Healthcare & Clinics</li>
     <li>Education & Training Institutes</li>
@@ -927,7 +925,7 @@ Top Reasons to Choose a Professional Web Designing Company in Chennai for Your B
 
   <p>We help businesses dominate local search results, attract quality leads, and scale faster.</p>
 
-  <p><strong>Get started today with Sha Infotech – one of the leading digital marketing companies in Chennai.</strong></p>
+  <p><strong>Get started today with <a href="/">Sha Infotech</a> one of the leading digital marketing companies in Chennai.</strong></p>
 
   `
 },
