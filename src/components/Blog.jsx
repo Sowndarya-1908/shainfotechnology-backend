@@ -28,10 +28,166 @@ const blogs = [
   /* ================= BLOG 1 ================= */
 
   
+{
+  id: 14,
+  slug: "custom-software-development-growth-engine",
+  title: "Beyond the Website: Why Custom Software Development is Your Next Growth Engine",
+  category: "Software Development",
+  image: "/images/blog16.png",
+  date: "04 Apr 2026",
+  short: "Discover how custom software development helps businesses automate workflows, integrate systems, and scale efficiently.",
+  content: `
+
+  <h2 class="gradient-heading">
+Beyond the Website: Why Custom Software Development is Your Next Growth Engine
+  </h2>
+
+  <p>In today’s fast-paced digital landscape, having a stunning website is just the starting line. At <a href="/">Sha Infotechnology</a>, we build high-performance, mobile-responsive websites that convert visitors into loyal customers. But what happens when your business outgrows off-the-shelf solutions? What if your unique processes demand a tool that doesn’t exist yet?</p>
+
+  <p>Enter <strong>Custom Software Development</strong>—the secret weapon for scaling businesses. While we are widely recognized as a results-driven digital marketing agency, our technical expertise runs much deeper. We design secure, scalable, and intelligent software solutions tailored to automate your workflows, integrate your data, and solve problems that generic SaaS products cannot.</p>
+
+  <p>Here is why integrating custom software into your growth strategy is a game-changer.</p>
 
 
+  <h2>Seamless Integration with Your Existing Tech Stack</h2>
+
+  <p>Your business likely runs on multiple platforms: an ERP, a CRM, marketing tools, and your website. Off-the-shelf software often creates data silos. Custom development bridges these gaps.</p>
+
+  <p>By building bespoke software, we ensure that your new tool talks directly to your existing SEO-friendly website architecture and analytics dashboards. Imagine your lead generation data from your website automatically syncing with a custom client portal—no manual data entry, no errors.</p>
 
 
+  <h2>Automate the Unique Workflows That Define You</h2>
+
+  <p>Every business has a "secret sauce"—a specific way of onboarding clients, managing projects, or delivering reports. At <a href="/services">Sha Infotechnology</a>, our Business Analysis services are designed to map these unique workflows.</p>
+
+  <p>We then transform them into automated software solutions. Whether it is an automated proposal generator, a custom inventory tracker for your e-commerce store, or an internal project management tool, we code the logic so your team can focus on growth, not repetitive tasks.</p>
+
+
+  <h2>Data-Driven Decision Making with AI-Ready Software</h2>
+
+  <p>We are an agency that champions data-driven strategies in everything we do. Our custom software solutions are built with analytics and AI marketing capabilities at their core.</p>
+
+  <p>Custom software can be designed to collect, clean, and visualize your operational data in ways that standard tools cannot. This means you are not just guessing—you are making strategic decisions based on real-time insights from your own proprietary systems.</p>
+
+
+  <h2>Fortified Security and Complete Ownership</h2>
+
+  <p>When you use a third-party platform, you play by their security rules. When you invest in custom development with us, you own the code, the database, and the security protocols.</p>
+
+  <p>We build secure and scalable applications following the same rigorous standards we apply to our E-commerce website development. This is particularly crucial for industries like healthcare, finance, or any business handling sensitive customer data. You get bank-grade security tailored to your specific risk profile.</p>
+
+
+  <h2>Long-Term ROI vs. Short-Term Licensing Fees</h2>
+
+  <p>Paying monthly licensing fees for multiple software users adds up quickly. Custom software requires an upfront investment, but it becomes a depreciating asset that you own. There are no surprise per-user fee hikes or feature limitations.</p>
+
+  <p>Moreover, as your business evolves, your software evolves with you. We provide ongoing support and optimization, just like we do for our digital marketing services, ensuring your tool remains relevant and powerful for years.</p>
+
+
+  <h2>From Strategy to Code: How We Work</h2>
+
+  <ol>
+    <li>Discovery: We analyze your business bottlenecks and goals.</li>
+    <li>Strategy: We design the software architecture and user experience.</li>
+    <li>Agile Development: We build in sprints, giving you visibility at every stage.</li>
+    <li>Testing & Launch: Rigorous QA ensures a bug-free deployment.</li>
+    <li>Optimization & Support: We track performance and roll out improvements continuously.</li>
+  </ol>
+
+
+  <h2>Is Your Business Ready for Custom Software?</h2>
+
+  <p>Consider this your sign. If you are tired of forcing your business into rigid, one-size-fits-all software, it is time for a conversation. Whether you are a startup looking to build an MVP or an established enterprise needing a complex operational dashboard, Sha Infotechnology has the experienced professionals to bring your vision to life.</p>
+
+  <p><strong>Don’t just digitize your processes—optimize them.</strong></p>
+
+  <p><strong><a href="/contact">Contact us today for a free consultation</a></strong>. Let’s discuss how a custom software solution can drive your next phase of measurable growth.</p>
+
+  `
+},
+
+
+{
+  id: 13,
+  slug: "digital-marketing-agency-growth-sha-infotechnology",
+  title: "Unlock Explosive Growth: Why SHA Infotechnology is Your Ultimate Digital Marketing Partner",
+  category: "Digital Marketing",
+  image: "/images/blog15.png",
+  date: "02 Apr 2026",
+  short: "Discover how SHA Infotechnology helps businesses scale with result-driven digital marketing strategies.",
+  content: `
+
+  <h2 class="gradient-heading">
+Unlock Explosive Growth  </h2>
+
+  <p>In a world where 63% of businesses have increased their digital marketing budgets, the question is no longer <strong>if</strong> you should market online, but <strong>how</strong> you can do it effectively.</p>
+
+  <p>At <a href="/">SHA Infotechnology</a>, we don't believe in guesswork. We believe in <strong>results-driven digital marketing</strong>. As a premier <a href="/services">digital marketing agency</a>, we combine creativity, data, and cutting-edge technology to help startups, SMEs, and enterprises scale online, generate qualified leads, and skyrocket revenue.</p>
+
+  <p>Here is an inside look at our comprehensive digital marketing ecosystem and why it is the only growth partner you will ever need.</p>
+
+
+  <h2>The Foundation: Website Development That Converts</h2>
+
+  <p>Before you drive traffic, you need a destination that works. Your website is your digital storefront, and if it is slow, unresponsive, or confusing, you are losing money with every click.</p>
+
+  <p>Our <a href="/services">Website Development services</a> are engineered specifically for conversion. We don’t just build pretty sites; we build <strong>SEO-friendly, fast-loading, and mobile-responsive</strong> platforms. By focusing on UX/UI optimized for conversions, we ensure that once a visitor lands on your page, they are guided naturally toward becoming a loyal customer.</p>
+
+
+  <h2>Visibility Engines: SEO & Google Ads (PPC)</h2>
+
+  <ul>
+    <li><strong>Search Engine Optimization (SEO):</strong> We implement white-hat, long-term strategies that improve your organic rankings. From technical audits to link building, our goal is to drive high-quality traffic that actually searches for what you offer.</li>
+    <li><strong>Google Ads & Paid Media (PPC):</strong> Need leads <strong>now</strong>? Our certified PPC experts create targeted campaigns that put your brand at the top of search results instantly while maximizing ROI.</li>
+  </ul>
+
+
+  <h2>Engagement & Authority: Social Media & Content Strategy</h2>
+
+  <p>Traffic means nothing if users bounce immediately. To build a loyal community, you need <strong>authority and trust</strong>.</p>
+
+  <p>Our <a href="/services">Social Media Marketing (SMM)</a> goes beyond posting content. We build brand awareness, foster engagement, and drive traffic through strategic campaigns on platforms like LinkedIn, Instagram, Facebook, and Twitter.</p>
+
+  <p>This is powered by our <a href="/services">Content Marketing Strategy</a>. We create SEO-optimized blogs, website content, and brand storytelling that helps you attract, engage, and retain your audience while positioning your brand as an industry leader.</p>
+
+
+  <h2>Hyper-Local Growth: Local SEO & Lead Generation</h2>
+
+  <p>For local businesses, visibility matters more than ever. Our <strong>Local SEO & Lead Generation</strong> services ensure your business appears when customers search for services “near me.”</p>
+
+  <p>We optimize your Google Business Profile, manage citations, and generate geo-targeted leads that are ready to convert.</p>
+
+
+  <h2>The Secret Sauce: AI Marketing & Analytics</h2>
+
+  <p>What truly separates SHA Infotechnology from the rest is our commitment to data.</p>
+
+  <p>We don’t just launch campaigns and hope for the best. We employ AI Marketing strategies that analyze customer behavior, predict trends, and automate personalized campaigns for smarter growth.</p>
+
+  <p>Every decision is backed by our Analytics & Performance Tracking. We provide transparent reporting so you can see exactly where every dollar goes and how it translates into growth.</p>
+
+
+  <h2>Why Choose SHA Infotechnology?</h2>
+
+  <ul>
+    <li><strong>Experienced Professionals:</strong> Work with skilled experts.</li>
+    <li><strong>Data-Driven Strategies:</strong> Zero guesswork, 100% analytics.</li>
+    <li><strong>Transparent Reporting:</strong> Clear ROI insights.</li>
+    <li><strong>Industry Expertise:</strong> IT, E-commerce, Healthcare, Real Estate, and Startups.</li>
+    <li><strong>Scalable Solutions:</strong> Flexible plans that grow with your business.</li>
+  </ul>
+
+
+  <h2>Ready to Scale?</h2>
+
+  <p>Whether you are a startup or an established business, <a href="/">SHA Infotechnology</a> is your trusted growth partner.</p>
+
+  <p><strong>Don’t just exist online. Dominate online.</strong></p>
+
+  <p>👉 <strong><a href="/contact">Contact us today for a free consultation</a></strong> and let us create a custom growth plan for your business.</p>
+
+  `
+},
 
 
 
@@ -984,9 +1140,12 @@ export default function Blog() {
     );
   }
 
-  const filteredBlogs = blogs.filter(blog =>
+const filteredBlogs = blogs
+  .filter(blog =>
     blog.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  )
+  .sort((a, b) => b.id - a.id); // 🔥 newest first
+  
 
   return (
     <>
