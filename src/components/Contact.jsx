@@ -41,6 +41,22 @@ export default function Contact() {
       .then(() => {
 
         alert("Message sent successfully!");
+          const message = `🚀 New Contact Enquiry
+
+👤 Name: ${form.name} ${form.LastName}
+📞 Phone: ${form.phone}
+📧 Email: ${form.email}
+📌 Service: ${form.service}
+📝 Subject: ${form.subject}
+
+💬 Message:
+${form.message}`;
+
+  const phoneNumber = "919361046387";
+
+  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+  window.location.href = whatsappURL;
 
         setForm({
           name: "",
