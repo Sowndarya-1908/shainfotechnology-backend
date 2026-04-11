@@ -27,13 +27,136 @@ const blogs = [
 
   /* ================= BLOG 1 ================= */
 {
+  id: 20,
+  slug: "web-development-that-drives-business-growth",
+  title: "Web Development That Drives Business Growth – SHA Infotechnology",
+  category: "Web Development",
+  image: "/images/blog200.jpg",
+  date: "11 Apr 2026",
+  content: `
+
+<h2 class="gradient-heading">
+Web Development That Drives Business Growth
+</h2>
+
+<p>In today’s digital-first world, your website is more than just an online presence—it is your most powerful business asset. A slow, outdated, or poorly designed website can cost you leads, customers, and revenue.</p>
+
+<p>At <a href="https://shainfotechnology.in/">SHA Infotechnology</a>, we specialize in building <strong>high-performance, conversion-focused websites</strong> that help businesses grow, scale, and succeed online.</p>
+
+<p>Our approach combines design, technology, and strategy to create websites that not only look great but also deliver real business results.</p>
+
+
+<h2>Why Web Development Matters for Business Growth</h2>
+
+<p>A well-developed website plays a crucial role in attracting visitors and converting them into customers.</p>
+
+<ul>
+<li>Creates a strong first impression</li>
+<li>Improves user experience and engagement</li>
+<li>Enhances search engine visibility</li>
+<li>Generates leads and conversions</li>
+</ul>
+
+<p>Your website is the foundation of your digital marketing strategy, and investing in the right development partner makes all the difference.</p>
+
+
+<h2>Our Web Development Approach</h2>
+
+<p>At SHA Infotechnology, we follow a structured and results-driven approach to website development.</p>
+
+<ul>
+<li><strong>Custom Design:</strong> Tailored layouts that match your brand identity</li>
+<li><strong>Mobile-Responsive:</strong> Optimized for all devices</li>
+<li><strong>SEO-Friendly Structure:</strong> Built to rank on search engines</li>
+<li><strong>Fast Performance:</strong> Optimized for speed and user experience</li>
+<li><strong>Secure & Scalable:</strong> Future-ready architecture</li>
+</ul>
+
+
+<h2>Website Development Checklist for Businesses</h2>
+
+<p>Use this checklist before launching your website:</p>
+
+<div class="table-wrapper">
+<table class="compliance-table">
+  <thead>
+    <tr>
+      <th>Website Feature</th>
+      <th>Required</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mobile-responsive design</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Fast loading speed (under 3 seconds)</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>SEO-friendly structure</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Secure HTTPS connection</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Clear call-to-action (CTA)</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>User-friendly navigation</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Analytics & tracking setup</td>
+      <td>Recommended</td>
+    </tr>
+    <tr>
+      <td>Content optimization</td>
+      <td>Recommended</td>
+    </tr>
+    <tr>
+      <td>Regular maintenance & updates</td>
+      <td>Recommended</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<h2>Benefits of Choosing SHA Infotechnology</h2>
+
+<p>We don’t just build websites—we build growth systems.</p>
+
+<ul>
+<li>Conversion-focused design approach</li>
+<li>SEO and performance optimization</li>
+<li>Customized solutions for every business</li>
+<li>Transparent communication and support</li>
+<li>Scalable solutions for long-term growth</li>
+</ul>
+
+
+<h2>Conclusion</h2>
+
+<p>A powerful website is the backbone of your digital success. Businesses that invest in professional web development gain a competitive advantage in visibility, engagement, and conversions.</p>
+
+<p><strong>Don’t just build a website—build a growth engine.</strong></p>
+
+<p><strong><a href="https://shainfotechnology.in/">Contact SHA Infotechnology today</a></strong> and start building a high-performance website that drives real business results.</p>
+
+`
+},
+  {
   id: 19,
   slug: "turn-clicks-into-customers",
   title: "Turn Clicks into Customers with SHA Infotechnology",
   category: "Digital Marketing",
-  image: "/images/blog23.png",
-  date: "08 Apr 2026",
-  short: "Learn how SHA Infotechnology transforms website traffic into real customers using conversion-focused strategies and performance-driven marketing.",
+  image: "/images/blog190.jpg",
+  date: "10 Apr 2026",
   content: `
 
   <h2 class="gradient-heading">
@@ -105,9 +228,8 @@ const blogs = [
   slug: "stop-guessing-start-growing",
   title: "Stop Guessing, Start Growing with SHA Infotechnology",
   category: "Digital Marketing",
-  image: "/images/blog22.png",
-  date: "08 Apr 2026",
-  short: "Stop relying on guesswork in marketing. Discover how SHA Infotechnology uses data-driven strategies to deliver predictable and scalable business growth.",
+  image: "/images/blog188.jpg",
+  date: "9 Apr 2026",
   content: `
 
   <h2 class="gradient-heading">
@@ -181,7 +303,6 @@ const blogs = [
   category: "Digital Marketing",
   image: "/images/blog166.jpg",
   date: "08 Apr 2026",
-  short: "A complete guide to digital marketing strategies including SEO, PPC, social media, content marketing, and AI-driven growth by SHA Infotechnology.",
   content: `
 
   <h2 class="gradient-heading">
@@ -286,7 +407,6 @@ const blogs = [
   category: "Digital Marketing",
   image: "/images/blog 155.jpg",
   date: "06 Apr 2026",
-  short: "Learn how SHA Infotechnology transforms website traffic into real revenue using data-driven strategies, SEO, PPC, and conversion-focused marketing.",
   content: `
 
   <h2 class="gradient-heading">
@@ -378,7 +498,6 @@ const blogs = [
   category: "Software Development",
   image: "/images/blog16.png",
   date: "04 Apr 2026",
-  short: "Discover how custom software development helps businesses automate workflows, integrate systems, and scale efficiently.",
   content: `
 
   <h2 class="gradient-heading">
@@ -457,7 +576,6 @@ Beyond the Website: Why Custom Software Development is Your Next Growth Engine
   category: "Digital Marketing",
   image: "/images/blog15.png",
   date: "02 Apr 2026",
-  short: "Discover how SHA Infotechnology helps businesses scale with result-driven digital marketing strategies.",
   content: `
 
   <h2 class="gradient-heading">
@@ -543,7 +661,6 @@ Unlock Explosive Growth  </h2>
   category: "Digital Marketing",
   image: "/images/socialblog.png",
   date: "18 Mar 2026",
-  short: "Learn why social media marketing is crucial for brand awareness, customer engagement, and business growth in 2026.",
   content: `
 
   <h2 class="gradient-heading">
@@ -625,7 +742,6 @@ As we move further into 2026, businesses that leverage <a href="/services/social
   category: "Web Development",
   image: "/images/whyblog.webp",
   date: "16 Mar 2026",
-  short: "Discover why having a professional website is essential for business growth, credibility, and lead generation in 2026.",
   content: `
 
   <h2 class="gradient-heading">
@@ -743,7 +859,6 @@ As technology continues to evolve in 2026, businesses must adapt to digital tran
   category: "Digital Marketing",
   image: "/images/coursedigi.png",
   date: "14 March 2026",
-  short: "Discover why enrolling in an online digital marketing course can help you build a successful and future-proof career.",
   content: `
 
 <h2 class="gradient-heading">Introduction</h2>
@@ -790,7 +905,6 @@ As technology continues to evolve in 2026, businesses must adapt to digital tran
   category: "Digital Marketing",
   image: "/images/soocial.jpg",
   date: "10 March 2026",
-  short: "Learn why partnering with a social media marketing agency can help your brand stand out and drive real results.",
   content: `
 
 <h2 class="gradient-heading">Introduction</h2>
@@ -822,7 +936,6 @@ As technology continues to evolve in 2026, businesses must adapt to digital tran
   category: "Digital Marketing",
   image: "/images/aim.webp",
   date: "5 March 2026",
-  short: "Discover how AI marketing tools are transforming digital strategies and maximizing ROI for businesses in 2024.",
   content: `
 
   <h2 class="gradient-heading">
@@ -865,7 +978,6 @@ title: "The Future is Here: Why AI Marketing Companies in Chennai Like SHA Infot
 category: "Digital Marketing",
 image: "/images/aiblog.png",
 date: "3 March 2026",
-short: "Explore how AI marketing companies in Chennai like SHA Infotech are transforming digital marketing using automation, predictive analytics, and AI-powered strategies.",
 content: `
 
 
@@ -920,7 +1032,6 @@ title: "How SHA Infotech Stands Out Among Digital Marketing Companies in Chennai
 category: "Digital Marketing",
 image: "/images/blogmark.jpg",
 date: "25 Feb 2026",
-short: "Discover how SHA Infotech stands out among digital marketing companies in Chennai with data-driven strategies, SEO expertise, and results-focused campaigns that help businesses grow online.",
 content: `
 
 
@@ -969,7 +1080,6 @@ title: "Top Reasons to Choose a Professional Web Designing Company in Chennai fo
 category: "Web Design",
 image: "/images/webdesign.jpg",
 date : "20 Feb 2026",
-short: "Discover why choosing a professional web designing company in Chennai can help your business grow and build a strong digital presence.",
 content: `
 
 
@@ -1046,7 +1156,6 @@ content: `
   category: "Digital Marketing",
   image: "/images/blog45.jpg",
    date : "14 Feb 2026",
-  short: "Discover how SHA Infotechnology transforms businesses through web development, SEO, digital marketing, branding, and strategic innovation.",
   content: `
 
   <h2 class="gradient-heading">
@@ -1135,7 +1244,6 @@ content: `
   category: "Digital Marketing",
   image: "/images/blog80.jpg",
   date : "5 Feb 2026",
-  short: "Explore how SHA Infotechnology delivers web development, SEO, branding, and digital strategy solutions to grow modern businesses.",
   content: `
 
   <h2 class="gradient-heading">
@@ -1329,7 +1437,6 @@ Introduction
   category: "Digital Marketing",
   image: "/images/blog11.jpg",
   date : "10 Jan 2026",
-  short: "Complete digital marketing services to grow your business in Chennai.",
   content: `
 
   <h2 class="gradient-heading">
@@ -1859,5 +1966,153 @@ body{
   }
 
 }
+
+/* ===== Table Wrapper (Mobile Scroll) ===== */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin: 25px 0;
+}
+
+/* ===== Main Table ===== */
+.compliance-table {
+  width: 100%;
+  min-width: 600px; /* enables scroll on small screens */
+  border-collapse: collapse;
+  font-size: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== Header ===== */
+.compliance-table thead {
+  background: linear-gradient(90deg, #ff6b00, #ff914d);
+  color: #fff;
+}
+
+.compliance-table th {
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* ===== Body ===== */
+.compliance-table td {
+  padding: 12px 16px;
+  border: 1px solid #eee;
+  color: #333;
+}
+
+/* Zebra Rows */
+.compliance-table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* Hover Effect */
+.compliance-table tbody tr:hover {
+  background-color: #fff3e6;
+  transition: 0.3s ease;
+}
+
+/* ===== Responsive Improvements ===== */
+@media (max-width: 768px) {
+  .compliance-table {
+    font-size: 14px;
+  }
+
+  .compliance-table th,
+  .compliance-table td {
+    padding: 10px;
+  }
+}
+
+/* ===== Scrollbar Styling (Optional) ===== */
+.table-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+/* ===== Table Wrapper ===== */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin: 25px 0;
+}
+
+/* ===== Main Table ===== */
+.compliance-table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  font-size: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0f172a; /* dark background */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Header (Gradient like your site) ===== */
+.compliance-table thead {
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  color: #fff;
+}
+
+.compliance-table th {
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+/* ===== Body ===== */
+.compliance-table td {
+  padding: 12px 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #e5e7eb; /* light text */
+}
+
+/* Zebra Rows */
+.compliance-table tbody tr:nth-child(even) {
+  background-color: #111827;
+}
+
+/* Hover Effect */
+.compliance-table tbody tr:hover {
+  background: rgba(99, 102, 241, 0.1);
+  transition: 0.3s ease;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .compliance-table {
+    font-size: 14px;
+  }
+
+  .compliance-table th,
+  .compliance-table td {
+    padding: 10px;
+  }
+}
+
+/* ===== Scrollbar ===== */
+.table-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #6366f1;
+  border-radius: 10px;
+}
+
 `;
 
