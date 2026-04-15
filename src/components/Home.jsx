@@ -2036,16 +2036,39 @@ onClick={()=>navigate(link)}
       "yxT-hRvX41RhpOdfZ"
     )
     .then(() => {
-      alert("Enquiry Sent Successfully!");
-      setShowPopup(false);
-      setFormData({
-        name: "",
-        phone: "",
-        email: "",
-        selection: "",
-        message: ""
-      });
-    })
+
+  alert("Enquiry Sent Successfully!");
+
+  // ✅ WhatsApp Message
+  const message = `🚀 New Enquiry
+
+👤 Name: ${formData.name}
+📞 Phone: ${formData.phone}
+📧 Email: ${formData.email}
+📌 Service: ${formData.selection}
+
+💬 Message:
+${formData.message}`;
+
+  const phoneNumber = "919361046387";
+
+  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+  // ✅ Redirect to WhatsApp
+  window.location.href = whatsappURL;
+
+  // Reset + Close popup
+  setShowPopup(false);
+
+  setFormData({
+    name: "",
+    phone: "",
+    email: "",
+    selection: "",
+    message: ""
+  });
+
+})
     .catch((error) => {
       alert("Failed to send enquiry.");
       console.error(error);
