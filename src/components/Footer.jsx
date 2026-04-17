@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -172,6 +172,100 @@ export default function Footer() {
   }
 
 }
+
+/* SOCIAL ICONS */
+
+.sps-footer-social{
+  display:flex;
+  gap:14px;
+  margin-top:20px;
+}
+
+.sps-footer-social a{
+  width:42px;
+  height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  font-size:18px;
+  color:#ffffff;
+
+  background:linear-gradient(135deg,#6366f1,#a855f7,#ec4899);
+  box-shadow:0 10px 30px rgba(99,102,241,0.4);
+
+  transition:all .3s ease;
+}
+
+.sps-footer-social a:hover{
+  transform:translateY(-4px) scale(1.05);
+  box-shadow:0 18px 50px rgba(236,72,153,0.6);
+}
+  /* LOGO */
+
+.sps-footer-logo{
+  width:120px;
+  height:120px;
+  object-fit:cover;
+
+  border-radius:50%; /* makes it round */
+
+  margin-bottom:16px;
+
+  border:3px solid rgba(255,255,255,0.2); /* optional nice border */
+  box-shadow:0 10px 30px rgba(0,0,0,0.3); /* premium look */
+}
+
+/* SOCIAL ICONS */
+
+.sps-footer-social{
+  display:flex;
+  gap:14px;
+  margin-top:18px;
+  justify-content:flex-start;
+}
+
+.sps-footer-social a{
+  width:42px;
+  height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  font-size:18px;
+  color:#ffffff;
+
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.15);
+
+  transition:all .3s ease;
+}
+
+/* HOVER COLORS */
+
+.sps-footer-social a:nth-child(1):hover{
+  background:#1877f2;
+  transform:translateY(-4px);
+}
+
+.sps-footer-social a:nth-child(2):hover{
+  background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
+  transform:translateY(-4px);
+}
+
+/* MOBILE CENTER ALIGN */
+
+@media(max-width:600px){
+  .sps-footer-social{
+    justify-content:center;
+  }
+
+  .sps-footer-logo{
+    display:block;
+    margin:auto;
+  }
+}
+
 `;
 
     const id = "footer-style";
@@ -191,13 +285,14 @@ export default function Footer() {
       <div className="sps-footer-grid">
 
         <div className="sps-footer-brand">
-          <h3>SHA INFOTECHNOLOGY</h3>
-          <p>
-            SHA Infotechnology is a Chennai-based digital solutions company
-            delivering result-driven strategies in digital marketing, web
-            development, and brand growth.
-          </p>
-        </div>
+  <img src="/LOGO.jpeg" alt="Shainfotechnology Logo" className="sps-footer-logo" />
+
+  <p>
+    SHA Infotechnology is a Chennai-based digital solutions company
+    delivering result-driven strategies in digital marketing, web
+    development, and brand growth.
+  </p>
+</div>
 
         <div>
           <h4>Quick Links</h4>
@@ -239,6 +334,16 @@ export default function Footer() {
               WhatsApp
             </a>
           </div>
+<div className="sps-footer-social">
+  <a href="https://www.facebook.com/profile.php?id=61584983202107" target="_blank" rel="noopener noreferrer">
+    <FaFacebookF />
+  </a>
+
+  <a href="https://www.instagram.com/_shainfotechnology_/" target="_blank" rel="noopener noreferrer">
+    <FaInstagram />
+  </a>
+</div>
+
         </div>
 
       </div>
