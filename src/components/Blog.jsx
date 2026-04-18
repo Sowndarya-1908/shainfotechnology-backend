@@ -27,9 +27,126 @@ const blogs = [
 
   /* ================= BLOG 1 ================= */
 {
+  id: 23,
+  slug: "why-choose-ecommerce-website-development-company-in-chennai",
+  title: "Why Choose an Ecommerce Website Development Company in Chennai for Your Business Growth – SHA Infotechnology",
+  metaTitle: "Ecommerce Website Development Company in Chennai | ShaInfotechnology ",
+  metaDescription: "Looking for a reliable ecommerce website development company in Chennai? Shain Infotechnology offers custom ecommerce solutions to grow your online business. Get a free quote today! ",
+  category: "Web Development",
+  image: "/images/bloge.jpg",
+  date: "18 Apr 2026",
+  content: `
+
+<h2 class="gradient-heading">
+Introduction
+</h2>
+
+<p>In today’s digital-first world, having a strong online presence is no longer optional—it’s essential. Businesses across industries are rapidly shifting online, making ecommerce platforms a powerful tool for growth. If you're looking to build a successful online store, partnering with a reliable ecommerce website development company in Chennai can make all the difference.</p>
+
+
+
+<h2>The Growing Demand for Ecommerce Websites</h2>
+
+<p>Chennai has become a hub for startups, SMEs, and established enterprises looking to expand digitally. With increasing internet penetration and mobile usage, customers now prefer shopping online for convenience and variety.</p>
+
+<p>This shift has created a strong demand for professional ecommerce website development services in Chennai that can deliver:</p>
+
+<ul>
+<li>Seamless user experience</li>
+<li>Mobile-friendly design</li>
+<li>Secure payment integration</li>
+<li>Scalable online stores</li>
+</ul>
+
+
+
+<h2>Why Your Business Needs a Professional Ecommerce Website</h2>
+
+<p>A professionally developed ecommerce website does more than just showcase products—it drives conversions and builds trust.</p>
+
+<p><strong>Key Benefits:</strong></p>
+
+<ul>
+<li><strong>Customized Design for Your Brand</strong> - A top ecommerce website development company in Chennai ensures your website reflects your brand identity and stands out from competitors.</li>
+<li><strong>Mobile Optimization</strong> - With most users shopping via smartphones, responsive design is crucial for success.</li>
+<li><strong>Secure Payment Integration</strong> - Security is a top concern for online shoppers. Professional developers integrate trusted payment gateways to ensure safe transactions.</li>
+<li><strong>SEO-Friendly Structure</strong> - Your ecommerce website should be optimized for search engines to attract organic traffic and increase visibility.</li>
+</ul>
+
+<h2>Features to Expect from the Best Ecommerce Development Company</h2>
+
+<p>When choosing an ecommerce partner, look for the following features:</p>
+
+<ul>
+<li>User-friendly navigation</li>
+<li>Fast loading speed</li>
+<li>Inventory management system</li>
+<li>Multi-payment gateway support</li>
+<li>SEO optimization</li>
+<li>Easy checkout process</li>
+</ul>
+
+<p>These features help improve customer experience and boost your online sales.</p>
+
+
+
+<h2>Why Choose Shain Infotechnology?</h2>
+
+<p>As a trusted ecommerce website development company in Chennai, Shain Infotechnology offers tailored solutions for businesses of all sizes.</p>
+
+<p><strong>What Sets Them Apart:</strong></p>
+
+<ul>
+<li>Experienced development team</li>
+<li>Customized ecommerce solutions</li>
+<li>Affordable pricing packages</li>
+<li>End-to-end support (design, development, maintenance)</li>
+<li>Focus on performance and scalability</li>
+</ul>
+
+<p>Whether you're launching a new store or upgrading an existing one, Shain Infotechnology ensures a smooth and efficient development process.</p>
+
+
+
+<h2>Explore Our Ecommerce Development Services</h2>
+
+<p>Looking to build a powerful online store? Check out our detailed service offerings here:</p>
+
+<p>👉 <a href="https://shainfotechnology.in/services/ecommerce-website">https://shainfotechnology.in/services/ecommerce-website</a></p>
+
+<p>This page covers everything from design to deployment, helping you understand how a professional ecommerce solution can transform your business.</p>
+
+
+
+<h2>How Ecommerce Development Impacts Your Business Growth</h2>
+
+<p>Investing in ecommerce development provides long-term benefits:</p>
+
+<ul>
+<li>Increased reach beyond local markets</li>
+<li>24/7 sales capability</li>
+<li>Better customer insights through analytics</li>
+<li>Improved brand credibility</li>
+</ul>
+
+<p>With the right strategy and technology, your ecommerce website can become a major revenue driver.</p>
+
+
+
+<h2>Final Thoughts</h2>
+
+<p>Choosing the right ecommerce website development company in Chennai is crucial for your online success. With expert guidance, modern technology, and a customer-centric approach, you can build a scalable and profitable ecommerce business.</p>
+
+<p>If you're ready to take your business online, Shain Infotechnology is here to help you every step of the way.</p>
+
+`
+},
+  {
   id: 22,
   slug: "seo-vs-ads-which-one-grows-your-business-faster",
   title: "SEO vs Ads: Which One Grows Your Business Faster? – SHA Infotechnology",
+  metaTitle: "SEO vs Ads: Which is Better for Business Growth? | SHA Infotechnology",
+metaDescription: "Confused between SEO and paid ads? Learn which strategy grows your business faster and how to combine both for maximum ROI with SHA Infotechnology.",
   category: "Digital Marketing",
   image: "/images/blogg220.jpg",
   date: "17 Apr 2026",
@@ -233,6 +350,8 @@ Introduction
   id: 21,
   slug: "ai-marketing-that-accelerates-business-growth",
   title: "AI Marketing That Accelerates Business Growth – SHA Infotechnology",
+  metaTitle: "AI Marketing Strategies for Business Growth | SHA Infotechnology",
+metaDescription: "Boost your business with AI marketing. Discover automation, predictive analytics, and data-driven strategies to increase ROI with SHA Infotechnology.",
   category: "AI Marketing",
   image: "/images/blog201.jpg",
   date: "13 Apr 2026",
@@ -357,6 +476,8 @@ AI Marketing That Accelerates Business Growth
   id: 20,
   slug: "web-development-that-drives-business-growth",
   title: "Web Development That Drives Business Growth – SHA Infotechnology",
+  metaTitle: "Web Development Company for Business Growth | SHA Infotechnology",
+metaDescription: "Build high-performance websites that convert visitors into customers. Explore web development solutions by SHA Infotechnology for business growth.",
   category: "Web Development",
   image: "/images/blog200.jpg",
   date: "11 Apr 2026",
@@ -481,6 +602,8 @@ Web Development That Drives Business Growth
   id: 19,
   slug: "turn-clicks-into-customers",
   title: "Turn Clicks into Customers with SHA Infotechnology",
+  metaTitle: "Turn Website Traffic into Customers | SHA Infotechnology",
+metaDescription: "Struggling with low conversions? Learn how to turn website traffic into paying customers using proven digital marketing strategies.",
   category: "Digital Marketing",
   image: "/images/blog190.jpg",
   date: "10 Apr 2026",
@@ -554,6 +677,8 @@ Web Development That Drives Business Growth
   id: 18,
   slug: "stop-guessing-start-growing",
   title: "Stop Guessing, Start Growing with SHA Infotechnology",
+  metaTitle: "Data-Driven Digital Marketing for Business Growth | SHA Infotechnology",
+metaDescription: "Stop guessing and start growing with data-driven marketing strategies. Learn how analytics improves performance and ROI.",
   category: "Digital Marketing",
   image: "/images/blog188.jpg",
   date: "9 Apr 2026",
@@ -627,6 +752,8 @@ Web Development That Drives Business Growth
   id: 17,
   slug: "complete-digital-marketing-strategy-guide",
   title: "Complete Digital Marketing Strategy Guide by SHA Infotechnology",
+  metaTitle: "Complete Digital Marketing Strategy Guide 2026 | SHA Infotechnology",
+metaDescription: "Learn the complete digital marketing strategy including SEO, ads, social media, and AI marketing to grow your business online.",
   category: "Digital Marketing",
   image: "/images/blog166.jpg",
   date: "08 Apr 2026",
@@ -731,6 +858,8 @@ Web Development That Drives Business Growth
   id: 15,
   slug: "traffic-to-revenue-sha-infotechnology-growth",
   title: "From Traffic to Revenue: How SHA Infotechnology Drives Real Business Growth",
+  metaTitle: "From Traffic to Revenue: Digital Growth Strategy | SHA Infotechnology",
+metaDescription: "Convert website traffic into revenue with proven strategies including SEO, PPC, and conversion optimization.",
   category: "Digital Marketing",
   image: "/images/blog 155.jpg",
   date: "06 Apr 2026",
@@ -822,6 +951,8 @@ Web Development That Drives Business Growth
   id: 14,
   slug: "custom-software-development-growth-engine",
   title: "Beyond the Website: Why Custom Software Development is Your Next Growth Engine",
+  metaTitle: "Custom Software Development for Business Growth | SHA Infotechnology",
+metaDescription: "Discover how custom software development helps automate workflows, improve efficiency, and scale your business.",
   category: "Software Development",
   image: "/images/blog16.png",
   date: "04 Apr 2026",
@@ -900,6 +1031,8 @@ Beyond the Website: Why Custom Software Development is Your Next Growth Engine
   id: 13,
   slug: "digital-marketing-agency-growth-sha-infotechnology",
   title: "Unlock Explosive Growth: Why SHA Infotechnology is Your Ultimate Digital Marketing Partner",
+  metaTitle: "Best Digital Marketing Agency for Business Growth | SHA Infotechnology",
+metaDescription: "Looking for a digital marketing partner? Discover how SHA Infotechnology helps businesses scale with SEO, ads, and AI marketing.",
   category: "Digital Marketing",
   image: "/images/blog15.png",
   date: "02 Apr 2026",
@@ -985,6 +1118,8 @@ Unlock Explosive Growth  </h2>
   id: 12,
   slug: "why-social-media-marketing-essential-business-growth-2026",
   title: "Why Social Media Marketing Is Essential for Business Growth in 2026",
+  metaTitle: "Why Social Media Marketing is Important in 2026 | SHA Infotechnology",
+metaDescription: "Learn why social media marketing is essential for business growth and how it drives traffic, engagement, and sales.",
   category: "Digital Marketing",
   image: "/images/socialblog.png",
   date: "18 Mar 2026",
@@ -1066,6 +1201,8 @@ As we move further into 2026, businesses that leverage <a href="/services/social
   id: 11,
   slug: "why-every-business-needs-a-website-2026",
   title: "Why Every Business Needs a Website in 2026",
+  metaTitle: "Why Every Business Needs a Website in 2026 | SHA Infotechnology",
+metaDescription: "Discover why having a website is crucial for business growth, credibility, and online success in 2026.",
   category: "Web Development",
   image: "/images/whyblog.webp",
   date: "16 Mar 2026",
@@ -1183,6 +1320,8 @@ As technology continues to evolve in 2026, businesses must adapt to digital tran
   id: 10,
   slug: "online-digital-marketing-course-career-investment",
   title: "Kickstart Your Career: Why Enrolling in an Online Digital Marketing Course is Your Best Investment",
+  metaTitle: "Best Digital Marketing Course for Career Growth | SHA Infotechnology",
+metaDescription: "Kickstart your career with a digital marketing course. Learn SEO, PPC, and social media to land high-paying jobs.",
   category: "Digital Marketing",
   image: "/images/coursedigi.png",
   date: "14 March 2026",
@@ -1229,6 +1368,8 @@ As technology continues to evolve in 2026, businesses must adapt to digital tran
   id: 9,
   slug: "why-your-business-needs-social-media-marketing-agency",
   title: "Why Your Business Needs a Social Media Marketing Agency to Cut Through the Noise",
+  metaTitle: "Why Your Business Needs a Social Media Marketing Agency",
+metaDescription: "Struggling with social media growth? Learn why hiring a social media marketing agency boosts engagement and conversions.",
   category: "Digital Marketing",
   image: "/images/soocial.jpg",
   date: "10 March 2026",
@@ -1260,6 +1401,8 @@ As technology continues to evolve in 2026, businesses must adapt to digital tran
   id: 8,
   slug: "ai-marketing-tools-revolutionizing-roi-2024",
   title: "Beyond the Hype: How AI Marketing Tools Are Revolutionizing ROI in 2024",
+  metaTitle: "AI Marketing Tools to Improve ROI in 2026 | SHA Infotechnology",
+metaDescription: "Discover how AI marketing tools improve ROI with automation, personalization, and predictive analytics.",
   category: "Digital Marketing",
   image: "/images/aim.webp",
   date: "5 March 2026",
@@ -1302,6 +1445,8 @@ Introduction  </h2>
   id: 7,
 slug: "ai-marketing-companies-in-chennai-sha-infotech-leading-the-way",
 title: "The Future is Here: Why AI Marketing Companies in Chennai Like SHA Infotech Are Leading the Way",
+metaTitle: "AI Marketing Companies in Chennai | SHA Infotechnology",
+metaDescription: "Explore how AI marketing companies in Chennai like SHA Infotechnology help businesses grow with automation and smart strategies.",
 category: "Digital Marketing",
 image: "/images/aiblog.png",
 date: "3 March 2026",
@@ -1356,6 +1501,8 @@ content: `
 id: 6,
 slug: "how-sha-infotech-stands-out-among-digital-marketing-companies-in-chennai",
 title: "How SHA Infotech Stands Out Among Digital Marketing Companies in Chennai",
+metaTitle: "Top Digital Marketing Company in Chennai | SHA Infotechnology",
+metaDescription: "Looking for digital marketing companies in Chennai? Discover how SHA Infotechnology delivers SEO, PPC, and social media growth.",
 category: "Digital Marketing",
 image: "/images/blogmark.jpg",
 date: "25 Feb 2026",
@@ -1404,6 +1551,8 @@ content: `
  id: 5,
 slug: "top-reasons-to-choose-web-designing-company-chennai",
 title: "Top Reasons to Choose a Professional Web Designing Company in Chennai for Your Business Growth",
+metaTitle: "Best Web Designing Company in Chennai | SHA Infotechnology",
+metaDescription: "Choose a professional web designing company in Chennai to build responsive, SEO-friendly, and high-converting websites.",
 category: "Web Design",
 image: "/images/webdesign.jpg",
 date : "20 Feb 2026",
@@ -1480,6 +1629,8 @@ content: `
   id: 4,
   slug: "digital-excellence-sha-infotechnology",
   title: "Transforming Businesses with Digital Excellence – SHA Infotechnology",
+  metaTitle: "Digital Marketing & Web Development Services | SHA Infotechnology",
+metaDescription: "Transform your business with digital marketing, web development, and branding services by SHA Infotechnology.",
   category: "Digital Marketing",
   image: "/images/blog45.jpg",
    date : "14 Feb 2026",
@@ -1568,6 +1719,8 @@ content: `
   id: 3,
   slug: "digital-marketing-web-development-chennai",
   title: "Empowering Brands Through Strategy, Design & Technology – SHA Infotechnology",
+  metaTitle: "Digital Marketing & Web Development Company Chennai",
+metaDescription: "Empower your business with SEO, web development, and digital strategy services from SHA Infotechnology.",
   category: "Digital Marketing",
   image: "/images/blog80.jpg",
   date : "5 Feb 2026",
@@ -1662,6 +1815,8 @@ Introduction
     id: 2,
     slug: "custom-software-solutions-chennai",
     title: "Crafting Digital Excellence in Chennai – Custom Software Solutions for Your Business",
+    metaTitle: "Custom Software Development Company in Chennai",
+metaDescription: "Get scalable custom software solutions in Chennai to improve efficiency and drive business growth.",
     category: "Software Development",
     image: "/images/blog12.jpeg",
     date : "25 Jan 2026",
@@ -1761,6 +1916,8 @@ Introduction
   id: 1,
   slug: "our-digital-marketing-services-chennai",
   title: "Our Digital Marketing Services in Chennai",
+  metaTitle: "Digital Marketing Services in Chennai | SHA Infotechnology",
+metaDescription: "Boost your business with SEO, PPC, social media, and web development services in Chennai by SHA Infotechnology.",
   category: "Digital Marketing",
   image: "/images/blog11.jpg",
   date : "10 Jan 2026",
@@ -1878,6 +2035,21 @@ export default function Blog() {
 
   if (slug) {
     const blog = blogs.find(b => b.slug === slug);
+    useEffect(() => {
+  if (blog) {
+    document.title = blog.metaTitle || blog.title;
+
+    let metaDesc = document.querySelector("meta[name='description']");
+    
+    if (!metaDesc) {
+      metaDesc = document.createElement("meta");
+      metaDesc.name = "description";
+      document.head.appendChild(metaDesc);
+    }
+
+    metaDesc.content = blog.metaDescription || "";
+  }
+}, [blog]);
 
     if (!blog) {
       return <h2 style={{ textAlign: "center", marginTop: "80px", color: "#fff" }}>Blog Not Found</h2>;
