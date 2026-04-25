@@ -26,7 +26,195 @@ const extraContent = `
 const blogs = [
 
   /* ================= BLOG 1 ================= */
+
 {
+  id: 24,
+  slug: "how-to-start-career-in-digital-marketing-with-no-experience",
+  title: "How to Start a Career in Digital Marketing with No Experience – SHA Infotechnology",
+  metaTitle: "How to Start a Career in Digital Marketing with No Experience | SHA Infotechnology",
+  metaDescription: "Learn how to start a digital marketing career with no experience ⭐ Discover skills, tools, roadmap, and job strategies to grow successfully with SHA Infotechnology.",
+  category: "Digital Marketing",
+  image: "/images/blogzero.jpg",
+  date: "25 Apr 2026",
+  content: `
+
+<h2 class="gradient-heading">
+Introduction
+</h2>
+
+<p>Starting a career in digital marketing without prior experience may seem challenging, but it is one of the most beginner-friendly and high-growth career paths today. With the rise of online businesses, startups, and personal brands, digital marketing skills are in huge demand across industries.</p>
+
+<p>The best part? You don’t need a technical background or years of experience to begin. With the right guidance and consistent practice, anyone can build a successful career. <a href="https://shainfotechnology.in/">SHA Infotechnology</a> helps beginners learn practical digital skills and turn them into real career opportunities.</p>
+
+
+
+<h2>What is Digital Marketing?</h2>
+
+<p>Digital marketing is the process of promoting products or services using online platforms such as search engines, social media, websites, and email. It focuses on reaching the right audience and converting them into customers.</p>
+
+<ul>
+<li>Search Engine Optimization (SEO)</li>
+<li>Social Media Marketing (SMM)</li>
+<li>Content Marketing</li>
+<li>Email Marketing</li>
+<li>Paid Advertising (Google Ads, Meta Ads)</li>
+<li>Analytics and Performance Tracking</li>
+</ul>
+
+
+
+<h2>Why Choose Digital Marketing as a Career?</h2>
+
+<p>Digital marketing offers flexibility, creativity, and strong earning potential. It is suitable for students, freshers, and even career switchers.</p>
+
+<ul>
+<li><strong>No technical degree required</strong></li>
+<li><strong>High demand in all industries</strong></li>
+<li><strong>Freelancing and remote opportunities</strong></li>
+<li><strong>Fast career growth</strong></li>
+<li><strong>Opportunity to start your own business</strong></li>
+</ul>
+
+
+
+<h2>Step-by-Step Roadmap to Start</h2>
+
+<h3>1. Learn the Basics</h3>
+<p>Start by understanding the core concepts of digital marketing. Focus on how online platforms work and how businesses use them to attract customers.</p>
+
+<ul>
+<li>Understand SEO fundamentals</li>
+<li>Learn social media platforms</li>
+<li>Explore content creation basics</li>
+<li>Get familiar with marketing terminology</li>
+</ul>
+
+
+
+<h3>2. Choose Your Specialization</h3>
+<p>Digital marketing has multiple areas. You can start with one and expand later.</p>
+
+<ul>
+<li>SEO Specialist</li>
+<li>Social Media Manager</li>
+<li>Content Creator</li>
+<li>Paid Ads Expert</li>
+<li>Email Marketing Specialist</li>
+</ul>
+
+
+
+<h3>3. Learn Practical Tools</h3>
+<p>Hands-on experience is more important than theory. Learn tools used by professionals.</p>
+
+<ul>
+<li>Google Analytics</li>
+<li>Google Ads</li>
+<li>Canva for design</li>
+<li>Meta Ads Manager</li>
+<li>Keyword research tools</li>
+</ul>
+
+
+
+<h3>4. Practice with Real Projects</h3>
+<p>Start applying your knowledge through small projects. Practice builds confidence and skills.</p>
+
+<ul>
+<li>Create your own blog or website</li>
+<li>Manage a social media page</li>
+<li>Run small ad campaigns</li>
+<li>Write SEO-based articles</li>
+</ul>
+
+
+
+<h3>5. Build a Portfolio</h3>
+<p>A strong portfolio helps you showcase your skills to employers or clients.</p>
+
+<ul>
+<li>Showcase your projects</li>
+<li>Add campaign results</li>
+<li>Include certifications</li>
+<li>Highlight your skills</li>
+</ul>
+
+
+
+<h3>6. Apply for Jobs or Freelance</h3>
+<p>Once you have basic experience, start applying for opportunities.</p>
+
+<ul>
+<li>Apply for internships</li>
+<li>Look for entry-level jobs</li>
+<li>Start freelancing</li>
+<li>Network on LinkedIn</li>
+</ul>
+
+
+
+<h2>Common Mistakes to Avoid</h2>
+
+<ul>
+<li>Learning without practice</li>
+<li>Trying to learn everything at once</li>
+<li>Ignoring real-world projects</li>
+<li>Not building a portfolio</li>
+<li>Giving up too early</li>
+</ul>
+
+
+
+<h2>Skills You Need to Succeed</h2>
+
+<ul>
+<li>Creativity and content thinking</li>
+<li>Basic analytical skills</li>
+<li>Communication skills</li>
+<li>Consistency and patience</li>
+<li>Adaptability to trends</li>
+</ul>
+
+
+
+<h2>Why Choose SHA Infotechnology?</h2>
+
+<p><a href="https://shainfotechnology.in/">SHA Infotechnology</a> provides practical, industry-focused training to help beginners become job-ready.</p>
+
+<ul>
+<li>Hands-on training programs</li>
+<li>Real-time project experience</li>
+<li>Expert guidance</li>
+<li>Placement support</li>
+<li>Affordable course fees</li>
+</ul>
+
+
+
+<h2>Career Opportunities in Digital Marketing</h2>
+
+<ul>
+<li>Digital Marketing Executive</li>
+<li>SEO Analyst</li>
+<li>Social Media Manager</li>
+<li>Content Strategist</li>
+<li>Freelancer or Consultant</li>
+</ul>
+
+
+
+<h2>Final Thoughts</h2>
+
+<p>Starting a career in digital marketing without experience is completely possible with the right approach. Focus on learning, practicing, and building your portfolio step by step.</p>
+
+<p>With dedication and proper guidance, you can build a rewarding career in one of the fastest-growing industries.</p>
+
+<p>👉 <a href="https://shainfotechnology.in/contact">Contact SHA Infotechnology Today</a> to start your digital marketing journey.</p>
+
+`
+},
+
+  {
   id: 23,
   slug: "from-code-to-conversion-complete-guide-modern-it-solutions",
   title: "From Code to Conversion: A Complete Guide to Modern IT Solutions – SHA Infotechnology",
