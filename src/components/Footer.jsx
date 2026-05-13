@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaYoutube
+} from "react-icons/fa";import { Link } from "react-router-dom";
 
 export default function Footer() {
 
@@ -140,7 +143,8 @@ export default function Footer() {
   border-top:1px solid rgba(255,255,255,0.12);
   padding-top:18px;
   display:flex;
-  justify-content:space-between;
+  justify-content:center;
+text-align:center;
   flex-wrap:wrap;
   gap:12px;
   font-size:13px;
@@ -213,7 +217,9 @@ export default function Footer() {
   margin-bottom:16px;
 
   border:3px solid rgba(255,255,255,0.2); /* optional nice border */
-  box-shadow:0 10px 30px rgba(0,0,0,0.3); /* premium look */
+box-shadow:
+  0 10px 30px rgba(0,0,0,0.3),
+  0 0 25px rgba(168,85,247,0.35);
 }
 
 /* SOCIAL ICONS */
@@ -243,14 +249,30 @@ export default function Footer() {
 
 /* HOVER COLORS */
 
-.sps-footer-social a:nth-child(1):hover{
+/* FACEBOOK */
+.sps-footer-social a.facebook{
   background:#1877f2;
-  transform:translateY(-4px);
 }
 
-.sps-footer-social a:nth-child(2):hover{
-  background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
-  transform:translateY(-4px);
+/* INSTAGRAM */
+.sps-footer-social a.instagram{
+  background:linear-gradient(
+    45deg,
+    #f58529,
+    #dd2a7b,
+    #8134af,
+    #515bd4
+  );
+}
+
+/* YOUTUBE */
+.sps-footer-social a.youtube{
+  background:#ff0000;
+}
+
+.sps-footer-social a:hover{
+  transform:translateY(-4px) scale(1.06);
+  box-shadow:0 18px 40px rgba(0,0,0,0.35);
 }
 
 /* MOBILE CENTER ALIGN */
@@ -286,7 +308,7 @@ export default function Footer() {
 
         <div className="sps-footer-brand">
   <img src="/LOGO.jpeg" alt="Shainfotechnology Logo" className="sps-footer-logo" />
-
+<h3>SHA INFOTECHNOLOGY</h3>
   <p>
     SHA Infotechnology is a Chennai-based digital solutions company
     delivering result-driven strategies in digital marketing, web
@@ -335,13 +357,37 @@ export default function Footer() {
             </a>
           </div>
 <div className="sps-footer-social">
-  <a href="https://www.facebook.com/profile.php?id=61584983202107" target="_blank" rel="noopener noreferrer">
+
+  <a
+    href="https://www.facebook.com/profile.php?id=61584983202107"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+    className="facebook"
+  >
     <FaFacebookF />
   </a>
 
-  <a href="https://www.instagram.com/_shainfotechnology_/" target="_blank" rel="noopener noreferrer">
+  <a
+    href="https://www.instagram.com/_shainfotechnology_/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+    className="instagram"
+  >
     <FaInstagram />
   </a>
+
+  <a
+    href="https://www.youtube.com/@shainfotechnology"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="YouTube"
+    className="youtube"
+  >
+    <FaYoutube />
+  </a>
+
 </div>
 
         </div>
