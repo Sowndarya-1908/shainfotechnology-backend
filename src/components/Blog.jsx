@@ -25,6 +25,128 @@ const extraContent = `
 
 const blogs = [
 
+{
+  id: 35,
+  slug: "best-online-digital-marketing-course-beginners-professionals",
+  title: "Best Online Digital Marketing Course for Beginners and Professionals",
+  metaTitle: "Best Online Digital Marketing Course with Practical Training",
+  metaDescription: "Join the best online digital marketing course for beginners and professionals with practical training, live projects, and certification support.",
+  category: "Digital Marketing Course",
+  image: "/images/may15.png",
+  date: "15 May 2026",
+  content: `
+
+<h2>Introduction</h2>
+
+<p>The demand for digital marketing professionals is growing rapidly as businesses move online. Choosing the right online digital marketing course can help students, job seekers, entrepreneurs, and professionals build successful careers in the digital industry.</p>
+
+<p><a href="https://shainfotechnology.in/">Shainfotechnology</a> offers industry-focused digital marketing training with practical learning and real-time project experience.</p>
+
+<h2>What You Will Learn in Our Online Digital Marketing Course</h2>
+
+<p>Our training program covers all major digital marketing modules.</p>
+
+<h3>Course Modules:</h3>
+
+<ul>
+<li>SEO (Search Engine Optimization)</li>
+<li>Google Ads</li>
+<li>Social Media Marketing</li>
+<li>Content Marketing</li>
+<li>Email Marketing</li>
+<li>Affiliate Marketing</li>
+<li>YouTube Marketing</li>
+<li>AI Tools for Marketing</li>
+<li>Website Analytics</li>
+</ul>
+
+<p><strong><a href="/courses">Join Our Online Digital Marketing Course</a></strong></p>
+
+<h2>Benefits of Learning Digital Marketing</h2>
+
+<h3>Career Opportunities</h3>
+<p>Digital marketing skills are in high demand across industries.</p>
+
+<h3>Freelancing Opportunities</h3>
+<p>Students can start freelancing and work with global clients.</p>
+
+<h3>Business Growth</h3>
+<p>Entrepreneurs can use digital marketing to grow their own businesses online.</p>
+
+<h3>Work From Home Careers</h3>
+<p>Digital marketing provides flexible remote work opportunities.</p>
+
+<h2>Why Choose Shainfotechnology Training?</h2>
+
+<ul>
+<li>Practical live projects</li>
+<li>Experienced trainers</li>
+<li>Certification support</li>
+<li>Placement assistance</li>
+<li>Flexible online classes</li>
+<li>Affordable course fees</li>
+</ul>
+
+<p><strong><a href="/contact">Contact for Digital Marketing Courses</a></strong></p>
+`
+},
+  {
+  id: 34,
+  slug: "why-digital-marketing-services-essential-business-growth-2026",
+  title: "Why Digital Marketing Services Are Essential for Business Growth in 2026",
+  metaTitle: "Professional Digital Marketing Services for Business Growth",
+  metaDescription: "Discover why digital marketing services are essential for business growth in 2026. Improve visibility, generate leads, and increase online sales.",
+  category: "Digital Marketing",
+  image: "/images/may13.png",
+  date: "13 May 2026",
+  content: `
+
+<h2>Introduction</h2>
+
+<p>In today’s competitive online marketplace, businesses need strong digital visibility to attract customers and increase revenue. Professional digital marketing services help brands build awareness, generate leads, and improve online sales through strategic online campaigns.</p>
+
+<p><a href="https://shainfotechnology.in/">Shainfotechnology</a> provides result-driven digital marketing solutions designed for startups, small businesses, and enterprises.</p>
+
+<h2>What Are Digital Marketing Services?</h2>
+
+<p>Digital marketing services include online strategies that help businesses promote their products and services through digital channels.</p>
+
+<h3>Our Services Include:</h3>
+
+<ul>
+<li>Search Engine Optimization (SEO)</li>
+<li>Google Ads & PPC Campaigns</li>
+<li>Social Media Marketing</li>
+<li>Content Marketing</li>
+<li>Website Optimization</li>
+<li>Email Marketing</li>
+<li>Lead Generation Campaigns</li>
+</ul>
+
+<p><strong><a href="/services">Explore Our Digital Marketing Services</a></strong></p>
+
+<h2>Benefits of Digital Marketing for Businesses</h2>
+
+<h3>1. Increased Online Visibility</h3>
+<p>SEO and social media campaigns help businesses rank higher on Google and attract targeted customers.</p>
+
+<h3>2. Better Lead Generation</h3>
+<p>Professional campaigns drive high-quality traffic and improve conversion rates.</p>
+
+<h3>3. Cost-Effective Marketing</h3>
+<p>Compared to traditional advertising, digital marketing offers better ROI and measurable results.</p>
+
+<h3>4. Brand Building</h3>
+<p>Consistent online presence increases trust and customer engagement.</p>
+
+<h2>Why Choose Shainfotechnology?</h2>
+
+<p>Shainfotechnology delivers customized marketing strategies based on business goals and industry trends. Our expert team focuses on improving search rankings, increasing website traffic, and maximizing ROI.</p>
+
+<p><strong><a href="/contact">Contact Our Marketing Experts</a></strong></p>
+
+`
+},
   /* ================= BLOG 1 ================= */
 {
   id: 30,
